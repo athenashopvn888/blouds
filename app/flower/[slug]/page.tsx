@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import { allFlowers, TIER_CONFIG, type FlowerProduct, type PricePoint } from "../../lib/products";
+import RelatedScroll from "./RelatedScroll";
 import styles from "./flower.module.css";
 
 /* ── Pre-generate all flower pages ── */
@@ -201,40 +202,11 @@ export default async function FlowerPage({
 
           {/* ── Related strains ── */}
           {related.length > 0 && (
-            <section className={styles.related}>
-              <h2 className={styles.relatedTitle}>
-                More{" "}
-                <span style={{ color: tierColor }}>{tierName}</span> Strains
-              </h2>
-              <div className={styles.relatedWrap}>
-                <div className={styles.relatedScroll}>
-                  {related.map((r) => (
-                    <Link
-                      key={r.sku}
-                      href={`/flower/${r.slug}`}
-                      className={styles.relatedCard}
-                    >
-                      <div className={styles.relatedImg}>
-                        {r.image ? (
-                          <img src={r.image} alt={r.name} loading="lazy" />
-                        ) : (
-                          <span>{r.name[0]}</span>
-                        )}
-                      </div>
-                      <div className={styles.relatedBody}>
-                        <h3>{r.name}</h3>
-                        <span className={styles.relatedThc}>THC {r.thc}</span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-                {related.length > 4 && (
-                  <div className={styles.scrollFade}>
-                    <span className={styles.scrollArrow}>&#8250;</span>
-                  </div>
-                )}
-              </div>
-            </section>
+            <RelatedScroll
+              flowers={related.map((r) => ({ sku: r.sku, slug: r.slug, name: r.name, image: r.image, thc: r.thc }))}
+              tierName={tierName}
+              tierColor={tierColor}
+            />
           )}
         </div>
       </main>
