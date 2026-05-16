@@ -1,0 +1,111 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(3, 7, 18, 0.88);
+  backdrop-filter: blur(20px) saturate(1.5);
+  border-bottom: 1px solid rgba(51, 65, 85, 0.3);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+}
+
+.logo { text-decoration: none; }
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 0.02em;
+}
+
+.fire {
+  display: inline-block;
+  margin: 0 2px;
+  animation: fireFlicker 2s ease-in-out infinite;
+}
+
+@keyframes fireFlicker {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  25% { opacity: 0.95; filter: brightness(1.1); }
+  50% { opacity: 1; filter: brightness(0.95); }
+  75% { opacity: 0.97; filter: brightness(1.05); }
+}
+
+.links {
+  display: none;
+  gap: 4px;
+}
+
+@media (min-width: 900px) {
+  .links { display: flex; }
+}
+
+.link {
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.linkGames {
+  padding: 7px 13px;
+  font-size: 16px;
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.linkGames:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: scale(1.1);
+}
+
+.actions { display: flex; align-items: center; gap: 12px; }
+
+.open {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}

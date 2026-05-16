@@ -36,6 +36,16 @@ yarn-error.log*
 # vercel
 .vercel
 
+# large data files
+*.xlsx
+onhand.csv
+onhand_template.csv
+
+# image source (banners are in public/banners/)
+/image/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
