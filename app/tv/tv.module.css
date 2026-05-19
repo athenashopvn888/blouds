@@ -7,7 +7,7 @@
 .tvPage {
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #020617 100%);
+  background: linear-gradient(135deg, #011f17 0%, #043d2c 50%, #01030d 100%);
   background-image: var(--bgImg, none);
   background-size: cover;
   background-position: center;
@@ -182,7 +182,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 0.30fr);
   grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 32px;
+  gap: 48px;
   grid-template-areas:
     "EXOTIC  PREMIUM AAA    ADDONS"
     "AA      BUDGET  OZ     ADDONS";
@@ -195,12 +195,7 @@
   border-radius: 20px;
   overflow: hidden;
   /* Raised 3D: layered shadow stack */
-  box-shadow:
-    0 1px 2px rgba(0,0,0,0.04),
-    0 4px 8px rgba(0,0,0,0.04),
-    0 12px 24px rgba(0,0,0,0.06),
-    0 24px 48px rgba(0,0,0,0.08),
-    0 2px 0 rgba(255,255,255,0.9) inset;
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.95), 0 20px 40px -10px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.1), 0 2px 0 rgba(255,255,255,0.9) inset;
   transform: translateY(-2px);
   display: flex;
   flex-direction: column;
@@ -226,23 +221,18 @@
   overflow: visible;
   color: #1a1a2e;
   animation: borderPulseRed 3s ease-in-out infinite;
-  box-shadow:
-    0 2px 4px rgba(220,38,38,0.06),
-    0 8px 16px rgba(220,38,38,0.08),
-    0 20px 40px rgba(220,38,38,0.10),
-    0 32px 64px rgba(0,0,0,0.08),
-    0 2px 0 rgba(255,255,255,0.9) inset;
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.95), 0 30px 60px -15px rgba(220,38,38,0.7), 0 0 0 2px rgba(220,38,38,0.3), 0 2px 0 rgba(255,255,255,0.9) inset;
   transform: translateY(-3px);
 }
 @keyframes borderPulseRed {
   0%, 100% {
     border-color: rgba(220,38,38,.20);
-    box-shadow: 0 2px 4px rgba(220,38,38,.06), 0 8px 16px rgba(220,38,38,.08), 0 20px 40px rgba(220,38,38,.10), 0 32px 64px rgba(0,0,0,.08);
+    box-shadow: 0 50px 100px -20px rgba(0,0,0,0.95), 0 30px 60px -15px rgba(220,38,38,0.7), 0 0 0 2px rgba(220,38,38,0.3);
     transform: translateY(-3px);
   }
   50% {
     border-color: rgba(220,38,38,.55);
-    box-shadow: 0 4px 8px rgba(220,38,38,.10), 0 12px 24px rgba(220,38,38,.14), 0 28px 56px rgba(220,38,38,.12), 0 40px 80px rgba(0,0,0,.10);
+    box-shadow: 0 60px 120px -20px rgba(0,0,0,1), 0 40px 80px -15px rgba(220,38,38,0.9), 0 0 0 3px rgba(220,38,38,0.5);
     transform: translateY(-5px);
   }
 }
@@ -254,23 +244,18 @@
   overflow: visible;
   color: #1a1a2e;
   animation: borderPulseGold 3.2s ease-in-out infinite;
-  box-shadow:
-    0 2px 4px rgba(245,158,11,0.06),
-    0 8px 16px rgba(245,158,11,0.08),
-    0 20px 40px rgba(245,158,11,0.10),
-    0 32px 64px rgba(0,0,0,0.08),
-    0 2px 0 rgba(255,255,255,0.9) inset;
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.95), 0 30px 60px -15px rgba(245,158,11,0.6), 0 0 0 2px rgba(245,158,11,0.3), 0 2px 0 rgba(255,255,255,0.9) inset;
   transform: translateY(-3px);
 }
 @keyframes borderPulseGold {
   0%, 100% {
     border-color: rgba(245,158,11,.22);
-    box-shadow: 0 2px 4px rgba(245,158,11,.06), 0 8px 16px rgba(245,158,11,.08), 0 20px 40px rgba(245,158,11,.10), 0 32px 64px rgba(0,0,0,.08);
+    box-shadow: 0 50px 100px -20px rgba(0,0,0,0.95), 0 30px 60px -15px rgba(245,158,11,0.6), 0 0 0 2px rgba(245,158,11,0.3);
     transform: translateY(-3px);
   }
   50% {
     border-color: rgba(245,158,11,.60);
-    box-shadow: 0 4px 8px rgba(245,158,11,.10), 0 12px 24px rgba(245,158,11,.14), 0 28px 56px rgba(245,158,11,.12), 0 40px 80px rgba(0,0,0,.10);
+    box-shadow: 0 60px 120px -20px rgba(0,0,0,1), 0 40px 80px -15px rgba(245,158,11,0.8), 0 0 0 3px rgba(245,158,11,0.5);
     transform: translateY(-5px);
   }
 }
@@ -282,23 +267,18 @@
   overflow: visible;
   color: #1a1a2e;
   animation: borderPulseBlue 3.4s ease-in-out infinite;
-  box-shadow:
-    0 2px 4px rgba(59,130,246,0.06),
-    0 8px 16px rgba(59,130,246,0.08),
-    0 20px 40px rgba(59,130,246,0.10),
-    0 32px 64px rgba(0,0,0,0.08),
-    0 2px 0 rgba(255,255,255,0.9) inset;
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.95), 0 30px 60px -15px rgba(59,130,246,0.6), 0 0 0 2px rgba(59,130,246,0.3), 0 2px 0 rgba(255,255,255,0.9) inset;
   transform: translateY(-3px);
 }
 @keyframes borderPulseBlue {
   0%, 100% {
     border-color: rgba(59,130,246,.20);
-    box-shadow: 0 2px 4px rgba(59,130,246,.06), 0 8px 16px rgba(59,130,246,.08), 0 20px 40px rgba(59,130,246,.10), 0 32px 64px rgba(0,0,0,.08);
+    box-shadow: 0 50px 100px -20px rgba(0,0,0,0.95), 0 30px 60px -15px rgba(59,130,246,0.6), 0 0 0 2px rgba(59,130,246,0.3);
     transform: translateY(-3px);
   }
   50% {
     border-color: rgba(59,130,246,.55);
-    box-shadow: 0 4px 8px rgba(59,130,246,.10), 0 12px 24px rgba(59,130,246,.14), 0 28px 56px rgba(59,130,246,.12), 0 40px 80px rgba(0,0,0,.10);
+    box-shadow: 0 60px 120px -20px rgba(0,0,0,1), 0 40px 80px -15px rgba(59,130,246,0.8), 0 0 0 3px rgba(59,130,246,0.5);
     transform: translateY(-5px);
   }
 }
@@ -308,11 +288,7 @@
   background: #ffffff;
   border: 2px solid rgba(234,88,12,.15);
   animation: borderPulseCopper 3.6s ease-in-out infinite;
-  box-shadow:
-    0 2px 4px rgba(234,88,12,0.04),
-    0 8px 16px rgba(234,88,12,0.06),
-    0 18px 36px rgba(0,0,0,0.08),
-    0 2px 0 rgba(255,255,255,0.9) inset;
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.95), 0 30px 60px -15px rgba(234,88,12,0.6), 0 0 0 2px rgba(234,88,12,0.3), 0 2px 0 rgba(255,255,255,0.9) inset;
   transform: translateY(-2px);
 }
 @keyframes borderPulseCopper {
@@ -325,11 +301,7 @@
   background: #ffffff;
   border: 2px solid rgba(22,163,74,.12);
   animation: borderPulseGreen 3.8s ease-in-out infinite;
-  box-shadow:
-    0 2px 4px rgba(22,163,74,0.04),
-    0 8px 16px rgba(22,163,74,0.06),
-    0 18px 36px rgba(0,0,0,0.08),
-    0 2px 0 rgba(255,255,255,0.9) inset;
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.95), 0 30px 60px -15px rgba(22,163,74,0.6), 0 0 0 2px rgba(22,163,74,0.3), 0 2px 0 rgba(255,255,255,0.9) inset;
   transform: translateY(-2px);
 }
 @keyframes borderPulseGreen {

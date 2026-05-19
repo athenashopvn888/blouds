@@ -7,7 +7,7 @@
 .tvPage {
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #020617 100%);
+  background: linear-gradient(135deg, #011f17 0%, #043d2c 50%, #01030d 100%);
   background-image: var(--bgImg, none);
   background-size: cover;
   background-position: center;
