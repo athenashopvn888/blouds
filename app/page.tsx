@@ -17,7 +17,7 @@ const TIERS = [
     glow: "rgba(245, 158, 11, 0.2)",
     icon: "🔥",
     count: 42,
-    banner: "/banners/blouds-exotics-banner.webp",
+    banner: "/banners/Blouds_Exotic.webp",
   },
   {
     name: "PREMIUM",
@@ -59,7 +59,7 @@ const TIERS = [
     glow: "rgba(52, 211, 153, 0.2)",
     icon: "✦",
     count: 35,
-    banner: "/banners/blouds-aa-banner.webp",
+    banner: "/banners/Blouds_AA.webp",
   },
   {
     name: "BUDGET",
@@ -73,7 +73,7 @@ const TIERS = [
     glow: "rgba(148, 163, 184, 0.15)",
     icon: "💰",
     count: 18,
-    banner: "/banners/blouds-budget-banner.webp",
+    banner: "/banners/Blouds_Budget.webp",
   },
   {
     name: "EDIBLES & MORE",
@@ -87,7 +87,7 @@ const TIERS = [
     glow: "rgba(251, 146, 60, 0.2)",
     icon: "🍬",
     count: 80,
-    banner: "/banners/blouds-edibles-prerolls-more-banner.webp",
+    banner: "/banners/Blouds_Edibles_Concentrates_More.webp",
   },
 ];
 
@@ -368,7 +368,7 @@ export default function HomePage() {
       <section className={styles.promoSection}>
         <a href="/items/edibles" className={styles.promoBannerLink}>
           <img
-            src="/banners/blouds-edibles-prerolls-more-banner.webp"
+            src="/banners/Blouds_Edibles_Concentrates_More.webp"
             alt="High THC Gummies & Edibles — Blouds Dispensary"
             className={styles.promoBannerImg}
           />
