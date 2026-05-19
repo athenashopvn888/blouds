@@ -151,7 +151,7 @@ export const TIER_CONFIG: Record<
 
 /* ── Item category config ── */
 export interface CategoryInfo {
-  name: string; slug: string; color: string; icon: string;
+  name: string; slug: string; color: string; icon: string; banner?: string;
   seoTitle: string; seoIntro: string; seoDescription: string;
   faqs: { q: string; a: string }[];
 }
