@@ -67,8 +67,7 @@
 .titleBar {
   height: 110px;
   border-radius: 18px;
-  width: calc(100% + 276px);
-  margin-left: -138px;
+  width: 100%;
   flex-shrink: 0;
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.55);
@@ -885,8 +884,7 @@
 .ticker {
   height: 100px;
   border-radius: 18px;
-  width: calc(100% + 276px);
-  margin-left: -138px;
+  width: 100%;
   flex-shrink: 0;
   box-sizing: border-box;
   background: #ffffff;
