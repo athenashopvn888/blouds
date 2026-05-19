@@ -66,7 +66,7 @@ const STATIC_POSTS = [
     readTime: "5 min",
   },
   {
-    slug: "toronto-cannabis-laws-2026",
+    slug: "brampton-cannabis-laws-2026",
     title: "Brampton Cannabis Laws in 2026 — What You Need to Know",
     excerpt: "Age limits, public consumption rules, possession limits, and where you can legally smoke in Brampton. Stay informed.",
     date: "2026-04-25",

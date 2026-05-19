@@ -209,6 +209,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   "ADD ONS": {
+    banner: "/banners/Blouds_Accessories.webp",
     name: "Accessories", slug: "add-ons", color: "#34d399", icon: "➕",
     seoTitle: "Cannabis Accessories Brampton — Grinders, Papers, Lighters & More",
     seoIntro: "Essential cannabis accessories at Blouds Dispensary, Brampton. Grinders, rolling papers, lighters, trays, and more.",

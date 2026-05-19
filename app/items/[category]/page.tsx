@@ -53,16 +53,23 @@ export default async function ItemsCategoryPage({
     <main className={styles.main}>
       <Navbar />
 
-      {/* Hero */}
-      <section className={styles.hero} style={{ "--cat-color": config.color } as React.CSSProperties}>
-        <div className={styles.heroContent}>
-          <span className={styles.heroIcon}>{config.icon}</span>
-          <h1 className={styles.heroTitle}>
-            <span style={{ color: config.color }}>{config.name}</span>
-          </h1>
-          <p className={styles.heroSub}>{items.length} products available</p>
-          <p className={styles.heroIntro}>{config.seoIntro}</p>
-        </div>
+      {/* Hero Banner */}
+      <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
+        {config.banner ? (
+          <img
+            src={config.banner}
+            alt={config.name}
+            style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
+          />
+        ) : (
+          <div className={styles.heroContent} style={{ background: config.color, padding: "60px 24px", textAlign: "center" }}>
+            <span className={styles.heroIcon}>{config.icon}</span>
+            <h1 className={styles.heroTitle}>
+              <span style={{ color: "#fff" }}>{config.name}</span>
+            </h1>
+            <p className={styles.heroSub} style={{ color: "rgba(255,255,255,0.8)" }}>{items.length} products available</p>
+          </div>
+        )}
       </section>
 
       {/* Product Grid */}

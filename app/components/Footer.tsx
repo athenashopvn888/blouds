@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Column 1 — Store Description */}
           <div className={styles.col}>
             <div className={styles.brand}>
-              SPIRIT<span className={styles.fire}>✨</span>CORNER
+              BLOUDS
             </div>
             <p className={styles.desc}>
               Your Local Cannabis Dispensary At 117 Queen St W, Brampton. Visit

@@ -163,7 +163,7 @@ export default function HomePage() {
         <div className={styles.heroContent}>
           <div className={styles.heroBadge}>
             <span className={styles.heroBadgeDot}></span>
-            TORONTO'S FORTRESS OF CANNABIS
+            BRAMPTON'S FORTRESS OF CANNABIS
           </div>
           <h1 className={styles.heroTitle}>
             Premium Cannabis.
@@ -296,7 +296,7 @@ export default function HomePage() {
         <div className={styles.container}>
           <div className={styles.sectionBanner}>
             <img
-              src="/banners/blouds-hot-right-now.png"
+              src="/banners/Blouds_Hot_Right_Now.webp"
               alt="Hot Right Now — Staff picks and top sellers"
               className={styles.sectionBannerImg}
             />
