@@ -84,7 +84,7 @@ export default function FAQPage() {
         {/* FAQ Banner */}
         <section style={{ width: "100%", overflow: "hidden", marginTop: "92px" }}>
           <img
-            src="/banners/blouds-faq.png"
+            src="/banners/Blouds_FAQ_Info.webp"
             alt="Blouds Dispensary FAQ — Your Questions Answered"
             style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
           />

@@ -167,7 +167,7 @@ export default function HomePage() {
         <div className={styles.container}>
           <div className={styles.sectionBanner}>
             <img
-              src="/banners/blouds-welcome-banner.webp"
+              src="/banners/Blouds_Welcome_Banner.webp"
               alt="Shop by Tier — From exotic craft flower to value budget OZs"
               className={styles.sectionBannerImg}
             />
@@ -230,13 +230,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── HOT RIGHT NOW ── */}
+      {/* ── FEATURE PRODUCTS ── */}
       <section className={styles.featuredSection}>
         <div className={styles.container}>
           <div className={styles.sectionBanner}>
             <img
-              src="/banners/Blouds_Hot_Right_Now.webp"
-              alt="Hot Right Now — Staff picks and top sellers"
+              src="/banners/Blouds_Feature_Products.webp"
+              alt="Feature Products — Staff picks and top sellers"
               className={styles.sectionBannerImg}
             />
           </div>
@@ -296,7 +296,7 @@ export default function HomePage() {
       <section className={styles.promoSection}>
         <a href="/games" className={styles.promoBannerLink}>
           <img
-            src="/banners/neon_arcade_gaming_promotion_banner.webp"
+            src="/banners/Blouds_Games_Arcade.webp"
             alt="Games Arcade — Flappy Bud, Snake Munchies, Brick Breaker 420"
             className={styles.promoBannerImg}
           />
@@ -318,7 +318,7 @@ export default function HomePage() {
       <section className={styles.promoSection}>
         <a href="/items/vapes" className={styles.promoBannerLink}>
           <img
-            src="/banners/blouds-deals.png"
+            src="/banners/Blouds_Daily_Deals.webp"
             alt="24 Hour Cannabis Deals — Vapes, Pre-Rolls & More"
             className={styles.promoBannerImg}
           />

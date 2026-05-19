@@ -171,7 +171,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   },
   "VAPE PENS": {
       banner: "/banners/Blouds_THC_Vape.webp",
-    name: "Vape Pens", slug: "vapes", color: "#8b5cf6", icon: "💨",
+    name: "THC Vape", slug: "vapes", color: "#8b5cf6", icon: "💨",
     seoTitle: "Vape Pens Brampton — THC & Nicotine Cartridges",
     seoIntro: "Shop THC and nicotine vape pens at Blouds Dispensary, Brampton. Cartridges, 510-thread batteries, and premium vape brands — all in stock.",
     seoDescription: "Blouds Dispensary carries a curated selection of vape pens and cartridges in Brampton. From 510-thread THC cartridges to nicotine vape pods, we stock the most popular brands and flavours. Our knowledgeable budtenders can help you choose the right cartridge and battery setup. Visit us at 117 Queen St W for the best vape selection in ByWard Market.",
@@ -181,7 +181,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   "VAPE DISPOSABLE": {
-    name: "Vape Disposables", slug: "vape-disposables", color: "#a78bfa", icon: "💨",
+    name: "Nic Vape", slug: "vape-disposables", color: "#a78bfa", icon: "💨",
     seoTitle: "Disposable Vapes Brampton — THC Disposable Pens",
     seoIntro: "THC disposable vapes available at Blouds Dispensary, Brampton. No charging, no refilling — just open and enjoy.",
     seoDescription: "Disposable THC vapes are the easiest way to enjoy cannabis on the go. Blouds Dispensary stocks a wide selection of pre-charged, pre-filled disposable vape pens with various strain profiles and potencies. Perfect for beginners and experienced users alike. Visit us at 117 Queen St W, Brampton.",

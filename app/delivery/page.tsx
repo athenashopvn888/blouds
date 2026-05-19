@@ -32,12 +32,12 @@ export default function DeliveryPage() {
     <main className={styles.main}>
       <Navbar />
       <div className={styles.content}>
-        <span className={styles.icon}>🚗</span>
+        <img src="/banners/Blouds_Delivery.webp" alt="Blouds Delivery" style={{ width: "100%", maxWidth: "1200px", display: "block", margin: "0 auto 2rem auto", borderRadius: "var(--radius-lg)" }} />
         <h1 className={styles.pageTitle}>
           Delivery <span className={styles.highlight}>Coming Soon</span>
         </h1>
         <p className={styles.pageSubtitle}>
-          Blouds Dispensary is launching delivery across Brampton &amp; Gatineau.
+          Blouds Dispensary is launching delivery across Brampton.
           Sign up below to be the first to know when we go live — and get an exclusive launch-day deal.
         </p>
 

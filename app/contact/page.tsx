@@ -20,14 +20,9 @@ export default function ContactPage() {
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>
-            Visit <span className={styles.heroAccent}>Blouds Dispensary</span>
-          </h1>
-          <p className={styles.heroSub}>
-            117 Queen St W · Brampton, ON L6Y 1M3
-          </p>
+      <section className={styles.hero} style={{ paddingTop: "92px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
+          <img src="/banners/Blouds_Contact_Us.webp" alt="Contact Us" style={{ width: "100%", height: "auto", display: "block", borderRadius: "var(--radius-lg)" }} />
         </div>
       </section>
 
