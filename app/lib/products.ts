@@ -158,6 +158,7 @@ export interface CategoryInfo {
 
 export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   EDIBLES: {
+      banner: "/banners/Blouds_Edibles.webp",
     name: "Edibles", slug: "edibles", color: "#f97316", icon: "🍬",
     seoTitle: "Cannabis Edibles Brampton — Gummies, Chocolates & Drinks",
     seoIntro: "Browse the full cannabis edibles menu at Blouds Dispensary on Brampton St, Brampton. We carry THC gummies, chocolates, drinks, and more from top Canadian brands.",
@@ -169,6 +170,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   "VAPE PENS": {
+      banner: "/banners/Blouds_THC_Vape.webp",
     name: "Vape Pens", slug: "vapes", color: "#8b5cf6", icon: "💨",
     seoTitle: "Vape Pens Brampton — THC & Nicotine Cartridges",
     seoIntro: "Shop THC and nicotine vape pens at Blouds Dispensary, Brampton. Cartridges, 510-thread batteries, and premium vape brands — all in stock.",
@@ -189,6 +191,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   CONCENTRATES: {
+      banner: "/banners/Blouds_Concentrate.webp",
     name: "Concentrates", slug: "concentrates", color: "#f59e0b", icon: "💎",
     seoTitle: "Cannabis Concentrates Brampton — Shatter, Wax, Hash & Live Resin",
     seoIntro: "Premium cannabis concentrates at Blouds Dispensary, Brampton. Shatter, wax, hash, live resin, and diamonds — all in stock.",
@@ -199,7 +202,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   PREROLLS: {
-    name: "Pre-Rolls", slug: "prerolls", color: "#22c55e", icon: "🚬",
+    banner: "/banners/Blouds_Pre-Rolls.webp", name: "Pre-Rolls", slug: "prerolls", color: "#22c55e", icon: "🚬",
     seoTitle: "Pre-Rolls Brampton — Ready-to-Smoke Cannabis Joints",
     seoIntro: "Pre-rolled cannabis joints at Blouds Dispensary, Brampton. Singles, multi-packs, and infused pre-rolls — ready to light up.",
     seoDescription: "Skip the rolling and grab a pre-roll from Blouds Dispensary in Brampton. We carry singles, multi-packs, and infused pre-rolls from premium flower. Whether you want a quick smoke or a party pack, our pre-roll selection has something for everyone. Visit us at 117 Queen St W — open daily 24 hours.",
@@ -209,7 +212,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   "ADD ONS": {
-    banner: "/banners/Blouds_Accessories.webp",
+      banner: "/banners/Blouds_Accessories.webp",
     name: "Accessories", slug: "add-ons", color: "#34d399", icon: "➕",
     seoTitle: "Cannabis Accessories Brampton — Grinders, Papers, Lighters & More",
     seoIntro: "Essential cannabis accessories at Blouds Dispensary, Brampton. Grinders, rolling papers, lighters, trays, and more.",
@@ -219,6 +222,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   CIGARETTES: {
+      banner: "/banners/Blouds_Cigarettes_No_Cigarette.webp",
     name: "Cigarettes", slug: "cigarettes", color: "#78716c", icon: "🏷️",
     seoTitle: "Native Cigarettes Brampton — Discount Tobacco at Blouds Dispensary",
     seoIntro: "Discount native cigarettes at Blouds Dispensary, Brampton. Premium and value brands at the best prices on Brampton St.",
@@ -230,6 +234,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   "MAGIC & OTHERS": {
+      banner: "/banners/Blouds_Magic_Stuff.webp",
     name: "Magic & Others", slug: "magic", color: "#ec4899", icon: "🍄",
     seoTitle: "Magic Mushrooms & More — Brampton",
     seoIntro: "Magic mushrooms, psilocybin products, and specialty items at Blouds Dispensary, Brampton.",

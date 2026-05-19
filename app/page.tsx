@@ -154,7 +154,7 @@ export default function HomePage() {
       <section className={styles.hero} id="hero">
         <div className={styles.heroBanner}>
           <img
-            src="/banners/Blouds_Welcome.webp"
+            src="/banners/Blouds_Homepage_Hero.webp"
             alt="Blouds Dispensary — Premium Brampton Cannabis Dispensary"
             className={styles.heroBannerImg}
           />
