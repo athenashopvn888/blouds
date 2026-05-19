@@ -151,76 +151,15 @@ export default function HomePage() {
       <Navbar />
 
       {/* ── HERO BANNER ── */}
-      <section className={styles.hero} id="hero">
-        <div className={styles.heroBanner}>
+      <section className={styles.hero} id="hero" style={{ paddingTop: "92px", paddingBottom: "24px", minHeight: "auto", display: "block" }}>
+        <a href="#menu" className={styles.heroBanner} style={{ display: "block", position: "relative", width: "100%", cursor: "pointer" }}>
           <img
             src="/banners/Blouds_Homepage_Hero.webp"
             alt="Blouds Dispensary — Premium Brampton Cannabis Dispensary"
             className={styles.heroBannerImg}
+            style={{ width: "100%", height: "auto", display: "block" }}
           />
-          <div className={styles.heroBannerOverlay}></div>
-        </div>
-        <div className={styles.heroContent}>
-          <div className={styles.heroBadge}>
-            <span className={styles.heroBadgeDot}></span>
-            BRAMPTON'S FORTRESS OF CANNABIS
-          </div>
-          <h1 className={styles.heroTitle}>
-            Premium Cannabis.
-            <br />
-            <span className={styles.heroFire}>Ascend to New Heights.</span>{" "}
-            <span className={styles.heroLit}>Blouds Dispensary.</span>
-          </h1>
-          <p className={styles.heroSubtitle}>
-            200+ hand-picked strains · Exotic to Budget · THC up to 39% ·
-            Real-time inventory · 117 Queen St W, Brampton
-          </p>
-          <div className={styles.heroButtons}>
-            <a href="#menu" className={styles.heroBtn}>
-              Browse Menu
-              <svg
-                width="18"
-                height="18"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </a>
-            <a href="/games" className={styles.heroBtnGhost}>
-              🎮 Play Games
-            </a>
-          </div>
-
-          {/* Stats bar */}
-          <div className={styles.heroStats}>
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>200+</span>
-              <span className={styles.heroStatLabel}>Strains</span>
-            </div>
-            <div className={styles.heroStatDivider}></div>
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>39%</span>
-              <span className={styles.heroStatLabel}>Max THC</span>
-            </div>
-            <div className={styles.heroStatDivider}></div>
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>$3</span>
-              <span className={styles.heroStatLabel}>From /g</span>
-            </div>
-            <div className={styles.heroStatDivider}></div>
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>24h</span>
-              <span className={styles.heroStatLabel}>Open</span>
-            </div>
-          </div>
-        </div>
+        </a>
       </section>
 
       {/* ── SHOP BY TIER BANNER ── */}
