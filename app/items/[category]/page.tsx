@@ -45,7 +45,9 @@ export default async function ItemsCategoryPage({
   let items = getItemsByCategory(catInfo.key);
   if (catInfo.key === "PREROLLS") {
     const accessories = getItemsByCategory("ADD ONS");
-    items = [...items, ...accessories];
+    const existingIds = new Set(items.map(i => i.id));
+    const uniqueAccessories = accessories.filter(a => !existingIds.has(a.id));
+    items = [...items, ...uniqueAccessories];
   }
   const { config } = catInfo;
 
