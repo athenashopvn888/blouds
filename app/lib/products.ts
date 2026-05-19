@@ -66,7 +66,7 @@ export async function fetchLiveProducts(): Promise<{
   }
 
   try {
-    const res = await fetch(`${APPS_SCRIPT_URL}?store=ALC01`, {
+    const res = await fetch(`${APPS_SCRIPT_URL}?store=BLS01`, {
       next: { revalidate: 300 }, // Cache for 5 min during build
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -120,7 +120,7 @@ export const TIER_CONFIG: Record<
     color: "#22d3ee",
     icon: "\u26A1",
     tagline: "Heavy hitters, proven strains \u00B7 THC 30-32%",
-    banner: "/banners/Blouds_AAAplus.webp",
+    banner: "/banners/Blouds_AA.webp",
     unitPrice: 10,
     deal3g: { label: "Buy 2g Get 1g FREE", total: "3G", price: 20 },
     deal6g: { label: "Buy 3g Get 3g FREE", total: "6G", price: 30 },
@@ -131,7 +131,7 @@ export const TIER_CONFIG: Record<
     color: "#34d399",
     icon: "\u2726",
     tagline: "Quality daily drivers \u00B7 THC 27-29%",
-    banner: "/banners/Blouds_AA.webp",
+    banner: "/banners/Blouds_AAAplus.webp",
     unitPrice: 4,
     deal3g: null,
     deal6g: null,
