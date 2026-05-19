@@ -64,7 +64,18 @@
 }
 
 /* ── TITLE BAR ── */
- 0 40px 80px -20px rgba(0,0,0,0.95), 0 20px 40px -10px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.1), 0 2px 0 rgba(255,255,255,0.9) inset;
+.titleBar {
+  height: 110px;
+  border-radius: 18px;
+  width: calc(100% + 276px);
+  margin-left: -138px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.55);
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.95), 0 20px 40px -10px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.1), 0 2px 0 rgba(255,255,255,0.9) inset;
   overflow: hidden;
   display: flex;
   align-items: center;
