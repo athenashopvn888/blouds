@@ -73,7 +73,7 @@ export default function Footer() {
               <Link href="/info/ottawa-weed-dispensary">Brampton Dispensary</Link>
               <Link href="/info/cheap-weed-ottawa">Cheap Weed Brampton</Link>
               <Link href="/info/native-cigarettes-ottawa">Native Cigarettes</Link>
-              <Link href="/info/weed-store-near-gatineau">Weed Store Near Gatineau</Link>
+              <Link href="/info/weed-store-near-mississauga">Weed Store Near Mississauga</Link>
               <Link href="/contact">Contact Us</Link>
               <a
                 href="https://maps.app.goo.gl/yVDY1PZ8qSwAjQ6s6"
