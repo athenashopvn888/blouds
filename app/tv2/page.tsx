@@ -192,12 +192,12 @@ function PromoCard({ title, accent }: { title: string; accent: string }) {
    VERTICAL TICKER
    ═══════════════════════════════════════ */
 const TICKER_SLIDES = [
-  🔥  — ,
-  200+ Strains In Stock,
-  Open 24 Hours,
-  Pre-Rolls • Edibles • Vapes • Concentrates,
-  ALL SALES ARE FINAL,
-  🎮 Play Games at /games,
+  "🔥 Blouds Dispensary — 117 Queen St W, Brampton",
+  "200+ Strains In Stock",
+  "Open 24 Hours",
+  "Pre-Rolls • Edibles • Vapes • Concentrates",
+  "ALL SALES ARE FINAL",
+  "🎮 Play Games at bloudsdispensary.ca/games",
 ];
 
 function VerticalTicker() {
