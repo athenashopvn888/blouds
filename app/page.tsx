@@ -87,7 +87,7 @@ const TIERS = [
     glow: "rgba(251, 146, 60, 0.2)",
     icon: "🍬",
     count: 80,
-    banner: "/banners/Blouds_Edibles_Concentrates_More.webp",
+    banner: "/banners/Blouds_Edibles.webp",
   },
 ];
 
@@ -307,7 +307,7 @@ export default function HomePage() {
       <section className={styles.promoSection}>
         <a href="/items/edibles" className={styles.promoBannerLink}>
           <img
-            src="/banners/Blouds_Edibles_Concentrates_More.webp"
+            src="/banners/Blouds_Edibles.webp"
             alt="High THC Gummies & Edibles — Blouds Dispensary"
             className={styles.promoBannerImg}
           />
