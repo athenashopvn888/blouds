@@ -22,7 +22,7 @@ async function main() {
   console.log('[prebuild] Fetching live stock from Apps Script...');
 
   try {
-    const url = `${APPS_SCRIPT_URL}?store=SCC01`;
+    const url = `${APPS_SCRIPT_URL}?store=BLS01`;
     const res = await fetch(url, { signal: AbortSignal.timeout(30000) });
 
     if (!res.ok) {
