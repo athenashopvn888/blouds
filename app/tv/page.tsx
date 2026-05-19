@@ -555,11 +555,9 @@ function AddOnsCard({ items, hiIdx }: { items: Item[]; hiIdx: number }) {
    VERTICAL TICKER — slides up, 3s per section
    ══════════════════════════════════════════════ */
 const TICKER_SLIDES = [
-  "🔥 Blouds Dispensary — 117 Queen St W, Brampton",
+  "🔥 Blouds Dispensary — 117 Queen St W,
   "200+ Strains In Stock",
-  "Open 24hrs !!",
-  "Exotic $20/g  •  Premium $15/g  •  AAA+ $10/g",
-  "AA $4/g  •  Budget $3.33/g",
+  "Open 24 Hours",
   "ALL SALES ARE FINAL",
   "🎮 Play Games at bloudsdispensary.ca/games",
 ];
