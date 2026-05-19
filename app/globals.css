@@ -14,18 +14,18 @@
   --bg-card-hover: #f0f5f2;
   --bg-glass: rgba(255, 255, 255, 0.85);
 
-  /* Brand colors - cannabis green */
-  --green-deep: #1B4332;
-  --green-dark: #2D6A4F;
-  --green-mid: #40916C;
-  --green-light: #52B788;
-  --green-pale: #95D5B2;
-  --green-mist: #D8F3DC;
-  --sale-red: #DC2626;
-  --hot-orange: #EA580C;
-  --hot-gradient: linear-gradient(135deg, #EA580C, #DC2626);
-  --green-gradient: linear-gradient(135deg, #2D6A4F, #40916C, #52B788);
-  --accent-gradient: linear-gradient(135deg, #40916C, #2D6A4F);
+    /* Brand colors - bold urban */
+  --green-deep: #2D0A28;
+  --green-dark: #4D194D;
+  --green-mid: #7B2CBF;
+  --green-light: #9D4EDD;
+  --green-pale: #C77DFF;
+  --green-mist: #F3E8FF;
+  --sale-red: #E5383B;
+  --hot-orange: #FF5400;
+  --hot-gradient: linear-gradient(135deg, #FF5400, #E5383B);
+  --green-gradient: linear-gradient(135deg, #4D194D, #7B2CBF, #9D4EDD);
+  --accent-gradient: linear-gradient(135deg, #7B2CBF, #4D194D);
 
   /* Tier colors */
   --tier-exotic: #B45309;

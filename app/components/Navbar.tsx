@@ -33,8 +33,8 @@ export default function Navbar() {
       <div className={styles.topBar}>
         <Link href="/" className={styles.logo}>
           <img
-            src="/banners/logo.jpg"
-            alt="Spirit Corner Cannabis — Ottawa Dispensary"
+            src="/banners/logo.png"
+            alt="Blouds Dispensary — Brampton Dispensary"
             className={styles.logoImg}
           />
         </Link>

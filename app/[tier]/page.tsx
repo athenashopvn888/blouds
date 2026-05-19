@@ -30,9 +30,9 @@ export async function generateMetadata({
 
   return {
     title: seo?.seoTitle || `${tierInfo.config.name} Cannabis Flower — ${flowers.length} Strains`,
-    description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at Spirit Corner Cannabis.`,
+    description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at Cafe Value.`,
     openGraph: {
-      title: `${tierInfo.config.name} Flower | Spirit Corner Cannabis`,
+      title: `${tierInfo.config.name} Flower | Cafe Value`,
       description: `${flowers.length} curated ${tierInfo.config.name.toLowerCase()} strains in stock now. From $${tierInfo.config.unitPrice}/g.`,
     },
   };

@@ -68,7 +68,7 @@ export default function BlogAdmin() {
   async function fetchPosts() {
     setLoading(true);
     try {
-      const res = await fetch(`${APPS_SCRIPT_URL}?action=blog&store=SCC01&admin=1`);
+      const res = await fetch(`${APPS_SCRIPT_URL}?action=blog&store=BLS01&admin=1`);
       const data = await res.json();
       setPosts(data.posts || []);
     } catch {
@@ -112,7 +112,7 @@ export default function BlogAdmin() {
         <div className={styles.loginCard}>
           <div className={styles.loginLogo}>📝</div>
           <h1 className={styles.loginTitle}>Blog Admin</h1>
-          <p className={styles.loginSub}>Spirit Corner Cannabis</p>
+          <p className={styles.loginSub}>Blouds Dispensary</p>
           <form onSubmit={handleLogin} className={styles.loginForm}>
             <input
               type="text"

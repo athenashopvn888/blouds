@@ -49,8 +49,8 @@ const STATIC_POSTS = [
   },
   {
     slug: "best-dispensary-byward-market",
-    title: "Why Spirit Corner is ByWard Market's Best Dispensary",
-    excerpt: "200+ strains, transparent pricing from $3/g, lab-tested products, and open 24 hours. Here's what makes us different.",
+    title: "Why Blouds Dispensary is Brampton's Best Dispensary",
+    excerpt: "200+ strains, transparent pricing from $3/g, lab-tested products, and open Open 24 Hours. Here's what makes us different.",
     date: "2026-05-03",
     category: "News",
     emoji: "🔥",
@@ -66,9 +66,9 @@ const STATIC_POSTS = [
     readTime: "5 min",
   },
   {
-    slug: "ottawa-cannabis-laws-2026",
-    title: "Ottawa Cannabis Laws in 2026 — What You Need to Know",
-    excerpt: "Age limits, public consumption rules, possession limits, and where you can legally smoke in Ottawa. Stay informed.",
+    slug: "toronto-cannabis-laws-2026",
+    title: "Brampton Cannabis Laws in 2026 — What You Need to Know",
+    excerpt: "Age limits, public consumption rules, possession limits, and where you can legally smoke in Brampton. Stay informed.",
     date: "2026-04-25",
     category: "News",
     emoji: "⚖️",
@@ -78,8 +78,8 @@ const STATIC_POSTS = [
 
 /* ── Google Reviews ── */
 const REVIEWS = [
-  { name: "Mike R.", rating: 5, text: "Best dispensary in the ByWard Market area. Staff is super knowledgeable and the exotic strains are legit fire.", date: "2 weeks ago" },
-  { name: "Sarah L.", rating: 5, text: "Love that they're open 24 hours. The selection is insane — over 200 strains. My go-to spot.", date: "1 month ago" },
+  { name: "Mike R.", rating: 5, text: "Best dispensary in the Brampton area. Staff is super knowledgeable and the exotic strains are legit fire.", date: "2 weeks ago" },
+  { name: "Sarah L.", rating: 5, text: "Love that they're open Open 24 Hours. The selection is insane — over 200 strains. My go-to spot.", date: "1 month ago" },
   { name: "James T.", rating: 5, text: "Tried the Buy 2g Get 1g Free deal on the AAA+ and it was incredible value.", date: "3 weeks ago" },
   { name: "Priya K.", rating: 5, text: "Clean store, friendly staff, great edible selection. The gummies are perfectly dosed.", date: "1 week ago" },
   { name: "Alex D.", rating: 5, text: "Finally a dispensary that lists everything with actual THC percentages and per-gram pricing.", date: "2 weeks ago" },
@@ -94,7 +94,7 @@ export default function BlogPage() {
   const [dynamicPosts, setDynamicPosts] = useState<BlogPost[]>([]);
 
   useEffect(() => {
-    fetch(`${APPS_SCRIPT_URL}?action=blog&store=SCC01`)
+    fetch(`${APPS_SCRIPT_URL}?action=blog&store=CHC01`)
       .then((r) => r.json())
       .then((data) => setDynamicPosts(data.posts || []))
       .catch(() => {});
@@ -104,15 +104,24 @@ export default function BlogPage() {
     <main className={styles.main}>
       <Navbar />
 
+      {/* Blog Banner */}
+      <section style={{ width: "100%", overflow: "hidden", marginTop: "92px" }}>
+        <img
+          src="/banners/blouds-blog.png"
+          alt="Blouds Dispensary Blog"
+          style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
+        />
+      </section>
+
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <h1 className={styles.heroH1}>
-            📝 Spirit Corner <span className={styles.heroAccent}>Blog</span>
+            📝 Blouds Dispensary <span className={styles.heroAccent}>Blog</span>
           </h1>
           <p className={styles.heroSub}>
-            Cannabis guides, strain reviews, and dispensary news from Ottawa&apos;s
-            24-hour dispensary.
+            Cannabis guides, strain reviews, and dispensary news from Brampton&apos;s
+            premium dispensary.
           </p>
         </div>
       </section>
@@ -227,7 +236,7 @@ export default function BlogPage() {
         <div className={styles.ctaInner}>
           <h2 className={styles.ctaTitle}>Ready to Shop?</h2>
           <p className={styles.ctaSub}>
-            200+ strains · Exotic to Budget · Open 24 Hours
+            200+ strains · Exotic to Budget · Open Open 24 Hours
           </p>
           <div className={styles.ctaBtns}>
             <Link href="/exotic" className={styles.ctaBtn}>

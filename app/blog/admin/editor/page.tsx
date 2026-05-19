@@ -20,7 +20,7 @@ function BlogEditorInner() {
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [author, setAuthor] = useState("Spirit Corner Team");
+  const [author, setAuthor] = useState("Blouds Dispensary Team");
   const [published, setPublished] = useState(false);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -38,14 +38,14 @@ function BlogEditorInner() {
     if (!editId) return;
     setLoading(true);
 
-    fetch(`${APPS_SCRIPT_URL}?action=blog&store=SCC01&admin=1`)
+    fetch(`${APPS_SCRIPT_URL}?action=blog&store=BLS01&admin=1`)
       .then((r) => r.json())
       .then((data) => {
         const post = (data.posts || []).find((p: { id: string }) => p.id === editId);
         if (post) {
           setTitle(post.title || "");
           setContent(post.content || "");
-          setAuthor(post.author || "Spirit Corner Team");
+          setAuthor(post.author || "Blouds Dispensary Team");
           setPublished(String(post.published).toUpperCase() === "TRUE");
         }
         setLoading(false);
@@ -64,7 +64,7 @@ function BlogEditorInner() {
 
     const payload = editId
       ? { action: "update", id: editId, title, content, author, published }
-      : { action: "create", title, content, author, published, store: "SCC01" };
+      : { action: "create", title, content, author, published, store: "BLS01" };
 
     try {
       await fetch(APPS_SCRIPT_URL, {

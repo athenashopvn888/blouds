@@ -17,7 +17,7 @@ const TIERS = [
     glow: "rgba(245, 158, 11, 0.2)",
     icon: "🔥",
     count: 42,
-    banner: "/banners/exotic_premium_cannabis_with_glowing_accents.webp",
+    banner: "/banners/blouds-exotics-banner.webp",
   },
   {
     name: "PREMIUM",
@@ -31,7 +31,7 @@ const TIERS = [
     glow: "rgba(167, 139, 250, 0.2)",
     icon: "💎",
     count: 38,
-    banner: "/banners/premium_cannabis_with_glowing_accents.webp",
+    banner: "/banners/Blouds_Premium.webp",
   },
   {
     name: "AAA+",
@@ -45,7 +45,7 @@ const TIERS = [
     glow: "rgba(34, 211, 238, 0.2)",
     icon: "⚡",
     count: 55,
-    banner: "/banners/electric_neon_cannabis_ad_banner.webp",
+    banner: "/banners/Blouds_AAAplus.webp",
   },
   {
     name: "AA",
@@ -59,7 +59,7 @@ const TIERS = [
     glow: "rgba(52, 211, 153, 0.2)",
     icon: "✦",
     count: 35,
-    banner: "/banners/neon_cannabis_product_showcase.webp",
+    banner: "/banners/blouds-aa-banner.webp",
   },
   {
     name: "BUDGET",
@@ -73,7 +73,7 @@ const TIERS = [
     glow: "rgba(148, 163, 184, 0.15)",
     icon: "💰",
     count: 18,
-    banner: "/banners/premium_budget_cannabis_deal_showcase.webp",
+    banner: "/banners/blouds-budget-banner.webp",
   },
   {
     name: "EDIBLES & MORE",
@@ -87,28 +87,33 @@ const TIERS = [
     glow: "rgba(251, 146, 60, 0.2)",
     icon: "🍬",
     count: 80,
-    banner: "/banners/neon_lit_edible_product_promotion_banner.webp",
+    banner: "/banners/blouds-edibles-prerolls-more-banner.webp",
   },
 ];
 
 /* ── Build featured strains dynamically from real inventory ── */
 function buildFeatured() {
-  const hot = allFlowers.filter((f) => f.isHot);
-  const sale = allFlowers.filter((f) => f.isSale && !f.isHot);
-  const rest = allFlowers
-    .filter((f) => !f.isHot && !f.isSale && f.image)
-    .sort((a, b) => parseFloat(b.thc) - parseFloat(a.thc));
-  const pool = [...hot, ...sale, ...rest];
+  const pool = [...allFlowers].filter(f => f.image);
+  
+  // Shuffle pool securely
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  
   const picked: typeof pool = [];
   const tierCounts: Record<string, number> = {};
+  
   for (const f of pool) {
     if (picked.length >= 8) break;
     const tc = tierCounts[f.tier] || 0;
-    if (tc >= 3) continue;
-    if (!f.image) continue;
+    if (tc >= 2) continue; // max 2 per tier
+    // Prevent duplicate strains with the same name
+    if (picked.some(p => p.name === f.name)) continue;
     picked.push(f);
     tierCounts[f.tier] = tc + 1;
   }
+  
   return picked.map((f) => ({
     name: f.name,
     sku: f.sku,
@@ -119,6 +124,7 @@ function buildFeatured() {
     image: f.image,
   }));
 }
+
 const FEATURED_STRAINS = buildFeatured();
 
 function getTypeLabel(type: string) {
@@ -148,8 +154,8 @@ export default function HomePage() {
       <section className={styles.hero} id="hero">
         <div className={styles.heroBanner}>
           <img
-            src="/banners/spirit_corner_cannabis_showcase.webp"
-            alt="Spirit Corner Cannabis — Premium Ottawa Cannabis Dispensary"
+            src="/banners/Blouds_Welcome.webp"
+            alt="Blouds Dispensary — Premium Brampton Cannabis Dispensary"
             className={styles.heroBannerImg}
           />
           <div className={styles.heroBannerOverlay}></div>
@@ -157,17 +163,17 @@ export default function HomePage() {
         <div className={styles.heroContent}>
           <div className={styles.heroBadge}>
             <span className={styles.heroBadgeDot}></span>
-            OTTAWA&apos;S UPLIFTING DISPENSARY
+            TORONTO'S FORTRESS OF CANNABIS
           </div>
           <h1 className={styles.heroTitle}>
             Premium Cannabis.
             <br />
-            <span className={styles.heroFire}>Elevate Your Spirit.</span>{" "}
-            <span className={styles.heroLit}>Spirit Corner.</span>
+            <span className={styles.heroFire}>Ascend to New Heights.</span>{" "}
+            <span className={styles.heroLit}>Blouds Dispensary.</span>
           </h1>
           <p className={styles.heroSubtitle}>
             200+ hand-picked strains · Exotic to Budget · THC up to 39% ·
-            Real-time inventory · 251 Dalhousie St, Ottawa
+            Real-time inventory · 117 Queen St W, Brampton
           </p>
           <div className={styles.heroButtons}>
             <a href="#menu" className={styles.heroBtn}>
@@ -222,7 +228,7 @@ export default function HomePage() {
         <div className={styles.container}>
           <div className={styles.sectionBanner}>
             <img
-              src="/banners/neon_crafted_cannabis_tier_shop_banner.webp"
+              src="/banners/blouds-welcome-banner.webp"
               alt="Shop by Tier — From exotic craft flower to value budget OZs"
               className={styles.sectionBannerImg}
             />
@@ -290,7 +296,7 @@ export default function HomePage() {
         <div className={styles.container}>
           <div className={styles.sectionBanner}>
             <img
-              src="/banners/hot_right_now_in_neon_glow.webp"
+              src="/banners/blouds-hot-right-now.png"
               alt="Hot Right Now — Staff picks and top sellers"
               className={styles.sectionBannerImg}
             />
@@ -299,7 +305,7 @@ export default function HomePage() {
           <div className={styles.featuredGrid}>
             {FEATURED_STRAINS.map((strain, i) => (
               <a
-                key={strain.sku}
+                key={`${strain.sku}-${i}`}
                 href={`/flower/${strain.name.toLowerCase().replace(/\s+/g, "-")}`}
                 className={styles.productCard}
                 style={{ animationDelay: `${i * 0.08}s` }}
@@ -358,12 +364,34 @@ export default function HomePage() {
         </a>
       </section>
 
+      {/* ── DEALS & PROMOS BANNER ── */}
+      <section className={styles.promoSection}>
+        <a href="/items/edibles" className={styles.promoBannerLink}>
+          <img
+            src="/banners/blouds-edibles-prerolls-more-banner.webp"
+            alt="High THC Gummies & Edibles — Blouds Dispensary"
+            className={styles.promoBannerImg}
+          />
+        </a>
+      </section>
+
+      {/* ── VAPES & PREROLL DEALS BANNER ── */}
+      <section className={styles.promoSection}>
+        <a href="/items/vapes" className={styles.promoBannerLink}>
+          <img
+            src="/banners/blouds-deals.png"
+            alt="24 Hour Cannabis Deals — Vapes, Pre-Rolls & More"
+            className={styles.promoBannerImg}
+          />
+        </a>
+      </section>
+
       {/* ── STORE INFO ── */}
       <section className={styles.storeSection} id="contact">
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
-              Visit <span className="text-gradient-neon">Spirit Corner</span>
+              Visit <span className="text-gradient-neon">Blouds Dispensary</span>
             </h2>
           </div>
           <div className={styles.storeGrid}>
@@ -371,12 +399,12 @@ export default function HomePage() {
               <div className={styles.storeIcon}>📍</div>
               <h3 className={styles.storeCardTitle}>Location</h3>
               <p className={styles.storeCardText}>
-                251 Dalhousie St
+                117 Queen St W
                 <br />
-                Ottawa, ON K1N 1E7
+                Brampton, ON M5S 2H7
                 <br />
                 <a
-                  href="https://maps.app.goo.gl/yVDY1PZ8qSwAjQ6s6"
+                  href="https://www.google.com/maps/dir//654+Brampton+Ave,+Brampton,+ON+M5S+2H7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.storeLink}
@@ -391,7 +419,7 @@ export default function HomePage() {
               <p className={styles.storeCardText}>
                 Open 7 Days a Week
                 <br />
-                <span className={styles.storeHighlight}>Open 24 Hours</span>
+                <span className={styles.storeHighlight}>Open Open 24 Hours</span>
               </p>
             </div>
             <div className={styles.storeCard}>
@@ -401,7 +429,7 @@ export default function HomePage() {
                 No appointment needed
                 <br />
                 <span className={styles.storeHighlight}>
-                  Dalhousie St, Ottawa
+                  Center St, Brampton
                 </span>
               </p>
             </div>
@@ -410,14 +438,14 @@ export default function HomePage() {
           {/* Embedded map */}
           <div className={styles.mapWrap}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.0!2d-75.6928!3d45.4292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce04c8524ed59b%3A0x5836a82438336497!2s251+Dalhousie+St%2C+Ottawa%2C+ON+K1N+1E7!5e0!3m2!1sen!2sca!4v1"
+              src="https://maps.google.com/maps?q=654%20Brampton%20Ave,%20Brampton,%20ON%20M5S%202H7&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="300"
               style={{ border: 0, borderRadius: "var(--radius-lg)" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Spirit Corner Cannabis — 251 Dalhousie St, Ottawa"
+              title="Blouds Dispensary — 117 Queen St W, Brampton"
             ></iframe>
           </div>
         </div>

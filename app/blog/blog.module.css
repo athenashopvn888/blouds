@@ -2,7 +2,7 @@
 
 /* Hero */
 .hero {
-  padding: 120px 24px 48px;
+  padding: 48px 24px 48px;
   background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
   text-align: center;
   border-bottom: 1px solid var(--border-subtle);

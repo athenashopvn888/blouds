@@ -28,10 +28,10 @@ export async function generateMetadata({
   const strainData = getStrainData(flower.name, flower.type, flower.tier, flower.thc);
 
   return {
-    title: `${flower.name} | ${tierName} ${flower.type === "indica" ? "Indica" : flower.type === "sativa" ? "Sativa" : "Hybrid"} | THC ${flower.thc} | Spirit Corner Cannabis Ottawa`,
+    title: `${flower.name} | ${tierName} ${flower.type === "indica" ? "Indica" : flower.type === "sativa" ? "Sativa" : "Hybrid"} | THC ${flower.thc} | Blouds Dispensary Brampton`,
     description: strainData.metaDescription,
     openGraph: {
-      title: `${flower.name} | Spirit Corner Cannabis`,
+      title: `${flower.name} | Blouds Dispensary`,
       description: strainData.metaDescription,
       images: flower.image ? [{ url: flower.image, width: 800, height: 800, alt: flower.name }] : [],
     },
@@ -53,14 +53,14 @@ function getJsonLd(flower: FlowerProduct) {
     name: flower.name,
     image: flower.image,
     description: strainData.description,
-    brand: { "@type": "Brand", name: "Spirit Corner Cannabis" },
+    brand: { "@type": "Brand", name: "Blouds Dispensary" },
     sku: flower.sku,
     offers: {
       "@type": "Offer",
       price: lowestPrice || 0,
       priceCurrency: "CAD",
       availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "Spirit Corner Cannabis" },
+      seller: { "@type": "Organization", name: "Blouds Dispensary" },
     },
   };
 }

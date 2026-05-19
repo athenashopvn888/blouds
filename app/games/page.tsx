@@ -46,31 +46,23 @@ export default function GamesPage() {
     <main>
       <Navbar />
 
+      <section style={{ width: "100%", overflow: "hidden", marginTop: "92px" }}>
+        <img
+          src="/banners/blouds-games.png"
+          alt="Games Arcade — Flappy Bud, Snake Munchies, Brick Breaker 420"
+          style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
+        />
+      </section>
+
       <div
         style={{
-          paddingTop: 120,
           paddingBottom: 80,
           maxWidth: 900,
           margin: "0 auto",
-          padding: "120px 24px 80px",
+          padding: "40px 24px 80px",
         }}
       >
         <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <div
-            style={{
-              maxWidth: 1000,
-              margin: "0 auto 24px",
-              borderRadius: "var(--radius-xl)",
-              overflow: "hidden",
-              border: "1px solid var(--border-subtle)",
-            }}
-          >
-            <img
-              src="/banners/neon_arcade_gaming_promotion_banner.webp"
-              alt="Games Arcade — Flappy Bud, Snake Munchies, Brick Breaker 420"
-              style={{ width: "100%", height: "auto", display: "block" }}
-            />
-          </div>
           <p
             style={{
               fontSize: 16,
@@ -80,7 +72,7 @@ export default function GamesPage() {
             }}
           >
             Kill time while your order&apos;s ready. Beat the high score. No
-            dispensary in Ottawa has this.
+            dispensary in Brampton has this.
           </p>
         </div>
 
