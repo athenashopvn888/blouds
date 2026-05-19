@@ -81,16 +81,16 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 48px;
 }
 
 /* ── CARD ── */
 .card {
   background: #fff;
-  border: 2px solid rgba(0,0,0,.10);
+  border: 2px solid transparent;
   border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  overflow: visible;
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.95), 0 30px 60px -15px var(--accent), 0 0 0 2px color-mix(in srgb, var(--accent) 30%, transparent), 0 2px 0 rgba(255,255,255,0.9) inset;
   display: flex;
   flex-direction: column;
   position: relative;
