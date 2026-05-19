@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import {
@@ -137,7 +138,7 @@ export default async function ItemsCategoryPage({
 
 function ItemCard({ item, catColor }: { item: ItemProduct; catColor: string }) {
   return (
-    <div className={styles.card} style={{ "--cat-color": catColor } as React.CSSProperties}>
+    <Link href={`/item/${item.slug}`} className={styles.card} style={{ "--cat-color": catColor } as React.CSSProperties}>
       <div className={styles.cardMedia}>
         {item.image ? (
           <img src={item.image} alt={item.name} loading="lazy" className={styles.cardImg} />
@@ -162,6 +163,6 @@ function ItemCard({ item, catColor }: { item: ItemProduct; catColor: string }) {
         )}
         <span className={styles.skuTag}>SKU {item.sku}</span>
       </div>
-    </div>
+    </Link>
   );
 }
