@@ -33,11 +33,11 @@ ITEMS_OUT = os.path.join(SCRIPT_DIR, "app", "lib", "items.json")
 # ============================================================
 #   CONFIGURATION - Set these values
 # ============================================================
-STORE_CODE = "ALC01"  # Always Lit Cannabis store code
+STORE_CODE = "BLS01"  # Blouds store code
 
 # Google Sheet IDs (the long string in the URL)
 # https://docs.google.com/spreadsheets/d/SHEET_ID_HERE/edit
-MENU_SHEET_ID = ""   # SETB Anti v2.3 6G MENU (FLOWERS_LIVE, ITEMS_LIVE)
+MENU_SHEET_ID = "1ECyzLymF6-aZn30Lt_BTzvXvXZr6LlEPHVixiv3McbQ"   # SETB Anti v2.3 6G MENU (FLOWERS_LIVE, ITEMS_LIVE)
 POS_SHEET_ID = ""    # POS sheet (FlowersFlags_POS, ItemsFlags_POS)
 # ============================================================
 
@@ -220,7 +220,7 @@ def build_flowers(product_rows: list[dict], flag_lookup: dict) -> list[dict]:
 
         # Check store-specific flags
         flags = flag_lookup.get(sku)
-        if flags and not flags["show"]:
+        if not flags or not flags["show"]:
             skipped += 1
             continue
 
@@ -277,7 +277,7 @@ def build_items(product_rows: list[dict], flag_lookup: dict) -> list[dict]:
         # Check store-specific flags (match on SKU key)
         sku_normalized = normalize_sku(sku)
         flags = flag_lookup.get(sku) or flag_lookup.get(sku_normalized)
-        if flags and not flags["show"]:
+        if not flags or not flags["show"]:
             skipped += 1
             continue
 
@@ -314,8 +314,28 @@ def load_from_google_sheets():
     """Fetch all data from Google Sheets."""
     flower_products = fetch_sheet_csv(MENU_SHEET_ID, FLOWERS_SHEET)
     item_products = fetch_sheet_csv(MENU_SHEET_ID, ITEMS_SHEET)
-    flower_flags = fetch_sheet_csv(POS_SHEET_ID, FLOWER_FLAGS_SHEET) if POS_SHEET_ID else []
-    item_flags = fetch_sheet_csv(POS_SHEET_ID, ITEM_FLAGS_SHEET) if POS_SHEET_ID else []
+    
+    if POS_SHEET_ID:
+        flower_flags = fetch_sheet_csv(POS_SHEET_ID, FLOWER_FLAGS_SHEET)
+        item_flags = fetch_sheet_csv(POS_SHEET_ID, ITEM_FLAGS_SHEET)
+    else:
+        # Fall back to reading POS flags from local XLSX
+        print("  Source (Flags): Local XLSX (POS_SHEET_ID not set)")
+        import openpyxl
+        menu_path = os.path.join(SCRIPT_DIR, "SETB Anti v2.3 6G MENU.xlsx")
+        wb_menu = openpyxl.load_workbook(menu_path, data_only=True)
+        flower_flags = []
+        item_flags = []
+        if FLOWER_FLAGS_SHEET in wb_menu.sheetnames:
+            flower_flags = read_xlsx_sheet(wb_menu, FLOWER_FLAGS_SHEET)
+        elif "WeightFlags" in wb_menu.sheetnames:
+            flower_flags = read_xlsx_sheet(wb_menu, "WeightFlags")
+
+        if ITEM_FLAGS_SHEET in wb_menu.sheetnames:
+            item_flags = read_xlsx_sheet(wb_menu, ITEM_FLAGS_SHEET)
+        elif "ItemsFlags" in wb_menu.sheetnames:
+            item_flags = read_xlsx_sheet(wb_menu, "ItemsFlags")
+            
     return flower_products, item_products, flower_flags, item_flags
 
 
