@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "FAQ — Blouds Dispensary | Brampton Dispensary Questions",
   description:
     "Frequently asked questions about Blouds Dispensary in Brampton. Hours, location, products, pricing, promotions, and everything you need to know before visiting.",
+  alternates: {
+    canonical: "https://bloudsdispensary.ca/faq",
+  },
 };
 
 const FAQ_CATEGORIES = [
