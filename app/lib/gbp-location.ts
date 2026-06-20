@@ -24,8 +24,8 @@ export const gbpLocation = {
     "Accessories"
   ],
   menuUrl: "/",
-  directionsUrl: "https://maps.app.goo.gl/yVDY1PZ8qSwAjQ6s6",
-  mapEmbedUrl: "https://maps.google.com/maps?q=Blouds%20Dispensary%20117%20Queen%20St%20W%2C%20Brampton%2C%20ON%20L6Y%201M3&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  directionsUrl: "",
+  mapEmbedUrl: "",
   latitude: "43.6894",
   longitude: "-79.7516",
   hours: ["Open 24 Hours"],

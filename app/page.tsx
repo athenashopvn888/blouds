@@ -345,14 +345,6 @@ export default function HomePage() {
                 <br />
                 Brampton, ON M5S 2H7
                 <br />
-                <a
-                  href="https://www.google.com/maps/dir//654+Brampton+Ave,+Brampton,+ON+M5S+2H7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.storeLink}
-                >
-                  Get Directions →
-                </a>
               </p>
             </div>
             <div className={styles.storeCard}>
@@ -379,16 +371,6 @@ export default function HomePage() {
 
           {/* Embedded map */}
           <div className={styles.mapWrap}>
-            <iframe
-              src="https://maps.google.com/maps?q=654%20Brampton%20Ave,%20Brampton,%20ON%20M5S%202H7&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="300"
-              style={{ border: 0, borderRadius: "var(--radius-lg)" }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Blouds Dispensary — 117 Queen St W, Brampton"
-            ></iframe>
           </div>
         </div>
       </section>

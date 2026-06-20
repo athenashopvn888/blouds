@@ -120,14 +120,6 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               117 Queen St W, Brampton, ON L6Y 1M3 · Open 24 Hours
             </p>
-            <a
-              href="https://maps.app.goo.gl/yVDY1PZ8qSwAjQ6s6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.visitBtn}
-            >
-              📍 Get Directions
-            </a>
           </div>
         </div>
       </section>
