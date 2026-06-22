@@ -37,8 +37,8 @@ export const SEO_PAGES: SeoPageData[] = [
         body: "Unlike most dispensaries that close at midnight, Blouds Dispensary is open around the clock — 24 hours a day, 7 days a week, 365 days a year. Whether you're finishing a late shift, heading out for the night, or need something at 3 AM, our doors are always open. We're centrally located at 117 Queen St W, steps from the ByWard Market, near major OC Transpo bus routes, and minutes from the Rideau Centre and Parliament Hill. Free street parking is available in the evenings.",
       },
       {
-        heading: "Unbeatable Promotions on Every Purchase",
-        body: "Every purchase at Blouds Dispensary comes with our signature promotions. Our Buy 2g Get 1g FREE deal applies to every single tier — you always get a bonus gram. Our top three tiers (Exotic, Premium, and AAA+) also qualify for Buy 3g Get 3g FREE, effectively doubling your order. Combined with our already competitive pricing, Blouds Dispensary offers some of the best cannabis value in Brampton and the surrounding area.",
+        heading: "Clear Bundle Pricing on Flower",
+        body: "Every purchase at Blouds Dispensary uses clear flower bundle pricing. The 3g bundle offer applies to every single tier — the 3g total is shown clearly before purchase. Our top three tiers (Exotic, Premium, and AAA+) also qualify for 6g bundle pricing for 6g total. Combined with our already competitive pricing, Blouds Dispensary offers some of the best cannabis value in Brampton and the surrounding area.",
       },
       {
         heading: "Serving Brampton & Gatineau",
@@ -49,9 +49,9 @@ export const SEO_PAGES: SeoPageData[] = [
       { q: "Where is Blouds Dispensary located?", a: "We are located at 117 Queen St W, Brampton, ON L6Y 1M3 — in the heart of ByWard Market, one of Brampton's most popular and accessible neighbourhoods. We're near the Rideau Centre, Parliament Hill, and major bus routes." },
       { q: "What are the hours for Blouds Dispensary?", a: "We are open 24 hours a day, 7 days a week, 365 days a year. Walk in anytime — no appointment needed. Whether it's 2 PM or 2 AM, our staff is here to help." },
       { q: "What cannabis products does Blouds Dispensary carry?", a: "We carry 200+ strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles, vapes, concentrates, pre-rolls, native cigarettes, and accessories. Our menu updates in real time online." },
-      { q: "What is the cheapest weed at Blouds Dispensary?", a: "Our Budget tier starts at $3/g with value ounces from $40. Our AA tier is $4/g. Every tier includes our Buy 2g Get 1g FREE promotion, making our prices even more competitive." },
+      { q: "What is the cheapest weed at Blouds Dispensary?", a: "Our Budget tier starts at $3/g with value ounces from $40. Our AA tier is $4/g. The flower menu includes 3g bundle pricing, making our prices even more competitive." },
       { q: "Does Blouds Dispensary have a live menu?", a: "Yes! Our online menu at bloudsdispensary.ca updates in real time with current stock, prices, and availability. You can see exactly what we have before you visit." },
-      { q: "What makes Blouds Dispensary different from other Brampton dispensaries?", a: "Three things set us apart: (1) We're open 24 hours, (2) our transparent 5-tier pricing system means no confusing markups, and (3) every purchase includes our Buy 2g Get 1g FREE promotion. Plus we carry one of Brampton's largest selections with over 200 strains." },
+      { q: "What makes Blouds Dispensary different from other Brampton dispensaries?", a: "Three things set us apart: (1) We're open 24 hours, (2) our transparent 5-tier pricing system means no confusing markups, and (3) the flower menu includes 3g bundle pricing. Plus we carry one of Brampton's largest selections with over 200 strains." },
       { q: "Can I check stock before visiting?", a: "Absolutely. Visit bloudsdispensary.ca to see our live menu. All flower, edibles, vapes, and accessories are listed with real-time stock status, THC levels, and pricing." },
       { q: "Is there parking near Blouds Dispensary?", a: "Yes. Free street parking is available in the evenings on Brampton St and surrounding streets. Paid lots are available nearby during the day. We're also easily accessible via OC Transpo." },
     ],
@@ -60,7 +60,7 @@ export const SEO_PAGES: SeoPageData[] = [
   {
     slug: "cheap-weed-ottawa",
     title: "Cheap Weed Brampton — Budget Cannabis Deals From $3/g | Blouds Dispensary",
-    metaDescription: "Looking for cheap weed in Brampton? Blouds Dispensary has budget flower from $3/g, ounces from $40, and Buy 2g Get 1g FREE promos. Open 24 hours at 117 Queen St W.",
+    metaDescription: "Looking for cheap weed in Brampton? Blouds Dispensary has budget flower from $3/g, ounces from $40, and 3g bundle pricing. Open 24 hours at 117 Queen St W.",
     h1: "Cheap Weed Brampton — Budget Cannabis Deals",
     icon: "💰",
     heroTagline: "Budget Flower From $3/g · Ounces From $40 · Always Open",
@@ -70,8 +70,8 @@ export const SEO_PAGES: SeoPageData[] = [
         body: "Looking for cheap weed in Brampton without sacrificing quality? Blouds Dispensary offers some of the most competitive cannabis prices in the city. Our Budget tier starts at just $3/g with value ounces from $40. Our AA tier ($4/g) and AAA+ tier ($5-$6/g) also deliver incredible value with THC levels from 27% to 32%. We believe great cannabis shouldn't break the bank, and our transparent tier-based pricing ensures you always get exactly what you pay for — no hidden markups, no gimmicks.",
       },
       {
-        heading: "Unbeatable Promotions That Stack",
-        body: "Every tier at Blouds Dispensary comes with our signature Buy 2g Get 1g FREE promotion — meaning you always get a free gram with every purchase. Our top three tiers (Exotic, Premium, AAA+) also offer Buy 3g Get 3g FREE, effectively doubling your order. When you combine our already low prices with these promos, Blouds Dispensary delivers the best cannabis value in Brampton. A $15 AAA+ 3g purchase actually gets you 3g of flower — that's just $5/g for THC 30%+ cannabis.",
+        heading: "Flower Bundle Pricing",
+        body: "Every tier at Blouds Dispensary uses clear 3g bundle pricing so the total grams and price are shown before purchase. Our top three tiers (Exotic, Premium, AAA+) also offer 6g bundle pricing for 6g total. When you combine our already low prices with these bundle offers, Blouds Dispensary delivers the best cannabis value in Brampton. A $15 AAA+ 3g purchase actually gets you 3g of flower — that's just $5/g for THC 30%+ cannabis.",
       },
       {
         heading: "Budget Doesn't Mean Low Quality",
@@ -79,15 +79,15 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Compare Our Prices",
-        body: "Budget: $3/g — $40/oz. AA: $4/g — $90/oz. AAA+: $5-$6/g — $100/oz. Premium: $7-$10/g. Exotic: $10-$12/g. Every tier includes Buy 2g Get 1g FREE. Top tiers include Buy 3g Get 3g FREE. These are some of the lowest prices you'll find at any dispensary in Brampton, Vanier, Sandy Hill, Lower Town, or the ByWard Market area.",
+        body: "Budget: $3/g — $40/oz. AA: $4/g — $90/oz. AAA+: $5-$6/g — $100/oz. Premium: $7-$10/g. Exotic: $10-$12/g. Every tier includes 3g bundle pricing. Top tiers include 6g bundle pricing. These are some of the lowest prices you'll find at any dispensary in Brampton, Vanier, Sandy Hill, Lower Town, or the ByWard Market area.",
       },
     ],
     faqs: [
       { q: "What is the cheapest weed at Blouds Dispensary?", a: "Our Budget tier starts at $3/g with value ounces from $40. These are quality, properly-cured strains at Brampton's most competitive prices." },
-      { q: "Do you have ounce deals?", a: "Yes! Budget ounces from $40, AA ounces from $90, AAA+ ounces from $100. All with excellent quality, freshness guaranteed, and Buy 2g Get 1g FREE promotions on top." },
+      { q: "Do you have ounce deals?", a: "Yes! Budget ounces from $40, AA ounces from $90, AAA+ ounces from $100. All with excellent quality, freshness guaranteed, and 3g bundle pricing on top." },
       { q: "Is cheap weed still good quality?", a: "Absolutely. Our Budget flower delivers THC 24-27% from trusted Canadian growers. We never sell old, dry, or improperly stored flower. Every product meets our quality standards regardless of price point." },
       { q: "Where can I buy cheap weed in Brampton?", a: "Blouds Dispensary at 117 Queen St W, Brampton. Open 24 hours a day, walk in anytime, no appointment needed. We're in the heart of ByWard Market." },
-      { q: "What promotions do you offer?", a: "Every tier includes Buy 2g Get 1g FREE (pay for 2g, get 3g). Our Exotic, Premium, and AAA+ tiers also offer Buy 3g Get 3g FREE (pay for 3g, get 6g). These promos apply on every visit." },
+      { q: "What bundle pricing do you offer?", a: "Every tier includes 3g bundle pricing (pay for 3g total). Our Exotic, Premium, and AAA+ tiers also offer 6g bundle pricing (pay for 6g total). These bundle offers apply on every visit." },
       { q: "Do you offer bulk discounts?", a: "Yes — our ounce pricing is deeply discounted compared to per-gram rates. Budget ounces are $40, AA ounces $90, and AAA+ ounces $100. The more you buy, the more you save." },
     ],
   },
@@ -141,7 +141,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Why Make the Drive to Blouds Dispensary?",
-        body: "Blouds Dispensary offers a wider selection and more competitive pricing than most local options. You'll find over 200 strains across five quality tiers — from ultra-rare Exotic genetics (THC 35-39%) to affordable Budget flower at just $3/g. Our Buy 2g Get 1g FREE promotion applies to every tier, and our top three tiers offer Buy 3g Get 3g FREE. With prices starting at $3/g and ounces from $40, Blouds Dispensary delivers value that's worth the short drive from Mississauga.",
+        body: "Blouds Dispensary offers a wider selection and more competitive pricing than most local options. You'll find over 200 strains across five quality tiers — from ultra-rare Exotic genetics (THC 35-39%) to affordable Budget flower at just $3/g. Our 3g bundle pricing applies to every tier, and our top three tiers offer 6g bundle pricing. With prices starting at $3/g and ounces from $40, Blouds Dispensary delivers value that's worth the short drive from Mississauga.",
       },
       {
         heading: "Open 24 Hours — Perfect for Late Night Visits",
@@ -158,9 +158,9 @@ export const SEO_PAGES: SeoPageData[] = [
     ],
     faqs: [
       { q: "How far is Blouds Dispensary from Mississauga?", a: "We're located at 117 Queen St W in Brampton — just a 15-20 minute drive from central Mississauga via Highway 410 or Hurontario Street." },
-      { q: "Is it worth driving from Mississauga for cannabis?", a: "Absolutely. Blouds Dispensary offers 200+ strains, prices starting at $3/g, and promotions like Buy 2g Get 1g FREE that make the short drive incredibly worthwhile." },
+      { q: "Is it worth driving from Mississauga for cannabis?", a: "Absolutely. Blouds Dispensary offers 200+ strains, prices starting at $3/g, and bundle pricing options like 3g total that make the short drive incredibly worthwhile." },
       { q: "Is Blouds Dispensary open late?", a: "We're open 24 hours a day, 7 days a week. Whether you're driving up from Mississauga at noon or midnight, we're open and ready to serve you." },
-      { q: "What's the cheapest weed near Mississauga?", a: "Blouds Dispensary has Budget flower from $3/g and value ounces from $40. With our Buy 2g Get 1g FREE promo, these are some of the best prices in the Peel Region." },
+      { q: "What's the cheapest weed near Mississauga?", a: "Blouds Dispensary has Budget flower from $3/g and value ounces from $40. With our 3g bundle pricing, these are some of the best prices in the Peel Region." },
       { q: "Is there parking at Blouds Dispensary?", a: "Yes. Free evening street parking is available near the store on Queen St W and surrounding streets. Paid parking lots are also nearby during the day." },
       { q: "Can I take transit from Mississauga to Blouds Dispensary?", a: "Yes! MiWay connects directly to Brampton Transit and Züm routes that will drop you off right near our location in downtown Brampton." },
       { q: "Do you carry products besides cannabis?", a: "Yes — we also carry native cigarettes, rolling papers, grinders, and other accessories. Many Mississauga customers appreciate the one-stop convenience." },
@@ -181,7 +181,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Why Choose Blouds Dispensary Over Other Dispensaries?",
-        body: "What sets Blouds Dispensary apart from other Brampton dispensaries is our combination of selection, pricing, and convenience. We carry 200+ strains across five clear quality tiers — no confusing markups, no inconsistent pricing. Our Buy 2g Get 1g FREE promotion applies to every tier, every purchase. And unlike most dispensaries that close at midnight, we're open 24 hours a day, 7 days a week. Whether you need flower, edibles, vapes, or concentrates at any hour, Blouds Dispensary is here.",
+        body: "What sets Blouds Dispensary apart from other Brampton dispensaries is our combination of selection, pricing, and convenience. We carry 200+ strains across five clear quality tiers — no confusing markups, no inconsistent pricing. Our 3g bundle pricing applies to every tier, every purchase. And unlike most dispensaries that close at midnight, we're open 24 hours a day, 7 days a week. Whether you need flower, edibles, vapes, or concentrates at any hour, Blouds Dispensary is here.",
       },
       {
         heading: "Areas We Serve in Brampton & Gatineau",
