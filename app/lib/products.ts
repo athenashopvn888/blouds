@@ -193,12 +193,12 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   CONCENTRATES: {
       banner: "/banners/Blouds_Concentrate.webp",
     name: "Concentrates", slug: "concentrates", color: "#f59e0b", icon: "💎",
-    seoTitle: "Cannabis Concentrates Brampton — Shatter, Wax, Hash & Live Resin",
-    seoIntro: "Premium cannabis concentrates at Blouds Dispensary, Brampton. Shatter, wax, hash, live resin, and diamonds — all in stock.",
-    seoDescription: "Blouds Dispensary offers a premium selection of cannabis concentrates in Brampton. From traditional hash and kief to modern extracts like shatter, wax, live resin, and THC diamonds, we carry products for every preference and potency level. Our concentrates are sourced from trusted extractors and tested for purity. Visit us at 117 Queen St W.",
+    seoTitle: "Cannabis Concentrates in Brampton | Blouds Dispensary",
+    seoIntro: "Browse concentrates category information at Blouds Dispensary in Brampton.",
+    seoDescription: "Review concentrate-related menu categories at Blouds Dispensary in Brampton and confirm current menu details before visiting. This page is intended for general category browsing and does not promise current product availability.",
     faqs: [
-      { q: "What types of concentrates do you carry?", a: "We stock shatter, wax, budder, live resin, rosin, hash, kief, and THC diamonds from top Canadian extractors." },
-      { q: "How do I consume concentrates?", a: "Concentrates can be dabbed with a rig, vaped with a concentrate pen, or added to flower in a joint or bowl for extra potency." },
+      { q: "What concentrate information can shoppers review?", a: "Customers can review concentrate-related category information and confirm current menu details before visiting Blouds Dispensary." },
+      { q: "Does this page guarantee current concentrate availability?", a: "No. This page is for general category browsing; customers should confirm current menu details before visiting." },
     ],
   },
   PREROLLS: {
