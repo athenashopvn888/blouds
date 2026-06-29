@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://bloudsdispensary.ca"),
   title: {
-    default: "Blouds Dispensary — Premium Cannabis Dispensary, Brampton",
+    default: "Blouds Dispensary | Brampton Cannabis Store",
     template: "%s | Blouds Dispensary",
   },
   description:
-    "Shop 200+ premium cannabis strains at Blouds Dispensary. Exotic, Premium, AAA+, AA & Budget flower from $3/g. Brampton's uplifting dispensary at 117 Queen St W. Open 24 Hours.",
+    "Blouds Dispensary is a Brampton cannabis store on Queen St W with adult 19+ store info and category browsing for flower, pre-rolls, vapes, edibles, concentrates, and accessories. Open 24 Hours.",
   keywords: [
     "cannabis dispensary Brampton",
     "weed store Brampton",
