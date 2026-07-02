@@ -25,7 +25,7 @@ export const STORE_BLOG_CONFIG = {
   storeCode: "BLS01",
   storeName: "Blouds Dispensary",
   city: "Brampton",
-  domain: "bloudsdispensary.ca",
+  domain: "www.bloudsdispensary.ca",
   storePath: "/weed-dispensary-brampton",
 };
 
