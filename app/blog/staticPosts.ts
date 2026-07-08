@@ -39,7 +39,7 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     meta_description: "Adult 19+ guide to Blouds Dispensary around Brampton, with local store-page checks, menu-category context, and safe visit planning.",
     h1: "Blouds Dispensary Local Store Guide for Adults 19+",
     excerpt: "Blouds Dispensary guide for adults 19+ reviewing store information around Brampton.",
-    author: "Athena SEO Team",
+    author: "The Blouds Dispensary Team",
     date: "2026-07-02",
     category: "Store Guide",
     readTime: "4 min",
