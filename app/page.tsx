@@ -45,7 +45,7 @@ const TIERS = [
     glow: "rgba(34, 211, 238, 0.2)",
     icon: "⚡",
     count: 55,
-    banner: "/banners/Blouds_AAAplus.webp",
+    banner: "/banners/Blouds_AAAplus_20260710.webp",
   },
   {
     name: "AA",
@@ -59,7 +59,7 @@ const TIERS = [
     glow: "rgba(52, 211, 153, 0.2)",
     icon: "✦",
     count: 35,
-    banner: "/banners/Blouds_AA.webp",
+    banner: "/banners/Blouds_AA_20260710.webp",
   },
   {
     name: "BUDGET",
