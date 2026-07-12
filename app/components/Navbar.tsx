@@ -12,15 +12,15 @@ const ALL_LINKS = [
   { href: "/budget", label: "Budget" },
   { href: "/items/edibles", label: "Edibles" },
   { href: "/items/prerolls", label: "Pre-Rolls" },
-  { href: "/items/vapes", label: "Nic Vape" },
-  { href: "/items/vape-disposables", label: "THC Vape" },
+  { href: "/items/vapes", label: "THC Vape" },
+  { href: "/items/vape-disposables", label: "Nic Vape" },
   { href: "/items/concentrates", label: "Concentrates" },
   { href: "/items/magic", label: "Magic Stuff" },
   { href: "/items/cigarettes", label: "Cigarettes" },
   { href: "/items/add-ons", label: "Accessories" },
   { href: "/delivery", label: "🚗 Delivery" },
+  { href: "/resources", label: "Resources" },
   { href: "/faq", label: "FAQ" },
-  { href: "/blog", label: "Blog" },
   { href: "/games", label: "🎮" },
 ];
 
@@ -69,3 +69,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

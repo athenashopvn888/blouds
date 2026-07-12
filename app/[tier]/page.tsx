@@ -29,10 +29,10 @@ export async function generateMetadata({
   const seo = TIER_SEO[tierInfo.key];
 
   return {
-    title: seo?.seoTitle || `${tierInfo.config.name} Cannabis Flower — ${flowers.length} Strains`,
-    description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at Cafe Value.`,
+    title: seo?.seoTitle || `${tierInfo.config.name} Cannabis Flower - ${flowers.length} Strains`,
+    description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at Blouds Dispensary.`,
     openGraph: {
-      title: `${tierInfo.config.name} Flower | Cafe Value`,
+      title: `${tierInfo.config.name} Flower | Blouds Dispensary`,
       description: `${flowers.length} curated ${tierInfo.config.name.toLowerCase()} strains in stock now. From $${tierInfo.config.unitPrice}/g.`,
     },
   };
@@ -60,16 +60,16 @@ export default async function TierPage({
     <main className={styles.main}>
       <Navbar />
 
-      {/* ── Banner Image (standalone, no overlay text) ── */}
+      {/* Banner Image (standalone, no overlay text) */}
       <section className={styles.bannerSection}>
         <img
           src={config.banner}
-          alt={`${config.name} Cannabis Flower — ${config.tagline}`}
+          alt={`${config.name} Cannabis Flower - ${config.tagline}`}
           className={styles.bannerImg}
         />
       </section>
 
-      {/* ── Hero Content BELOW banner ── */}
+      {/* Hero Content BELOW banner */}
       <section
         className={styles.heroInfo}
         style={{ "--tier-color": config.color } as React.CSSProperties}
@@ -89,12 +89,12 @@ export default async function TierPage({
               </span>
               {saleFlowers.length > 0 && (
                 <span className={styles.statSale}>
-                  🔥 {saleFlowers.length} on sale
+                  Sale: {saleFlowers.length} on sale
                 </span>
               )}
               {hotFlowers.length > 0 && (
                 <span className={styles.statHot}>
-                  ⚡ {hotFlowers.length} hot picks
+                  Hot: {hotFlowers.length} hot picks
                 </span>
               )}
             </div>
@@ -110,7 +110,7 @@ export default async function TierPage({
             <div className={styles.dealRow}>
               {config.deal3g && (
               <div className={styles.dealBox}>
-                <div className={styles.dealLabel}>🎁 {config.deal3g.label}</div>
+                <div className={styles.dealLabel}>{config.deal3g.label}</div>
                 <div className={styles.dealPrice}>
                   = <strong>${config.deal3g.price}</strong> / {config.deal3g.total}
                 </div>
@@ -118,7 +118,7 @@ export default async function TierPage({
               )}
               {config.deal6g && (
                 <div className={styles.dealBox}>
-                  <div className={styles.dealLabel}>🎁 {config.deal6g.label}</div>
+                  <div className={styles.dealLabel}>{config.deal6g.label}</div>
                   <div className={styles.dealPrice}>
                     = <strong>${config.deal6g.price}</strong> / {config.deal6g.total}
                   </div>
@@ -130,13 +130,13 @@ export default async function TierPage({
         </div>
       </section>
 
-      {/* ── Product grid ── */}
+      {/* Product grid */}
       <section className={styles.products}>
         <div className={styles.container}>
           {saleFlowers.length > 0 && (
             <>
               <h2 className={styles.sectionTitle}>
-                🔥 <span style={{ color: "#f43f5e" }}>On Sale</span>
+                <span style={{ color: "#f43f5e" }}>On Sale</span>
               </h2>
               <div className={styles.grid}>
                 {saleFlowers.map((f) => (
@@ -167,7 +167,7 @@ export default async function TierPage({
         </div>
       </section>
 
-      {/* ── SEO Content ── */}
+      {/* SEO Content */}
       {seo && (
         <section className={styles.seoSection}>
           <div className={styles.container}>

@@ -17,12 +17,12 @@ export default function Footer() {
               Open 24 Hours.
             </p>
             <div className={styles.buttons}>
-              <a
-                href="tel:+14374250117"
+              <Link
+                href="/#menu"
                 className={styles.btnPrimary}
               >
-                Call Now
-              </a>
+                View Menu
+              </Link>
             </div>
           </div>
 
@@ -58,8 +58,9 @@ export default function Footer() {
               <Link href="/items/edibles">Edibles</Link>
               <Link href="/items/cigarettes">Cigarettes</Link>
               <Link href="/items/vapes">Vape Pens</Link>
-              <Link href="/blog">Blog</Link>
-              <Link href="/blog/blouds-dispensary-local-visit-guide-2026">Local Visit Guide</Link>
+              <Link href="/resources">Resources</Link>
+              <Link href="/resources/queen-street-visit-guide">Queen Street Visit Guide</Link>
+              <Link href="/resources/blouds-flower-tier-guide">Flower Tier Guide</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/delivery">Delivery (Coming Soon)</Link>
               <Link href="/games">Games Arcade</Link>

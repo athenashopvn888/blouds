@@ -81,8 +81,8 @@ export default async function ItemsCategoryPage({
         <div className={styles.container}>
           {items.length > 0 ? (
             <div className={styles.grid}>
-              {items.map((item) => (
-                <ItemCard key={item.sku} item={item} catColor={config.color} />
+              {items.map((item, index) => (
+                <ItemCard key={`${item.sku}-${item.slug}-${index}`} item={item} catColor={config.color} />
               ))}
             </div>
           ) : (

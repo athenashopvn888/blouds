@@ -88,7 +88,7 @@ export default function DeliveryContent() {
           </div>
           <div className={styles.infoCard}>
             <span className={styles.infoIcon}>🌉</span>
-            <h3 className={styles.infoTitle}>Brampton & Gatineau</h3>
+            <h3 className={styles.infoTitle}>Brampton Area</h3>
             <p className={styles.infoDesc}>Serving the entire National Capital Region.</p>
           </div>
           <div className={styles.infoCard}>
@@ -110,3 +110,5 @@ export default function DeliveryContent() {
     </main>
   );
 }
+
+

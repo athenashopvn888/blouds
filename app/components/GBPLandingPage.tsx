@@ -1,4 +1,4 @@
-﻿// Auto-generated Google Business Profile Local SEO Landing Page Component
+// Auto-generated Google Business Profile Local SEO Landing Page Component
 import Link from "next/link";
 import styles from "./GBPLandingPage.module.css";
 import { gbpLocation } from "../lib/gbp-location";
@@ -86,7 +86,7 @@ export function GBPLandingPage() {
 
       {/* Hero Header */}
       <header className={styles.hero}>
-        <h1 className={styles.h1}>{gbpLocation.storeName} â€” Weed Dispensary in {gbpLocation.city}</h1>
+        <h1 className={styles.h1}>{gbpLocation.storeName} - Weed Dispensary in {gbpLocation.city}</h1>
         <p className={styles.heroTagline}>Serving {gbpLocation.city} & Nearby Neighborhoods</p>
       </header>
 
@@ -135,7 +135,7 @@ export function GBPLandingPage() {
         </p>
         <p className={styles.infoText}>
           For a fuller local overview, read the{" "}
-          <Link href="/blog/blouds-dispensary-brampton-store-guide">Blouds Brampton guide</Link>.
+          <Link href="/resources">Resources</Link>.
         </p>
         <div className={styles.btnRow}>
           <Link href={gbpLocation.menuUrl} className={`${styles.btn} ${styles.btnPrimary}`}>

@@ -16,11 +16,11 @@ const FAQ_CATEGORIES = [
   {
     title: "📍 Location & Hours",
     faqs: [
-      { q: "Where is Blouds Dispensary located?", a: "We are located at 117 Queen St W, Brampton, ON M5S 2H7 — in the heart of Brampton. We're near the Eaton Centre, CN Tower, and major OC Transpo bus routes." },
-      { q: "What are your hours?", a: "We are open Open 24 Hours a day, 7 days a week, 365 days a year. Walk in anytime — no appointment needed." },
-      { q: "Is there parking nearby?", a: "Yes. Free street parking is available on Center St and surrounding streets in the evenings. Paid parking lots are available nearby during the day. We're also accessible by OC Transpo and STO buses." },
-      { q: "How far are you from Mississauga?", a: "We're just 5 minutes from the Gardiner Expressway and 7 minutes from the Don Valley Parkway. We're one of the closest dispensaries to the Ontario border." },
-      { q: "What's the best way to get to Blouds Dispensary?", a: "We're easily accessible by car, bus, or foot. From Eaton Centre, walk north on Center St — we're a 5-minute walk. By bus, several OC Transpo routes stop within walking distance. Free evening parking is available on surrounding streets." },
+      { q: "Where is Blouds Dispensary located?", a: "We are located at 117 Queen St W, Brampton, ON L6Y 1M3, on the Queen Street W side of downtown Brampton." },
+      { q: "What are your hours?", a: "We are open 24 Hours a day, 7 days a week. Walk in anytime with valid 19+ ID." },
+      { q: "Is there parking nearby?", a: "Parking options can vary by time of day in downtown Brampton. Check nearby street and lot signage when you arrive." },
+      { q: "How far are you from Mississauga?", a: "Blouds is in Brampton at 117 Queen St W. Travel time from Mississauga depends on your starting point and traffic." },
+      { q: "What's the best way to get to Blouds Dispensary?", a: "Use 117 Queen St W, Brampton, ON L6Y 1M3 in your map app, then check the menu before heading over so the visit stays quick." },
     ],
   },
   {
@@ -47,7 +47,7 @@ const FAQ_CATEGORIES = [
   {
     title: "🛒 Shopping & Experience",
     faqs: [
-      { q: "Do I need an appointment?", a: "No! Blouds Dispensary is walk-in only. Just show up anytime — we're open Open 24 Hours." },
+      { q: "Do I need an appointment?", a: "No. Blouds Dispensary is walk-in friendly. Just bring valid 19+ ID and check the menu before visiting." },
       { q: "Can I order online?", a: "Currently, Blouds Dispensary is an in-store shopping experience only. You can browse our live menu online to see what's in stock before visiting." },
       { q: "Do you offer delivery?", a: "Delivery is coming soon! Visit our delivery page to sign up for email notifications when we launch our delivery service." },
       { q: "What payment methods do you accept?", a: "We accept cash and debit. No credit cards at this time." },
@@ -113,7 +113,7 @@ export default function FAQPage() {
           <div className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Still have questions?</h2>
             <p className={styles.ctaText}>
-              Call us at <strong>(437) 577-2589</strong> or visit us at 117 Queen St W, Brampton.
+              Browse the resource hub or visit us at 117 Queen St W, Brampton.
             </p>
           </div>
         </div>
@@ -122,3 +122,4 @@ export default function FAQPage() {
     </>
   );
 }
+

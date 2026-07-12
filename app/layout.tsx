@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "200+ strains from $3/g. Exotic to Budget. Brampton's uplifting dispensary at 117 Queen St W. Open 24 Hours.",
     images: [
       {
-        url: "/banners/Blouds_Homepage_Hero.webp",
+        url: "/banners/Blouds_Welcome_Banner.webp",
         width: 1200,
         height: 630,
         alt: "Blouds Dispensary — Premium Cannabis Dispensary Brampton",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Blouds Dispensary — Brampton's Uplifting Dispensary",
     description: "200+ strains from $3/g. Open 24 Hours at 117 Queen St W, Brampton.",
-    images: ["/banners/Blouds_Homepage_Hero.webp"],
+    images: ["/banners/Blouds_Welcome_Banner.webp"],
   },
   robots: {
     index: true,

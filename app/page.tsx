@@ -45,7 +45,7 @@ const TIERS = [
     glow: "rgba(34, 211, 238, 0.2)",
     icon: "⚡",
     count: 55,
-    banner: "/banners/Blouds_AAAplus_20260710.webp",
+    banner: "/banners/Blouds_AAAplus.webp",
   },
   {
     name: "AA",
@@ -59,7 +59,7 @@ const TIERS = [
     glow: "rgba(52, 211, 153, 0.2)",
     icon: "✦",
     count: 35,
-    banner: "/banners/Blouds_AA_20260710.webp",
+    banner: "/banners/Blouds_AA.webp",
   },
   {
     name: "BUDGET",
@@ -127,6 +127,27 @@ function buildFeatured() {
 
 const FEATURED_STRAINS = buildFeatured();
 
+const RESOURCE_LINKS = [
+  {
+    href: "/resources/queen-street-visit-guide",
+    tag: "Visit guide",
+    title: "Queen Street W pull-up notes",
+    body: "Route-friendly store notes, ID reminders, and fast menu prep for downtown Brampton.",
+  },
+  {
+    href: "/resources/downtown-brampton-menu-guide",
+    tag: "Menu guide",
+    title: "Downtown Brampton menu map",
+    body: "Flower tiers, edibles, vapes, pre-rolls, concentrates, cigarettes, and accessories in one useful flow.",
+  },
+  {
+    href: "/resources/edibles-and-vapes-guide",
+    tag: "Format guide",
+    title: "Edibles and vape paths",
+    body: "Separate THC vapes, nic vapes, edibles, and support gear before you head in.",
+  },
+];
+
 function getTypeLabel(type: string) {
   if (type.startsWith("IH")) return "Indica";
   if (type.startsWith("SH")) return "Sativa";
@@ -157,7 +178,7 @@ export default function HomePage() {
       <section className={styles.hero} id="hero" style={{ paddingTop: "92px", paddingBottom: "24px", minHeight: "auto", display: "block" }}>
         <a href="#menu" className={styles.heroBanner} style={{ display: "block", position: "relative", width: "100%", cursor: "pointer" }}>
           <img
-            src="/banners/Blouds_Homepage_Hero.webp"
+            src="/banners/Blouds_Welcome_Banner.webp"
             alt="Blouds Dispensary — Premium Brampton Cannabis Dispensary"
             className={styles.heroBannerImg}
             style={{ width: "100%", height: "auto", display: "block" }}
@@ -170,7 +191,7 @@ export default function HomePage() {
         <div className={styles.container}>
           <div className={styles.sectionBanner}>
             <img
-              src="/banners/Blouds_Welcome_Banner.webp"
+              src="/banners/Blouds_Edibles_Concentrates_More.webp"
               alt="Shop by Tier — From exotic craft flower to value budget OZs"
               className={styles.sectionBannerImg}
             />
@@ -238,7 +259,7 @@ export default function HomePage() {
         <div className={styles.container}>
           <div className={styles.sectionBanner}>
             <img
-              src="/banners/Blouds_Feature_Products.webp"
+              src="/banners/Blouds_Homepage_Hero.webp"
               alt="Feature Products — Staff picks and top sellers"
               className={styles.sectionBannerImg}
             />
@@ -321,11 +342,35 @@ export default function HomePage() {
       <section className={styles.promoSection}>
         <a href="/items/vapes" className={styles.promoBannerLink}>
           <img
-            src="/banners/Blouds_Daily_Deals.webp"
+            src="/banners/Blouds_Pre-Rolls.webp"
             alt="24 Hour Cannabis Deals — Vapes, Pre-Rolls & More"
             className={styles.promoBannerImg}
           />
         </a>
+      </section>
+
+      {/* Resource lounge */}
+      <section className={styles.resourceLounge}>
+        <div className={styles.container}>
+          <div className={styles.resourceLoungeTop}>
+            <span>Blouds resources</span>
+            <h2>Useful Queen Street pages, grouped clean.</h2>
+            <p>
+              Visit planning, downtown Brampton menu paths, flower tiers, late-night shopping,
+              native smokes, edibles, and vape guides without burying the main menu.
+            </p>
+            <a href="/resources">Open Resource Lounge</a>
+          </div>
+          <div className={styles.resourceLoungeGrid}>
+            {RESOURCE_LINKS.map((resource) => (
+              <a key={resource.href} href={resource.href} className={styles.resourceLoungeCard}>
+                <span>{resource.tag}</span>
+                <h3>{resource.title}</h3>
+                <p>{resource.body}</p>
+              </a>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ── STORE INFO ── */}
@@ -343,7 +388,7 @@ export default function HomePage() {
               <p className={styles.storeCardText}>
                 117 Queen St W
                 <br />
-                Brampton, ON M5S 2H7
+                Brampton, ON L6Y 1M3
                 <br />
               </p>
             </div>
@@ -353,7 +398,7 @@ export default function HomePage() {
               <p className={styles.storeCardText}>
                 Open 7 Days a Week
                 <br />
-                <span className={styles.storeHighlight}>Open Open 24 Hours</span>
+                <span className={styles.storeHighlight}>Open 24 Hours</span>
               </p>
             </div>
             <div className={styles.storeCard}>
@@ -363,7 +408,7 @@ export default function HomePage() {
                 No appointment needed
                 <br />
                 <span className={styles.storeHighlight}>
-                  Center St, Brampton
+                  Queen Street W, Brampton
                 </span>
               </p>
             </div>
@@ -380,3 +425,4 @@ export default function HomePage() {
     </main>
   );
 }
+
