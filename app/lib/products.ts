@@ -236,13 +236,13 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   CIGARETTES: {
       banner: "/banners/Blouds_Cigarettes.webp",
     name: "Cigarettes", slug: "cigarettes", color: "#78716c", icon: "🏷️",
-    seoTitle: "Native Cigarettes Brampton — Discount Tobacco at Blouds Dispensary",
-    seoIntro: "Discount native cigarettes at Blouds Dispensary, Brampton. Premium and value brands at the best prices on Queen Street W.",
-    seoDescription: "Blouds Dispensary is your go-to source for affordable native cigarettes in Brampton. We carry a wide selection of premium and value tobacco brands at competitive prices. Located at 117 Queen St W in the heart of downtown Brampton, we're open daily 24 hours. Stop by for the best cigarette prices in the neighbourhood.",
+    seoTitle: "Native Cigarettes Brampton - Brands And Prices at Blouds Dispensary",
+    seoIntro: "Shop native cigarettes in Brampton at Blouds Dispensary with listed brands like Canadian, Canadian Goose, Canadian Classics, Putters, Rolled Gold, Nexus, Time, Backwoods, Grabba, and nicotine pouches.",
+    seoDescription: "Blouds Dispensary lists native cigarette packs at $25 for many brands, plus 10 x Premium Mix Cigarettes at $3, nicotine pouches from Velo, Pablo, and Killa at $20, Grabba at $5, Grabba Shaker at $19, and Backwoods options from $20-$25. Visit 117 Queen St W in Brampton and check the live cigarette menu for current stock.",
     faqs: [
-      { q: "Do you sell cigarettes at Blouds Dispensary?", a: "Yes! We carry a wide selection of native cigarette brands at competitive prices." },
-      { q: "What cigarette brands do you carry?", a: "We stock a variety of premium and value native cigarette brands. Visit us to see our full in-store selection." },
-      { q: "Are your cigarette prices competitive?", a: "Absolutely. We offer some of the best cigarette prices in the downtown Brampton area of Brampton." },
+      { q: "Do you sell native cigarettes at Blouds Dispensary?", a: "Yes. The cigarette menu includes brands such as Canadian Lights, Canadian Full, Canadian Menthol, Canadian Goose, Canadian Classics, Putters, Rolled Gold, Nexus, and Time." },
+      { q: "How much are cigarettes at Blouds Dispensary?", a: "Many native cigarette packs are listed at $25. The menu also lists 10 x Premium Mix Cigarettes at $3, nicotine pouches at $20, Grabba at $5, Grabba Shaker at $19, and Backwoods options from $20-$25." },
+      { q: "Do cigarette brands and prices change?", a: "Yes. Brand mix, flavours, carton options, and prices can rotate, so check the live cigarette category before visiting Queen Street W." },
     ],
   },
 };

@@ -87,14 +87,14 @@ export const RESOURCE_PAGES: ResourceArticle[] = [
   {
     slug: "native-smokes-guide",
     title: "Native Cigarettes Brampton Guide",
-    metaDescription: "Find Blouds Dispensary native cigarettes in Brampton with cigarette category links, accessories, Queen Street W visit notes, and cannabis menu shortcuts.",
+    metaDescription: "Find Blouds Dispensary native cigarettes in Brampton with brands and prices including Canadian, Canadian Goose, Canadian Classics, Putters, Nexus, Time, Backwoods, Grabba, and 10 x Premium Mix.",
     eyebrow: "Cigarettes",
-    summary: "A dedicated native cigarettes Brampton resource for Blouds shoppers who want the tobacco lane beside the cannabis menu.",
+    summary: "A dedicated native cigarettes Brampton resource with real cigarette brands, listed prices, and tobacco add-ons for Queen Street W shoppers.",
     sections: [
-      { heading: "Make The Cigarette Lane Obvious", body: "This guide gives native cigarette shoppers in Brampton a direct route to the Blouds cigarette category instead of burying it inside the cannabis menu." },
-      { heading: "Tie It To Queen Street W", body: "Blouds is located at 117 Queen St W, so the cigarette resource should use that local anchor. Shoppers searching from downtown Brampton, Queen Street, or nearby Peel routes get a clearer signal that this is the right store page." },
-      { heading: "Pair With Accessories", body: "Cigarette shoppers often need papers, lighters, grinders, trays, or other small add-ons. The page links cigarettes and accessories together so the trip feels planned, not scattered." },
-      { heading: "Keep Current Details Flexible", body: "Exact brands, cartons, and tobacco selection can rotate. This page supports the keyword and route, then pushes shoppers to the live category or store counter for current details." },
+      { heading: "Cigarette Brands On The Menu", body: "The Blouds cigarette lane lists Canadian Lights, Canadian Full, Canadian Menthol, Canadian Goose Full, Canadian Goose Lights, Canadian Classics Original, Canadian Classics Silver, Putters, Rolled Gold Lights, Nexus Full, Nexus Lights, and Time Full." },
+      { heading: "Listed Cigarette Prices", body: "Most native cigarette packs in the current menu are listed at $25 each. The 10 x Premium Mix Cigarettes item is listed at $3, giving downtown Brampton and Queen Street W shoppers a low-cost quick-pick option." },
+      { heading: "Pouches, Grabba, And Backwoods", body: "The tobacco section also includes nicotine pouches from Velo, Pablo, and Killa listed at $20, Grabba listed at $5, Grabba Shaker in RedRose or Red Herring listed at $19, Backwoods assorted flavours listed from $20-$25, and new Backwoods flavours listed at $25." },
+      { heading: "Check Current Stock", body: "Brand mix, flavour mix, carton availability, and prices can rotate. Use /items/cigarettes for the current Blouds cigarette menu before visiting, then pair the stop with accessories, flower, pre-rolls, edibles, or THC vapes if needed." },
     ],
     quickLinks: [
       { label: "Cigarettes", href: "/items/cigarettes" },
