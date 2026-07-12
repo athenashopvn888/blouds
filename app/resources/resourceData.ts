@@ -21,7 +21,7 @@ export const RESOURCE_PAGES: ResourceArticle[] = [
     sections: [
       { heading: "Start With The Queen Street W Location", body: "Blouds Dispensary has a downtown Brampton address, so the resources should speak to Queen Street W shoppers, not generic cannabis traffic. This guide helps people check the menu, understand the category lanes, and arrive with valid 19+ ID." },
       { heading: "Use The Menu Before The Visit", body: "The fastest path is to decide whether the trip is about flower, edibles, vapes, pre-rolls, concentrates, cigarettes, or accessories. The resource hub gives Blouds a local menu map while the live category pages handle current stock." },
-      { heading: "Built For 24-Hour Shopping", body: "Blouds is positioned as open 24 hours, which matters for downtown Brampton shoppers outside normal retail hours. The page should support late-night and early-morning searches without turning into a thin blog post." },
+      { heading: "Built For 24-Hour Shopping", body: "Blouds is positioned as open 24 hours, which matters for downtown Brampton shoppers outside normal retail hours. The guide keeps late-night and early-morning visits easy to plan." },
       { heading: "Keep A Backup Lane", body: "Menu rotation is normal. Pick one primary lane and one backup before heading to Queen Street W, such as Premium flower plus pre-rolls, edibles plus vapes, or cigarettes plus accessories." },
     ],
     quickLinks: [
@@ -38,9 +38,9 @@ export const RESOURCE_PAGES: ResourceArticle[] = [
     summary: "A local menu map for Blouds shoppers searching cannabis categories around downtown Brampton and Queen Street W.",
     sections: [
       { heading: "Group The Menu By Intent", body: "Some shoppers want exotic flower, some want cheap weed, some want edibles, and some are only looking for native cigarettes in Brampton. This guide groups the paths by intent so Blouds feels like a useful local menu hub." },
-      { heading: "Flower Tiers Stay Clear", body: "Exotic, Premium, AAA+, AA, and Budget are stronger as separate pages because each tier serves a different search. That helps shoppers compare quality and price while giving the site cleaner internal links." },
+      { heading: "Flower Tiers Stay Clear", body: "Exotic, Premium, AAA+, AA, and Budget are stronger as separate lanes because each tier serves a different shopper. That helps visitors compare quality and price before choosing a flower page." },
       { heading: "Formats Stay Fast", body: "Edibles, THC vapes, nic vapes, pre-rolls, concentrates, accessories, and cigarettes are separate lanes. A shopper who searches for edibles in Brampton should not have to scroll through every flower section first." },
-      { heading: "Local SEO Without Fake Claims", body: "The copy can target downtown Brampton cannabis menu searches without inventing awards, fixed brands, or live inventory claims. The resource explains the path and sends shoppers to the right live page." },
+      { heading: "Local Detail Without Guesswork", body: "The guide can support downtown Brampton cannabis menu searches without inventing awards, fixed brands, or live inventory claims. It explains the path and sends shoppers to the right live page." },
     ],
     quickLinks: [
       { label: "Edibles", href: "/items/edibles" },
@@ -57,7 +57,7 @@ export const RESOURCE_PAGES: ResourceArticle[] = [
     sections: [
       { heading: "Exotic And Premium Flower", body: "Exotic and Premium should speak to shoppers searching top-shelf cannabis flower in Brampton. These lanes are about quality-first browsing, stronger shelf presence, and a more premium menu experience." },
       { heading: "AAA+ And AA Flower", body: "AAA+ and AA are the comparison lanes for shoppers who want value and quality balanced together. They help the Blouds menu feel organized instead of forcing every flower option into one long list." },
-      { heading: "Budget Flower", body: "Budget is the practical value lane for shoppers searching cheap weed in Brampton. The page should point to current Budget flower options while avoiding fixed product promises that could go stale." },
+      { heading: "Budget Flower", body: "Budget is the practical value lane for shoppers searching cheap weed in Brampton. It points to current Budget flower options while avoiding fixed product promises that could go stale." },
       { heading: "Why It Helps The Store", body: "A tier guide gives Blouds better keyword coverage for Brampton flower searches and gives visitors a cleaner way to choose before walking into the Queen Street W store." },
     ],
     quickLinks: [
@@ -74,8 +74,8 @@ export const RESOURCE_PAGES: ResourceArticle[] = [
     summary: "A night-shopping guide for Blouds visitors checking the Queen Street W menu outside regular retail hours.",
     sections: [
       { heading: "Decide The Category First", body: "Late-night shoppers usually want a clean decision. Flower tiers, pre-rolls, THC vapes, edibles, concentrates, cigarettes, and accessories should all be one click away from the resource hub." },
-      { heading: "Useful For Downtown Brampton", body: "Queen Street W is a practical local search anchor. The page should help people searching late-night cannabis in Brampton or a 24-hour dispensary near downtown Brampton choose a menu path quickly." },
-      { heading: "Keep One Backup", body: "If a specific strain, edible, vape, or cigarette option rotates, a backup lane keeps the visit from stalling. The resource page encourages that plan without pretending to know live stock." },
+      { heading: "Useful For Downtown Brampton", body: "Queen Street W is a practical local anchor. The guide helps people searching late-night cannabis in Brampton or a 24-hour dispensary near downtown Brampton choose a menu path quickly." },
+      { heading: "Keep One Backup", body: "If a specific strain, edible, vape, or cigarette option rotates, a backup lane keeps the visit from stalling. Choose one main category and one backup before heading over." },
       { heading: "Bring ID", body: "The 24-hour schedule does not change adult-use rules. Bring valid government ID and use the live menu pages for current product details." },
     ],
     quickLinks: [
@@ -91,7 +91,7 @@ export const RESOURCE_PAGES: ResourceArticle[] = [
     eyebrow: "Cigarettes",
     summary: "A dedicated native cigarettes Brampton resource for Blouds shoppers who want the tobacco lane beside the cannabis menu.",
     sections: [
-      { heading: "Make The Cigarette Lane Obvious", body: "The screenshot was right: this page needed more than generic cigarette copy. It now targets native cigarettes Brampton and gives shoppers a direct route to the Blouds cigarette category instead of burying it inside the cannabis menu." },
+      { heading: "Make The Cigarette Lane Obvious", body: "This guide gives native cigarette shoppers in Brampton a direct route to the Blouds cigarette category instead of burying it inside the cannabis menu." },
       { heading: "Tie It To Queen Street W", body: "Blouds is located at 117 Queen St W, so the cigarette resource should use that local anchor. Shoppers searching from downtown Brampton, Queen Street, or nearby Peel routes get a clearer signal that this is the right store page." },
       { heading: "Pair With Accessories", body: "Cigarette shoppers often need papers, lighters, grinders, trays, or other small add-ons. The page links cigarettes and accessories together so the trip feels planned, not scattered." },
       { heading: "Keep Current Details Flexible", body: "Exact brands, cartons, and tobacco selection can rotate. This page supports the keyword and route, then pushes shoppers to the live category or store counter for current details." },
@@ -109,7 +109,7 @@ export const RESOURCE_PAGES: ResourceArticle[] = [
     eyebrow: "Edibles and vapes",
     summary: "A format-first guide for Blouds shoppers who want gummies, chocolates, THC vapes, nic vapes, or support gear without starting from flower.",
     sections: [
-      { heading: "Edibles For Measured Formats", body: "Edibles deserve their own path because shoppers looking for gummies, chocolates, drinks, or other measured formats are not making the same decision as flower buyers. The resource page supports edibles Brampton searches and links to the live category." },
+      { heading: "Edibles For Measured Formats", body: "Edibles deserve their own path because shoppers looking for gummies, chocolates, drinks, or other measured formats are not making the same decision as flower buyers. Use the guide to reach the live edibles category quickly." },
       { heading: "THC Vapes Stay Separate", body: "THC vapes are cannabis products and should sit in their own lane for vape pens, cartridges, and vape-first menu browsing when listed. This avoids mixing cannabis vape intent with the nic vape route." },
       { heading: "Nic Vapes Stay Separate Too", body: "Nic vapes can serve a different shopper intent than cannabis. Keeping that page separate makes the Blouds navigation clearer and gives the site more precise category coverage." },
       { heading: "Add The Small Stuff", body: "Accessories, papers, lighters, and add-ons often complete the trip. The resource hub should help shoppers combine those links before heading to Queen Street W." },
