@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "prebuild": "node scripts/prebuild-stock.js",
+    "verify:mojibake": "node scripts/verify-mojibake.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
