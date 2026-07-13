@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node scripts/prebuild-stock.js",
+    "prebuild": "node scripts/prebuild-stock.js && npm run verify:resources",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verify:resources": "node scripts/verify-resources-route.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.105.4",

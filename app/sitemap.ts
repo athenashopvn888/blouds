@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import {TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems} from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
-import { RESOURCE_PAGES } from "./resources/resourceData";
+import { RESOURCE_PATHS } from "./resources/resourceData";
 
 const BASE = "https://www.bloudsdispensary.ca";
 
@@ -12,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE, lastModified: now, changeFrequency: "daily", priority: 1 },
     { url: `${BASE}/weed-dispensary-brampton/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE}/resources`, lastModified: now, changeFrequency: "weekly", priority: 0.75 },
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/delivery`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/games`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
@@ -58,11 +57,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const resourcePages: MetadataRoute.Sitemap = RESOURCE_PAGES.map((page) => ({
-    url: `${BASE}/resources/${page.slug}`,
+  const resourcePages: MetadataRoute.Sitemap = RESOURCE_PATHS.map((resourcePath) => ({
+    url: `${BASE}${resourcePath}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.65,
+    priority: resourcePath === "/resources" ? 0.75 : 0.65,
   }));
 
 

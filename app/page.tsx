@@ -129,19 +129,19 @@ const FEATURED_STRAINS = buildFeatured();
 
 const RESOURCE_LINKS = [
   {
-    href: "/resources/queen-street-visit-guide",
+    href: "/resources/queen-street-w-visit-guide",
     tag: "Visit guide",
     title: "Queen Street W pull-up notes",
     body: "Route-friendly store notes, ID reminders, and fast menu prep for downtown Brampton.",
   },
   {
-    href: "/resources/downtown-brampton-menu-guide",
+    href: "/resources/downtown-brampton-menu-map",
     tag: "Menu guide",
     title: "Downtown Brampton menu map",
     body: "Flower tiers, edibles, vapes, pre-rolls, concentrates, cigarettes, and accessories in one useful flow.",
   },
   {
-    href: "/resources/edibles-and-vapes-guide",
+    href: "/resources/edibles-vapes-guide",
     tag: "Format guide",
     title: "Edibles and vape paths",
     body: "Separate THC vapes, nic vapes, edibles, and support gear before you head in.",
