@@ -9,6 +9,8 @@ const data = read("app/resources/resourceData.ts");
 const sitemap = read("app/sitemap.ts");
 const nav = read("app/components/Navbar.tsx");
 const footer = read("app/components/Footer.tsx");
+const infoPage = read("app/info/[seoPage]/page.tsx");
+const seoPages = read("app/lib/seoPages.ts");
 
 const routes = [...data.matchAll(/route:\s*"([^"]+)"/g)].map((match) => match[1]);
 const uniqueRoutes = new Set(routes);
@@ -67,6 +69,10 @@ if (!nav.includes('href: "/resources"')) {
 
 if (!footer.includes('href="/resources"')) {
   throw new Error("Footer is missing /resources");
+}
+
+if (!seoPages.includes("getLegacySeoRedirect") || !infoPage.includes("getLegacySeoRedirect")) {
+  throw new Error("Info pages must preserve legacy Ottawa slug redirects after Brampton slug cleanup");
 }
 
 console.log(`Blouds resources check passed: ${routes.length} routes, catch-all route, nav link, footer link, and sitemap coverage.`);

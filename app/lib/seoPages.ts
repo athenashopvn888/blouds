@@ -202,6 +202,17 @@ export function getSeoPageBySlug(slug: string): SeoPageData | undefined {
   return SEO_PAGES.find((p) => p.slug === slug);
 }
 
+const LEGACY_SEO_REDIRECTS: Record<string, string> = {
+  "ottawa-weed-dispensary": "brampton-weed-dispensary",
+  "cheap-weed-ottawa": "cheap-weed-brampton",
+  "native-cigarettes-ottawa": "native-cigarettes-brampton",
+  "dispensary-near-me-ottawa": "dispensary-near-me-brampton",
+};
+
+export function getLegacySeoRedirect(slug: string): string | undefined {
+  return LEGACY_SEO_REDIRECTS[slug];
+}
+
 
 
 
