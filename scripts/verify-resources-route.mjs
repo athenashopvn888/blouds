@@ -11,6 +11,8 @@ const nav = read("app/components/Navbar.tsx");
 const footer = read("app/components/Footer.tsx");
 const infoPage = read("app/info/[seoPage]/page.tsx");
 const seoPages = read("app/lib/seoPages.ts");
+const tvPage = read("app/tv/page.tsx");
+const tv2Page = read("app/tv2/page.tsx");
 
 const routes = [...data.matchAll(/route:\s*"([^"]+)"/g)].map((match) => match[1]);
 const uniqueRoutes = new Set(routes);
@@ -21,6 +23,10 @@ const bannedPublicPhrases = [
   "resource hub should support",
   "verified",
   "repository",
+  "Mohawk Medicine",
+  "2655 Eglinton",
+  "Scarborough",
+  "mohawkmedicine.com",
 ];
 
 if (!exists("app/resources/[...slug]/page.tsx")) {
@@ -50,8 +56,9 @@ for (const route of routes) {
 }
 
 for (const phrase of bannedPublicPhrases) {
-  if (data.toLowerCase().includes(phrase.toLowerCase())) {
-    throw new Error(`Public resource copy contains internal phrase: ${phrase}`);
+  const publicCopy = [data, tvPage, tv2Page].join("\n").toLowerCase();
+  if (publicCopy.includes(phrase.toLowerCase())) {
+    throw new Error(`Public copy contains copied/internal phrase: ${phrase}`);
   }
 }
 

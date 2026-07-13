@@ -134,12 +134,12 @@ function ItemCard({ title, accent, items, hiIdx, preset }: {
 
 /* -- TICKER -- */
 const TICKER_SLIDES = [
-  "🔥 Mohawk Medicine — 2655 Eglinton Ave E, Scarborough",
+  "🔥 Blouds Dispensary — 117 Queen St W, Brampton",
   "200+ Strains In Stock",
   "Open 24 Hours",
   "Pre-Rolls · Edibles · Vapes · Concentrates",
   "ALL SALES ARE FINAL",
-  "🎮 Play Games at mohawkmedicine.com/games",
+  "🎮 Play Games at bloudsdispensary.ca/games",
 ];
 
 function VerticalTicker() {
