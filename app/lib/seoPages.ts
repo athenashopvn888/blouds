@@ -13,7 +13,7 @@ export interface SeoPageData {
 
 export const SEO_PAGES: SeoPageData[] = [
   {
-    slug: "ottawa-weed-dispensary",
+    slug: "brampton-weed-dispensary",
     title: "Brampton Weed Dispensary â€” Blouds Dispensary | 24 Hours | Queen Street W",
     metaDescription: "Blouds Dispensary is Brampton's #1 24-hour weed dispensary at 117 Queen St W in downtown Brampton. 200+ strains, THC up to 39%, edibles, vapes, concentrates & more. Walk in anytime.",
     h1: "Brampton Weed Dispensary â€” Blouds Dispensary",
@@ -58,7 +58,7 @@ export const SEO_PAGES: SeoPageData[] = [
   },
 
   {
-    slug: "cheap-weed-ottawa",
+    slug: "cheap-weed-brampton",
     title: "Cheap Weed Brampton â€” Budget Cannabis Deals From $3/g | Blouds Dispensary",
     metaDescription: "Looking for cheap weed in Brampton? Blouds Dispensary has budget flower from $3/g, ounces from $40, and 3g bundle pricing. Open 24 hours at 117 Queen St W.",
     h1: "Cheap Weed Brampton â€” Budget Cannabis Deals",
@@ -79,7 +79,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Compare Our Prices",
-        body: "Budget: $3/g â€” $40/oz. AA: $4/g â€” $90/oz. AAA+: $5-$6/g â€” $100/oz. Premium: $7-$10/g. Exotic: $10-$12/g. Every tier includes 3g bundle pricing. Top tiers include 6g bundle pricing. These are some of the lowest prices you'll find at any dispensary in Brampton, Vanier, Sandy Hill, Lower Town, or the downtown Brampton area.",
+        body: "Budget: $3/g â€” $40/oz. AA: $4/g â€” $90/oz. AAA+: $5-$6/g â€” $100/oz. Premium: $7-$10/g. Exotic: $10-$12/g. Every tier includes 3g bundle pricing. Top tiers include 6g bundle pricing. These are strong value lanes for downtown Brampton, Peel Village, Bramalea, and nearby Peel communities.",
       },
     ],
     faqs: [
@@ -93,7 +93,7 @@ export const SEO_PAGES: SeoPageData[] = [
   },
 
   {
-    slug: "native-cigarettes-ottawa",
+    slug: "native-cigarettes-brampton",
     title: "Native Cigarettes Brampton â€” Discount Tobacco | Blouds Dispensary",
     metaDescription: "Buy native cigarettes in Brampton at Blouds Dispensary. Wide selection of premium and value tobacco brands at the best prices. 117 Queen St W, downtown Brampton. Open 24/7.",
     h1: "Native Cigarettes Brampton â€” Discount Tobacco",
@@ -110,7 +110,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Convenient downtown Brampton Location",
-        body: "Our shop at 117 Queen St W is centrally located in downtown Brampton â€” easily accessible from Queen Street W and nearby downtown Brampton routes. Whether you're walking, driving, or taking the bus, Blouds Dispensary is easy to reach. Free evening street parking is available on Queen Street W and nearby streets. We serve customers from across Brampton including Lower Town, Sandy Hill, Centretown, Vanier, and across the bridge from Peel Region.",
+        body: "Our shop at 117 Queen St W is centrally located in downtown Brampton â€” easily accessible from Queen Street W and nearby downtown Brampton routes. Whether you're walking, driving, or taking the bus, Blouds Dispensary is easy to reach. Free evening street parking is available on Queen Street W and nearby streets. We serve customers from across Brampton, Peel Village, Bramalea, Mississauga, and nearby Peel communities.",
       },
       {
         heading: "More Than Just Cigarettes",
@@ -168,7 +168,7 @@ export const SEO_PAGES: SeoPageData[] = [
   },
 
   {
-    slug: "dispensary-near-me-ottawa",
+    slug: "dispensary-near-me-brampton",
     title: "Cannabis Dispensary Near Me Brampton â€” Blouds Dispensary | Open 24 Hours",
     metaDescription: "Find a cannabis dispensary near you in Brampton. Blouds Dispensary at 117 Queen St W has 200+ strains from $3/g. Open 24 hours. Walk in anytime, no appointment needed.",
     h1: "Cannabis Dispensary Near Me â€” Brampton",
@@ -191,7 +191,7 @@ export const SEO_PAGES: SeoPageData[] = [
     faqs: [
       { q: "Where is the closest dispensary in downtown Brampton?", a: "Blouds Dispensary at 117 Queen St W is conveniently located in the heart of downtown Brampton â€” one of Brampton's most accessible neighbourhoods." },
       { q: "Is Blouds Dispensary walk-in friendly?", a: "Absolutely! No appointment needed. Walk in anytime â€” we're open 24 hours a day, 7 days a week. Our friendly staff is always ready to help." },
-      { q: "What neighbourhoods does Blouds Dispensary serve?", a: "We serve all of Brampton including downtown Brampton, Sandy Hill, Lower Town, Centretown, the Glebe, Vanier, Orleans, Kanata, Barrhaven, and nearby Peel communities." },
+      { q: "What neighbourhoods does Blouds Dispensary serve?", a: "We serve Brampton shoppers from downtown Brampton, Peel Village, Bramalea, Mount Pleasant, Heart Lake, Mississauga, and nearby Peel communities." },
       { q: "How do I check what's in stock?", a: "Visit bloudsdispensary.ca for our live menu with real-time stock, pricing, and THC levels for all products." },
       { q: "Do you sell edibles and vapes?", a: "Yes! In addition to 200+ flower strains, we carry edibles (gummies, chocolates), vape pens, disposable vapes, concentrates, pre-rolls, and accessories." },
     ],

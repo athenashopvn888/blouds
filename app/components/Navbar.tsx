@@ -18,10 +18,10 @@ const ALL_LINKS = [
   { href: "/items/magic", label: "Magic Stuff" },
   { href: "/items/cigarettes", label: "Cigarettes" },
   { href: "/items/add-ons", label: "Accessories" },
-  { href: "/delivery", label: "🚗 Delivery" },
+  { href: "/delivery", label: "Delivery" },
   { href: "/resources", label: "Resources" },
   { href: "/faq", label: "FAQ" },
-  { href: "/games", label: "🎮" },
+  { href: "/games", label: "Games" },
 ];
 
 export default function Navbar() {
@@ -29,18 +29,17 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar} id="main-nav">
-      {/* Top bar — logo + open now */}
       <div className={styles.topBar}>
         <Link href="/" className={styles.logo}>
           <img
             src="/banners/logo.png"
-            alt="Blouds Dispensary — Brampton Dispensary"
+            alt="Blouds Dispensary - Brampton Dispensary"
             className={styles.logoImg}
           />
         </Link>
         <div className={styles.topBarRight}>
           <Link href="/games" className={styles.gamesBtn}>
-            🎮 Play Games
+            Play Games
           </Link>
           <span className={styles.open}>
             <span className={styles.dot}></span>
@@ -49,7 +48,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Scrollable link bar */}
       <div className={styles.scrollBar}>
         <div className={styles.scrollInner}>
           {ALL_LINKS.map((link) => {
@@ -69,4 +67,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
