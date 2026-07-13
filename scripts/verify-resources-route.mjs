@@ -13,6 +13,8 @@ const infoPage = read("app/info/[seoPage]/page.tsx");
 const seoPages = read("app/lib/seoPages.ts");
 const tvPage = read("app/tv/page.tsx");
 const tv2Page = read("app/tv2/page.tsx");
+const deliveryPage = read("app/delivery/page.tsx");
+const deliveryContent = read("app/delivery/DeliveryContent.tsx");
 
 const sourceExtensions = new Set([".ts", ".tsx", ".js", ".jsx", ".mjs", ".css"]);
 const mojibakePatterns = [
@@ -51,6 +53,14 @@ const bannedPublicPhrases = [
   "Scarborough",
   "mohawkmedicine.com",
 ];
+const bannedDeliveryPhrases = [
+  "same-day",
+  "order before 6 pm",
+  "national capital region",
+  "gatineau",
+  "all in-store promotions apply",
+  "exclusive launch-day deal",
+];
 
 if (!exists("app/resources/[...slug]/page.tsx")) {
   throw new Error("Resources must use catch-all app/resources/[...slug]/page.tsx");
@@ -82,6 +92,13 @@ for (const phrase of bannedPublicPhrases) {
   const publicCopy = [data, tvPage, tv2Page].join("\n").toLowerCase();
   if (publicCopy.includes(phrase.toLowerCase())) {
     throw new Error(`Public copy contains copied/internal phrase: ${phrase}`);
+  }
+}
+
+for (const phrase of bannedDeliveryPhrases) {
+  const deliveryCopy = [deliveryPage, deliveryContent].join("\n").toLowerCase();
+  if (deliveryCopy.includes(phrase.toLowerCase())) {
+    throw new Error(`Delivery copy contains unapproved launch claim: ${phrase}`);
   }
 }
 

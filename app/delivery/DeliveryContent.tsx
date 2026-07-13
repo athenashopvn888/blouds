@@ -37,8 +37,8 @@ export default function DeliveryContent() {
           Delivery <span className={styles.highlight}>Coming Soon</span>
         </h1>
         <p className={styles.pageSubtitle}>
-          Blouds Dispensary is launching delivery across Brampton.
-          Sign up below to be the first to know when we go live — and get an exclusive launch-day deal.
+          Blouds Dispensary is preparing delivery updates for Brampton shoppers.
+          Join the list and we&apos;ll let you know when this store is ready.
         </p>
 
         {/* Email signup */}
@@ -83,25 +83,25 @@ export default function DeliveryContent() {
         <div className={styles.infoGrid}>
           <div className={styles.infoCard}>
             <span className={styles.infoIcon}>📦</span>
-            <h3 className={styles.infoTitle}>Same-Day Delivery</h3>
-            <p className={styles.infoDesc}>Order before 6 PM, delivered same day across Brampton.</p>
+            <h3 className={styles.infoTitle}>Delivery Updates</h3>
+            <p className={styles.infoDesc}>Timing and coverage will be confirmed before this page goes live.</p>
           </div>
           <div className={styles.infoCard}>
             <span className={styles.infoIcon}>🌉</span>
             <h3 className={styles.infoTitle}>Brampton Area</h3>
-            <p className={styles.infoDesc}>Serving the entire National Capital Region.</p>
+            <p className={styles.infoDesc}>Delivery area details will stay specific to Blouds Dispensary.</p>
           </div>
           <div className={styles.infoCard}>
             <span className={styles.infoIcon}>💰</span>
-            <h3 className={styles.infoTitle}>Same Great Prices</h3>
-            <p className={styles.infoDesc}>All in-store promotions apply to delivery orders too.</p>
+            <h3 className={styles.infoTitle}>Store-Specific Routing</h3>
+            <p className={styles.infoDesc}>Your signup stays tied to Blouds and store code BLS01.</p>
           </div>
         </div>
 
         {/* CTA */}
         <div className={styles.ctaSection}>
           <p className={styles.ctaText}>
-            Can&apos;t wait? Visit us in-store at <strong>117 Queen St W, Brampton</strong> —
+            Until delivery is live, visit us in-store at <strong>117 Queen St W, Brampton</strong> —
             open <strong>24 hours</strong>. Call <strong>(437) 425-0117</strong>.
           </p>
         </div>
