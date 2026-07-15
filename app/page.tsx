@@ -191,12 +191,14 @@ export default function HomePage() {
       {/* ── SHOP BY TIER BANNER ── */}
       <section className={styles.tierSection} id="menu">
         <div className={styles.container}>
-          <div className={styles.sectionBanner}>
-            <img
-              src="/banners/Blouds_Edibles_Concentrates_More.webp"
-              alt="Shop by Tier — From exotic craft flower to value budget OZs"
-              className={styles.sectionBannerImg}
-            />
+          <div className={styles.tierIntro}>
+            <span>Shop by tier</span>
+            <h2>Pick the Blouds shelf that fits the visit.</h2>
+            <p>
+              Exotic, Premium, AAA+, AA, Budget, and edibles each get their own
+              lane, so the page can move straight from the welcome banner into
+              useful choices.
+            </p>
           </div>
 
           <div className={styles.tierGrid}>

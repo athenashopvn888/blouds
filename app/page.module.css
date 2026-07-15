@@ -421,6 +421,43 @@
   display: block;
 }
 
+.tierIntro {
+  max-width: 920px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.tierIntro span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(45, 106, 79, 0.18);
+  background: rgba(45, 106, 79, 0.08);
+  color: #2d6a4f;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tierIntro h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.tierIntro p {
+  max-width: 700px;
+  margin: 14px auto 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 650;
+}
+
 .resourceLounge {
   padding: 82px 0;
   background:
