@@ -91,7 +91,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     sections: [
       {
-        heading: "The Shelf Talks Louder Than Generic Copy",
+        heading: "Browse the Blouds Shelf by What You Need",
         body: [
           "If shoppers search Gas Gang, Drizzle, nicotine pouches, Backwoods, or grabba, the page should answer with those names. Blouds has the product data, so the resource centre can speak directly.",
         ],
@@ -139,7 +139,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     sections: [
       {
-        heading: "Current Non-Flower Names Worth Search Space",
+        heading: "Popular Non-Flower Picks to Browse",
         body: [
           "The current data lists Gas Gang Dispo Vape 1G, 2g Gas Gang Vol.3 Hybrid, Drizzle Switch 3in1 / 2G, ZYN nicotine pouches, nicotine pouches with Velo, Pablo, and Killa, Backwoods assorted flavors, new Backwoods flavors, grabba, and grabba shaker.",
         ],

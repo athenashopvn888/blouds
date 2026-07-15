@@ -6,7 +6,7 @@ import BudtenderApplicationForm from "./BudtenderApplicationForm";
 import styles from "./budtender.module.css";
 
 export const metadata: Metadata = {
-  title: "Budtender Or Manager Application | Blouds Dispensary",
+  title: { absolute: "Budtender Or Manager Application | Blouds Dispensary" },
   description:
     "Apply online for budtender or manager opportunities at Blouds Dispensary in Brampton. Submit availability, experience, motivation, determination, and customer-service answers.",
   alternates: {

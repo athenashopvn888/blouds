@@ -261,14 +261,6 @@ export default function HomePage() {
       {/* ── FEATURE PRODUCTS ── */}
       <section className={styles.featuredSection}>
         <div className={styles.container}>
-          <div className={styles.sectionBanner}>
-            <img
-              src="/banners/Blouds_Homepage_Hero.webp"
-              alt="Feature Products — Staff picks and top sellers"
-              className={styles.sectionBannerImg}
-            />
-          </div>
-
           <div className={styles.featuredGrid}>
             {FEATURED_STRAINS.map((strain, i) => (
               <a
@@ -429,4 +421,3 @@ export default function HomePage() {
     </main>
   );
 }
-

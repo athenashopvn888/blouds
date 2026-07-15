@@ -21,7 +21,7 @@ export const SEO_PAGES: SeoPageData[] = [
     heroTagline: "Premium Cannabis on Queen Street W - Open 24 Hours - Walk-In Welcome",
     sections: [
       {
-        heading: "Brampton's Premier Cannabis Destination",
+        heading: "A Brampton Cannabis Stop on Queen Street West",
         body: "Blouds Dispensary is a premium cannabis dispensary located at 117 Queen St W in the heart of Brampton's vibrant downtown Brampton neighbourhood. We carry over 200 hand-picked cannabis strains across five quality tiers - from ultra-rare Exotic genetics with THC up to 39% to affordable Budget flower starting at just $3/g. Whether you're a connoisseur seeking the rarest strains or a daily smoker looking for reliable value, Blouds Dispensary has the perfect flower for you. We're proud to be one of Brampton's most trusted dispensaries, serving the downtown Brampton community 24 hours a day, 7 days a week.",
       },
       {
@@ -201,7 +201,6 @@ export const SEO_PAGES: SeoPageData[] = [
 export function getSeoPageBySlug(slug: string): SeoPageData | undefined {
   return SEO_PAGES.find((p) => p.slug === slug);
 }
-
 
 
 

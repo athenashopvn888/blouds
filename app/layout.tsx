@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bloudsdispensary.ca"),
+  metadataBase: new URL("https://www.bloudsdispensary.ca"),
   title: {
     default: "Blouds Dispensary | Brampton Cannabis Store",
     template: "%s | Blouds Dispensary",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://bloudsdispensary.ca",
+    url: "https://www.bloudsdispensary.ca",
     siteName: "Blouds Dispensary",
     title: "Blouds Dispensary — Premium Brampton Cannabis Dispensary",
     description:
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://bloudsdispensary.ca",
+    canonical: "https://www.bloudsdispensary.ca",
   },
   verification: {
     // google: "your-google-verification-code",
@@ -72,12 +72,12 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
   additionalType: "https://schema.org/Store",
-  "@id": "https://bloudsdispensary.ca",
+  "@id": "https://www.bloudsdispensary.ca",
   name: "Blouds Dispensary",
   description: "Cannabis dispensary at 117 Queen St W in Brampton, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
-  url: "https://bloudsdispensary.ca",
+  url: "https://www.bloudsdispensary.ca",
   telephone: "+14374250117",
-  image: "https://bloudsdispensary.ca/wp-content/uploads/2026/04/7Clmh.jpg",
+  image: "https://www.bloudsdispensary.ca/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {
     "@type": "PostalAddress",
