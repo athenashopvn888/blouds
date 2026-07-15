@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 import Navbar from "./components/Navbar";
+import HiringCallout from "./components/HiringCallout";
 import Footer from "./components/Footer";
 import { allFlowers } from "./lib/products";
 
@@ -170,6 +171,7 @@ export default function HomePage() {
     <main className={styles.main}>
       {/* ── NAVBAR ── */}
       <Navbar />
+      <HiringCallout />
       <h1 style={{ position: "absolute", width: "1px", height: "1px", padding: 0, margin: "-1px", overflow: "hidden", clip: "rect(0, 0, 0, 0)", border: 0 }}>
         Blouds Dispensary — Premium Brampton Cannabis Dispensary
       </h1>
@@ -356,7 +358,7 @@ export default function HomePage() {
             <span>Blouds resources</span>
             <h2>Useful Queen Street pages, grouped clean.</h2>
             <p>
-              Visit planning, downtown Brampton menu paths, flower tiers, late-night shopping,
+              Visit planning, downtown Brampton menu sections, flower tiers, late-night shopping,
               native smokes, edibles, and vape guides without burying the main menu.
             </p>
             <a href="/resources">Open Resource Lounge</a>

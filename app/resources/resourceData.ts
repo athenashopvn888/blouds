@@ -51,7 +51,7 @@ export const RESOURCE_PAGES: ResourceArticle[] = [
   {
     slug: "blouds-flower-tier-guide",
     title: "Blouds Brampton Flower Tier Guide",
-    metaDescription: "Compare Blouds Dispensary flower tiers in Brampton, including Exotic, Premium, AAA+, AA, and Budget cannabis flower menu paths.",
+    metaDescription: "Compare Blouds Dispensary flower tiers in Brampton, including Exotic, Premium, AAA+, AA, and Budget cannabis flower menu sections.",
     eyebrow: "Flower tiers",
     summary: "A Queen Street W flower guide for shoppers comparing top-shelf, middle-tier, and value cannabis flower at Blouds.",
     sections: [
@@ -74,7 +74,7 @@ export const RESOURCE_PAGES: ResourceArticle[] = [
     summary: "A night-shopping guide for Blouds visitors checking the Queen Street W menu outside regular retail hours.",
     sections: [
       { heading: "Decide The Category First", body: "Late-night shoppers usually want a clean decision. Flower tiers, pre-rolls, THC vapes, edibles, concentrates, cigarettes, and accessories should all be one click away from the resource hub." },
-      { heading: "Useful For Downtown Brampton", body: "Queen Street W is a practical local anchor. The guide helps people searching late-night cannabis in Brampton or a 24-hour dispensary near downtown Brampton choose a menu path quickly." },
+      { heading: "Useful For Downtown Brampton", body: "Queen Street W is a practical local anchor. The guide helps people searching late-night cannabis in Brampton or a 24-hour dispensary near downtown Brampton choose a menu section quickly." },
       { heading: "Keep One Backup", body: "If a specific strain, edible, vape, or cigarette option rotates, a backup lane keeps the visit from stalling. Choose one main category and one backup before heading over." },
       { heading: "Bring ID", body: "The 24-hour schedule does not change adult-use rules. Bring valid government ID and use the live menu pages for current product details." },
     ],
@@ -105,7 +105,7 @@ export const RESOURCE_PAGES: ResourceArticle[] = [
   {
     slug: "edibles-and-vapes-guide",
     title: "Brampton Edibles And Vape Guide At Blouds",
-    metaDescription: "Compare Blouds Dispensary edibles, THC vapes, nic vapes, pre-rolls, accessories, and Queen Street W menu paths before visiting in Brampton.",
+    metaDescription: "Compare Blouds Dispensary edibles, THC vapes, nic vapes, pre-rolls, accessories, and Queen Street W menu sections before visiting in Brampton.",
     eyebrow: "Edibles and vapes",
     summary: "A format-first guide for Blouds shoppers who want gummies, chocolates, THC vapes, nic vapes, or support gear without starting from flower.",
     sections: [
