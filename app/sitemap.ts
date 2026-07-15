@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/weed-dispensary-brampton/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/careers/budtender`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/resources`, lastModified: now, changeFrequency: "weekly", priority: 0.75 },
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/delivery`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/games`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
@@ -60,10 +59,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const resourcePages: MetadataRoute.Sitemap = RESOURCE_PAGES.map((page) => ({
-    url: `${BASE}/resources/${page.slug}`,
+    url: `${BASE}${page.path}`,
     lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.65,
+    changeFrequency: "weekly" as const,
+    priority: page.path === "/resources" ? 0.75 : 0.65,
   }));
 
 
