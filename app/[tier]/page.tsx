@@ -33,7 +33,7 @@ export async function generateMetadata({
     description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at Blouds Dispensary.`,
     openGraph: {
       title: `${tierInfo.config.name} Flower | Blouds Dispensary`,
-      description: `${flowers.length} curated ${tierInfo.config.name.toLowerCase()} strains in stock now. From $${tierInfo.config.unitPrice}/g.`,
+      description: `Browse listed ${tierInfo.config.name.toLowerCase()} flower names, weights, and prices. Menu pricing starts from $${tierInfo.config.unitPrice}/g.`,
     },
   };
 }

@@ -135,7 +135,7 @@ function ItemCard({ title, accent, items, hiIdx, preset }: {
 /* -- TICKER -- */
 const TICKER_SLIDES = [
   "🔥 Mohawk Medicine — 2655 Eglinton Ave E, Scarborough",
-  "200+ Strains In Stock",
+  "Browse Current Flower Tiers",
   "Open 24 Hours",
   "Pre-Rolls · Edibles · Vapes · Concentrates",
   "ALL SALES ARE FINAL",

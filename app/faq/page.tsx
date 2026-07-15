@@ -20,17 +20,17 @@ const FAQ_CATEGORIES = [
       { q: "What are your hours?", a: "We are open 24 Hours a day, 7 days a week. Walk in anytime with valid 19+ ID." },
       { q: "Is there parking nearby?", a: "Parking options can vary by time of day in downtown Brampton. Check nearby street and lot signage when you arrive." },
       { q: "How far are you from Mississauga?", a: "Blouds is in Brampton at 117 Queen St W. Travel time from Mississauga depends on your starting point and traffic." },
-      { q: "What's the best way to get to Blouds Dispensary?", a: "Use 117 Queen St W, Brampton, ON L6Y 1M3 in your map app, then check the menu before heading over so the visit stays quick." },
+      { q: "How do I get to Blouds Dispensary?", a: "Use 117 Queen St W, Brampton, ON L6Y 1M3 in your map app, then check the menu before heading over." },
     ],
   },
   {
     title: "🌿 Products & Menu",
     faqs: [
       { q: "What products do you carry?", a: "We carry over 200 strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles (gummies, chocolates, baked goods), vape pens, disposable vapes, concentrates (shatter, wax, hash, diamonds, live resin), pre-rolled joints, native cigarettes, and accessories." },
-      { q: "Do you have a live menu?", a: "Yes! Our online menu at bloudsdispensary.ca updates in real time with current stock, prices, THC levels, and availability. You can check what's in stock before you visit." },
-      { q: "What are your flower tiers?", a: "Exotic ($10-$12/g, THC 35-39%) — ultra-rare top-shelf genetics. Premium ($7-$10/g, THC 32-34%) — connoisseur-grade. AAA+ ($5-$6/g, THC 30-32%) — heavy hitters, our most popular tier. AA ($4/g, THC 27-29%) — quality daily drivers. Budget ($3/g, THC 24-27%) — reliable value flower." },
-      { q: "Do you sell edibles?", a: "Yes! We carry a variety of edibles including gummies, chocolates, baked goods, and more. THC content varies. Check our live menu for current availability." },
-      { q: "Do you sell vapes?", a: "Yes — both disposable vapes and refillable vape pens. We carry both nicotine vapes and THC vapes from top brands." },
+      { q: "Do you have an online menu?", a: "Yes. Browse the current menu at bloudsdispensary.ca for listed categories, items, prices, and package details." },
+      { q: "What are your flower tiers?", a: "The flower menu is organized into Exotic, Premium, AAA+, AA, and Budget sections so shoppers can compare current listings and posted prices." },
+      { q: "Do you list edibles online?", a: "Yes. Check the current edibles category for the items and package details listed online." },
+      { q: "Do you list vapes?", a: "Yes. Browse the current disposable and refillable vape categories for listed nicotine and THC vape brands and package details." },
       { q: "Do you sell native cigarettes?", a: "Yes! We carry one of the widest selections of native cigarettes in downtown Brampton, including premium and value brands in multiple varieties." },
     ],
   },
@@ -48,10 +48,10 @@ const FAQ_CATEGORIES = [
     title: "🛒 Shopping & Experience",
     faqs: [
       { q: "Do I need an appointment?", a: "No. Blouds Dispensary is walk-in friendly. Just bring valid 19+ ID and check the menu before visiting." },
-      { q: "Can I order online?", a: "Currently, Blouds Dispensary is an in-store shopping experience only. You can browse our live menu online to see what's in stock before visiting." },
+      { q: "Can I order online?", a: "Currently, Blouds Dispensary is an in-store shopping experience only. You can browse the current menu online before visiting." },
       { q: "Do you offer delivery?", a: "Delivery is coming soon! Visit our delivery page to sign up for email notifications when we launch our delivery service." },
       { q: "What payment methods do you accept?", a: "We accept cash and debit. No credit cards at this time." },
-      { q: "Can your staff help me choose a strain?", a: "Absolutely! Our knowledgeable budtenders are here to help. Whether you're a first-time buyer or a seasoned connoisseur, we can recommend strains based on your preferences, desired effects, and budget." },
+      { q: "Can your staff help me compare menu items?", a: "Yes. Staff can help you compare the categories, formats, package details, and prices shown on the current menu." },
       { q: "Is there a minimum purchase?", a: "No minimum purchase required. You can buy as little as 1 gram." },
     ],
   },
@@ -122,4 +122,3 @@ export default function FAQPage() {
     </>
   );
 }
-

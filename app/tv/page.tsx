@@ -66,16 +66,16 @@ function TypeTag({ type }: { type: string }) {
 
 /* -- Vibe card -- */
 const VIBE_MAP: Record<string, [string,string][]> = {
-  indica: [["🛋️","Couch Lock"],["😌","Relax"],["🌙","Sleepy"]],
-  sativa: [["⚡","Energy"],["🧠","Cerebral"],["🚀","Uplift"]],
-  hybrid: [["🧘","Balance"],["🌿","Calm"],["✨","Creative"]],
+  indica: [["🌿","Indica"],["📦","Package Details"],["📋","Current Menu"]],
+  sativa: [["🌿","Sativa"],["📦","Package Details"],["📋","Current Menu"]],
+  hybrid: [["🌿","Hybrid"],["📦","Package Details"],["📋","Current Menu"]],
 };
 function VibeCard({ type }: { type: string }) {
   const t = type?.toLowerCase();
   const vibes = VIBE_MAP[t] || VIBE_MAP.hybrid;
   return (
     <div className={styles.vibeSection}>
-      <div className={styles.vibeHead}>EFFECTS</div>
+      <div className={styles.vibeHead}>PRODUCT DETAILS</div>
       <div className={styles.vibePills}>
         {vibes.map(([emoji, label]) => (
           <span key={label} className={styles.vibePill}>
@@ -262,7 +262,7 @@ function FlowerCard({
           <div className={styles.mediaFrame}>
             <div className={styles.mediaViewport}>
               {hi?.isSale && <div className={styles.saleBadge}>SALE</div>}
-              {hi?.isHot && <div className={styles.topPickBadge}>TOP PICK</div>}
+              {hi?.isHot && <div className={styles.topPickBadge}>FEATURED</div>}
               {hi?.thc && <div className={styles.imgThcBadge}>{fmtTHC(hi.thc)}</div>}
               {prevImg && (
                 <img src={prevImg} alt="" className={`${styles.budImg} ${styles.budImgFadeOut}`}
@@ -378,7 +378,7 @@ function FlowerCard({
                   <div className={`${styles.mc} ${styles.mcStrain}`}>
                     {f.name}
                     {f.isSale && <span className={`${styles.tag} ${styles.tagSale}`}>SALE</span>}
-                    {f.isHot && <span className={`${styles.tag} ${styles.tagHot}`}>TOP PICK</span>}
+                    {f.isHot && <span className={`${styles.tag} ${styles.tagHot}`}>FEATURED</span>}
                     {f.isMustTry && <span className={`${styles.tag} ${styles.tagMust}`}>MUST TRY</span>}
                     <TypeTag type={f.type} />
                   </div>
@@ -413,7 +413,7 @@ function FlowerCard({
                   <div className={`${styles.mc} ${styles.mcStrain}`}>
                     {f.name}
                     {f.isSale && <span className={`${styles.tag} ${styles.tagSale}`}>SALE</span>}
-                    {f.isHot && <span className={`${styles.tag} ${styles.tagHot}`}>TOP PICK</span>}
+                    {f.isHot && <span className={`${styles.tag} ${styles.tagHot}`}>FEATURED</span>}
                     {f.isMustTry && <span className={`${styles.tag} ${styles.tagMust}`}>MUST TRY</span>}
                     <TypeTag type={f.type} />
                   </div>
@@ -442,7 +442,7 @@ function FlowerCard({
                 <div className={`${styles.mc} ${styles.mcStrain}`}>
                   {f.name}
                   {f.isSale && <span className={`${styles.tag} ${styles.tagSale}`}>SALE</span>}
-                  {f.isHot && <span className={`${styles.tag} ${styles.tagHot}`}>TOP PICK</span>}
+                  {f.isHot && <span className={`${styles.tag} ${styles.tagHot}`}>FEATURED</span>}
                   {f.isMustTry && <span className={`${styles.tag} ${styles.tagMust}`}>MUST TRY</span>}
                   <TypeTag type={f.type} />
                 </div>
@@ -503,7 +503,7 @@ function OZCard({ flowers, hiIdx }: { flowers: Flower[]; hiIdx: number }) {
         <div className={styles.ozTop}>
           <div className={styles.ozImgWrap}>
             <div className={styles.mediaViewport}>
-              {hi?.isHot && <div className={styles.topPickBadge}>TOP PICK</div>}
+              {hi?.isHot && <div className={styles.topPickBadge}>FEATURED</div>}
               {prevImg && <img src={prevImg} alt="" className={`${styles.budImg} ${styles.budImgFadeOut}`} referrerPolicy="no-referrer" 
             onError={(e) => {
               const t = e.currentTarget;
@@ -551,7 +551,7 @@ function OZCard({ flowers, hiIdx }: { flowers: Flower[]; hiIdx: number }) {
                 <span className={styles.ozName}>
                   {f.name}
                   {f.isSale && <span className={`${styles.tag} ${styles.tagSale}`}>SALE</span>}
-                  {f.isHot && <span className={`${styles.tag} ${styles.tagHot}`}>TOP PICK</span>}
+                  {f.isHot && <span className={`${styles.tag} ${styles.tagHot}`}>FEATURED</span>}
                   {f.isMustTry && <span className={`${styles.tag} ${styles.tagMust}`}>MUST TRY</span>}
                   <TypeTag type={f.type} />
                   <span style={{fontSize:14,opacity:0.6,marginLeft:4}}>{fmtTHC(f.thc)}</span>
@@ -570,7 +570,7 @@ function OZCard({ flowers, hiIdx }: { flowers: Flower[]; hiIdx: number }) {
                 <span className={styles.ozName}>
                   {f.name}
                   {f.isSale && <span className={`${styles.tag} ${styles.tagSale}`}>SALE</span>}
-                  {f.isHot && <span className={`${styles.tag} ${styles.tagHot}`}>TOP PICK</span>}
+                  {f.isHot && <span className={`${styles.tag} ${styles.tagHot}`}>FEATURED</span>}
                   {f.isMustTry && <span className={`${styles.tag} ${styles.tagMust}`}>MUST TRY</span>}
                   <TypeTag type={f.type} />
                   <span style={{fontSize:14,opacity:0.6,marginLeft:4}}>{fmtTHC(f.thc)}</span>
@@ -635,7 +635,7 @@ function AddOnsCard({ items, hiIdx }: { items: Item[]; hiIdx: number }) {
           <div className={styles.addonsDetailCard}>
             <div className={styles.addonsDetailName}>{hi?.name||""}</div>
             <div className={styles.addonsDetailPrice}>PRICE {(hi?.price||'').replace(/\[object.*\]/,'')}</div>
-            <div className={styles.effectIcons}>🌿 ✨ 💚</div>
+            <div className={styles.effectIcons}>CURRENT MENU ITEM</div>
           </div>
         </div>
 
@@ -672,7 +672,7 @@ function AddOnsCard({ items, hiIdx }: { items: Item[]; hiIdx: number }) {
    ============================================================ */
 const TICKER_SLIDES = [
   "🔥 Mohawk Medicine — 2655 Eglinton Ave E, Scarborough",
-  "200+ Strains In Stock",
+  "Browse Current Flower Tiers",
   "Open 24 Hours",
   "ALL SALES ARE FINAL",
   "🎮 Play Games at mohawkmedicine.com/games",

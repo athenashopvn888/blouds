@@ -9,7 +9,7 @@ const TIERS = [
   {
     name: "EXOTIC",
     slug: "exotic",
-    tagline: "Ultra-rare, top-shelf genetics",
+    tagline: "Browse current Exotic flower listings",
     thc: "35-39%",
     unitPrice: 20,
     deal3g: "3g bundle for $40",

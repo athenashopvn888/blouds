@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Blouds Dispensary",
     title: "Blouds Dispensary — Premium Brampton Cannabis Dispensary",
     description:
-      "200+ strains from $3/g. Exotic to Budget. Brampton's uplifting dispensary at 117 Queen St W. Open 24 Hours.",
+      "Browse flower tiers and menu categories at Blouds Dispensary, 117 Queen St W in Brampton. Open 24 Hours.",
     images: [
       {
         url: "/banners/Blouds_Welcome_Banner.webp",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Blouds Dispensary — Brampton's Uplifting Dispensary",
-    description: "200+ strains from $3/g. Open 24 Hours at 117 Queen St W, Brampton.",
+    description: "Browse the current menu at Blouds Dispensary. Open 24 Hours at 117 Queen St W, Brampton.",
     images: ["/banners/Blouds_Welcome_Banner.webp"],
   },
   robots: {

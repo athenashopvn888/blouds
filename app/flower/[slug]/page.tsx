@@ -59,7 +59,6 @@ function getJsonLd(flower: FlowerProduct) {
     "@type": "Offer",
     url: `https://bloudsdispensary.ca/flower/${flower.slug}`,
     priceCurrency: "CAD",
-    availability: "https://schema.org/InStock",
     itemCondition: "https://schema.org/NewCondition",
     seller: { "@type": "Organization", name: "Blouds Dispensary" },
     hasMerchantReturnPolicy: {
@@ -233,7 +232,7 @@ export default async function FlowerPage({
                 </div>
               </div>
 
-              {/* Effects */}
+              {/* Product details */}
               <div className={styles.effectsRow}>
                 {strainData.effects.map((e) => (
                   <span key={e.label} className={styles.effectPill}>
@@ -282,7 +281,7 @@ export default async function FlowerPage({
 
                 {bestValue && (
                   <div className={styles.valueNote}>
-                    Best value: <strong>${bestValue.perG}/g</strong> at {bestValue.label}
+                    Lowest listed unit price: <strong>${bestValue.perG}/g</strong> at {bestValue.label}
                   </div>
                 )}
               </div>
@@ -294,7 +293,7 @@ export default async function FlowerPage({
               </div>
 
               <div className={styles.visitCta}>
-                <p>Available in-store &middot; Walk-in welcome &middot; No appointment needed</p>
+                <p>Check the current menu &middot; Walk-in welcome &middot; No appointment needed</p>
               </div>
             </div>
           </div>

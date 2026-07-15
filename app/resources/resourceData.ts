@@ -520,7 +520,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     sections: [
       {
-        heading: "Nearby Search Language",
+        heading: "Nearby Area Terms",
         body: [
           "The local language around Blouds includes Queen Street W, Downtown Brampton, Main Street, Kennedy Road, Bramalea, Peel Region, and Brampton Transit.",
         ],

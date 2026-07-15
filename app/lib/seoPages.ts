@@ -1,5 +1,3 @@
-﻿/* Geo-targeted SEO landing pages for Brampton keywords */
-
 export interface SeoPageData {
   slug: string;
   title: string;
@@ -7,200 +5,109 @@ export interface SeoPageData {
   h1: string;
   icon: string;
   heroTagline: string;
+  banner?: string;
   sections: { heading: string; body: string }[];
   faqs: { q: string; a: string }[];
 }
 
 export const SEO_PAGES: SeoPageData[] = [
   {
-    slug: "ottawa-weed-dispensary",
-    title: "Brampton Weed Dispensary - Blouds Dispensary | 24 Hours | Queen Street W",
-    metaDescription: "Blouds Dispensary is Brampton's #1 24-hour weed dispensary at 117 Queen St W in downtown Brampton. 200+ strains, THC up to 39%, edibles, vapes, concentrates & more. Walk in anytime.",
-    h1: "Brampton Weed Dispensary - Blouds Dispensary",
-    icon: "*",
-    heroTagline: "Premium Cannabis on Queen Street W - Open 24 Hours - Walk-In Welcome",
+    slug: "brampton-weed-dispensary",
+    title: "Brampton Weed Dispensary — Blouds Dispensary | Open 24 Hours",
+    metaDescription: "Blouds Dispensary is open 24 hours at 117 Queen St W in Brampton. Browse flower tiers and other menu categories online.",
+    h1: "Brampton Weed Dispensary — Blouds Dispensary",
+    icon: "✨",
+    heroTagline: "117 Queen St W · Open 24 Hours · Walk-In Welcome",
+    banner: "/banners/Blouds_Welcome.webp",
     sections: [
-      {
-        heading: "A Brampton Cannabis Stop on Queen Street West",
-        body: "Blouds Dispensary is a premium cannabis dispensary located at 117 Queen St W in the heart of Brampton's vibrant downtown Brampton neighbourhood. We carry over 200 hand-picked cannabis strains across five quality tiers - from ultra-rare Exotic genetics with THC up to 39% to affordable Budget flower starting at just $3/g. Whether you're a connoisseur seeking the rarest strains or a daily smoker looking for reliable value, Blouds Dispensary has the perfect flower for you. We're proud to be one of Brampton's most trusted dispensaries, serving the downtown Brampton community 24 hours a day, 7 days a week.",
-      },
-      {
-        heading: "Five Tiers of Quality Cannabis - Transparent Pricing",
-        body: "Our unique tier system ensures transparent pricing and quality grading so you always know what you're getting. Exotic ($10-$12/g) features top-shelf, ultra-rare genetics with THC levels reaching 35-39% - these are the strains connoisseurs travel across Brampton to find. Premium ($7-$10/g) offers connoisseur-grade strains at THC 32-34%, balancing quality and value. AAA+ ($5-$6/g) delivers heavy hitters at THC 30-32% - our most popular tier for experienced users. AA ($4/g) provides quality daily drivers at THC 27-29%, perfect for regular consumption. Budget ($3/g) offers value ounces from $40 without sacrificing reliability. Every tier is lab-tested, properly cured, and freshly rotated.",
-      },
-      {
-        heading: "Beyond Flower - Edibles, Vapes, Concentrates & More",
-        body: "Blouds Dispensary is more than just a flower shop. We carry a comprehensive selection of cannabis edibles (gummies, chocolates, baked goods), vape pens and disposable vapes, concentrates (shatter, wax, hash, diamonds, live resin), pre-rolled joints, native cigarettes, rolling papers, and accessories. Our live digital menu at bloudsdispensary.ca updates in real time so you always know exactly what's in stock before you make the trip.",
-      },
-      {
-        heading: "Open 24 Hours in the Heart of downtown Brampton",
-        body: "Unlike most dispensaries that close at midnight, Blouds Dispensary is open around the clock - 24 hours a day, 7 days a week, 365 days a year. Whether you're finishing a late shift, heading out for the night, or need something at 3 AM, our doors are always open. We're centrally located at 117 Queen St W, steps from the downtown Brampton, near major local transit bus routes, and minutes from the downtown Brampton. Free street parking is available in the evenings.",
-      },
-      {
-        heading: "Clear Bundle Pricing on Flower",
-        body: "Every purchase at Blouds Dispensary uses clear flower bundle pricing. The 3g bundle offer applies to every single tier - the 3g total is shown clearly before purchase. Our top three tiers (Exotic, Premium, and AAA+) also qualify for 6g bundle pricing for 6g total. Combined with our already competitive pricing, Blouds Dispensary offers some of the best cannabis value in Brampton and the surrounding area.",
-      },
-      {
-        heading: "Serving Brampton & Peel Region",
-        body: "Blouds Dispensary proudly serves customers from across the Peel Region. Whether you're coming from downtown Brampton, downtown Brampton, Peel Village, Bramalea, Mississauga, and nearby Peel communities, or from nearby Peel communities, we welcome you. Our 24-hour operation means you can visit on your own schedule. Call us at (437) 425-0117 or visit us at 117 Queen St W, Brampton, ON L6Y 1M3.",
-      },
+      { heading: "A 24-Hour Store on Queen Street West", body: "Blouds Dispensary is located at 117 Queen St W in Brampton and is open 24 hours. Use the store page for visit information and the menu for current item details." },
+      { heading: "Browse Flower Tiers", body: "The flower menu is organized into Exotic, Premium, AAA+, AA, and Budget sections. Compare the names, listed weights, posted prices, and package details shown in each section." },
+      { heading: "Browse More Menu Categories", body: "The menu also includes edibles, vapes, concentrates, pre-rolls, cigarettes, and accessories. Check a current category page for listed details." },
     ],
     faqs: [
-      { q: "Where is Blouds Dispensary located?", a: "We are located at 117 Queen St W, Brampton, ON L6Y 1M3 - in the heart of downtown Brampton, one of Brampton's most popular and accessible neighbourhoods. We're near the downtown Brampton and major local routes." },
-      { q: "What are the hours for Blouds Dispensary?", a: "We are open 24 hours a day, 7 days a week, 365 days a year. Walk in anytime - no appointment needed. Whether it's 2 PM or 2 AM, our staff is here to help." },
-      { q: "What cannabis products does Blouds Dispensary carry?", a: "We carry 200+ strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles, vapes, concentrates, pre-rolls, native cigarettes, and accessories. Our menu updates in real time online." },
-      { q: "What is the cheapest weed at Blouds Dispensary?", a: "Our Budget tier starts at $3/g with value ounces from $40. Our AA tier is $4/g. The flower menu includes 3g bundle pricing, making our prices even more competitive." },
-      { q: "Does Blouds Dispensary have a live menu?", a: "Yes! Our online menu at bloudsdispensary.ca updates in real time with current stock, prices, and availability. You can see exactly what we have before you visit." },
-      { q: "What makes Blouds Dispensary different from other Brampton dispensaries?", a: "Three things set us apart: (1) We're open 24 hours, (2) our transparent 5-tier pricing system means no confusing markups, and (3) the flower menu includes 3g bundle pricing. Plus we carry one of Brampton's largest selections with over 200 strains." },
-      { q: "Can I check stock before visiting?", a: "Absolutely. Visit bloudsdispensary.ca to see our live menu. All flower, edibles, vapes, and accessories are listed with real-time stock status, THC levels, and pricing." },
-      { q: "Is there parking near Blouds Dispensary?", a: "Yes. Free street parking is available in the evenings on Queen Street W and surrounding streets. Paid lots are available nearby during the day. We're also easily accessible via local transit." },
+      { q: "Where is Blouds Dispensary?", a: "Blouds Dispensary is at 117 Queen St W, Brampton, ON." },
+      { q: "What are the store hours?", a: "Blouds Dispensary is open 24 hours a day, seven days a week." },
+      { q: "What can I check before visiting?", a: "Browse the current flower tiers and product categories online for listed menu details." },
     ],
   },
-
   {
-    slug: "cheap-weed-ottawa",
-    title: "Cheap Weed Brampton - Budget Cannabis Deals From $3/g | Blouds Dispensary",
-    metaDescription: "Looking for cheap weed in Brampton? Blouds Dispensary has budget flower from $3/g, ounces from $40, and 3g bundle pricing. Open 24 hours at 117 Queen St W.",
-    h1: "Cheap Weed Brampton - Budget Cannabis Deals",
-    icon: "$",
-    heroTagline: "Budget Flower From $3/g - Ounces From $40 - Always Open",
+    slug: "cheap-weed-brampton",
+    title: "Cheap Weed Brampton — Budget Cannabis Menu | Blouds Dispensary",
+    metaDescription: "Browse the Budget and AA flower sections at Blouds Dispensary, 117 Queen St W in Brampton. Open 24 hours.",
+    h1: "Cheap Weed Brampton — Budget Cannabis Menu",
+    icon: "💰",
+    heroTagline: "Compare Budget and AA Flower · Open 24 Hours",
+    banner: "/banners/Blouds_Budget.webp",
     sections: [
-      {
-        heading: "Brampton's Best Prices on Quality Cannabis",
-        body: "Looking for cheap weed in Brampton without sacrificing quality? Blouds Dispensary offers some of the most competitive cannabis prices in the city. Our Budget tier starts at just $3/g with value ounces from $40. Our AA tier ($4/g) and AAA+ tier ($5-$6/g) also deliver incredible value with THC levels from 27% to 32%. We believe great cannabis shouldn't break the bank, and our transparent tier-based pricing ensures you always get exactly what you pay for - no hidden markups, no gimmicks.",
-      },
-      {
-        heading: "Flower Bundle Pricing",
-        body: "Every tier at Blouds Dispensary uses clear 3g bundle pricing so the total grams and price are shown before purchase. Our top three tiers (Exotic, Premium, AAA+) also offer 6g bundle pricing for 6g total. When you combine our already low prices with these bundle offers, Blouds Dispensary delivers the best cannabis value in Brampton. A $15 AAA+ 3g purchase actually gets you 3g of flower - that's just $5/g for THC 30%+ cannabis.",
-      },
-      {
-        heading: "Budget Doesn't Mean Low Quality",
-        body: "At Blouds Dispensary, cheap doesn't mean low quality. Every strain in our Budget and AA tiers delivers reliable potency (THC 24-29%) from trusted Canadian growers. We rotate our inventory frequently to ensure freshness and maintain our quality standards across all price points. Our Budget strains are perfect for rolling, sessions, or anyone who prefers value over premium aesthetics. Our AA tier is a step up - solid daily drivers with consistent effects.",
-      },
-      {
-        heading: "Compare Our Prices",
-        body: "Budget: $3/g - $40/oz. AA: $4/g - $90/oz. AAA+: $5-$6/g - $100/oz. Premium: $7-$10/g. Exotic: $10-$12/g. Every tier includes 3g bundle pricing. Top tiers include 6g bundle pricing. These are some of the lowest prices you'll find at any dispensary in Brampton, Vanier, Sandy Hill, Lower Town, or the downtown Brampton area.",
-      },
+      { heading: "Compare Budget and AA Flower", body: "Use the Budget and AA menu sections to compare the names, listed weights, posted prices, and package details currently shown online." },
+      { heading: "Clear Menu Pricing", body: "Each flower page presents its listed price and weight options in one place. Review the current item page when a particular listing matters to your visit." },
+      { heading: "Visit on Queen Street West", body: "Blouds Dispensary is open 24 hours at 117 Queen St W in Brampton. Walk-in shopping is welcome." },
     ],
     faqs: [
-      { q: "What is the cheapest weed at Blouds Dispensary?", a: "Our Budget tier starts at $3/g with value ounces from $40. These are quality, properly-cured strains at Brampton's most competitive prices." },
-      { q: "Do you have ounce deals?", a: "Yes! Budget ounces from $40, AA ounces from $90, AAA+ ounces from $100. All with excellent quality, freshness guaranteed, and 3g bundle pricing on top." },
-      { q: "Is cheap weed still good quality?", a: "Absolutely. Our Budget flower delivers THC 24-27% from trusted Canadian growers. We never sell old, dry, or improperly stored flower. Every product meets our quality standards regardless of price point." },
-      { q: "Where can I buy cheap weed in Brampton?", a: "Blouds Dispensary at 117 Queen St W, Brampton. Open 24 hours a day, walk in anytime, no appointment needed. We're in the heart of downtown Brampton." },
-      { q: "What bundle pricing do you offer?", a: "Every tier includes 3g bundle pricing (pay for 3g total). Our Exotic, Premium, and AAA+ tiers also offer 6g bundle pricing (pay for 6g total). These bundle offers apply on every visit." },
-      { q: "Do you offer bulk discounts?", a: "Yes - our ounce pricing is deeply discounted compared to per-gram rates. Budget ounces are $40, AA ounces $90, and AAA+ ounces $100. The more you buy, the more you save." },
+      { q: "Where can I browse value-priced flower?", a: "Use the Budget and AA menu sections to compare current listings and posted prices." },
+      { q: "Can I check item details before visiting?", a: "Yes. Current menu pages show the names, weights, prices, and package details listed online." },
+      { q: "When is the store open?", a: "Blouds Dispensary is open 24 hours a day." },
     ],
   },
-
   {
-    slug: "native-cigarettes-ottawa",
-    title: "Native Cigarettes Brampton - Discount Tobacco | Blouds Dispensary",
-    metaDescription: "Buy native cigarettes in Brampton at Blouds Dispensary. Wide selection of premium and value tobacco brands at the best prices. 117 Queen St W, downtown Brampton. Open 24/7.",
-    h1: "Native Cigarettes Brampton - Discount Tobacco",
-    icon: "TAG",
-    heroTagline: "Premium & Value Brands - Best Prices in Brampton - Open 24 Hours",
+    slug: "native-cigarettes-brampton",
+    title: "Native Cigarettes Brampton — Current Menu | Blouds Dispensary",
+    metaDescription: "Browse the current native cigarette category at Blouds Dispensary, 117 Queen St W in Brampton. Open 24/7.",
+    h1: "Native Cigarettes Brampton",
+    icon: "🏷️",
+    heroTagline: "Current Brands and Prices · Open 24 Hours",
+    banner: "/banners/Blouds_Cigarettes.webp",
     sections: [
-      {
-        heading: "Brampton's Best Selection of Native Cigarettes",
-        body: "Blouds Dispensary carries one of the widest selections of native cigarettes in Brampton. Located at 117 Queen St W in downtown Brampton, we stock a comprehensive range of both premium and value native cigarette brands at competitive prices. Whether you prefer full-flavour, light, menthol, or specialty blends, our tobacco selection has something for every smoker. We're proud to be one of the few stores in downtown Brampton that combines a full cannabis dispensary with a comprehensive tobacco counter - one stop for everything you need.",
-      },
-      {
-        heading: "Why Brampton Smokers Choose Blouds Dispensary",
-        body: "There are three reasons Brampton smokers keep coming back to Blouds Dispensary for their cigarettes. First, our prices are among the lowest in downtown Brampton area - we buy in volume and pass the savings to our customers. Second, our selection is comprehensive - we carry brands and varieties that many other shops simply don't stock. Third, we're open 24 hours a day, 7 days a week. Need cigarettes at midnight or 3 AM? We're here. No other tobacco shop in downtown Brampton offers this level of convenience.",
-      },
-      {
-        heading: "Convenient downtown Brampton Location",
-        body: "Our shop at 117 Queen St W is centrally located in downtown Brampton - easily accessible from Queen Street W and nearby downtown Brampton routes. Whether you're walking, driving, or taking the bus, Blouds Dispensary is easy to reach. Free evening street parking is available on Queen Street W and nearby streets. We serve customers from across Brampton including Lower Town, Sandy Hill, Centretown, Vanier, and across the bridge from Peel Region.",
-      },
-      {
-        heading: "More Than Just Cigarettes",
-        body: "While you're picking up your cigarettes, browse our full cannabis menu - over 200 strains of flower, plus edibles, vapes, concentrates, pre-rolls, and accessories. Many of our customers appreciate the convenience of getting their cigarettes and cannabis in one trip. Our knowledgeable staff can help you with both sides of our inventory.",
-      },
+      { heading: "Browse the Current Cigarette Category", body: "Use the cigarette menu page to review the brand names, varieties, and prices currently listed by Blouds Dispensary." },
+      { heading: "One Menu for Visit Planning", body: "The website separates cigarettes, flower tiers, and other product categories so shoppers can compare listed details before travelling." },
+      { heading: "Open 24 Hours", body: "Blouds Dispensary is open 24 hours at 117 Queen St W in Brampton." },
     ],
     faqs: [
-      { q: "Does Blouds Dispensary sell native cigarettes?", a: "Yes! We carry one of the widest selections of native cigarettes in downtown Brampton, including premium brands, value brands, full-flavour, light, and menthol varieties." },
-      { q: "What cigarette brands do you carry?", a: "We stock a comprehensive range of native cigarette brands in multiple varieties. Our selection rotates regularly. Visit us at 117 Queen St W to see our full current inventory and pricing." },
-      { q: "Where can I buy cheap cigarettes in Brampton?", a: "Blouds Dispensary at 117 Queen St W offers some of the best cigarette prices in downtown Brampton area. We're open 24 hours so you can shop on your own schedule." },
-      { q: "Are you open late for cigarette purchases?", a: "We're open 24 hours a day, 7 days a week. Whether you need cigarettes at noon or 3 AM, our doors are always open." },
-      { q: "Can I buy cigarettes and cannabis at Blouds Dispensary?", a: "Absolutely. Blouds Dispensary is both a fully-licensed cannabis dispensary and a tobacco retailer. Many customers appreciate the convenience of one stop for both products." },
-      { q: "Where is Blouds Dispensary located?", a: "117 Queen St W, Brampton, ON L6Y 1M3 - in downtown Brampton. Near downtown Brampton, close to major bus routes, with free evening street parking available." },
+      { q: "Where can I browse cigarette brands?", a: "Check the current cigarette category page for the brands and prices listed online." },
+      { q: "Where is Blouds Dispensary?", a: "The store is at 117 Queen St W in Brampton." },
+      { q: "Is the store open late?", a: "Yes. Blouds Dispensary is open 24 hours a day." },
     ],
   },
-
   {
     slug: "weed-store-near-mississauga",
-    title: "Weed Store Near Mississauga - Blouds Dispensary | 5 Min From Highway 410",
-    metaDescription: "Looking for a weed store near Mississauga? Blouds Dispensary at 117 Queen St W, Brampton is just minutes away via Highway 410. 200+ strains, open 24 hours.",
-    h1: "Weed Store Near Mississauga - Blouds Dispensary",
-    icon: "CAR",
-    heroTagline: "Just Minutes From Mississauga via Highway 410 - Open 24 Hours",
+    title: "Weed Store Near Mississauga — Blouds Dispensary",
+    metaDescription: "Plan a visit from Mississauga to Blouds Dispensary at 117 Queen St W in Brampton. Browse current menu categories online. Open 24 hours.",
+    h1: "Weed Store Near Mississauga — Blouds Dispensary",
+    icon: "🚗",
+    heroTagline: "Browse Before Travelling · Open 24 Hours",
+    banner: "/banners/Blouds_Welcome.webp",
     sections: [
-      {
-        heading: "The Closest Quality Dispensary to Mississauga",
-        body: "Blouds Dispensary is one of the closest premium cannabis dispensaries to Mississauga. Located at 117 Queen St W in Brampton - just minutes up Highway 410 or Hurontario Street - we're the easiest dispensary to reach when you're coming from the south. Whether you're driving from Square One, Port Credit, Streetsville, or anywhere in the Peel Region, Blouds Dispensary is the fastest, most convenient option for top-tier cannabis.",
-      },
-      {
-        heading: "Why Make the Drive to Blouds Dispensary?",
-        body: "Blouds Dispensary offers a wider selection and more competitive pricing than most local options. You'll find over 200 strains across five quality tiers - from ultra-rare Exotic genetics (THC 35-39%) to affordable Budget flower at just $3/g. Our 3g bundle pricing applies to every tier, and our top three tiers offer 6g bundle pricing. With prices starting at $3/g and ounces from $40, Blouds Dispensary delivers value that's worth the short drive from Mississauga.",
-      },
-      {
-        heading: "Open 24 Hours - Perfect for Late Night Visits",
-        body: "Unlike most dispensaries in Peel Region with limited hours, Blouds Dispensary is open 24 hours a day, 7 days a week. Whether you're heading home from a late shift in Mississauga, going out for the night, or just need a quick pickup after hours, you can stop by Blouds Dispensary anytime. Early morning, late night, weekends, holidays - we're always here.",
-      },
-      {
-        heading: "Directions From Mississauga",
-        body: "From central Mississauga (Square One area): Take Highway 403 East to Highway 410 North. Exit at Queen St in Brampton and head west to 117 Queen St W. Total drive time: approximately 15-20 minutes. From North Mississauga: Take Hurontario Street north straight into Brampton, turn left on Queen St W. Free evening street parking is available near the dispensary. We're also accessible via Brampton Transit and Zum routes connecting from MiWay.",
-      },
-      {
-        heading: "Full Menu - Cannabis, Edibles, Vapes & More",
-        body: "When you make the trip up to Brampton, make it count. Blouds Dispensary carries a full selection including 200+ flower strains, edibles, vape pens, disposable vapes, concentrates (shatter, wax, hash, live resin), pre-rolled joints, native cigarettes, and accessories. Check our live online menu at bloudsdispensary.ca before you visit to see exactly what's in stock.",
-      },
+      { heading: "Plan a Visit From Mississauga", body: "Blouds Dispensary is located at 117 Queen St W in Brampton. Confirm your route and review the store page before travelling." },
+      { heading: "Check the Menu Before You Leave", body: "Browse flower tiers, edibles, vapes, concentrates, pre-rolls, cigarettes, and accessories for current menu details." },
+      { heading: "Open 24 Hours", body: "Blouds Dispensary is open 24 hours a day, seven days a week, so shoppers can plan a visit around their schedule." },
     ],
     faqs: [
-      { q: "How far is Blouds Dispensary from Mississauga?", a: "We're located at 117 Queen St W in Brampton - just a 15-20 minute drive from central Mississauga via Highway 410 or Hurontario Street." },
-      { q: "Is it worth driving from Mississauga for cannabis?", a: "Absolutely. Blouds Dispensary offers 200+ strains, prices starting at $3/g, and bundle pricing options like 3g total that make the short drive incredibly worthwhile." },
-      { q: "Is Blouds Dispensary open late?", a: "We're open 24 hours a day, 7 days a week. Whether you're driving up from Mississauga at noon or midnight, we're open and ready to serve you." },
-      { q: "What's the cheapest weed near Mississauga?", a: "Blouds Dispensary has Budget flower from $3/g and value ounces from $40. With our 3g bundle pricing, these are some of the best prices in the Peel Region." },
-      { q: "Is there parking at Blouds Dispensary?", a: "Yes. Free evening street parking is available near the store on Queen St W and surrounding streets. Paid parking lots are also nearby during the day." },
-      { q: "Can I take transit from Mississauga to Blouds Dispensary?", a: "Yes! MiWay connects directly to Brampton Transit and Zum routes that will drop you off right near our location in downtown Brampton." },
-      { q: "Do you carry products besides cannabis?", a: "Yes - we also carry native cigarettes, rolling papers, grinders, and other accessories. Many Mississauga customers appreciate the one-stop convenience." },
+      { q: "Where can I check the menu before travelling?", a: "Browse the current flower tiers and product category pages online." },
+      { q: "Is Blouds Dispensary open late?", a: "Blouds Dispensary is open 24 hours a day." },
+      { q: "What is the store address?", a: "Blouds Dispensary is at 117 Queen St W in Brampton." },
     ],
   },
-
   {
-    slug: "dispensary-near-me-ottawa",
-    title: "Cannabis Dispensary Near Me Brampton - Blouds Dispensary | Open 24 Hours",
-    metaDescription: "Find a cannabis dispensary near you in Brampton. Blouds Dispensary at 117 Queen St W has 200+ strains from $3/g. Open 24 hours. Walk in anytime, no appointment needed.",
-    h1: "Cannabis Dispensary Near Me - Brampton",
-    icon: "MAP",
-    heroTagline: "Walk-In Welcome - Open 24 Hours - 200+ Strains In Stock",
+    slug: "dispensary-near-me-brampton",
+    title: "Cannabis Dispensary Near Me Brampton — Blouds Dispensary",
+    metaDescription: "Find Blouds Dispensary at 117 Queen St W in Brampton. Browse flower tiers and product categories online. Open 24 hours.",
+    h1: "Cannabis Dispensary Near Me — Brampton",
+    icon: "🗺️",
+    heroTagline: "117 Queen St W · Open 24 Hours · Browse the Menu",
+    banner: "/banners/Blouds_Welcome.webp",
     sections: [
-      {
-        heading: "Find Premium Cannabis Near You in Brampton",
-        body: "If you're searching for a cannabis dispensary near you in Brampton, Blouds Dispensary is conveniently located at 117 Queen St W - in the heart of the downtown Brampton. We serve customers from across Brampton and Peel Region including downtown Brampton, Peel Village, Bramalea, Mississauga, and nearby Peel communities, and from nearby Peel communities.",
-      },
-      {
-        heading: "Why Choose Blouds Dispensary Over Other Dispensaries?",
-        body: "What sets Blouds Dispensary apart from other Brampton dispensaries is our combination of selection, pricing, and convenience. We carry 200+ strains across five clear quality tiers - no confusing markups, no inconsistent pricing. Our 3g bundle pricing applies to every tier, every purchase. And unlike most dispensaries that close at midnight, we're open 24 hours a day, 7 days a week. Whether you need flower, edibles, vapes, or concentrates at any hour, Blouds Dispensary is here.",
-      },
-      {
-        heading: "Areas We Serve in Brampton & Peel Region",
-        body: "Blouds Dispensary is centrally located and easily accessible from anywhere in Brampton. We regularly serve customers from: downtown Brampton, downtown Brampton, Peel Village, Bramalea, Mississauga, and nearby Peel communities, and across the bridge from nearby Peel communities. We're near major local transit routes and the downtown Brampton.",
-      },
+      { heading: "Find Blouds Dispensary in Brampton", body: "Blouds Dispensary is located at 117 Queen St W in Brampton. Use the store page for current visit information." },
+      { heading: "Browse Before You Visit", body: "The menu organizes flower into five tiers and provides separate pages for edibles, vapes, concentrates, pre-rolls, cigarettes, and accessories." },
+      { heading: "Open Around the Clock", body: "The store is open 24 hours a day, seven days a week. Walk-in shopping is welcome." },
     ],
     faqs: [
-      { q: "Where is the closest dispensary in downtown Brampton?", a: "Blouds Dispensary at 117 Queen St W is conveniently located in the heart of downtown Brampton - one of Brampton's most accessible neighbourhoods." },
-      { q: "Is Blouds Dispensary walk-in friendly?", a: "Absolutely! No appointment needed. Walk in anytime - we're open 24 hours a day, 7 days a week. Our friendly staff is always ready to help." },
-      { q: "What neighbourhoods does Blouds Dispensary serve?", a: "We serve all of Brampton including downtown Brampton, Sandy Hill, Lower Town, Centretown, the Glebe, Vanier, Orleans, Kanata, Barrhaven, and nearby Peel communities." },
-      { q: "How do I check what's in stock?", a: "Visit bloudsdispensary.ca for our live menu with real-time stock, pricing, and THC levels for all products." },
-      { q: "Do you sell edibles and vapes?", a: "Yes! In addition to 200+ flower strains, we carry edibles (gummies, chocolates), vape pens, disposable vapes, concentrates, pre-rolls, and accessories." },
+      { q: "Where is the store?", a: "Blouds Dispensary is at 117 Queen St W in Brampton." },
+      { q: "What are the hours?", a: "The store is open 24 hours a day." },
+      { q: "Can I browse online first?", a: "Yes. Use the current menu pages to compare categories and listed item details." },
     ],
   },
 ];
 
 export function getSeoPageBySlug(slug: string): SeoPageData | undefined {
-  return SEO_PAGES.find((p) => p.slug === slug);
+  return SEO_PAGES.find((page) => page.slug === slug);
 }
-
-
-

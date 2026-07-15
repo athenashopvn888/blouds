@@ -100,11 +100,11 @@ export default function ContactPage() {
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>{"\u2713"}</span>
-                  200+ strains in stock
+                  Browse current flower tiers
                 </div>
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>{"\u2713"}</span>
-                  Lab-tested &amp; safe
+                  Current menu details
                 </div>
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>{"\u2713"}</span>
@@ -129,5 +129,3 @@ export default function ContactPage() {
     </main>
   );
 }
-
-

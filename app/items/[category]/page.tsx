@@ -71,7 +71,7 @@ export default async function ItemsCategoryPage({
             <h1 className={styles.heroTitle}>
               <span style={{ color: "#fff" }}>{config.name}</span>
             </h1>
-            <p className={styles.heroSub} style={{ color: "rgba(255,255,255,0.8)" }}>{items.length} products available</p>
+            <p className={styles.heroSub} style={{ color: "rgba(255,255,255,0.8)" }}>{items.length} products listed</p>
           </div>
         )}
       </section>

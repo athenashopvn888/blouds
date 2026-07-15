@@ -56,7 +56,6 @@ function getJsonLd(item: ItemProduct) {
     "@type": "Offer",
     url: `https://bloudsdispensary.ca/item/${item.slug}`,
     priceCurrency: "CAD",
-    availability: "https://schema.org/InStock",
     itemCondition: "https://schema.org/NewCondition",
     seller: { "@type": "Organization", name: "Blouds Dispensary" },
     hasMerchantReturnPolicy: {
@@ -214,7 +213,7 @@ export default async function ItemPage({
                 </div>
               </div>
 
-              {/* Effects */}
+              {/* Product details */}
               <div className={styles.effectsRow}>
                 {itemData.effects.map((e) => (
                   <span key={e.label} className={styles.effectPill}>
@@ -247,14 +246,14 @@ export default async function ItemPage({
                 <p className={styles.descText}>{itemData.description}</p>
               </div>
 
-              {/* -- How to consume -- */}
+              {/* -- Product details -- */}
               <div className={styles.descSection} style={{ marginTop: '24px' }}>
-                <h2 className={styles.descTitle}>How to Consume</h2>
+                <h2 className={styles.descTitle}>Product Details</h2>
                 <p className={styles.descText}>{itemData.consume}</p>
               </div>
 
               <div className={styles.visitCta}>
-                <p>Available in-store &middot; Walk-in welcome &middot; No appointment needed</p>
+                <p>Check the current menu &middot; Walk-in welcome &middot; No appointment needed</p>
               </div>
             </div>
           </div>

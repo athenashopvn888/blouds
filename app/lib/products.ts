@@ -97,7 +97,7 @@ export const TIER_CONFIG: Record<
     slug: "exotic",
     color: "#f59e0b",
     icon: "\uD83D\uDD25",
-    tagline: "Ultra-rare, top-shelf genetics \u00B7 THC 35-39%",
+    tagline: "Browse current Exotic flower listings",
     banner: "/banners/Blouds_Exotic.webp",
     unitPrice: 20,
     deal3g: { label: "3g bundle", total: "3G", price: 40 },
@@ -161,11 +161,11 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
       banner: "/banners/Blouds_Edibles.webp",
     name: "Edibles", slug: "edibles", color: "#f97316", icon: "🍬",
     seoTitle: "Cannabis Edibles Brampton — Gummies, Chocolates & Drinks",
-    seoIntro: "Browse the full cannabis edibles menu at Blouds Dispensary on Queen Street W, Brampton. We carry THC gummies, chocolates, drinks, and more from top Canadian brands.",
-    seoDescription: "Looking for cannabis edibles in Brampton? Blouds Dispensary stocks a wide range of THC-infused gummies, chocolates, beverages, and baked goods. Our edibles range from micro-dose options for beginners to high-potency products for experienced consumers. All products are lab-tested and sourced from licensed Canadian producers. Visit us at 117 Queen St W — open daily 24 hours.",
+    seoIntro: "Browse the current cannabis edibles menu at Blouds Dispensary on Queen Street W, Brampton for listed formats, brands, and package details.",
+    seoDescription: "Browse the current edibles category at Blouds Dispensary in Brampton for listed formats, brands, package details, and prices. Visit us at 117 Queen St W — open daily 24 hours.",
     faqs: [
-      { q: "What cannabis edibles do you carry?", a: "We stock THC gummies, chocolates, beverages, capsules, and baked goods from top Canadian brands. Potencies range from 10mg to 1000mg+ THC." },
-      { q: "How long do edibles take to kick in?", a: "Cannabis edibles typically take 30-90 minutes to take effect. Start with a low dose (5-10mg) and wait at least 2 hours before consuming more." },
+      { q: "What edibles are listed online?", a: "Check the current edibles category for listed formats, brands, package details, and prices." },
+      { q: "Where can I review package information?", a: "Open the current item page and review the product label for package information." },
       { q: "Can I buy edibles at Blouds Dispensary?", a: "Yes! Visit us at 117 Queen St W, Brampton. We're open daily 24 hours with a full edibles selection in store." },
     ],
   },
@@ -173,10 +173,10 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
       banner: "/banners/Blouds_THC_Vape.webp",
     name: "THC Vape", slug: "vapes", color: "#8b5cf6", icon: "💨",
     seoTitle: "Vape Pens Brampton — THC & Nicotine Cartridges",
-    seoIntro: "Shop THC and nicotine vape pens at Blouds Dispensary, Brampton. Cartridges, 510-thread batteries, and premium vape brands — all in stock.",
-    seoDescription: "Blouds Dispensary carries a curated selection of vape pens and cartridges in Brampton. From 510-thread THC cartridges to nicotine vape pods, we stock the most popular brands and flavours. Our knowledgeable budtenders can help you choose the right cartridge and battery setup. Visit us at 117 Queen St W for the best vape selection in downtown Brampton.",
+    seoIntro: "Browse the current THC and nicotine vape categories at Blouds Dispensary in Brampton, including listed cartridges, pods, and batteries.",
+    seoDescription: "Use the current vape menu to compare listed formats, brands, package details, and prices before visiting Blouds Dispensary at 117 Queen St W.",
     faqs: [
-      { q: "What vape pens do you sell?", a: "We carry 510-thread THC cartridges, nicotine vape pods, disposable vapes, and compatible batteries from top Canadian brands." },
+      { q: "What vape pens are listed?", a: "Check the current vape category for listed 510-thread cartridges, nicotine vape pods, disposable vapes, and compatible batteries." },
       { q: "Do you sell vape batteries?", a: "Yes! We stock 510-thread batteries and pod systems that pair with our cartridge selection." },
     ],
   },
@@ -184,8 +184,8 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     banner: "/banners/Blouds_Nic_Vape.webp",
     name: "Nic Vape", slug: "vape-disposables", color: "#a78bfa", icon: "💨",
     seoTitle: "Disposable Vapes Brampton — THC Disposable Pens",
-    seoIntro: "THC disposable vapes available at Blouds Dispensary, Brampton. No charging, no refilling — just open and enjoy.",
-    seoDescription: "Disposable THC vapes are the easiest way to enjoy cannabis on the go. Blouds Dispensary stocks a wide selection of pre-charged, pre-filled disposable vape pens with various strain profiles and potencies. Perfect for beginners and experienced users alike. Visit us at 117 Queen St W, Brampton.",
+    seoIntro: "Browse the current disposable vape category at Blouds Dispensary in Brampton for listed brands, formats, and package details.",
+    seoDescription: "Use the disposable vape menu to compare the item names, package details, and prices currently listed before visiting 117 Queen St W in Brampton.",
     faqs: [
       { q: "How long does a disposable vape last?", a: "Most disposable THC vapes contain 0.5g-1g of distillate and last between 100-300 puffs depending on usage." },
       { q: "Are disposable vapes rechargeable?", a: "Most are designed for single use, but some models include a USB-C charging port to ensure you can use the full cartridge." },
@@ -196,10 +196,10 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     name: "Concentrates", slug: "concentrates", color: "#f59e0b", icon: "💎",
     seoTitle: "Cannabis Concentrates in Brampton | Blouds Dispensary",
     seoIntro: "Browse concentrates category information at Blouds Dispensary in Brampton.",
-    seoDescription: "Review concentrate-related menu categories at Blouds Dispensary in Brampton and confirm current menu details before visiting. This page is intended for general category browsing and does not promise current product availability.",
+    seoDescription: "Review the current concentrate category at Blouds Dispensary in Brampton for listed item names, package details, and prices before visiting.",
     faqs: [
       { q: "What concentrate information can shoppers review?", a: "Customers can review concentrate-related category information and confirm current menu details before visiting Blouds Dispensary." },
-      { q: "Does this page guarantee current concentrate availability?", a: "No. This page is for general category browsing; customers should confirm current menu details before visiting." },
+      { q: "Where can I check current concentrate details?", a: "Use the current concentrate category and item pages for listed menu and package details." },
     ],
   },
   PREROLLS: {
@@ -208,7 +208,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     seoIntro: "Pre-rolled cannabis joints at Blouds Dispensary, Brampton. Singles, multi-packs, and infused pre-rolls — ready to light up.",
     seoDescription: "Skip the rolling and grab a pre-roll from Blouds Dispensary in Brampton. We carry singles, multi-packs, and infused pre-rolls from premium flower. Whether you want a quick smoke or a party pack, our pre-roll selection has something for everyone. Visit us at 117 Queen St W — open daily 24 hours.",
     faqs: [
-      { q: "What pre-rolls do you carry?", a: "We stock singles, 3-packs, and multi-packs in various strains and potencies, including infused pre-rolls with concentrates." },
+      { q: "What pre-rolls are listed?", a: "Check the current pre-roll category for listed singles, multi-packs, package details, and prices." },
       { q: "Are your pre-rolls made with quality flower?", a: "Yes! Our pre-rolls are filled with ground flower from our regular menu tiers — not shake or trim." },
     ],
   },
@@ -217,7 +217,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     name: "Accessories", slug: "add-ons", color: "#34d399", icon: "➕",
     seoTitle: "Cannabis Accessories Brampton — Grinders, Papers, Lighters & More",
     seoIntro: "Essential cannabis accessories at Blouds Dispensary, Brampton. Grinders, rolling papers, lighters, trays, and more.",
-    seoDescription: "Blouds Dispensary carries all the accessories you need for the perfect smoke session. From premium grinders and rolling papers to lighters, trays, and storage containers, we have everything in stock. Visit us at 117 Queen St W, Brampton.",
+    seoDescription: "Browse the current accessories category for listed grinders, rolling papers, lighters, trays, storage items, and prices. Visit Blouds Dispensary at 117 Queen St W in Brampton.",
     faqs: [
       { q: "What accessories do you sell?", a: "We carry grinders, rolling papers, filter tips, lighters, rolling trays, storage jars, and more." },
     ],
@@ -226,11 +226,11 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     banner: "/banners/Blouds_Magic_Stuff.webp",
     name: "Magic Stuff", slug: "magic", color: "#64748b", icon: "*",
     seoTitle: "Magic Stuff - Specialty Items",
-    seoIntro: "Browse current menu for available specialty products. Availability may vary by store.",
-    seoDescription: "Current specialty items are listed when they are carried on the menu. Product availability may vary by store and by day. Check the live menu for current selection.",
+    seoIntro: "Browse the current specialty category for listed products and package details.",
+    seoDescription: "Use the current specialty menu to review listed item names, package details, and prices for this location.",
     faqs: [
-      { q: "What specialty items are available?", a: "Selection varies by store and by day. Check the current menu for available specialty products." },
-      { q: "Does availability vary by location?", a: "Yes. Specialty item availability may vary by store, so please check the current menu for this location." },
+      { q: "What specialty items are listed?", a: "Check the current specialty category for the items and package details listed for this location." },
+      { q: "Where can I compare specialty items?", a: "Use the current category and item pages to compare listed details and prices." },
     ],
   },
   CIGARETTES: {
@@ -296,5 +296,3 @@ export function formatPrice(p: PricePoint | null): string {
   if (p.sale !== null) return `$${p.sale}`;
   return `$${p.regular}`;
 }
-
-
