@@ -221,7 +221,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     sections: [
       {
         heading: "Current Listed Vape Names",
-        body: ["These names are shopper-facing search terms, not internal tags. They belong in a dedicated Blouds vape guide."],
+        body: ["These shopper-facing names help people compare the current vape listings and belong in a dedicated Blouds vape guide."],
         bullets: [
           "Gas Gang Dispo Vape 1G - $45",
           "2g Gas Gang Vol.3 Hybrid - $50",
