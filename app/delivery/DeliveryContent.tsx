@@ -102,7 +102,7 @@ export default function DeliveryContent() {
         <div className={styles.ctaSection}>
           <p className={styles.ctaText}>
             Can&apos;t wait? Visit us in-store at <strong>117 Queen St W, Brampton</strong> —
-            open <strong>24 hours</strong>. Call <strong>(437) 425-0117</strong>.
+            open <strong>24 hours</strong>. Call <strong>+1 (437) 371-5377</strong>.
           </p>
         </div>
       </div>
@@ -110,5 +110,4 @@ export default function DeliveryContent() {
     </main>
   );
 }
-
 
