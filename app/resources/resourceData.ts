@@ -48,7 +48,7 @@ export const SITE = {
   baseUrl: "https://www.bloudsdispensary.ca",
   storePage: "/weed-dispensary-brampton",
   address: "117 Queen St W, Brampton, ON L6Y 1M3",
-  phone: "(437) 425-0117",
+  phone: "+1 (437) 371-5377",
   hours: "Open 24 Hours",
 };
 

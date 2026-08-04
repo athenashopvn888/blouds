@@ -9,8 +9,8 @@ export const gbpLocation = {
   address: "117 Queen St W, Brampton, ON L6Y 1M3",
   streetAddress: "117 Queen St W",
   postalCode: "L6Y 1M3",
-  phone: "(437) 425-0117",
-  phoneIntl: "+14374250117",
+  phone: "+1 (437) 371-5377",
+  phoneIntl: "+14373715377",
   neighborhood: "Brampton",
   nearbyAreas: ["Brampton", "Downtown Brampton", "Queen Street", "Main Street", "Kennedy Road", "Bramalea", "Peel Region", "Brampton Transit"],
   products: [
