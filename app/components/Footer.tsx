@@ -62,8 +62,7 @@ export default function Footer() {
               <Link href="/resources/queen-street-visit-guide">Queen Street Visit Guide</Link>
               <Link href="/resources/blouds-flower-tier-guide">Flower Tier Guide</Link>
               <Link href="/faq">FAQ</Link>
-              <Link href="/delivery">Delivery (Coming Soon)</Link>
-              <Link href="/games">Games Arcade</Link>
+              <Link href="/delivery">DELIVERY MENU</Link>
               <Link href="/info/ottawa-weed-dispensary">Brampton Dispensary</Link>
               <Link href="/info/cheap-weed-ottawa">Cheap Weed Brampton</Link>
               <Link href="/info/native-cigarettes-ottawa">Native Cigarettes</Link>
