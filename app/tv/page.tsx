@@ -675,7 +675,7 @@ const TICKER_SLIDES = [
   "Browse Current Flower Tiers",
   "Open 24 Hours",
   "ALL SALES ARE FINAL",
-  "🎮 Play Games at mohawkmedicine.com/games",
+  "DELIVERY MENU at bloudsdispensary.ca/delivery",
 ];
 
 function VerticalTicker() {
