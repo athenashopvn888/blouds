@@ -57,7 +57,7 @@ export default function Footer() {
               <Link href="/budget">Budget Flower</Link>
               <Link href="/items/edibles">Edibles</Link>
               <Link href="/items/cigarettes">Cigarettes</Link>
-              <Link href="/items/vapes">Vape Pens</Link>
+              <Link href="/items/vapes">Nic Vape</Link>
               <Link href="/resources">Resources</Link>
               <Link href="/resources/queen-street-visit-guide">Queen Street Visit Guide</Link>
               <Link href="/resources/blouds-flower-tier-guide">Flower Tier Guide</Link>
