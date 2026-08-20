@@ -254,8 +254,8 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     intro: ["The vape section keeps THC vapes, vape disposables, Gas Gang, and Drizzle easy to compare for Brampton shoppers."],
     sections: [{ heading: "Brand Searches Belong Beside Category Searches", body: ["The shopper might type THC vapes, Gas Gang, or Drizzle. Each should land close to the current vape category."] }],
     commercialLinks: [
-      { label: "THC vapes", href: "/items/vapes" },
-      { label: "Vape disposables", href: "/items/vape-disposables" },
+      { label: "THC vapes", href: "/items/vape-disposables" },
+      { label: "Nic vapes", href: "/items/vapes" },
     ],
     related: ["/resources/brand-guides/gas-gang-drizzle-vapes", "/resources/menu-guide"],
   },
