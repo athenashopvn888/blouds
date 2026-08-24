@@ -65,7 +65,7 @@ export default function Footer() {
               <Link href="/delivery">DELIVERY MENU</Link>
               <Link href="/info/ottawa-weed-dispensary">Brampton Dispensary</Link>
               <Link href="/info/cheap-weed-ottawa">Cheap Weed Brampton</Link>
-              <Link href="/info/native-cigarettes-ottawa">Native Cigarettes</Link>
+              <Link href="/info/native-cigarettes-brampton">Native Cigarettes</Link>
               <Link href="/info/weed-store-near-mississauga">Weed Store Near Mississauga</Link>
               <Link href="/weed-dispensary-brampton/">Blouds Dispensary Weed Dispensary in Brampton</Link>
               <Link href="/contact">Contact Us</Link>
