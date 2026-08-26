@@ -24,8 +24,9 @@ export async function generateMetadata({
   if (!page) return {};
 
   return {
-    title: page.title,
+    title: page.absoluteTitle ? { absolute: page.title } : page.title,
     description: page.metaDescription,
+    robots: page.publicationStatus === "draft" ? { index: false, follow: false } : undefined,
     alternates: {
       canonical: `https://bloudsdispensary.ca/info/${slug}`,
     },
@@ -43,32 +44,37 @@ export default async function SeoLandingPage({
   if (!page) notFound();
 
   const tiers = Object.values(TIER_CONFIG);
+  const heroPreview = page.heroPreview;
 
   return (
     <main className={styles.main}>
       <Navbar />
 
       {/* Hero */}
-      {page.heroPreview ? (
-        <section className={styles.productHero}>
+      {heroPreview ? (
+        <section
+          className={`${styles.productHero} ${heroPreview.theme === "nicotine" ? styles.nicotineProductHero : ""}`}
+          data-publication-status={page.publicationStatus ?? "approved"}
+        >
           <div className={styles.productHeroInner}>
             <div className={styles.productHeroCopy}>
-              <span className={styles.productHeroKicker}>{page.heroPreview.eyebrow}</span>
+              <span className={styles.productHeroKicker}>{heroPreview.eyebrow}</span>
               <h1>{page.h1}</h1>
-              <p>{page.heroPreview.intro}</p>
+              <p>{heroPreview.intro}</p>
               <div className={styles.productHeroActions}>
-                <Link href="/items/cigarettes" className={styles.productHeroPrimary}>Check the cigarette menu</Link>
-                <Link href="/items/cigarettes" className={styles.productHeroSecondary}>See the current selection</Link>
+                <Link href={heroPreview.menuHref} className={styles.productHeroPrimary}>{heroPreview.primaryLabel}</Link>
+                <Link href={heroPreview.secondaryHref ?? heroPreview.menuHref} className={styles.productHeroSecondary}>{heroPreview.secondaryLabel}</Link>
               </div>
+              {heroPreview.identityStrip && <p className={styles.productHeroIdentity}>{heroPreview.identityStrip}</p>}
             </div>
             <div className={styles.productPreviewStage} aria-label={`${page.h1} brand preview`}>
-              {page.heroPreview.products.map((product, index) => (
-                <Link key={product.name} href="/items/cigarettes" className={styles.productPreviewCard}>
-                  <Image src={product.image} alt={`${product.name} brand preview`} width={800} height={800} priority={index === 0} sizes="(max-width: 720px) 42vw, (max-width: 980px) 46vw, 220px" />
+              {heroPreview.products.map((product, index) => (
+                <Link key={product.name} href={heroPreview.menuHref} className={styles.productPreviewCard}>
+                  <Image src={product.image} alt={`${product.name} brand preview`} width={800} height={800} priority={index === 0} unoptimized={product.image.startsWith("https://")} sizes="(max-width: 720px) 42vw, (max-width: 980px) 46vw, 220px" />
                   <span>{product.name}</span>
                 </Link>
               ))}
-              <p className={styles.productHeroDisclosure}>{page.heroPreview.disclosure}</p>
+              <p className={styles.productHeroDisclosure}>{heroPreview.disclosure}</p>
             </div>
           </div>
         </section>
@@ -85,6 +91,13 @@ export default async function SeoLandingPage({
       {/* Content Sections */}
       <section className={styles.content}>
         <div className={styles.container}>
+          {heroPreview?.featuredHeading && heroPreview.featuredIntro && (
+            <div className={styles.featuredIntro} id="featured-vapes">
+              <h2>{heroPreview.featuredHeading}</h2>
+              <p>{heroPreview.featuredIntro}</p>
+            </div>
+          )}
+
           {page.sections.map((s, i) => (
             <div key={i} className={styles.section}>
               <h2 className={styles.sectionTitle}>{s.heading}</h2>
@@ -135,6 +148,8 @@ export default async function SeoLandingPage({
               ))}
             </div>
           )}
+
+          {page.warning && <p className={styles.nicotineWarning}>{page.warning}</p>}
         </div>
       </section>
 

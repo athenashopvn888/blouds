@@ -25,13 +25,19 @@
   margin: 0;
 }
 
-/* Native cigarette brand-preview hero */
+/* Cigarette and nicotine-vape product-preview hero */
 .productHero {
+  --product-hero-accent: #e7b85b;
+  --product-hero-glow: rgba(231,184,91,.28);
   position: relative;
   overflow: hidden;
   padding: 132px 24px 76px;
   color: #f7f4ed;
-  background: radial-gradient(circle at 78% 32%, rgba(231,184,91,.28), transparent 32%), linear-gradient(145deg, #08080c 0%, #11101a 62%, #070708 100%);
+  background: radial-gradient(circle at 78% 32%, var(--product-hero-glow), transparent 32%), linear-gradient(145deg, #08080c 0%, #11101a 62%, #070708 100%);
+}
+.nicotineProductHero {
+  --product-hero-accent: #9a78ff;
+  --product-hero-glow: rgba(154,120,255,.3);
 }
 .productHero::before {
   content: "";
@@ -54,7 +60,7 @@
 .productHeroKicker {
   display: block;
   margin-bottom: 15px;
-  color: #e7b85b;
+  color: var(--product-hero-accent);
   font-size: .76rem;
   font-weight: 800;
   letter-spacing: .18em;
@@ -87,11 +93,18 @@
   font-weight: 800;
   transition: transform .2s ease, border-color .2s ease;
 }
-.productHeroPrimary { color: #0a0907; background: #e7b85b; box-shadow: 0 12px 34px rgba(231,184,91,.3); }
+.productHeroPrimary { color: #0a0907; background: var(--product-hero-accent); box-shadow: 0 12px 34px var(--product-hero-glow); }
 .productHeroSecondary { color: #f8f6ef; border: 1px solid #3e3c49; background: rgba(255,255,255,.035); }
 .productHeroPrimary:hover,
 .productHeroSecondary:hover { transform: translateY(-2px); }
-.productHeroSecondary:hover { border-color: #e7b85b; }
+.productHeroSecondary:hover { border-color: var(--product-hero-accent); }
+.productHeroIdentity {
+  margin: 24px 0 0;
+  color: #aaa6b2;
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
 .productPreviewStage {
   min-height: 520px;
   display: grid;
@@ -118,7 +131,7 @@
   inset: auto 10% -45% 10%;
   height: 90%;
   border-radius: 50%;
-  background: rgba(231,184,91,.28);
+  background: var(--product-hero-glow);
   filter: blur(34px);
 }
 .productPreviewCard img {
@@ -162,6 +175,18 @@
 /* Content */
 .content { padding: 40px 24px 60px; }
 .container { max-width: 960px; margin: 0 auto; }
+
+.featuredIntro {
+  scroll-margin-top: 120px;
+  margin-bottom: 36px;
+  padding: 30px 32px;
+  color: var(--text-primary);
+  background: color-mix(in srgb, #9a78ff 8%, var(--bg-primary));
+  border: 1px solid color-mix(in srgb, #9a78ff 30%, var(--border-subtle));
+  border-radius: var(--radius-lg);
+}
+.featuredIntro h2 { margin: 0 0 12px; font-size: 24px; font-weight: 900; }
+.featuredIntro p { margin: 0; color: var(--text-secondary); font-size: 15px; line-height: 1.8; }
 
 .section {
   margin-bottom: 36px;
@@ -266,6 +291,17 @@
   line-height: 1.7;
   color: var(--text-secondary);
   margin: 0;
+}
+.nicotineWarning {
+  margin: 0;
+  padding: 18px 22px;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
