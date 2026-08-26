@@ -76,8 +76,7 @@ export interface SeoPageData {
   warning?: string;
 }
 
-// GPT-reviewed store payload. Keep this page noindex until Tri approves the
-// exact page for publication and publicationStatus is changed.
+// GPT-reviewed store payload approved by Tri for publication.
 export const NICOTINE_VAPE_LANDING_CONTENT: SeoPageData = {
   slug: "nicotine-vapes-brampton",
   title: "Nicotine Vapes in Brampton | Blouds Dispensary",
@@ -86,7 +85,7 @@ export const NICOTINE_VAPE_LANDING_CONTENT: SeoPageData = {
   h1: "Nicotine Vapes at Blouds Dispensary in Brampton",
   icon: "NV",
   heroTagline: "Adults 19+ · Nicotine is addictive.",
-  publicationStatus: "draft",
+  publicationStatus: "approved",
   heroPreview: {
     eyebrow: "BLOUDS DISPENSARY • BRAMPTON • ADULTS 19+",
     intro: "Searching for nicotine vapes near me in Brampton? This Blouds Dispensary guide features six verified nicotine vape product pages and directs adults to /items/vapes for the current selection. Product details can change, so open the individual item page before choosing. Nicotine is addictive.",
