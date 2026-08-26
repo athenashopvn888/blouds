@@ -50,12 +50,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   /* SEO landing pages */
-  const seoPages: MetadataRoute.Sitemap = SEO_PAGES.map((p) => ({
-    url: `${BASE}/info/${p.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
+  const seoPages: MetadataRoute.Sitemap = SEO_PAGES
+    .filter((p) => p.publicationStatus !== "draft")
+    .map((p) => ({
+      url: `${BASE}/info/${p.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    }));
 
   const resourcePages: MetadataRoute.Sitemap = RESOURCE_PAGES.map((page) => ({
     url: `${BASE}${page.path}`,
