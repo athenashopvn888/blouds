@@ -42,6 +42,16 @@ test("nicotine-vape payload includes the approved adult warning and category bou
   assert.match(NICOTINE_VAPE_LANDING_CONTENT.sections[2].body, /\/items\/vape-disposables/);
 });
 
+test("nicotine-vape discovery uses the served www canonical host", () => {
+  const infoPageSource = readFileSync(new URL("../app/info/[seoPage]/page.tsx", import.meta.url), "utf8");
+  const sitemapSource = readFileSync(new URL("../app/sitemap.ts", import.meta.url), "utf8");
+  const footerSource = readFileSync(new URL("../app/components/Footer.tsx", import.meta.url), "utf8");
+
+  assert.match(infoPageSource, /slug === "nicotine-vapes-brampton"[\s\S]*"https:\/\/www\.bloudsdispensary\.ca"/);
+  assert.match(sitemapSource, /const BASE = "https:\/\/www\.bloudsdispensary\.ca"/);
+  assert.ok(footerSource.includes('href="/info/nicotine-vapes-brampton"'));
+});
+
 test("footer SEO and guide links resolve to declared Brampton routes", () => {
   const footerSource = readFileSync(new URL("../app/components/Footer.tsx", import.meta.url), "utf8");
   const seoSlugs = new Set(SEO_PAGES.map((page) => page.slug));
