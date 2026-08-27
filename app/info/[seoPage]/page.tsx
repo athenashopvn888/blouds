@@ -23,12 +23,16 @@ export async function generateMetadata({
   const page = getSeoPageBySlug(slug);
   if (!page) return {};
 
+  const canonicalHost = slug === "nicotine-vapes-brampton"
+    ? "https://www.bloudsdispensary.ca"
+    : "https://bloudsdispensary.ca";
+
   return {
     title: page.absoluteTitle ? { absolute: page.title } : page.title,
     description: page.metaDescription,
     robots: page.publicationStatus === "draft" ? { index: false, follow: false } : undefined,
     alternates: {
-      canonical: `https://bloudsdispensary.ca/info/${slug}`,
+      canonical: `${canonicalHost}/info/${slug}`,
     },
   };
 }
