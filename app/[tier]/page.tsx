@@ -31,9 +31,13 @@ export async function generateMetadata({
   return {
     title: seo?.seoTitle || `${tierInfo.config.name} Cannabis Flower - ${flowers.length} Strains`,
     description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at Blouds Dispensary.`,
+    alternates: {
+      canonical: `https://www.bloudsdispensary.ca/${tierSlug}`,
+    },
     openGraph: {
       title: `${tierInfo.config.name} Flower | Blouds Dispensary`,
       description: `Browse listed ${tierInfo.config.name.toLowerCase()} flower names, weights, and prices. Menu pricing starts from $${tierInfo.config.unitPrice}/g.`,
+      url: `https://www.bloudsdispensary.ca/${tierSlug}`,
     },
   };
 }

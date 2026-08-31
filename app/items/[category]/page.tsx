@@ -31,6 +31,12 @@ export async function generateMetadata({
   return {
     title: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
     description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at Blouds Dispensary.`,
+    alternates: {
+      canonical: `https://www.bloudsdispensary.ca/items/${catSlug}`,
+    },
+    openGraph: {
+      url: `https://www.bloudsdispensary.ca/items/${catSlug}`,
+    },
   };
 }
 
@@ -60,11 +66,18 @@ export default async function ItemsCategoryPage({
       {/* Hero Banner */}
       <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
         {config.banner ? (
-          <img
-            src={config.banner}
-            alt={config.name}
-            style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
-          />
+          <>
+            <img
+              src={config.banner}
+              alt={config.name}
+              style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
+            />
+            <div className={styles.heroContent} style={{ background: config.color, padding: "20px 24px", textAlign: "center" }}>
+              <h1 className={styles.heroTitle}>
+                <span style={{ color: "#fff" }}>{config.name}</span>
+              </h1>
+            </div>
+          </>
         ) : (
           <div className={styles.heroContent} style={{ background: config.color, padding: "60px 24px", textAlign: "center" }}>
             <span className={styles.heroIcon}>{config.icon}</span>
