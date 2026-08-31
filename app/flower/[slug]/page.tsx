@@ -30,9 +30,13 @@ export async function generateMetadata({
   return {
     title: `${flower.name} | ${tierName} ${flower.type === "indica" ? "Indica" : flower.type === "sativa" ? "Sativa" : "Hybrid"} | THC ${flower.thc} | Blouds Dispensary Brampton`,
     description: strainData.metaDescription,
+    alternates: {
+      canonical: `https://www.bloudsdispensary.ca/flower/${slug}`,
+    },
     openGraph: {
       title: `${flower.name} | Blouds Dispensary`,
       description: strainData.metaDescription,
+      url: `https://www.bloudsdispensary.ca/flower/${slug}`,
       images: flower.image ? [{ url: flower.image, width: 800, height: 800, alt: flower.name }] : [],
     },
   };
