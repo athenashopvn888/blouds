@@ -1,31 +1,66 @@
 export interface TierSeoData {
   seoTitle: string;
+  h1: string;
+  catalogHeading: string;
+  imageAlt: string;
   seoIntro: string;
-  sections: { heading: string; body: string }[];
   faqs: { q: string; a: string }[];
 }
 
-function tierData(name: string, slug: string): TierSeoData {
+function tierData(
+  name: string,
+  seoIntro: string,
+  faq: { q: string; a: string },
+): TierSeoData {
   return {
-    seoTitle: `${name} Cannabis Flower Brampton | Blouds Dispensary`,
-    seoIntro: `Browse the ${name} flower section at Blouds Dispensary in Brampton. Compare current listings, posted weights, prices, and package details.`,
-    sections: [
-      { heading: `${name} Flower Menu`, body: `The ${name} section gives shoppers a focused place to compare the flower names, types, listed weights, and posted prices currently shown online.` },
-      { heading: "Check Current Item Details", body: "Open an item page to review its listed menu details before visiting. A tier label helps organize the menu and is not a product guarantee." },
-      { heading: "Visit Blouds Dispensary", body: "Blouds Dispensary is open 24 hours at 117 Queen St W in Brampton. Use the store page for current visit information." },
-    ],
-    faqs: [
-      { q: `Where can I browse ${name} flower?`, a: `Use the /${slug} menu section to compare the ${name} flower listings currently shown online.` },
-      { q: "What details are shown?", a: "Menu pages show listed names, types, weights, prices, and package details." },
-      { q: "Where is Blouds Dispensary?", a: "Blouds Dispensary is at 117 Queen St W in Brampton and is open 24 hours." },
-    ],
+    seoTitle: `${name} Weed & Cannabis Flower in Brampton | Blouds Dispensary`,
+    h1: `${name} Weed & Cannabis Flower in Brampton`,
+    catalogHeading: `Explore ${name} Weed & Flower`,
+    imageAlt: `${name} Weed and Cannabis Flower at Blouds Dispensary`,
+    seoIntro,
+    faqs: [faq],
   };
 }
 
 export const TIER_SEO: Record<string, TierSeoData> = {
-  EXOTIC: tierData("Exotic", "exotic"),
-  PREMIUM: tierData("Premium", "premium"),
-  "AAA+": tierData("AAA+", "aaa"),
-  AA: tierData("AA", "aa"),
-  BUDGET: tierData("Budget", "budget"),
+  EXOTIC: tierData(
+    "Exotic",
+    "Blouds Dispensary organizes Exotic as its own cannabis flower tier for adults 19+ who want to focus their browsing on that section. Explore Exotic weed and flower without mixing it into the other Blouds flower tiers.",
+    {
+      q: "What does Exotic weed mean at Blouds Dispensary?",
+      a: "Exotic is the name of one of Blouds Dispensary’s cannabis flower tiers. The Exotic section keeps that tier separate from Premium, AAA+, AA and Budget.",
+    },
+  ),
+  PREMIUM: tierData(
+    "Premium",
+    "The Premium section gives Blouds shoppers a dedicated place to browse Premium weed and cannabis flower. Use the tier on its own when Premium is the flower category you want to explore.",
+    {
+      q: "What is Premium weed at Blouds Dispensary?",
+      a: "Premium is one of Blouds Dispensary’s dedicated cannabis flower tiers. The Premium section is the focused place for shoppers interested in that tier.",
+    },
+  ),
+  "AAA+": tierData(
+    "AAA+",
+    "AAA+ has its own flower section at Blouds Dispensary, making it easier to focus on AAA+ weed and cannabis flower without moving through every tier at once.",
+    {
+      q: "What is the AAA+ weed section?",
+      a: "AAA+ is a separate Blouds Dispensary flower tier with its own browsing section alongside Exotic, Premium, AA and Budget.",
+    },
+  ),
+  AA: tierData(
+    "AA",
+    "The AA section keeps AA weed and cannabis flower together as a distinct Blouds flower tier. It provides adults 19+ with a focused starting point when AA is the category they want to browse.",
+    {
+      q: "What does AA weed mean on the Blouds menu?",
+      a: "AA is the label for one of Blouds Dispensary’s cannabis flower tiers. The AA section keeps that category distinct from the other flower tiers.",
+    },
+  ),
+  BUDGET: tierData(
+    "Budget",
+    "Budget is Blouds Dispensary’s dedicated value-oriented flower tier. Adults 19+ looking specifically for Budget weed or cannabis flower can begin with this section without implying any current deal, price or promotion.",
+    {
+      q: "What is Budget weed at Blouds Dispensary?",
+      a: "Budget is Blouds Dispensary’s value-oriented cannabis flower tier. The label describes the tier and does not by itself establish a current sale, promotion or specific price.",
+    },
+  ),
 };

@@ -171,12 +171,12 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   },
   "VAPE PENS": {
     banner: "/banners/Blouds_Nic_Vape.webp",
-    name: "Nic Vape", slug: "vapes", color: "#8b5cf6", icon: "💨",
-    seoTitle: "Nic Vape Brampton — Disposable Nicotine Vapes",
-    seoIntro: "Browse the current Nic Vape category at Blouds Dispensary in Brampton for listed product names, formats, package details, and prices.",
-    seoDescription: "Use the Nic Vape category to compare the nicotine vape products currently listed before visiting Blouds Dispensary at 117 Queen St W.",
+    name: "Nicotine Vape", slug: "vapes", color: "#8b5cf6", icon: "💨",
+    seoTitle: "Nicotine Vape in Brampton",
+    seoIntro: "Explore the Nicotine Vape category at Blouds Dispensary in Brampton. This category is separate from THC Vape and is intended for adults 19+ reviewing nicotine-vape product information.",
+    seoDescription: "Explore the Nicotine Vape category at Blouds Dispensary in Brampton. Adults 19+ can review nicotine-vape products and category information.",
     faqs: [
-      { q: "What is listed on the Nic Vape page?", a: "Use this page to compare the nicotine vape product names, package details, and prices currently listed." },
+      { q: "What is the Nicotine Vape category at Blouds Dispensary?", a: "The Nicotine Vape category is Blouds Dispensary’s nicotine-vape section and is separate from the THC Vape category. Adults 19+ can review the listed nicotine-vape product information without this page making a current stock or availability claim." },
       { q: "Where should shoppers check device details?", a: "Review each item listing and product package for the current format and device details." },
     ],
   },

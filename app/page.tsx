@@ -146,7 +146,7 @@ const RESOURCE_LINKS = [
     href: "/resources/edibles-and-vapes-guide",
     tag: "Format guide",
     title: "Edibles and vape paths",
-    body: "Separate THC vapes, nic vapes, edibles, and support gear before you head in.",
+    body: "Separate THC vapes, nicotine vapes, edibles, and support gear before you head in.",
   },
 ];
 
