@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import Navbar from "./components/Navbar";
 import HiringCallout from "./components/HiringCallout";
 import Footer from "./components/Footer";
+import { WeedDiscoveryModule } from "./components/WeedDiscoveryModule";
 import { allFlowers } from "./lib/products";
 
 /* ── Tier data (will come from Supabase later) ── */
@@ -257,6 +258,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <WeedDiscoveryModule />
 
       {/* ── FEATURE PRODUCTS ── */}
       <section className={styles.featuredSection}>
