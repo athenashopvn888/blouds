@@ -227,6 +227,36 @@
   margin: 0;
 }
 
+.compareBlock {
+  margin: 28px 0;
+  padding: 22px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+}
+
+.tierLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 16px;
+}
+
+.tierLinks a,
+.compareBlock p a {
+  color: var(--green-dark);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tierLinks a {
+  padding: 8px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  text-decoration: none;
+}
+
 /* ── FAQ Accordion ── */
 .faqSection {
   margin-top: 32px;

@@ -255,7 +255,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     sections: [{ heading: "Brand Searches Belong Beside Category Searches", body: ["The shopper might type THC vapes, Gas Gang, or Drizzle. Each should land close to the current vape category."] }],
     commercialLinks: [
       { label: "THC vapes", href: "/items/vape-disposables" },
-      { label: "Nic vapes", href: "/items/vapes" },
+      { label: "Nicotine Vape", href: "/items/vapes" },
     ],
     related: ["/resources/brand-guides/gas-gang-drizzle-vapes", "/resources/menu-guide"],
   },
