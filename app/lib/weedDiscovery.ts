@@ -9,7 +9,7 @@ export const bloudsWeedOwner = {
   postalCode: "L6Y 1M3",
   phoneDisplay: "+1 (437) 371-5377",
   phoneIntl: "+14373715377",
-  ownerPath: "/weed-dispensary-brampton/",
+  ownerPath: "/weed-dispensary-brampton",
   flowerTiers: [
     { label: "Budget Weed", description: "Explore Budget Weed at Blouds.", href: "/budget-weed" },
     { label: "AA Weed", description: "Explore AA Weed at Blouds.", href: "/aa-weed" },
@@ -32,3 +32,4 @@ export const bloudsWeedOwner = {
     { label: "Queen Street Brampton Visit Guide", description: "Find additional store-specific visit information.", href: "/resources/local-guides/queen-street-brampton-visit-guide" },
   ] satisfies WeedDiscoveryLink[],
 };
+
