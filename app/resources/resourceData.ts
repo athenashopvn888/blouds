@@ -391,11 +391,11 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         heading: "Explore Blouds Weed & Flower Tiers",
         body: ["Each established flower tier has its own browsing page."],
         links: [
-          { label: "Weed Exotic", href: "/exotic-weed" },
-          { label: "Weed Premium", href: "/premium-weed" },
-          { label: "Weed AAA+", href: "/aaa-weed" },
-          { label: "Weed AA", href: "/aa-weed" },
-          { label: "Weed Budget", href: "/budget-weed" },
+          { label: "Exotic Weed", href: "/exotic-weed" },
+          { label: "Premium Weed", href: "/premium-weed" },
+          { label: "AAA+ Weed", href: "/aaa-weed" },
+          { label: "AA Weed", href: "/aa-weed" },
+          { label: "Budget Weed", href: "/budget-weed" },
         ],
       },
       {
@@ -492,7 +492,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     intro: ["Value pages work better when they compare inside the right shelf instead of turning every product into flower math."],
     sections: [{ heading: "Product Names Carry Price Intent", body: ["Gas Gang at $45/$50, Drizzle at $50, pouches at $20, grabba at $5, and Backwoods at $20/$25 all support direct value language."] }],
     commercialLinks: [
-      { label: "Weed Budget", href: "/budget-weed" },
+      { label: "Budget Weed", href: "/budget-weed" },
       { label: "Vape disposables", href: "/items/vape-disposables" },
       { label: "Cigarettes and pouches", href: "/items/cigarettes" },
     ],

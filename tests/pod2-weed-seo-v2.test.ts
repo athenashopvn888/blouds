@@ -14,13 +14,13 @@ const routes = [
   ["budget", "budget-weed", "Budget"],
 ] as const;
 
-test("BLS01 V2 tiers have Weed-first labels and compliant canonical slugs", () => {
+test("BLS01 V2.1 tiers have tier-first Weed labels and compliant canonical slugs", () => {
   const products = read("app/lib/products.ts");
   const tierSeo = read("app/lib/tierSeoContent.ts");
   for (const [, slug, name] of routes) {
     assert.match(products, new RegExp(`name: \"${name.replace("+", "\\+")}\",\\s+slug: \"${slug}\"`));
-    assert.ok(tierSeo.includes(`seoTitle: \`Weed \${name} & Cannabis Flower in Brampton | Blouds\``));
-    assert.ok(tierSeo.includes(`h1: \`Weed \${name} & Cannabis Flower in Brampton\``));
+    assert.ok(tierSeo.includes(`seoTitle: \`\${name} Weed & Cannabis Flower in Brampton | Blouds\``));
+    assert.ok(tierSeo.includes(`h1: \`\${name} Weed & Cannabis Flower in Brampton\``));
   }
 });
 
@@ -44,7 +44,8 @@ test("BLS01 V2 internal links and resource owner use only new tier routes", () =
   ].map(read).join("\n");
   for (const [, newSlug, name] of routes) {
     assert.ok(sources.includes(`/${newSlug}`));
-    assert.ok(sources.includes(`Weed ${name}`));
+    assert.ok(sources.includes(`${name} Weed`));
+    assert.ok(!sources.includes(`Weed ${name}`));
   }
   assert.ok(sources.includes("/resources/weed-flower-guides"));
   for (const [oldSlug] of routes) {

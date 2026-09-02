@@ -11,11 +11,11 @@ export const bloudsWeedOwner = {
   phoneIntl: "+14373715377",
   ownerPath: "/weed-dispensary-brampton/",
   flowerTiers: [
-    { label: "Weed Budget", description: "Explore Weed Budget at Blouds.", href: "/budget-weed" },
-    { label: "Weed AA", description: "Explore Weed AA at Blouds.", href: "/aa-weed" },
-    { label: "Weed AAA+", description: "Explore Weed AAA+ at Blouds.", href: "/aaa-weed" },
-    { label: "Weed Premium", description: "Explore Weed Premium at Blouds.", href: "/premium-weed" },
-    { label: "Weed Exotic", description: "Explore Weed Exotic at Blouds.", href: "/exotic-weed" },
+    { label: "Budget Weed", description: "Explore Budget Weed at Blouds.", href: "/budget-weed" },
+    { label: "AA Weed", description: "Explore AA Weed at Blouds.", href: "/aa-weed" },
+    { label: "AAA+ Weed", description: "Explore AAA+ Weed at Blouds.", href: "/aaa-weed" },
+    { label: "Premium Weed", description: "Explore Premium Weed at Blouds.", href: "/premium-weed" },
+    { label: "Exotic Weed", description: "Explore Exotic Weed at Blouds.", href: "/exotic-weed" },
   ] satisfies WeedDiscoveryLink[],
   categories: [
     { label: "Pre-Rolls", description: "Explore cannabis in pre-roll format.", href: "/items/prerolls" },
@@ -26,7 +26,7 @@ export const bloudsWeedOwner = {
   ] satisfies WeedDiscoveryLink[],
   guides: [
     { label: "Menu Guide", description: "Compare the main cannabis formats and decide where you want to begin.", href: "/resources/menu-guide" },
-    { label: "Weed & Flower Guides", description: "Learn more before choosing between Weed Budget, Weed AA, Weed AAA+, Weed Premium and Weed Exotic.", href: "/resources/weed-flower-guides" },
+    { label: "Weed & Flower Guides", description: "Learn more before choosing between Budget Weed, AA Weed, AAA+ Weed, Premium Weed and Exotic Weed.", href: "/resources/weed-flower-guides" },
     { label: "Value Guides", description: "Explore value-oriented choices without relying on a current price or promotion.", href: "/resources/value-guides" },
     { label: "Pre-Roll Guides", description: "Focus specifically on pre-rolls.", href: "/resources/pre-roll-guides" },
     { label: "Queen Street Brampton Visit Guide", description: "Find additional store-specific visit information.", href: "/resources/local-guides/queen-street-brampton-visit-guide" },

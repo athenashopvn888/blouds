@@ -9,7 +9,7 @@ import { allFlowers } from "./lib/products";
 /* ── Tier data (will come from Supabase later) ── */
 const TIERS = [
   {
-    name: "Weed Exotic",
+    name: "Exotic Weed",
     slug: "exotic-weed",
     tagline: "Browse current Exotic flower listings",
     thc: "35-39%",
@@ -23,7 +23,7 @@ const TIERS = [
     banner: "/banners/Blouds_Exotic.webp",
   },
   {
-    name: "Weed Premium",
+    name: "Premium Weed",
     slug: "premium-weed",
     tagline: "Hand-picked connoisseur grade",
     thc: "32-34%",
@@ -37,7 +37,7 @@ const TIERS = [
     banner: "/banners/Blouds_Premium.webp",
   },
   {
-    name: "Weed AAA+",
+    name: "AAA+ Weed",
     slug: "aaa-weed",
     tagline: "Heavy hitters, proven strains",
     thc: "30-32%",
@@ -51,7 +51,7 @@ const TIERS = [
     banner: "/banners/Blouds_AAAplus.webp",
   },
   {
-    name: "Weed AA",
+    name: "AA Weed",
     slug: "aa-weed",
     tagline: "Quality daily drivers",
     thc: "27-29%",
@@ -65,7 +65,7 @@ const TIERS = [
     banner: "/banners/Blouds_AA.webp",
   },
   {
-    name: "Weed Budget",
+    name: "Budget Weed",
     slug: "budget-weed",
     tagline: "Shreds & value OZs",
     thc: "24-27%",
@@ -198,7 +198,7 @@ export default function HomePage() {
             <span>Shop by tier</span>
             <h2>Pick the Blouds shelf that fits the visit.</h2>
             <p>
-              Weed Exotic, Weed Premium, Weed AAA+, Weed AA, Weed Budget, and edibles each get their own
+              Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, Budget Weed, and edibles each get their own
               lane, so the page can move straight from the welcome banner into
               useful choices.
             </p>
@@ -292,7 +292,7 @@ export default function HomePage() {
                         color: strain.tier === "BUDGET" ? "#1e293b" : "white",
                       }}
                     >
-                      WEED {strain.tier}
+                      {strain.tier} WEED
                     </span>
                   </div>
                 </div>

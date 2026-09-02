@@ -10,7 +10,7 @@ test("five Blouds tier routes carry distinct Weed and Flower signals", () => {
   assert.deepEqual(Object.values(TIER_SEO).map((tier) => tier.h1.split(" Weed")[0]), expected);
 
   for (const tier of Object.values(TIER_SEO)) {
-    assert.match(tier.seoTitle, / Weed & Cannabis Flower in Brampton \| Blouds Dispensary$/);
+    assert.match(tier.seoTitle, / Weed & Cannabis Flower in Brampton \| Blouds$/);
     assert.match(tier.h1, / Weed & Cannabis Flower in Brampton$/);
     assert.match(tier.catalogHeading, /^Explore .* Weed & Flower$/);
     assert.match(tier.imageAlt, / Weed and Cannabis Flower at Blouds Dispensary$/);
@@ -22,7 +22,7 @@ test("tier template preserves canonical routes and links all tier owners to the 
   const source = read("../app/[tier]/page.tsx");
   assert.match(source, /title: seo \? \{ absolute: seo\.seoTitle \}/);
   assert.match(source, /canonical: `https:\/\/www\.bloudsdispensary\.ca\/\$\{tierSlug\}`/);
-  for (const route of ["exotic", "premium", "aaa", "aa", "budget"]) {
+  for (const route of ["exotic-weed", "premium-weed", "aaa-weed", "aa-weed", "budget-weed"]) {
     assert.ok(source.includes(`href="/${route}"`));
   }
   assert.ok(source.includes('href="/weed-dispensary-brampton/"'));
