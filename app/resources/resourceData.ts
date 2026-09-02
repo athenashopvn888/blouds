@@ -405,7 +405,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
           "Cannabis is the broader term used across the Blouds store and product categories.",
           "Flower refers specifically to cannabis flower, including the five established Blouds tiers.",
           "Bud is another common term for cannabis flower.",
-          "Blouds does not need separate competing pages for each of these words. The existing Weed owner, flower tiers and supporting guides can reinforce one another while keeping each search intent clear.",
+          "Blouds brings Weed, cannabis, flower and bud terminology together naturally while keeping Exotic Weed, Premium Weed, AAA+ Weed, AA Weed and Budget Weed easy to explore.",
         ],
       },
       {
@@ -609,3 +609,4 @@ export function getFeaturedPages() {
 export function getRelatedPages(page: ResourcePage) {
   return page.related.map((path) => RESOURCE_PAGES.find((item) => item.path === path)).filter(Boolean) as ResourcePage[];
 }
+
