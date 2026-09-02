@@ -67,4 +67,3 @@ test("BLS01 held Delivery and compliant Nicotine Vape remain unchanged by V2", (
   const config = read("next.config.ts");
   assert.doesNotMatch(config, /weed-delivery/);
 });
-

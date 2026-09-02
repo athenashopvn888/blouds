@@ -609,4 +609,3 @@ export function getFeaturedPages() {
 export function getRelatedPages(page: ResourcePage) {
   return page.related.map((path) => RESOURCE_PAGES.find((item) => item.path === path)).filter(Boolean) as ResourcePage[];
 }
-

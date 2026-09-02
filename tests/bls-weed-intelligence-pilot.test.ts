@@ -41,4 +41,3 @@ test("BLS01 intelligence delta preserves protected and held surfaces", () => {
     assert.ok(!changedCopy.includes(prohibited), `Unexpected protected or unsupported phrase: ${prohibited}`);
   }
 });
-

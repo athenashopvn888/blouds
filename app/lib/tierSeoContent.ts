@@ -64,4 +64,3 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     },
   ),
 };
-

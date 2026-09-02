@@ -60,4 +60,3 @@ test("nicotine banner is a real WebP asset", () => {
   assert.equal(banner.subarray(0, 4).toString("ascii"), "RIFF");
   assert.equal(banner.subarray(8, 12).toString("ascii"), "WEBP");
 });
-

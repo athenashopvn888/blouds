@@ -32,4 +32,3 @@ export const bloudsWeedOwner = {
     { label: "Queen Street Brampton Visit Guide", description: "Find additional store-specific visit information.", href: "/resources/local-guides/queen-street-brampton-visit-guide" },
   ] satisfies WeedDiscoveryLink[],
 };
-
