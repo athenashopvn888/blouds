@@ -364,12 +364,12 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     related: ["/resources/native-smokes", "/resources/nicotine-pouches"],
   },
   {
-    path: "/resources/flower-guides",
+    path: "/resources/weed-flower-guides",
     kind: "category",
     parent: "/resources",
     categoryLabel: "Flower Guides",
     title: "Weed & Flower Guides",
-    seoTitle: "Weed & Flower Guides | Blouds Dispensary Brampton",
+    seoTitle: "Weed & Flower Guides Brampton | Blouds",
     metaDescription:
       "Explore Blouds flower guides covering Weed, cannabis flower and the Exotic, Premium, AAA+, AA and Budget tiers available across the site.",
     h1: "Weed & Flower Guides",
@@ -391,11 +391,11 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         heading: "Explore Blouds Weed & Flower Tiers",
         body: ["Each established flower tier has its own browsing page."],
         links: [
-          { label: "Exotic Weed & Flower", href: "/exotic" },
-          { label: "Premium Weed & Flower", href: "/premium" },
-          { label: "AAA+ Weed & Flower", href: "/aaa" },
-          { label: "AA Weed & Flower", href: "/aa" },
-          { label: "Budget Weed & Flower", href: "/budget" },
+          { label: "Weed Exotic", href: "/exotic-weed" },
+          { label: "Weed Premium", href: "/premium-weed" },
+          { label: "Weed AAA+", href: "/aaa-weed" },
+          { label: "Weed AA", href: "/aa-weed" },
+          { label: "Weed Budget", href: "/budget-weed" },
         ],
       },
       {
@@ -468,7 +468,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     intro: ["Pre-roll shoppers usually want a faster path than flower shoppers. Keep that section clean and direct."],
     sections: [{ heading: "Ready-To-Smoke Path", body: ["Compare pre-rolls by product name, pack format, and category detail before adding edibles, vapes, or smokes to the same visit."] }],
     commercialLinks: [{ label: "Shop pre-rolls", href: "/items/prerolls" }],
-    related: ["/resources/menu-guide", "/resources/flower-guides"],
+    related: ["/resources/menu-guide", "/resources/weed-flower-guides"],
   },
   {
     path: "/resources/value-guides",
@@ -492,7 +492,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     intro: ["Value pages work better when they compare inside the right shelf instead of turning every product into flower math."],
     sections: [{ heading: "Product Names Carry Price Intent", body: ["Gas Gang at $45/$50, Drizzle at $50, pouches at $20, grabba at $5, and Backwoods at $20/$25 all support direct value language."] }],
     commercialLinks: [
-      { label: "Budget flower", href: "/budget" },
+      { label: "Weed Budget", href: "/budget-weed" },
       { label: "Vape disposables", href: "/items/vape-disposables" },
       { label: "Cigarettes and pouches", href: "/items/cigarettes" },
     ],

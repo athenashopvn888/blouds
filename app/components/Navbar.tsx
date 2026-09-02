@@ -7,11 +7,11 @@ import styles from "./Navbar.module.css";
 
 const ALL_LINKS = [
   { href: "/careers/budtender", label: "Join Team" },
-  { href: "/exotic", label: "Exotic" },
-  { href: "/premium", label: "Premium" },
-  { href: "/aaa", label: "AAA+" },
-  { href: "/aa", label: "AA" },
-  { href: "/budget", label: "Budget" },
+  { href: "/exotic-weed", label: "Weed Exotic" },
+  { href: "/premium-weed", label: "Weed Premium" },
+  { href: "/aaa-weed", label: "Weed AAA+" },
+  { href: "/aa-weed", label: "Weed AA" },
+  { href: "/budget-weed", label: "Weed Budget" },
   { href: "/items/edibles", label: "Edibles" },
   { href: "/items/prerolls", label: "Pre-Rolls" },
   { href: "/items/vapes", label: "Nicotine Vape" },
