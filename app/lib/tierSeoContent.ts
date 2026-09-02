@@ -13,10 +13,10 @@ function tierData(
   faq: { q: string; a: string },
 ): TierSeoData {
   return {
-    seoTitle: `Weed ${name} & Cannabis Flower in Brampton | Blouds`,
-    h1: `Weed ${name} & Cannabis Flower in Brampton`,
-    catalogHeading: `Explore Weed ${name} & Flower`,
-    imageAlt: `Weed ${name} and Cannabis Flower at Blouds Dispensary`,
+    seoTitle: `${name} Weed & Cannabis Flower in Brampton | Blouds`,
+    h1: `${name} Weed & Cannabis Flower in Brampton`,
+    catalogHeading: `Explore ${name} Weed & Flower`,
+    imageAlt: `${name} Weed and Cannabis Flower at Blouds Dispensary`,
     seoIntro,
     faqs: [faq],
   };
@@ -64,3 +64,4 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     },
   ),
 };
+

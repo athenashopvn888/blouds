@@ -13,11 +13,11 @@ test("BLS01 Flower Guides support existing Weed owners without creating a new ow
   assert.deepEqual(
     links.map(({ label, href }) => ({ label, href })),
     [
-      { label: "Weed Exotic", href: "/exotic-weed" },
-      { label: "Weed Premium", href: "/premium-weed" },
-      { label: "Weed AAA+", href: "/aaa-weed" },
-      { label: "Weed AA", href: "/aa-weed" },
-      { label: "Weed Budget", href: "/budget-weed" },
+      { label: "Exotic Weed", href: "/exotic-weed" },
+      { label: "Premium Weed", href: "/premium-weed" },
+      { label: "AAA+ Weed", href: "/aaa-weed" },
+      { label: "AA Weed", href: "/aa-weed" },
+      { label: "Budget Weed", href: "/budget-weed" },
       { label: "Blouds Weed Dispensary in Brampton", href: "/weed-dispensary-brampton" },
       { label: "Blouds Dispensary", href: "/" },
     ],
@@ -41,3 +41,4 @@ test("BLS01 intelligence delta preserves protected and held surfaces", () => {
     assert.ok(!changedCopy.includes(prohibited), `Unexpected protected or unsupported phrase: ${prohibited}`);
   }
 });
+
