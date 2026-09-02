@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: "/exotic", destination: "/exotic-weed", permanent: true },
+      { source: "/premium", destination: "/premium-weed", permanent: true },
+      { source: "/aaa", destination: "/aaa-weed", permanent: true },
+      { source: "/aa", destination: "/aa-weed", permanent: true },
+      { source: "/budget", destination: "/budget-weed", permanent: true },
+      { source: "/resources/flower-guides", destination: "/resources/weed-flower-guides", permanent: true },
       { source: "/blog", destination: "/resources", permanent: true },
       { source: "/blog/:path*", destination: "/resources", permanent: true },
       { source: "/edibles", destination: "/items/edibles", permanent: true },

@@ -185,11 +185,11 @@ export default async function TierPage({
             <div className={styles.compareBlock}>
               <h3 className={styles.seoHeading}>Compare Blouds Weed &amp; Flower Tiers</h3>
               <nav className={styles.tierLinks} aria-label="Compare Blouds flower tiers">
-                <Link href="/exotic">Exotic Weed</Link>
-                <Link href="/premium">Premium Weed</Link>
-                <Link href="/aaa">AAA+ Weed</Link>
-                <Link href="/aa">AA Weed</Link>
-                <Link href="/budget">Budget Weed</Link>
+                <Link href="/exotic-weed">Weed Exotic</Link>
+                <Link href="/premium-weed">Weed Premium</Link>
+                <Link href="/aaa-weed">Weed AAA+</Link>
+                <Link href="/aa-weed">Weed AA</Link>
+                <Link href="/budget-weed">Weed Budget</Link>
               </nav>
               <p className={styles.seoBody}>
                 Looking for the broader store overview instead of one flower tier? Explore Blouds Dispensary —{" "}

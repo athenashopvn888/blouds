@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Link from "next/link";
 import Navbar from "./components/Navbar";
 import HiringCallout from "./components/HiringCallout";
 import Footer from "./components/Footer";
@@ -8,8 +9,8 @@ import { allFlowers } from "./lib/products";
 /* ── Tier data (will come from Supabase later) ── */
 const TIERS = [
   {
-    name: "EXOTIC",
-    slug: "exotic",
+    name: "Weed Exotic",
+    slug: "exotic-weed",
     tagline: "Browse current Exotic flower listings",
     thc: "35-39%",
     unitPrice: 20,
@@ -22,8 +23,8 @@ const TIERS = [
     banner: "/banners/Blouds_Exotic.webp",
   },
   {
-    name: "PREMIUM",
-    slug: "premium",
+    name: "Weed Premium",
+    slug: "premium-weed",
     tagline: "Hand-picked connoisseur grade",
     thc: "32-34%",
     unitPrice: 15,
@@ -36,8 +37,8 @@ const TIERS = [
     banner: "/banners/Blouds_Premium.webp",
   },
   {
-    name: "AAA+",
-    slug: "aaa",
+    name: "Weed AAA+",
+    slug: "aaa-weed",
     tagline: "Heavy hitters, proven strains",
     thc: "30-32%",
     unitPrice: 10,
@@ -50,8 +51,8 @@ const TIERS = [
     banner: "/banners/Blouds_AAAplus.webp",
   },
   {
-    name: "AA",
-    slug: "aa",
+    name: "Weed AA",
+    slug: "aa-weed",
     tagline: "Quality daily drivers",
     thc: "27-29%",
     unitPrice: 4,
@@ -64,8 +65,8 @@ const TIERS = [
     banner: "/banners/Blouds_AA.webp",
   },
   {
-    name: "BUDGET",
-    slug: "budget",
+    name: "Weed Budget",
+    slug: "budget-weed",
     tagline: "Shreds & value OZs",
     thc: "24-27%",
     unitPrice: 3,
@@ -118,6 +119,7 @@ function buildFeatured() {
   
   return picked.map((f) => ({
     name: f.name,
+    slug: f.slug,
     sku: f.sku,
     tier: f.tier.toUpperCase(),
     thc: f.thc,
@@ -131,19 +133,19 @@ const FEATURED_STRAINS = buildFeatured();
 
 const RESOURCE_LINKS = [
   {
-    href: "/resources/queen-street-visit-guide",
+    href: "/resources/local-guides/queen-street-brampton-visit-guide",
     tag: "Visit guide",
     title: "Queen Street W pull-up notes",
     body: "Route-friendly store notes, ID reminders, and fast menu prep for downtown Brampton.",
   },
   {
-    href: "/resources/downtown-brampton-menu-guide",
+    href: "/resources/menu-guide",
     tag: "Menu guide",
     title: "Downtown Brampton menu map",
     body: "Flower tiers, edibles, vapes, pre-rolls, concentrates, cigarettes, and accessories in one useful flow.",
   },
   {
-    href: "/resources/edibles-and-vapes-guide",
+    href: "/resources/vape-guides",
     tag: "Format guide",
     title: "Edibles and vape paths",
     body: "Separate THC vapes, nicotine vapes, edibles, and support gear before you head in.",
@@ -196,7 +198,7 @@ export default function HomePage() {
             <span>Shop by tier</span>
             <h2>Pick the Blouds shelf that fits the visit.</h2>
             <p>
-              Exotic, Premium, AAA+, AA, Budget, and edibles each get their own
+              Weed Exotic, Weed Premium, Weed AAA+, Weed AA, Weed Budget, and edibles each get their own
               lane, so the page can move straight from the welcome banner into
               useful choices.
             </p>
@@ -204,7 +206,7 @@ export default function HomePage() {
 
           <div className={styles.tierGrid}>
             {TIERS.map((tier, i) => (
-              <a
+              <Link
                 key={tier.slug}
                 href={`/${tier.slug}`}
                 className={styles.tierCard}
@@ -253,7 +255,7 @@ export default function HomePage() {
                   )}
                 </div>
                 <div className={styles.tierCardArrow}>→</div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -266,9 +268,9 @@ export default function HomePage() {
         <div className={styles.container}>
           <div className={styles.featuredGrid}>
             {FEATURED_STRAINS.map((strain, i) => (
-              <a
+              <Link
                 key={`${strain.sku}-${i}`}
-                href={`/flower/${strain.name.toLowerCase().replace(/\s+/g, "-")}`}
+                href={`/flower/${strain.slug}`}
                 className={styles.productCard}
                 style={{ animationDelay: `${i * 0.08}s` }}
               >
@@ -290,7 +292,7 @@ export default function HomePage() {
                         color: strain.tier === "BUDGET" ? "#1e293b" : "white",
                       }}
                     >
-                      {strain.tier}
+                      WEED {strain.tier}
                     </span>
                   </div>
                 </div>
@@ -309,7 +311,7 @@ export default function HomePage() {
                   </div>
                   <div className={styles.productCta}>View Strain →</div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -318,24 +320,24 @@ export default function HomePage() {
       {/* ── GAMES ARCADE BANNER ── */}
       {/* ── DEALS & PROMOS BANNER ── */}
       <section className={styles.promoSection}>
-        <a href="/items/edibles" className={styles.promoBannerLink}>
+        <Link href="/items/edibles" className={styles.promoBannerLink}>
           <img
             src="/banners/Blouds_Edibles.webp"
             alt="High THC Gummies & Edibles — Blouds Dispensary"
             className={styles.promoBannerImg}
           />
-        </a>
+        </Link>
       </section>
 
       {/* ── VAPES & PREROLL DEALS BANNER ── */}
       <section className={styles.promoSection}>
-        <a href="/items/vapes" className={styles.promoBannerLink}>
+        <Link href="/items/vapes" className={styles.promoBannerLink}>
           <img
             src="/banners/Blouds_Pre-Rolls.webp"
             alt="24 Hour Cannabis Deals — Vapes, Pre-Rolls & More"
             className={styles.promoBannerImg}
           />
-        </a>
+        </Link>
       </section>
 
       {/* Resource lounge */}
@@ -348,15 +350,15 @@ export default function HomePage() {
               Visit planning, downtown Brampton menu sections, flower tiers, late-night shopping,
               native smokes, edibles, and vape guides without burying the main menu.
             </p>
-            <a href="/resources">Open Resource Lounge</a>
+            <Link href="/resources">Open Resource Lounge</Link>
           </div>
           <div className={styles.resourceLoungeGrid}>
             {RESOURCE_LINKS.map((resource) => (
-              <a key={resource.href} href={resource.href} className={styles.resourceLoungeCard}>
+              <Link key={resource.href} href={resource.href} className={styles.resourceLoungeCard}>
                 <span>{resource.tag}</span>
                 <h3>{resource.title}</h3>
                 <p>{resource.body}</p>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

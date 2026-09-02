@@ -17,7 +17,7 @@ test("BLS01 keeps the protected owner and exact metadata", () => {
 
 test("BLS01 static discovery uses only approved destinations", () => {
   const sources = [read("app/lib/weedDiscovery.ts"), read("app/components/WeedDiscoveryModule.tsx")].join("\n");
-  for (const href of ["/budget", "/aa", "/aaa", "/premium", "/exotic", "/items/prerolls", "/items/edibles", "/items/vapes", "/items/concentrates", "/items/add-ons", "/weed-dispensary-brampton/", "/resources/flower-guides", "/resources/local-guides/queen-street-brampton-visit-guide"]) {
+  for (const href of ["/budget-weed", "/aa-weed", "/aaa-weed", "/premium-weed", "/exotic-weed", "/items/prerolls", "/items/edibles", "/items/vapes", "/items/concentrates", "/items/add-ons", "/weed-dispensary-brampton/", "/resources/weed-flower-guides", "/resources/local-guides/queen-street-brampton-visit-guide"]) {
     assert.ok(sources.includes(href), `Missing approved link: ${href}`);
   }
 });

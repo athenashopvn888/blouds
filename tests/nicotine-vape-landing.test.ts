@@ -70,7 +70,7 @@ test("footer SEO and guide links resolve to declared Brampton routes", () => {
 
   for (const path of [
     "/resources/local-guides/queen-street-brampton-visit-guide",
-    "/resources/flower-guides",
+    "/resources/weed-flower-guides",
   ]) {
     assert.ok(resourcePaths.has(path));
     assert.ok(footerSource.includes(`href="${path}"`));

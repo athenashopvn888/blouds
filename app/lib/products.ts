@@ -94,7 +94,7 @@ export const TIER_CONFIG: Record<
 > = {
   EXOTIC: {
     name: "Exotic",
-    slug: "exotic",
+    slug: "exotic-weed",
     color: "#f59e0b",
     icon: "\uD83D\uDD25",
     tagline: "Browse current Exotic flower listings",
@@ -105,7 +105,7 @@ export const TIER_CONFIG: Record<
   },
   PREMIUM: {
     name: "Premium",
-    slug: "premium",
+    slug: "premium-weed",
     color: "#a78bfa",
     icon: "\uD83D\uDC8E",
     tagline: "Hand-picked connoisseur grade \u00B7 THC 32-34%",
@@ -116,7 +116,7 @@ export const TIER_CONFIG: Record<
   },
   "AAA+": {
     name: "AAA+",
-    slug: "aaa",
+    slug: "aaa-weed",
     color: "#22d3ee",
     icon: "\u26A1",
     tagline: "Heavy hitters, proven strains \u00B7 THC 30-32%",
@@ -127,7 +127,7 @@ export const TIER_CONFIG: Record<
   },
   AA: {
     name: "AA",
-    slug: "aa",
+    slug: "aa-weed",
     color: "#34d399",
     icon: "\u2726",
     tagline: "Quality daily drivers \u00B7 THC 27-29%",
@@ -138,7 +138,7 @@ export const TIER_CONFIG: Record<
   },
   BUDGET: {
     name: "Budget",
-    slug: "budget",
+    slug: "budget-weed",
     color: "#94a3b8",
     icon: "\uD83D\uDCB0",
     tagline: "Shreds & value OZs \u00B7 From $40/oz",
