@@ -25,7 +25,7 @@ test("tier template preserves canonical routes and links all tier owners to the 
   for (const route of ["exotic-weed", "premium-weed", "aaa-weed", "aa-weed", "budget-weed"]) {
     assert.ok(source.includes(`href="/${route}"`));
   }
-  assert.ok(source.includes('href="/weed-dispensary-brampton/"'));
+  assert.ok(source.includes('href="/weed-dispensary-brampton"'));
   assert.ok(source.includes("Compare Blouds Weed &amp; Flower Tiers"));
 });
 
@@ -60,3 +60,4 @@ test("nicotine banner is a real WebP asset", () => {
   assert.equal(banner.subarray(0, 4).toString("ascii"), "RIFF");
   assert.equal(banner.subarray(8, 12).toString("ascii"), "WEBP");
 });
+

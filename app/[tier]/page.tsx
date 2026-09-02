@@ -193,7 +193,7 @@ export default async function TierPage({
               </nav>
               <p className={styles.seoBody}>
                 Looking for the broader store overview instead of one flower tier? Explore Blouds Dispensary —{" "}
-                <Link href="/weed-dispensary-brampton/">Weed Dispensary in Brampton</Link>{" "}
+                <Link href="/weed-dispensary-brampton">Weed Dispensary in Brampton</Link>{" "}
                 for store information and additional cannabis categories.
               </p>
             </div>
@@ -218,3 +218,4 @@ export default async function TierPage({
     </main>
   );
 }
+

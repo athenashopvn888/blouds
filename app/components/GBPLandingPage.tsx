@@ -18,9 +18,9 @@ const faqItems = [
 const storeSchema = {
   "@context": "https://schema.org",
   "@type": "Store",
-  "@id": "https://bloudsdispensary.ca/weed-dispensary-brampton/",
+  "@id": "https://www.bloudsdispensary.ca/weed-dispensary-brampton",
   name: store.storeName,
-  url: "https://bloudsdispensary.ca/weed-dispensary-brampton/",
+  url: "https://www.bloudsdispensary.ca/weed-dispensary-brampton",
   telephone: store.phoneIntl,
   address: { "@type": "PostalAddress", streetAddress: store.streetAddress, addressLocality: store.city, addressRegion: store.province, postalCode: store.postalCode, addressCountry: "CA" },
   openingHours: "Mo-Su 00:00-23:59",
@@ -85,3 +85,4 @@ export function GBPLandingPage() {
     </>
   );
 }
+

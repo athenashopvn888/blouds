@@ -198,9 +198,8 @@ export default function HomePage() {
             <span>Shop by tier</span>
             <h2>Pick the Blouds shelf that fits the visit.</h2>
             <p>
-              Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, Budget Weed, and edibles each get their own
-              lane, so the page can move straight from the welcome banner into
-              useful choices.
+              Explore Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, Budget Weed and edibles from Blouds,
+              with clear choices for different kinds of browsing.
             </p>
           </div>
 
@@ -416,3 +415,4 @@ export default function HomePage() {
     </main>
   );
 }
+
