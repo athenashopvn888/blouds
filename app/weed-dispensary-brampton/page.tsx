@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: { absolute: gbpLocation.seoTitle },
   description: gbpLocation.metaDescription,
   alternates: {
-    canonical: `https://${gbpLocation.domain}/${gbpLocation.slug}/`,
+    canonical: `https://www.${gbpLocation.domain}/${gbpLocation.slug}`,
   },
   robots: {
     index: true,
@@ -17,3 +17,4 @@ export const metadata: Metadata = {
 export default function Page() {
   return <GBPLandingPage />;
 }
+
