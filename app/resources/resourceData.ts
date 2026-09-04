@@ -116,6 +116,101 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
   },
   {
+    path: "/resources/cannabis-dispensary-vs-weed-dispensary",
+    kind: "article",
+    parent: "/resources",
+    categoryLabel: "Dispensary Guide",
+    title: "Cannabis Dispensary vs. Weed Dispensary",
+    seoTitle: "Cannabis Dispensary vs Weed Dispensary | Blouds Brampton",
+    metaDescription:
+      "Cannabis dispensary or weed dispensary? Learn how the terms relate, what “dispensary near me” means, and how to find Blouds Dispensary in Brampton.",
+    h1: "Cannabis Dispensary vs. Weed Dispensary: What's the Difference?",
+    excerpt:
+      "Learn how cannabis dispensary, weed dispensary and dispensary near me describe closely related local searches in Brampton.",
+    primaryKeyword: "dispensary near me",
+    supportingKeywords: [
+      "cannabis dispensary near me",
+      "weed dispensary near me",
+      "cannabis store near me",
+      "cannabis near me",
+      "weed near me",
+    ],
+    searchIntent: "Understand dispensary terminology and continue to accurate Brampton store information.",
+    author: "local",
+    datePublished: "2026-09-04",
+    dateModified: "2026-09-04",
+    image: { src: "/banners/Blouds_Welcome_Banner.webp", alt: "Blouds Dispensary guide to cannabis and weed dispensary terminology" },
+    intro: [
+      "People looking for a dispensary in Brampton do not always use the same words.",
+      "One person might search “cannabis dispensary near me.” Another might search “weed dispensary near me.” Someone else may simply type “dispensary near me.”",
+      "Although the wording changes, these searches commonly express very similar local intent: finding a nearby cannabis business.",
+    ],
+    sections: [
+      {
+        heading: "Cannabis Dispensary vs. Weed Dispensary",
+        body: [
+          "“Cannabis dispensary” uses the more formal term cannabis.",
+          "“Weed dispensary” uses the more conversational word weed.",
+          "In everyday local searching, both phrases can describe the same type of destination.",
+          "The important difference is usually the language being used by the customer — not a completely different type of store.",
+        ],
+      },
+      {
+        heading: "What About “Dispensary Near Me”?",
+        body: [
+          "“Dispensary near me” is the shorter version of the search.",
+          "A customer might use any of these phrases:",
+        ],
+        bullets: [
+          "dispensary near me",
+          "cannabis dispensary near me",
+          "weed dispensary near me",
+          "cannabis store near me",
+          "cannabis near me",
+          "weed near me",
+        ],
+      },
+      {
+        heading: "Finding a Dispensary in Brampton",
+        body: [
+          "These searches are not identical keywords, but they belong to a closely related local-search family.",
+          "Blouds Dispensary is located at 117 Queen St W in Brampton.",
+          "For customers who are actually planning a visit, the existing Blouds Brampton dispensary page remains the primary location resource.",
+        ],
+        links: [
+          { label: "Cannabis Dispensary Near Me in Brampton", href: "/info/dispensary-near-me-brampton" },
+        ],
+      },
+      {
+        heading: "Why Local Store Information Matters",
+        body: [
+          "After finding a nearby dispensary, customers normally need practical information such as correct business identity, address, current hours, directions, store information and available website resources.",
+          "That is why this educational page explains terminology while the existing local page handles the actual Brampton visit intent.",
+        ],
+      },
+      {
+        heading: "Is a weed dispensary different from a cannabis dispensary?",
+        body: ["Usually the main difference is terminology. Cannabis is the formal term, while weed is common conversational language."],
+      },
+      {
+        heading: "Does “dispensary near me” include cannabis dispensaries?",
+        body: ["When the search context is cannabis, “dispensary near me” is commonly used as a shorter way to search for a nearby cannabis dispensary."],
+      },
+      {
+        heading: "What is another name for a cannabis dispensary?",
+        body: ["Customers may use cannabis store, weed dispensary, weed store or simply dispensary depending on how they normally speak."],
+      },
+      {
+        heading: "Where is Blouds Dispensary?",
+        body: ["Blouds Dispensary is located at 117 Queen St W in Brampton, Ontario."],
+      },
+    ],
+    commercialLinks: [
+      { label: "Cannabis Dispensary Near Me in Brampton", href: "/info/dispensary-near-me-brampton" },
+    ],
+    related: ["/resources/local-guides/queen-street-brampton-visit-guide", "/resources/weed-flower-guides"],
+  },
+  {
     path: "/resources/menu-guide",
     kind: "article",
     parent: "/resources",
