@@ -75,6 +75,17 @@ export function GBPLandingPage() {
         </section>
 
         <section className={styles.section}>
+          <h2>Learn Before You Browse</h2>
+          <p>Want a clearer way to read the Blouds Dispensary menu? Start with Cannabis 101, the Queen Street Visit Guide or the Weed &amp; Flower Guides.</p>
+          <div className={styles.learningLinks}>
+            <Link href="/resources/cannabis-101">Cannabis 101</Link>
+            <Link href="/resources/local-guides/queen-street-brampton-visit-guide">Queen Street Brampton Visit Guide</Link>
+            <Link href="/resources/weed-flower-guides">Weed &amp; Flower Guides</Link>
+            <Link href="/resources">Resource Centre</Link>
+          </div>
+        </section>
+
+        <section className={styles.section}>
           <h2>Helpful Blouds Guides</h2>
           <div className={styles.guideGrid}>{store.guides.map((guide) => <article className={styles.guideCard} key={guide.href}><h3>{guide.label}</h3><p>{guide.description}</p><Link href={guide.href}>Explore {guide.label}</Link></article>)}</div>
         </section>

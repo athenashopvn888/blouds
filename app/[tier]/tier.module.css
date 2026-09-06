@@ -257,6 +257,42 @@
   text-decoration: none;
 }
 
+.educationBlock {
+  margin: 32px 0;
+  padding: 24px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+}
+
+.educationGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+
+.educationDetail {
+  padding: 18px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+}
+
+.educationLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.educationLinks a {
+  padding: 8px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  color: var(--green-dark);
+  font-weight: 800;
+  text-decoration: none;
+}
+
 /* ── FAQ Accordion ── */
 .faqSection {
   margin-top: 32px;
@@ -310,6 +346,9 @@
 
 /* ── Mobile ── */
 @media (max-width: 768px) {
+  .educationGrid {
+    grid-template-columns: 1fr;
+  }
   .heroInfoInner {
     flex-direction: column;
     gap: 20px;

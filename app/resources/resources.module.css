@@ -178,6 +178,28 @@
   margin-top: 6px;
 }
 
+.faqList {
+  display: grid;
+  gap: 12px;
+}
+
+.faqItem {
+  padding: 18px;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.74);
+  border: 1px solid rgba(34, 197, 94, 0.24);
+}
+
+.faqItem h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.faqItem p {
+  margin: 0;
+}
+
 .cardGrid,
 .cardGridCompact {
   display: grid;

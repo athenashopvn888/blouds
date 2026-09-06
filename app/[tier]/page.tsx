@@ -10,6 +10,7 @@ import {
   TIER_CONFIG,
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
+import { TIER_EDUCATION } from "../lib/tierEducation";
 import styles from "./tier.module.css";
 
 /* -- Generate all tier pages at build -- */
@@ -61,6 +62,7 @@ export default async function TierPage({
   const flowers = getFlowersByTier(tierInfo.key);
   const { config } = tierInfo;
   const seo = TIER_SEO[tierInfo.key];
+  const education = TIER_EDUCATION[tierInfo.key];
 
   const saleFlowers = flowers.filter((f) => f.isSale);
   const regularFlowers = flowers.filter((f) => !f.isSale);
@@ -197,6 +199,26 @@ export default async function TierPage({
                 for store information and additional cannabis categories.
               </p>
             </div>
+
+            {education && (
+              <section className={styles.educationBlock}>
+                <h2 className={styles.seoMainTitle}>{education.heading}</h2>
+                <p className={styles.seoBody}>{education.intro}</p>
+                <div className={styles.educationGrid}>
+                  {education.details.map((detail) => (
+                    <div key={detail.heading} className={styles.educationDetail}>
+                      <h3 className={styles.seoHeading}>{detail.heading}</h3>
+                      <p className={styles.seoBody}>{detail.body}</p>
+                    </div>
+                  ))}
+                </div>
+                <nav className={styles.educationLinks} aria-label={`${config.name} Weed education`}>
+                  {education.links.map((link) => (
+                    <Link href={link.href} key={link.href}>{link.label}</Link>
+                  ))}
+                </nav>
+              </section>
+            )}
 
             {/* FAQ Accordion */}
             {seo.faqs.length > 0 && (
