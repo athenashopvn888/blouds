@@ -79,6 +79,20 @@ export default function ResourceView({ page }: ResourceViewProps) {
             </section>
           ))}
 
+          {page.faqs && page.faqs.length > 0 && (
+            <section className={styles.contentSection} aria-labelledby="resource-faq-heading">
+              <h2 id="resource-faq-heading">Frequently Asked Questions</h2>
+              <div className={styles.faqList}>
+                {page.faqs.map((faq) => (
+                  <article className={styles.faqItem} key={faq.question}>
+                    <h3>{faq.question}</h3>
+                    <p>{faq.answer}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+
           {page.commercialLinks.length > 0 && (
             <section className={styles.linkPanel}>
               <h2>Current Blouds Links</h2>

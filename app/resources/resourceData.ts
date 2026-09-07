@@ -19,6 +19,11 @@ export interface ResourceSection {
   links?: ResourceLink[];
 }
 
+export interface ResourceFaq {
+  question: string;
+  answer: string;
+}
+
 export interface ResourcePage {
   path: string;
   kind: "root" | "category" | "article";
@@ -38,6 +43,7 @@ export interface ResourcePage {
   image: { src: string; alt: string };
   intro: string[];
   sections: ResourceSection[];
+  faqs?: ResourceFaq[];
   commercialLinks: ResourceLink[];
   related: string[];
 }
@@ -60,7 +66,7 @@ export const AUTHORS: Record<ResourceAuthorKey, ResourceAuthor> = {
 
 export const updated = "2026-07-15";
 
-export const RESOURCE_PAGES: ResourcePage[] = [
+const BASE_RESOURCE_PAGES: ResourcePage[] = [
   {
     path: "/resources",
     kind: "root",
@@ -656,6 +662,13 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     related: ["/resources/local-guides", "/resources/menu-guide"],
   },
+];
+
+import { ADC_V2_NEW_PAGES, applyAdcV2Expansions } from "./adcV2ResourceData.ts";
+
+export const RESOURCE_PAGES: ResourcePage[] = [
+  ...BASE_RESOURCE_PAGES.map(applyAdcV2Expansions),
+  ...ADC_V2_NEW_PAGES,
 ];
 
 export const RESOURCE_HOME = RESOURCE_PAGES[0];

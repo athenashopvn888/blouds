@@ -32,7 +32,10 @@ export default async function ResourceRoute({ params }: { params: PageParams }) 
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+      />
       <ResourceView page={page} />
     </>
   );
@@ -76,9 +79,7 @@ function buildSchema(page: ResourcePage) {
   const canonical = `${SITE.baseUrl}${page.path}`;
   const author = AUTHORS[page.author];
 
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
+  const graph = [
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -105,6 +106,21 @@ function buildSchema(page: ResourcePage) {
         dateModified: page.dateModified,
         mainEntityOfPage: canonical,
       },
-    ],
+      ...(page.faqs && page.faqs.length > 0
+        ? [{
+            "@type": "FAQPage",
+            "@id": `${canonical}#faq`,
+            mainEntity: page.faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+          }]
+        : []),
+    ];
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph,
   };
 }
