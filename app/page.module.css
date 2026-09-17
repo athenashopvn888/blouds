@@ -265,9 +265,9 @@
 
 .localActions a:nth-child(2),
 .localActions a:nth-child(3) {
-  color: #ecfdf5;
-  background: rgba(16, 185, 129, 0.14);
-  border: 1px solid rgba(110, 231, 183, 0.45);
+  color: #064e3b;
+  background: #ecfdf5;
+  border: 1px solid rgba(16, 185, 129, 0.55);
 }
 
 

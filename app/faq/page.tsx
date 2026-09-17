@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import styles from "./faq.module.css";
 
 export const metadata: Metadata = {
-  title: "FAQ — Blouds Dispensary | Brampton Dispensary Questions",
+  title: { absolute: "FAQ — Blouds Dispensary | Brampton Dispensary Questions" },
   description:
     "Frequently asked questions about Blouds Dispensary in Brampton. Hours, location, products, pricing, bundle offers, and everything you need to know before visiting.",
   alternates: {

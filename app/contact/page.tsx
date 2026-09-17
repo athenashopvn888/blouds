@@ -5,7 +5,7 @@ import styles from "./contact.module.css";
 import { SITE_ORIGIN, gbpLocation } from "../lib/gbp-location";
 
 export const metadata: Metadata = {
-  title: `Contact Us — ${gbpLocation.storeName} | ${gbpLocation.streetAddress}, ${gbpLocation.city}`,
+  title: { absolute: `Contact ${gbpLocation.storeName} | ${gbpLocation.streetAddress}, ${gbpLocation.city}` },
   description:
     `Visit ${gbpLocation.storeName} at ${gbpLocation.address}. ${gbpLocation.hoursDisplay} a day, 7 days a week. Call ${gbpLocation.phone}. Walk-ins welcome.`,
   alternates: {
