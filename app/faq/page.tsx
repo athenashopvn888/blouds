@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Frequently asked questions about Blouds Dispensary in Brampton. Hours, location, products, pricing, bundle offers, and everything you need to know before visiting.",
   alternates: {
-    canonical: "https://bloudsdispensary.ca/faq",
+    canonical: "https://www.bloudsdispensary.ca/faq",
   },
 };
 
@@ -27,7 +27,7 @@ const FAQ_CATEGORIES = [
     title: "🌿 Products & Menu",
     faqs: [
       { q: "What products do you carry?", a: "We carry over 200 strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles (gummies, chocolates, baked goods), vape pens, disposable vapes, concentrates (shatter, wax, hash, diamonds, live resin), pre-rolled joints, native cigarettes, and accessories." },
-      { q: "Do you have an online menu?", a: "Yes. Browse the current menu at bloudsdispensary.ca for listed categories, items, prices, and package details." },
+      { q: "Do you have an online menu?", a: "Yes. Browse the current menu at www.bloudsdispensary.ca for listed categories, items, prices, and package details." },
       { q: "What are your flower tiers?", a: "The flower menu is organized into Exotic, Premium, AAA+, AA, and Budget sections so shoppers can compare current listings and posted prices." },
       { q: "Do you list edibles online?", a: "Yes. Check the current edibles category for the items and package details listed online." },
       { q: "Do you list vapes?", a: "Yes. Browse the current disposable and refillable vape categories for listed nicotine and THC vape brands and package details." },

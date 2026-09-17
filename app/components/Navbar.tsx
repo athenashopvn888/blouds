@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
+import { gbpLocation } from "../lib/gbp-location";
 
 const ALL_LINKS = [
   { href: "/careers/budtender", label: "Join Team" },
@@ -74,12 +75,15 @@ export default function Navbar() {
           />
         </Link>
         <div className={styles.topBarRight}>
+          <a href={gbpLocation.phoneHref} className={styles.callLink}>
+            {gbpLocation.phone}
+          </a>
           <Link href="/delivery" className={styles.gamesBtn}>
             DELIVERY MENU
           </Link>
           <span className={styles.open}>
             <span className={styles.dot}></span>
-            Open Now
+            Open 24 Hours
           </span>
         </div>
       </div>

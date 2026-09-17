@@ -1,12 +1,17 @@
 import { Metadata } from "next";
 import { GBPLandingPage } from "@/app/components/GBPLandingPage";
-import { gbpLocation } from "@/app/lib/gbp-location";
+import { gbpLocation, siteUrl } from "@/app/lib/gbp-location";
 
 export const metadata: Metadata = {
   title: { absolute: gbpLocation.seoTitle },
   description: gbpLocation.metaDescription,
   alternates: {
-    canonical: `https://www.${gbpLocation.domain}/${gbpLocation.slug}`,
+    canonical: siteUrl(`/${gbpLocation.slug}`),
+  },
+  openGraph: {
+    title: gbpLocation.seoTitle,
+    description: gbpLocation.metaDescription,
+    url: siteUrl(`/${gbpLocation.slug}`),
   },
   robots: {
     index: true,

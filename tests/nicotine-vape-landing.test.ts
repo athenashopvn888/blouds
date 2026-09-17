@@ -47,7 +47,7 @@ test("nicotine-vape discovery uses the served www canonical host", () => {
   const sitemapSource = readFileSync(new URL("../app/sitemap.ts", import.meta.url), "utf8");
   const footerSource = readFileSync(new URL("../app/components/Footer.tsx", import.meta.url), "utf8");
 
-  assert.match(infoPageSource, /slug === "nicotine-vapes-brampton"[\s\S]*"https:\/\/www\.bloudsdispensary\.ca"/);
+  assert.match(infoPageSource, /canonical: `https:\/\/www\.bloudsdispensary\.ca\/info\/\$\{slug\}`/);
   assert.match(sitemapSource, /const BASE = "https:\/\/www\.bloudsdispensary\.ca"/);
   assert.ok(footerSource.includes('href="/info/nicotine-vapes-brampton"'));
 });
