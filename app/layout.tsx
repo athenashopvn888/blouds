@@ -69,11 +69,10 @@ export const metadata: Metadata = {
 };
 
 /* ── JSON-LD Structured Data ── */
-const jsonLd = {
+const storeJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Store",
-  additionalType: "https://schema.org/Store",
-  "@id": "https://www.bloudsdispensary.ca",
+  "@type": "CannabisStore",
+  "@id": "https://www.bloudsdispensary.ca/#store",
   name: "Blouds Dispensary",
   description: "Cannabis dispensary at 117 Queen St W in Brampton, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
   url: "https://www.bloudsdispensary.ca",
@@ -107,6 +106,15 @@ const jsonLd = {
   },
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.bloudsdispensary.ca/#website",
+  name: "Blouds Dispensary",
+  url: "https://www.bloudsdispensary.ca",
+  publisher: { "@id": "https://www.bloudsdispensary.ca/#store" },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -123,7 +131,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([storeJsonLd, websiteJsonLd]) }}
         />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-D2SNLR6G0H"></script>
         <script

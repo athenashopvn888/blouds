@@ -15,15 +15,20 @@ const faqItems = [
   { question: "Do I need to be 19+?", answer: <>Yes. Blouds Dispensary is for <strong>adults 19+</strong>.</> },
 ];
 
-const storeSchema = {
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Store",
-  "@id": "https://www.bloudsdispensary.ca/weed-dispensary-brampton",
-  name: store.storeName,
-  url: "https://www.bloudsdispensary.ca/weed-dispensary-brampton",
-  telephone: store.phoneIntl,
-  address: { "@type": "PostalAddress", streetAddress: store.streetAddress, addressLocality: store.city, addressRegion: store.province, postalCode: store.postalCode, addressCountry: "CA" },
-  openingHours: "Mo-Su 00:00-23:59",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.bloudsdispensary.ca/weed-dispensary-brampton#faq",
+      about: { "@id": "https://www.bloudsdispensary.ca/#store" },
+      mainEntity: [
+        { "@type": "Question", name: "Where is Blouds Dispensary?", acceptedAnswer: { "@type": "Answer", text: "Blouds Dispensary is located at 117 Queen St W in Brampton." } },
+        { "@type": "Question", name: "What are the hours?", acceptedAnswer: { "@type": "Answer", text: "Open 24 hours a day, seven days a week." } },
+        { "@type": "Question", name: "Is Blouds Dispensary in Mississauga?", acceptedAnswer: { "@type": "Answer", text: "No. Blouds Dispensary is a Queen Street West Brampton walk-in store. Mississauga visitors should treat the Mississauga page as a route guide only." } },
+      ],
+    },
+  ],
 };
 
 export function GBPLandingPage() {
@@ -31,17 +36,18 @@ export function GBPLandingPage() {
     <>
       <Navbar />
       <main className={styles.main}>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(storeSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         <section className={styles.hero}>
           <p className={styles.eyebrow}>Open 24 Hours · Adults 19+</p>
-          <h1>Blouds Dispensary — Weed Dispensary in Brampton</h1>
+          <h1>Brampton Weed Dispensary on Queen Street West</h1>
           <p className={styles.heroAddress}>{store.address}</p>
           <div className={styles.actions}><Link href="#find-your-weed" className={styles.primaryAction}>Find Your Weed</Link><Link href="#visit" className={styles.secondaryAction}>Visit Blouds</Link></div>
         </section>
 
         <section className={styles.section}>
           <h2>Weed and Cannabis on Queen Street West</h2>
-          <p>Blouds Dispensary is located at <strong>{store.streetAddress}</strong> in Brampton and is open <strong>24 hours a day, seven days a week</strong>.</p>
+          <p>Blouds Dispensary is the Queen Street West walk-in cannabis store at <strong>{store.streetAddress}</strong> in Brampton and is open <strong>24 hours a day, seven days a week</strong>.</p>
+          <p>Downtown Brampton shoppers use this page to plan a Queen Street visit. Blouds is not a Mississauga storefront and not a Kennedy Road location.</p>
           <p>At Blouds Dispensary on Queen St W, adults 19+ can start with flower by tier or choose a cannabis format such as pre-rolls, edibles, vapes, concentrates or accessories. The <Link href="/resources/local-guides/queen-street-brampton-visit-guide">Queen Street Brampton Visit Guide</Link> is also available for shoppers who want additional store-specific visit information before heading over.</p>
           <p>If you are looking for one specific product, call <a href={`tel:${store.phoneIntl}`}><strong>{store.phoneDisplay}</strong></a> before making a special trip.</p>
         </section>
