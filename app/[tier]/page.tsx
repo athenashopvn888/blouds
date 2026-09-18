@@ -229,7 +229,9 @@ export default async function TierPage({
                 <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link>
                 {" "}or the <Link href="/">homepage menu</Link>. Storefront arrival is on the{" "}
                 <Link href="/visit">Queen Street walk-in guide</Link>. Overnight visits use the{" "}
-                <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West page</Link>.
+                <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West page</Link>. Queen
+                Street West cannabis delivery — dispatcher-confirmed, not the 24-hour walk-in — is on the{" "}
+                <Link href="/cannabis-delivery-queen-street-brampton">delivery guide</Link>.
               </p>
               <SccHubLinks currentPath={`/${tierSlug}`} showTiers={false} />
             </div>

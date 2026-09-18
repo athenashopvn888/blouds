@@ -34,7 +34,7 @@ test("BLS01 exact FMD identity is consistent", () => {
 
 test("BLS01 shopper copy avoids workflow and unsupported claims", () => {
   const sources = [read("app/components/GBPLandingPage.tsx"), read("app/components/WeedDiscoveryModule.tsx")].join("\n").toLowerCase();
-  for (const blocked of ["homepage remains", "search intent", "page role", "gsc", "peel region", "parking", "transit", "delivery", "best seller", "bestseller", "trending", "fully licensed"]) {
+  for (const blocked of ["homepage remains", "search intent", "page role", "gsc", "peel region", "parking", "transit", "best seller", "bestseller", "trending", "fully licensed"]) {
     assert.ok(!sources.includes(blocked), `Blocked shopper-copy phrase: ${blocked}`);
   }
 });
@@ -120,4 +120,5 @@ test("homepage and Brampton landing keep a visible Queen Street H1", () => {
   assert.match(landing, /href="\/visit"/);
   assert.match(homepage, /href="\/24-hour-queen-street-brampton-dispensary"/);
   assert.match(landing, /href="\/24-hour-queen-street-brampton-dispensary"/);
+  assert.match(landing, /href="\/cannabis-delivery-queen-street-brampton"/);
 });

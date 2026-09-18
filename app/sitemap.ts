@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/brampton-walk-in-checklist`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/dispensary-brampton`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/24-hour-queen-street-brampton-dispensary`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/cannabis-delivery-queen-street-brampton`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/careers/budtender`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

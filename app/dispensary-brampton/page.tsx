@@ -132,6 +132,8 @@ export default function DispensaryBramptonPage() {
           <Link href="/">current menu</Link> stay on this same website. Overnight walk-ins can use the{" "}
           <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West guide</Link>. The{" "}
           <Link href="/brampton-walk-in-checklist">walk-in checklist</Link> stays on name, address, hours, and phone.
+          Queen Street West cannabis delivery — dispatcher-confirmed, not the 24-hour door — is on the{" "}
+          <Link href="/cannabis-delivery-queen-street-brampton">delivery guide</Link>.
         </p>
 
         <div className={styles.napBar}>
@@ -297,6 +299,9 @@ export default function DispensaryBramptonPage() {
               </Link>
               <Link className={styles.secondaryAction} href="/24-hour-queen-street-brampton-dispensary">
                 24-hour Queen Street West
+              </Link>
+              <Link className={styles.secondaryAction} href="/cannabis-delivery-queen-street-brampton">
+                Queen Street West delivery
               </Link>
               <Link className={styles.secondaryAction} href="/">
                 Menu

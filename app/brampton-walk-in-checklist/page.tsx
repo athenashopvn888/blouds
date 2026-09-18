@@ -124,7 +124,9 @@ export default function BramptonWalkInChecklistPage() {
           <Link href="/dispensary-brampton">Brampton dispensary near me guide</Link> turns a city search into this pin;
           the <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link> is the broad weed page; overnight
           visits can use the{" "}
-          <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West guide</Link>. The{" "}
+          <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West guide</Link>. Queen Street
+          West delivery — dispatcher-confirmed, not the 24-hour walk-in — is on the{" "}
+          <Link href="/cannabis-delivery-queen-street-brampton">cannabis delivery guide</Link>. The{" "}
           <Link href="/">current menu</Link> stays on this same website.
         </p>
 
@@ -165,9 +167,11 @@ export default function BramptonWalkInChecklistPage() {
           <p>
             This checklist does not invent hours for other banners, including Value Buds. If you need an overnight or
             early-morning walk-in in downtown Brampton, the Blouds door at {gbpLocation.streetAddress} is listed as
-            open on that 24-hour schedule. Use the{" "}
+            open on that 24-hour schedule.             Use the{" "}
             <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West page</Link> for late-night
-            notes. Hours on this page match the store listing used on the{" "}
+            notes. Cannabis delivery hours are confirmed by the dispatcher and live on the{" "}
+            <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West delivery guide</Link> — they are not
+            the 24-hour walk-in. Hours on this page match the store listing used on the{" "}
             <Link href="/">homepage</Link> and <Link href="/faq">FAQ</Link>.
           </p>
         </section>
@@ -284,6 +288,9 @@ export default function BramptonWalkInChecklistPage() {
               </Link>
               <Link className={styles.secondaryAction} href="/24-hour-queen-street-brampton-dispensary">
                 24-hour Queen Street West
+              </Link>
+              <Link className={styles.secondaryAction} href="/cannabis-delivery-queen-street-brampton">
+                Queen Street West delivery
               </Link>
               <Link className={styles.secondaryAction} href="/">
                 Menu

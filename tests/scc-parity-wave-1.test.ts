@@ -24,6 +24,7 @@ const PUBLIC_SOURCES = [
   "app/components/GBPLandingPage.tsx",
   "app/weed-dispensary-brampton/page.tsx",
   "app/24-hour-queen-street-brampton-dispensary/page.tsx",
+  "app/cannabis-delivery-queen-street-brampton/page.tsx",
   "app/lib/tierSeoContent.ts",
   "app/[tier]/page.tsx",
   "app/components/Footer.tsx",
