@@ -218,6 +218,7 @@ export default function HomePage() {
             <Link href="#menu">Browse the menu</Link>
             <Link href={`/${gbpLocation.slug}`}>Brampton store details</Link>
             <Link href="/visit">Queen Street walk-in</Link>
+            <Link href="/dispensary-brampton">Brampton dispensary near me</Link>
             <a href={gbpLocation.phoneHref}>Call {gbpLocation.phone}</a>
           </div>
         </div>
