@@ -120,6 +120,18 @@
     "promoImage": "CIG_2_FOR_5"
   },
   {
+    "sku": "1014",
+    "name": "CANADIAN CLASSICS ORIGINAL",
+    "slug": "canadian-classics-original",
+    "category": "CIGARETTES",
+    "type": "",
+    "thc": "",
+    "mg": "",
+    "price": "$25",
+    "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/1014-CANADIAN-CLASSSICS-ORIGINAL.webp",
+    "promoImage": "CIG_2_FOR_5"
+  },
+  {
     "sku": "1015",
     "name": "CANADIAN CLASSICS SILVER",
     "slug": "canadian-classics-silver",
@@ -153,6 +165,18 @@
     "mg": "",
     "price": "$25",
     "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/1011-CANADIAN-GOOSE.webp",
+    "promoImage": "CIG_2_FOR_5"
+  },
+  {
+    "sku": "1005",
+    "name": "CANADIAN LIGHTS",
+    "slug": "canadian-lights",
+    "category": "CIGARETTES",
+    "type": "",
+    "thc": "",
+    "mg": "",
+    "price": "$25",
+    "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/1005-CANADIAN-LIGHTS.webp",
     "promoImage": "CIG_2_FOR_5"
   },
   {
@@ -657,6 +681,18 @@
     "mg": "500mg",
     "price": "$25",
     "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/615_Stellar500.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "691",
+    "name": "Stoner PATCH",
+    "slug": "stoner-patch",
+    "category": "EDIBLES",
+    "type": "",
+    "thc": "",
+    "mg": "1000mg",
+    "price": "$35",
+    "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/STONERPATCHTHCSYRUP500x500HQ.webp",
     "promoImage": null
   },
   {

@@ -68,11 +68,29 @@
     },
     "price5g": null,
     "price14g": null,
+    "price28g": null,
+    "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/172-LAVENDER-KUSH-SHOWCASE.webp"
+  },
+  {
+    "sku": "184",
+    "name": "APPLE KUSH",
+    "slug": "apple-kush",
+    "tier": "BUDGET",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "26%",
+    "price3g": {
+      "regular": 10,
+      "sale": null
+    },
+    "price5g": null,
+    "price14g": null,
     "price28g": {
       "regular": 50,
       "sale": null
     },
-    "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/172-LAVENDER-KUSH-SHOWCASE.webp"
+    "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/184_APPLE_KUSH_showcase_600x600.webp"
   },
   {
     "sku": "185",
@@ -89,7 +107,10 @@
     },
     "price5g": null,
     "price14g": null,
-    "price28g": null,
+    "price28g": {
+      "regular": 50,
+      "sale": null
+    },
     "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/185_HALIE_BERRY_S_showcase_600x600.webp"
   },
   {
@@ -107,7 +128,10 @@
     },
     "price5g": null,
     "price14g": null,
-    "price28g": null,
+    "price28g": {
+      "regular": 50,
+      "sale": null
+    },
     "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/187_CHOCOLATE_KUSH.webp"
   },
   {
@@ -172,6 +196,27 @@
     },
     "price28g": null,
     "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/211-BC-KUSH-99225.webp"
+  },
+  {
+    "sku": "215",
+    "name": "GRAPE FRUIT (S)",
+    "slug": "grape-fruit-s",
+    "tier": "AA",
+    "type": "sativa",
+    "isHot": false,
+    "isSale": true,
+    "thc": "28%",
+    "price3g": null,
+    "price5g": {
+      "regular": 20,
+      "sale": 15
+    },
+    "price14g": {
+      "regular": 45,
+      "sale": 40
+    },
+    "price28g": null,
+    "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/370_BLUEBERRY_JUNKY.webp"
   },
   {
     "sku": "216",
@@ -250,7 +295,10 @@
       "regular": 20,
       "sale": null
     },
-    "price14g": null,
+    "price14g": {
+      "regular": 40,
+      "sale": null
+    },
     "price28g": null,
     "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/99244-275-SUGAR-COOKIES.webp"
   },
@@ -357,6 +405,27 @@
     "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/99296-PURPLE-PUNCH-339.webp"
   },
   {
+    "sku": "371",
+    "name": "PURPLE GRAPES (S)",
+    "slug": "purple-grapes-s",
+    "tier": "AAA+",
+    "type": "sativa",
+    "isHot": false,
+    "isSale": false,
+    "thc": "32%",
+    "price3g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/371_PURPLE_GRAPES_(S).webp"
+  },
+  {
     "sku": "376",
     "name": "OG KUSH (AAA+)",
     "slug": "og-kush-aaa",
@@ -365,7 +434,10 @@
     "isHot": false,
     "isSale": true,
     "thc": "30%",
-    "price3g": null,
+    "price3g": {
+      "regular": 20,
+      "sale": 15
+    },
     "price5g": {
       "regular": 30,
       "sale": 25
@@ -616,7 +688,10 @@
       "regular": 20,
       "sale": null
     },
-    "price14g": null,
+    "price14g": {
+      "regular": 55,
+      "sale": null
+    },
     "price28g": null,
     "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/254-PINK-DIABLO-OG-I.jpg"
   },
@@ -696,7 +771,10 @@
       "regular": 20,
       "sale": null
     },
-    "price5g": null,
+    "price5g": {
+      "regular": 30,
+      "sale": null
+    },
     "price14g": null,
     "price28g": null,
     "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/320-ELMO-STICKY-PINK-SHOWCASE.webp"
@@ -752,7 +830,10 @@
     "isHot": false,
     "isSale": false,
     "thc": "",
-    "price3g": null,
+    "price3g": {
+      "regular": 20,
+      "sale": null
+    },
     "price5g": {
       "regular": 30,
       "sale": null
@@ -834,7 +915,10 @@
       "regular": 20,
       "sale": null
     },
-    "price5g": null,
+    "price5g": {
+      "regular": 30,
+      "sale": null
+    },
     "price14g": null,
     "price28g": null,
     "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/395-PINK-ODYSSEY-SHOWCASE.webp"
@@ -954,7 +1038,7 @@
     "isSale": false,
     "thc": "36%",
     "price3g": {
-      "regular": 45,
+      "regular": 40,
       "sale": null
     },
     "price5g": {
@@ -975,7 +1059,7 @@
     "isSale": false,
     "thc": "",
     "price3g": {
-      "regular": 45,
+      "regular": 40,
       "sale": null
     },
     "price5g": {
