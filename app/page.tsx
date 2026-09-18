@@ -217,6 +217,7 @@ export default function HomePage() {
           <div className={styles.localActions}>
             <Link href="#menu">Browse the menu</Link>
             <Link href={`/${gbpLocation.slug}`}>Brampton store details</Link>
+            <Link href="/visit">Queen Street walk-in</Link>
             <a href={gbpLocation.phoneHref}>Call {gbpLocation.phone}</a>
           </div>
         </div>
