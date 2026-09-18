@@ -3,33 +3,58 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import styles from "./GBPLandingPage.module.css";
 import { bloudsWeedOwner as store } from "../lib/weedDiscovery";
+import { SITE_ORIGIN, gbpLocation, siteUrl } from "../lib/gbp-location";
 
 const faqItems = [
-  { question: "Where is Blouds Dispensary?", answer: <>Blouds Dispensary is located at <strong>{store.address}</strong>.</> },
-  { question: "Is Blouds Dispensary open 24 hours?", answer: <>Yes. Blouds Dispensary is <strong>open 24 hours a day, seven days a week</strong>.</> },
-  { question: "What cannabis categories can I explore?", answer: <>Adults 19+ can explore Budget, AA, AAA+, Premium and Exotic flower tiers, along with pre-rolls, edibles, vapes, concentrates and accessories.</> },
-  { question: "What is the difference between weed and cannabis?", answer: <><strong>Weed</strong> is common everyday terminology for cannabis. <strong>Cannabis</strong> is the broader term and can include flower, pre-rolls, edibles, vapes, concentrates and other formats.</> },
-  { question: "What is the difference between bud and flower?", answer: <><strong>Flower</strong> is the category term for dried cannabis flower. <strong>Bud</strong> is a common informal word people use for flower.</> },
-  { question: "Can I explore different flower tiers?", answer: <>Yes. Blouds Dispensary has dedicated sections for Budget, AA, AAA+, Premium and Exotic flower browsing.</> },
-  { question: "How can I check on a specific product before visiting?", answer: <>Call Blouds Dispensary at <a href={`tel:${store.phoneIntl}`}><strong>{store.phoneDisplay}</strong></a> before making a special trip for one specific product.</> },
-  { question: "Do I need to be 19+?", answer: <>Yes. Blouds Dispensary is for <strong>adults 19+</strong>.</> },
+  { question: "Where is Blouds Dispensary?", answer: `Blouds Dispensary is located at ${store.address}.` },
+  { question: "Is Blouds Dispensary open 24 hours?", answer: "Yes. Blouds Dispensary is open 24 hours a day, seven days a week." },
+  { question: "What is the phone number for Blouds Dispensary?", answer: `Call Blouds Dispensary at ${store.phoneDisplay}.` },
+  { question: "What cannabis categories can I explore?", answer: "Adults 19+ can explore Budget, AA, AAA+, Premium and Exotic flower tiers, along with pre-rolls, edibles, vapes, concentrates and accessories." },
+  { question: "What is the difference between weed and cannabis?", answer: "Weed is common everyday terminology for cannabis. Cannabis is the broader term and can include flower, pre-rolls, edibles, vapes, concentrates and other formats." },
+  { question: "What is the difference between bud and flower?", answer: "Flower is the category term for dried cannabis flower. Bud is a common informal word people use for flower." },
+  { question: "Can I explore different flower tiers?", answer: "Yes. Blouds Dispensary has dedicated sections for Budget, AA, AAA+, Premium and Exotic flower browsing." },
+  { question: "How can I check on a specific product before visiting?", answer: `Call Blouds Dispensary at ${store.phoneDisplay} before making a special trip for one specific product.` },
+  { question: "Do I need to be 19+?", answer: "Yes. Blouds Dispensary is for adults 19+." },
 ];
+
+const pageUrl = siteUrl(`/${gbpLocation.slug}`);
 
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: gbpLocation.seoTitle,
+      description: gbpLocation.metaDescription,
+      isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
+      about: { "@id": `${SITE_ORIGIN}/#store` },
+    },
+    {
       "@type": "FAQPage",
-      "@id": "https://www.bloudsdispensary.ca/weed-dispensary-brampton#faq",
-      about: { "@id": "https://www.bloudsdispensary.ca/#store" },
-      mainEntity: [
-        { "@type": "Question", name: "Where is Blouds Dispensary?", acceptedAnswer: { "@type": "Answer", text: "Blouds Dispensary is located at 117 Queen St W in Brampton." } },
-        { "@type": "Question", name: "What are the hours?", acceptedAnswer: { "@type": "Answer", text: "Open 24 hours a day, seven days a week." } },
-        { "@type": "Question", name: "Is Blouds Dispensary in Mississauga?", acceptedAnswer: { "@type": "Answer", text: "No. Blouds Dispensary is a Queen Street West Brampton walk-in store. Mississauga visitors should treat the Mississauga page as a route guide only." } },
-      ],
+      "@id": `${pageUrl}#faq`,
+      about: { "@id": `${SITE_ORIGIN}/#store` },
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
     },
   ],
 };
+
+function renderAnswer(item: (typeof faqItems)[number]) {
+  if (!item.answer.includes(store.phoneDisplay)) return item.answer;
+  const [before, after] = item.answer.split(store.phoneDisplay);
+  return (
+    <>
+      {before}
+      <a href={`tel:${store.phoneIntl}`}><strong>{store.phoneDisplay}</strong></a>
+      {after}
+    </>
+  );
+}
 
 export function GBPLandingPage() {
   return (
@@ -39,15 +64,16 @@ export function GBPLandingPage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         <section className={styles.hero}>
           <p className={styles.eyebrow}>Open 24 Hours · Adults 19+</p>
-          <h1>Brampton Weed Dispensary on Queen Street West</h1>
+          <h1>Weed Dispensary in Brampton on Queen Street West</h1>
           <p className={styles.heroAddress}>{store.address}</p>
+          <p className={styles.heroAddress}>Call <a href={`tel:${store.phoneIntl}`}>{store.phoneDisplay}</a> · {gbpLocation.hoursDisplay}</p>
           <div className={styles.actions}><Link href="#find-your-weed" className={styles.primaryAction}>Find Your Weed</Link><Link href="#visit" className={styles.secondaryAction}>Visit Blouds</Link></div>
         </section>
 
         <section className={styles.section}>
           <h2>Weed and Cannabis on Queen Street West</h2>
-          <p>Blouds Dispensary is the Queen Street West walk-in cannabis store at <strong>{store.streetAddress}</strong> in Brampton and is open <strong>24 hours a day, seven days a week</strong>.</p>
-          <p>Downtown Brampton shoppers use this page to plan a Queen Street visit. Blouds is not a Mississauga storefront and not a Kennedy Road location.</p>
+          <p>Looking for a weed dispensary in Brampton that is open now? Blouds Dispensary is the Queen Street West walk-in cannabis store at <strong>{store.streetAddress}</strong> in Brampton and is <strong>open 24 hours a day, seven days a week</strong>.</p>
+          <p>Use <strong>{store.address}</strong> in maps. Downtown Brampton shoppers use this page to confirm the Queen Street West door, hours, and phone before walking in.</p>
           <p>At Blouds Dispensary on Queen St W, adults 19+ can start with flower by tier or choose a cannabis format such as pre-rolls, edibles, vapes, concentrates or accessories. The <Link href="/resources/local-guides/queen-street-brampton-visit-guide">Queen Street Brampton Visit Guide</Link> is also available for shoppers who want additional store-specific visit information before heading over.</p>
           <p>If you are looking for one specific product, call <a href={`tel:${store.phoneIntl}`}><strong>{store.phoneDisplay}</strong></a> before making a special trip.</p>
         </section>
@@ -76,8 +102,8 @@ export function GBPLandingPage() {
 
         <section className={styles.visitSection} id="visit">
           <div><p className={styles.kicker}>Open 24 Hours at 117 Queen St W</p><h2>{store.storeName}</h2><address>{store.streetAddress}<br />{store.city}, {store.province} {store.postalCode}</address></div>
-          <div className={styles.visitFacts}><strong>Open 24 Hours · 7 Days a Week</strong><a href={`tel:${store.phoneIntl}`}>Phone: {store.phoneDisplay}</a><span>Adults 19+</span></div>
-          <p>Blouds Dispensary is available around the clock for adults 19+ who want flexibility in when they visit. If a particular product is the reason for your trip, call ahead before travelling specifically for that item.</p>
+          <div className={styles.visitFacts}><strong>Open 24 Hours · 7 Days a Week</strong><a href={`tel:${store.phoneIntl}`}>Phone: {store.phoneDisplay}</a><a href={gbpLocation.directionsUrl}>Get directions</a><span>Adults 19+</span></div>
+          <p>Blouds Dispensary is available around the clock for adults 19+ who want flexibility in when they visit Queen Street West. If a particular product is the reason for your trip, call ahead before travelling specifically for that item.</p>
         </section>
 
         <section className={styles.section}>
@@ -96,10 +122,9 @@ export function GBPLandingPage() {
           <div className={styles.guideGrid}>{store.guides.map((guide) => <article className={styles.guideCard} key={guide.href}><h3>{guide.label}</h3><p>{guide.description}</p><Link href={guide.href}>Explore {guide.label}</Link></article>)}</div>
         </section>
 
-        <section className={styles.section} id="faq"><h2>Frequently Asked Questions</h2><div className={styles.faqList}>{faqItems.map((item) => <article className={styles.faqItem} key={item.question}><h3>{item.question}</h3><p>{item.answer}</p></article>)}</div></section>
+        <section className={styles.section} id="faq"><h2>Frequently Asked Questions</h2><div className={styles.faqList}>{faqItems.map((item) => <article className={styles.faqItem} key={item.question}><h3>{item.question}</h3><p>{renderAnswer(item)}</p></article>)}</div></section>
       </main>
       <Footer />
     </>
   );
 }
-

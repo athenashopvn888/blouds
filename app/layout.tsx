@@ -1,52 +1,49 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import { SITE_ORIGIN, buildStoreJsonLd, buildWebsiteJsonLd, gbpLocation } from "./lib/gbp-location";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.bloudsdispensary.ca"),
+  metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "Blouds Dispensary | Brampton Cannabis Store",
+    default: gbpLocation.seoTitle,
     template: "%s | Blouds Dispensary",
   },
-  description:
-    "Blouds Dispensary is a Brampton cannabis store on Queen St W with adult 19+ store info and category browsing for flower, pre-rolls, vapes, edibles, concentrates, and accessories. Open 24 Hours.",
+  description: gbpLocation.metaDescription,
   keywords: [
+    "weed dispensary Brampton",
     "cannabis dispensary Brampton",
     "weed store Brampton",
-    "exotic flower Brampton",
-    "premium cannabis",
+    "24 hour dispensary Brampton",
+    "Queen Street West dispensary",
+    "117 Queen St W",
     "Blouds Dispensary",
     "cheap weed Brampton",
-    "dispensary near me",
-    "THC flower",
-    "indica sativa hybrid",
+    "dispensary near me Brampton",
     "edibles Brampton",
-    "vapes",
-    "pre-rolls",
+    "pre-rolls Brampton",
     "native cigarettes Brampton",
-    "weed store Mississauga",
   ],
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://www.bloudsdispensary.ca",
-    siteName: "Blouds Dispensary",
-    title: "Blouds Dispensary — Premium Brampton Cannabis Dispensary",
-    description:
-      "Browse flower tiers and menu categories at Blouds Dispensary, 117 Queen St W in Brampton. Open 24 Hours.",
+    url: SITE_ORIGIN,
+    siteName: gbpLocation.storeName,
+    title: gbpLocation.seoTitle,
+    description: gbpLocation.metaDescription,
     images: [
       {
         url: "/banners/Blouds_Welcome_Banner.webp",
         width: 1200,
         height: 630,
-        alt: "Blouds Dispensary — Premium Cannabis Dispensary Brampton",
+        alt: "Blouds Dispensary — 24-hour weed dispensary at 117 Queen St W, Brampton",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blouds Dispensary — Brampton's Uplifting Dispensary",
-    description: "Browse the current menu at Blouds Dispensary. Open 24 Hours at 117 Queen St W, Brampton.",
+    title: gbpLocation.seoTitle,
+    description: gbpLocation.metaDescription,
     images: ["/banners/Blouds_Welcome_Banner.webp"],
   },
   robots: {
@@ -60,60 +57,10 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  alternates: {
-    canonical: "https://www.bloudsdispensary.ca",
-  },
-  verification: {
-    // google: "your-google-verification-code",
-  },
 };
 
-/* ── JSON-LD Structured Data ── */
-const storeJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "CannabisStore",
-  "@id": "https://www.bloudsdispensary.ca/#store",
-  name: "Blouds Dispensary",
-  description: "Cannabis dispensary at 117 Queen St W in Brampton, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
-  url: "https://www.bloudsdispensary.ca",
-  telephone: "+14373715377",
-  image: "https://www.bloudsdispensary.ca/wp-content/uploads/2026/04/7Clmh.jpg",
-  priceRange: "$3 - $12/g",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "117 Queen St W",
-    addressLocality: "Brampton",
-    addressRegion: "ON",
-    postalCode: "L6Y 1M3",
-    addressCountry: "CA",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 43.683273,
-    longitude: -79.762376,
-  },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "00:00",
-      closes: "23:59",
-    },
-  ],
-  areaServed: {
-    "@type": "City",
-    name: "Brampton",
-  },
-};
-
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://www.bloudsdispensary.ca/#website",
-  name: "Blouds Dispensary",
-  url: "https://www.bloudsdispensary.ca",
-  publisher: { "@id": "https://www.bloudsdispensary.ca/#store" },
-};
+const storeJsonLd = buildStoreJsonLd();
+const websiteJsonLd = buildWebsiteJsonLd();
 
 export default function RootLayout({
   children,

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import styles from "./page.module.css";
 import FleetAnnouncementBanner from "./components/FleetAnnouncementBanner";
 import Link from "next/link";
@@ -6,6 +7,20 @@ import HiringCallout from "./components/HiringCallout";
 import Footer from "./components/Footer";
 import { WeedDiscoveryModule } from "./components/WeedDiscoveryModule";
 import { allFlowers } from "./lib/products";
+import { SITE_ORIGIN, gbpLocation } from "./lib/gbp-location";
+
+export const metadata: Metadata = {
+  title: { absolute: gbpLocation.seoTitle },
+  description: gbpLocation.metaDescription,
+  alternates: {
+    canonical: SITE_ORIGIN,
+  },
+  openGraph: {
+    url: SITE_ORIGIN,
+    title: gbpLocation.seoTitle,
+    description: gbpLocation.metaDescription,
+  },
+};
 
 /* ── Tier data (will come from Supabase later) ── */
 const TIERS = [
@@ -177,20 +192,34 @@ export default function HomePage() {
       {/* ── NAVBAR ── */}
       <Navbar />
       <HiringCallout />
-      <h1 style={{ position: "absolute", width: "1px", height: "1px", padding: 0, margin: "-1px", overflow: "hidden", clip: "rect(0, 0, 0, 0)", border: 0 }}>
-        Blouds Dispensary — Premium Brampton Cannabis Dispensary
-      </h1>
 
       {/* ── HERO BANNER ── */}
       <section className={styles.hero} id="hero" style={{ paddingTop: "92px", paddingBottom: "24px", minHeight: "auto", display: "block" }}>
         <a href="#menu" className={styles.heroBanner} style={{ display: "block", position: "relative", width: "100%", cursor: "pointer" }}>
           <img
             src="/banners/Blouds_Welcome_Banner.webp"
-            alt="Blouds Dispensary — Premium Brampton Cannabis Dispensary"
+            alt="Blouds Dispensary — 24-hour weed dispensary at 117 Queen St W, Brampton"
             className={styles.heroBannerImg}
             style={{ width: "100%", height: "auto", display: "block" }}
           />
         </a>
+      </section>
+
+      <section className={styles.localIdentity} aria-label="Blouds Dispensary Brampton location">
+        <div className={styles.container}>
+          <p className={styles.localKicker}>Open 24 Hours · Adults 19+</p>
+          <h1>24-Hour Weed Dispensary in Brampton</h1>
+          <p>
+            <strong>{gbpLocation.storeName}</strong> is the walk-in cannabis store at{" "}
+            <strong>{gbpLocation.address}</strong>. Call{" "}
+            <a href={gbpLocation.phoneHref}>{gbpLocation.phone}</a> or browse the current menu before you head to Queen Street West.
+          </p>
+          <div className={styles.localActions}>
+            <Link href="#menu">Browse the menu</Link>
+            <Link href={`/${gbpLocation.slug}`}>Brampton store details</Link>
+            <a href={gbpLocation.phoneHref}>Call {gbpLocation.phone}</a>
+          </div>
+        </div>
       </section>
 
       {/* ── SHOP BY TIER BANNER ── */}
@@ -378,10 +407,20 @@ export default function HomePage() {
               <div className={styles.storeIcon}>📍</div>
               <h3 className={styles.storeCardTitle}>Location</h3>
               <p className={styles.storeCardText}>
-                117 Queen St W
+                {gbpLocation.streetAddress}
                 <br />
-                Brampton, ON L6Y 1M3
+                {gbpLocation.city}, {gbpLocation.province} {gbpLocation.postalCode}
+              </p>
+            </div>
+            <div className={styles.storeCard}>
+              <div className={styles.storeIcon}>📞</div>
+              <h3 className={styles.storeCardTitle}>Phone</h3>
+              <p className={styles.storeCardText}>
+                <a href={gbpLocation.phoneHref} className={styles.storeLink}>
+                  {gbpLocation.phone}
+                </a>
                 <br />
+                <span className={styles.storeHighlight}>Call before a special trip</span>
               </p>
             </div>
             <div className={styles.storeCard}>
@@ -390,7 +429,7 @@ export default function HomePage() {
               <p className={styles.storeCardText}>
                 Open 7 Days a Week
                 <br />
-                <span className={styles.storeHighlight}>Open 24 Hours</span>
+                <span className={styles.storeHighlight}>{gbpLocation.hoursDisplay}</span>
               </p>
             </div>
             <div className={styles.storeCard}>

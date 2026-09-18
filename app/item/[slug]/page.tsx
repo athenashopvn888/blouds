@@ -30,7 +30,7 @@ export async function generateMetadata({
     title: `${item.name} | ${item.category} | Blouds Dispensary Brampton`,
     description: itemData.metaDescription,
     alternates: {
-      canonical: `https://bloudsdispensary.ca/item/${slug}`,
+      canonical: `https://www.bloudsdispensary.ca/item/${slug}`,
     },
     openGraph: {
       title: `${item.name} | Blouds Dispensary`,
@@ -55,7 +55,7 @@ function getJsonLd(item: ItemProduct) {
 
   const offers: any = {
     "@type": "Offer",
-    url: `https://bloudsdispensary.ca/item/${item.slug}`,
+    url: `https://www.bloudsdispensary.ca/item/${item.slug}`,
     priceCurrency: "CAD",
     itemCondition: "https://schema.org/NewCondition",
     seller: { "@type": "Organization", name: "Blouds Dispensary" },
@@ -74,7 +74,7 @@ function getJsonLd(item: ItemProduct) {
     "@context": "https://schema.org",
     "@type": "Product",
     name: item.name,
-    image: item.image ? [item.image.startsWith('http') ? item.image : `https://bloudsdispensary.ca${item.image.startsWith('/') ? '' : '/'}${item.image}`] : undefined,
+    image: item.image ? [item.image.startsWith('http') ? item.image : `https://www.bloudsdispensary.ca${item.image.startsWith('/') ? '' : '/'}${item.image}`] : undefined,
     description: itemData.description,
     brand: { "@type": "Brand", name: "Blouds Dispensary" },
     sku: cleanSku(item.sku || item.slug),
@@ -93,19 +93,19 @@ function getBreadcrumbJsonLd(item: ItemProduct) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://bloudsdispensary.ca"
+        "item": "https://www.bloudsdispensary.ca"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": item.category,
-        "item": `https://bloudsdispensary.ca/items/${catSlug}`
+        "item": `https://www.bloudsdispensary.ca/items/${catSlug}`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": item.name,
-        "item": `https://bloudsdispensary.ca/item/${item.slug}`
+        "item": `https://www.bloudsdispensary.ca/item/${item.slug}`
       }
     ]
   };

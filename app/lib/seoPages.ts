@@ -124,12 +124,13 @@ export const SEO_PAGES: SeoPageData[] = [
     heroTagline: "117 Queen St W · Open 24 Hours · Walk-In Welcome",
     banner: "/banners/Blouds_Welcome.webp",
     sections: [
-      { heading: "A 24-Hour Store on Queen Street West", body: "Blouds Dispensary is located at 117 Queen St W in Brampton and is open 24 hours. Use the store page for visit information and the menu for current item details." },
+      { heading: "A 24-Hour Store on Queen Street West", body: "Blouds Dispensary is located at 117 Queen St W, Brampton, ON L6Y 1M3 and is open 24 hours. Call +1 (437) 371-5377. Use the store page for visit information and the menu for current item details." },
       { heading: "Browse Flower Tiers", body: "The flower menu is organized into Exotic, Premium, AAA+, AA, and Budget sections. Compare the names, listed weights, posted prices, and package details shown in each section." },
       { heading: "Browse More Menu Categories", body: "The menu also includes edibles, vapes, concentrates, pre-rolls, cigarettes, and accessories. Check a current category page for listed details." },
     ],
     faqs: [
-      { q: "Where is Blouds Dispensary?", a: "Blouds Dispensary is at 117 Queen St W, Brampton, ON." },
+      { q: "Where is Blouds Dispensary?", a: "Blouds Dispensary is at 117 Queen St W, Brampton, ON L6Y 1M3." },
+      { q: "What is the phone number?", a: "Call +1 (437) 371-5377." },
       { q: "What are the store hours?", a: "Blouds Dispensary is open 24 hours a day, seven days a week." },
       { q: "What can I check before visiting?", a: "Browse the current flower tiers and product categories online for listed menu details." },
     ],

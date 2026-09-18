@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./contact.module.css";
+import { SITE_ORIGIN, gbpLocation } from "../lib/gbp-location";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Blouds Dispensary | 117 Queen St W, Brampton",
+  title: { absolute: `Contact ${gbpLocation.storeName} | ${gbpLocation.streetAddress}, ${gbpLocation.city}` },
   description:
-    "Visit Blouds Dispensary at 117 Queen St W, Brampton, ON L6Y 1M3. Open 24 Hours a day, 7 days a week. Walk-ins welcome.",
+    `Visit ${gbpLocation.storeName} at ${gbpLocation.address}. ${gbpLocation.hoursDisplay} a day, 7 days a week. Call ${gbpLocation.phone}. Walk-ins welcome.`,
   alternates: {
-    canonical: "https://bloudsdispensary.ca/contact",
+    canonical: `${SITE_ORIGIN}/contact`,
   },
   openGraph: {
-    title: "Contact Blouds Dispensary — Brampton Dispensary",
+    title: `Contact ${gbpLocation.storeName} — Brampton Dispensary`,
     description:
-      "117 Queen St W, Brampton. Open 24 Hours a day, 7 days a week. Premium cannabis, always fire.",
+      `${gbpLocation.streetAddress}, ${gbpLocation.city}. ${gbpLocation.hoursDisplay} a day, 7 days a week. Call ${gbpLocation.phone}.`,
+    url: `${SITE_ORIGIN}/contact`,
   },
 };
 
@@ -25,7 +27,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className={styles.hero} style={{ paddingTop: "92px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
-          <img src="/banners/Blouds_Contact_Us.webp" alt="Contact Us" style={{ width: "100%", height: "auto", display: "block", borderRadius: "var(--radius-lg)" }} />
+          <img src="/banners/Blouds_Contact_Us.webp" alt={`Contact ${gbpLocation.storeName} at ${gbpLocation.streetAddress}, ${gbpLocation.city}`} style={{ width: "100%", height: "auto", display: "block", borderRadius: "var(--radius-lg)" }} />
         </div>
       </section>
 
@@ -38,11 +40,22 @@ export default function ContactPage() {
               <div className={styles.infoIcon}>PIN</div>
               <h2 className={styles.infoTitle}>Location</h2>
               <p className={styles.infoText}>
-                117 Queen St W
+                {gbpLocation.streetAddress}
                 <br />
-                Brampton, ON L6Y 1M3
+                {gbpLocation.city}, {gbpLocation.province} {gbpLocation.postalCode}
                 <br />
                 <span className={styles.infoMuted}>Queen Street W, Brampton</span>
+              </p>
+            </div>
+
+            {/* Phone */}
+            <div className={styles.infoCard}>
+              <div className={styles.infoIcon}>CALL</div>
+              <h2 className={styles.infoTitle}>Phone</h2>
+              <p className={styles.infoText}>
+                <a href={gbpLocation.phoneHref}>{gbpLocation.phone}</a>
+                <br />
+                <span className={styles.infoMuted}>Call before a special trip</span>
               </p>
             </div>
 

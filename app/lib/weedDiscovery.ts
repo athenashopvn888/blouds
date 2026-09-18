@@ -1,14 +1,16 @@
+import { gbpLocation } from "./gbp-location";
+
 export type WeedDiscoveryLink = { label: string; description: string; href: string };
 
 export const bloudsWeedOwner = {
-  storeName: "Blouds Dispensary",
-  city: "Brampton",
-  address: "117 Queen St W, Brampton, ON L6Y 1M3",
-  streetAddress: "117 Queen St W",
-  province: "ON",
-  postalCode: "L6Y 1M3",
-  phoneDisplay: "+1 (437) 371-5377",
-  phoneIntl: "+14373715377",
+  storeName: gbpLocation.storeName,
+  city: gbpLocation.city,
+  address: gbpLocation.address,
+  streetAddress: gbpLocation.streetAddress,
+  province: gbpLocation.province,
+  postalCode: gbpLocation.postalCode,
+  phoneDisplay: gbpLocation.phone,
+  phoneIntl: gbpLocation.phoneIntl,
   ownerPath: "/weed-dispensary-brampton",
   flowerTiers: [
     { label: "Budget Weed", description: "Explore Budget Weed at Blouds.", href: "/budget-weed" },

@@ -57,7 +57,7 @@
 }
 
 @media (min-width: 768px) {
-  .infoGrid { grid-template-columns: repeat(3, 1fr); }
+  .infoGrid { grid-template-columns: repeat(2, 1fr); }
 }
 
 .infoCard {
@@ -93,6 +93,11 @@
   color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 16px;
+}
+
+.infoText a {
+  color: var(--green-mid, #2DB872);
+  font-weight: 700;
 }
 
 .infoMuted {

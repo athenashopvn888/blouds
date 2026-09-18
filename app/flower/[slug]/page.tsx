@@ -61,7 +61,7 @@ function getJsonLd(flower: FlowerProduct) {
 
   const offers: any = {
     "@type": "Offer",
-    url: `https://bloudsdispensary.ca/flower/${flower.slug}`,
+    url: `https://www.bloudsdispensary.ca/flower/${flower.slug}`,
     priceCurrency: "CAD",
     itemCondition: "https://schema.org/NewCondition",
     seller: { "@type": "Organization", name: "Blouds Dispensary" },
@@ -80,7 +80,7 @@ function getJsonLd(flower: FlowerProduct) {
     "@context": "https://schema.org",
     "@type": "Product",
     name: flower.name,
-    image: flower.image ? [flower.image.startsWith('http') ? flower.image : `https://bloudsdispensary.ca${flower.image.startsWith('/') ? '' : '/'}${flower.image}`] : undefined,
+    image: flower.image ? [flower.image.startsWith('http') ? flower.image : `https://www.bloudsdispensary.ca${flower.image.startsWith('/') ? '' : '/'}${flower.image}`] : undefined,
     description: strainData.description,
     brand: { "@type": "Brand", name: "Blouds Dispensary" },
     sku: cleanSku(flower.sku || flower.slug),
@@ -101,19 +101,19 @@ function getBreadcrumbJsonLd(flower: FlowerProduct) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://bloudsdispensary.ca"
+        "item": "https://www.bloudsdispensary.ca"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": tierName,
-        "item": `https://bloudsdispensary.ca/${tierSlug}`
+        "item": `https://www.bloudsdispensary.ca/${tierSlug}`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": flower.name,
-        "item": `https://bloudsdispensary.ca/flower/${flower.slug}`
+        "item": `https://www.bloudsdispensary.ca/flower/${flower.slug}`
       }
     ]
   };

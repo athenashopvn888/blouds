@@ -607,7 +607,7 @@ const BASE_RESOURCE_PAGES: ResourcePage[] = [
     title: "Queen Street W and Brampton Local Guides",
     seoTitle: "Queen Street W Brampton Cannabis Guides | Blouds Dispensary",
     metaDescription:
-      "Blouds local cannabis guides for Queen Street W, Downtown Brampton, Main Street, Kennedy Road, Bramalea, Peel Region, and Brampton Transit shoppers.",
+      "Blouds local cannabis guides for Queen Street W, Downtown Brampton, Main Street, and Bramalea shoppers heading to 117 Queen St W.",
     h1: "Queen Street W and Brampton Local Guides",
     excerpt:
       "Local guides for shoppers who start with the area, then need flower, vapes, pouches, Backwoods, grabba, edibles, or pre-rolls.",
@@ -618,7 +618,7 @@ const BASE_RESOURCE_PAGES: ResourcePage[] = [
     datePublished: updated,
     dateModified: updated,
     image: { src: "/banners/Blouds_Welcome_Banner.webp", alt: "Blouds Brampton local guide" },
-    intro: ["Queen Street W, Downtown Brampton, Main Street, Kennedy Road, Bramalea, Peel Region, and Brampton Transit searches need local context plus a clear next shelf."],
+    intro: ["Queen Street W, Downtown Brampton, Main Street, and Bramalea searches need local context plus a clear next shelf at 117 Queen St W."],
     sections: [{ heading: "Local First, Shelf Second", body: ["Use the store page for the location anchor, then the resource hub for the actual shopping section."] }],
     commercialLinks: [
       { label: "Queen Street visit guide", href: "/resources/local-guides/queen-street-brampton-visit-guide" },
@@ -652,7 +652,7 @@ const BASE_RESOURCE_PAGES: ResourcePage[] = [
       {
         heading: "Nearby Area Terms",
         body: [
-          "The local language around Blouds includes Queen Street W, Downtown Brampton, Main Street, Kennedy Road, Bramalea, Peel Region, and Brampton Transit.",
+          "The local language around Blouds includes Queen Street W, Downtown Brampton, Main Street, and Bramalea.",
         ],
       },
     ],
