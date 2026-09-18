@@ -114,8 +114,9 @@ export default function FAQPage() {
           <div className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Still have questions?</h2>
             <p className={styles.ctaText}>
-              Use the <Link href="/visit">Queen Street West walk-in guide</Link> for the downtown storefront, or the{" "}
-              <Link href="/dispensary-brampton">Brampton dispensary near me open guide</Link> for the Queen Street pin
+              Use the <Link href="/visit">Queen Street West walk-in guide</Link> or the{" "}
+              <Link href="/brampton-walk-in-checklist">Brampton walk-in checklist</Link> for the downtown storefront, or
+              the <Link href="/dispensary-brampton">Brampton dispensary near me open guide</Link> for the Queen Street pin
               and hours. Visit us at 117 Queen St W, Brampton.
             </p>
           </div>

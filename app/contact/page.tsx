@@ -114,6 +114,8 @@ export default function ContactPage() {
               <p className={styles.infoText}>
                 <Link href="/visit">Queen Street West walk-in guide</Link>
                 {" · "}
+                <Link href="/brampton-walk-in-checklist">Brampton walk-in checklist</Link>
+                {" · "}
                 <Link href="/dispensary-brampton">Brampton dispensary near me</Link>
               </p>
               <div className={styles.featureList}>

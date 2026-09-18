@@ -149,6 +149,12 @@ const FEATURED_STRAINS = buildFeatured();
 
 const RESOURCE_LINKS = [
   {
+    href: "/brampton-walk-in-checklist",
+    tag: "Walk-in checklist",
+    title: "Choosing a Brampton walk-in",
+    body: "Confirm hours, address, and phone before you travel — a practical checklist, not a review roundup.",
+  },
+  {
     href: "/resources/local-guides/queen-street-brampton-visit-guide",
     tag: "Visit guide",
     title: "Queen Street W pull-up notes",
@@ -218,6 +224,7 @@ export default function HomePage() {
             <Link href="#menu">Browse the menu</Link>
             <Link href={`/${gbpLocation.slug}`}>Brampton store details</Link>
             <Link href="/visit">Queen Street walk-in</Link>
+            <Link href="/brampton-walk-in-checklist">Walk-in checklist</Link>
             <Link href="/dispensary-brampton">Brampton dispensary near me</Link>
             <a href={gbpLocation.phoneHref}>Call {gbpLocation.phone}</a>
           </div>
