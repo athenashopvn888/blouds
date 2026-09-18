@@ -128,7 +128,8 @@ export default function VisitPage() {
           hours, and phone before walking in.
         </p>
         <p className={styles.lede}>
-          This is a visit guide for the Queen Street West door. The{" "}
+          This is a visit guide for the Queen Street West door. City Brampton near-me searches can use the{" "}
+          <Link href="/dispensary-brampton">downtown Queen Street open guide</Link>. The{" "}
           <Link href="/weed-dispensary-brampton">Brampton store page</Link> and the{" "}
           <Link href="/">current menu</Link> stay on this same website.
         </p>
@@ -290,6 +291,9 @@ export default function VisitPage() {
               </Link>
               <Link className={styles.secondaryAction} href="/faq">
                 More FAQ
+              </Link>
+              <Link className={styles.secondaryAction} href="/dispensary-brampton">
+                Brampton near-me guide
               </Link>
               <Link className={styles.secondaryAction} href="/weed-dispensary-brampton">
                 Brampton store page
