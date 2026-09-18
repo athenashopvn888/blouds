@@ -4,6 +4,7 @@ export const SCC_WAVE1_HUBS = [
   { href: "/brampton-walk-in-checklist", label: "Brampton walk-in checklist" },
   { href: "/dispensary-brampton", label: "Brampton dispensary near me" },
   { href: "/weed-dispensary-brampton", label: "Queen Street West weed hub" },
+  { href: "/cannabis-delivery-queen-street-brampton", label: "Queen Street West delivery" },
   { href: "/24-hour-queen-street-brampton-dispensary", label: "24-hour Queen Street West" },
 ] as const;
 

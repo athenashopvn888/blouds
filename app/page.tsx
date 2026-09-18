@@ -174,6 +174,12 @@ const RESOURCE_LINKS = [
     body: "The downtown Queen Street West owner page for broad weed browsing, flower tiers, and store facts.",
   },
   {
+    href: "/cannabis-delivery-queen-street-brampton",
+    tag: "Delivery",
+    title: "Queen Street West delivery",
+    body: "Neighbourhood cannabis delivery from 117 Queen St W. Dispatcher-confirmed hours — not the 24-hour walk-in.",
+  },
+  {
     href: "/24-hour-queen-street-brampton-dispensary",
     tag: "Open 24 hours",
     title: "Overnight Queen Street West",
@@ -239,6 +245,7 @@ export default function HomePage() {
             <Link href="/visit">Queen Street walk-in</Link>
             <Link href="/brampton-walk-in-checklist">Walk-in checklist</Link>
             <Link href="/dispensary-brampton">Brampton dispensary near me</Link>
+            <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West delivery</Link>
             <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West</Link>
             <a href={gbpLocation.phoneHref}>Call {gbpLocation.phone}</a>
           </div>
@@ -404,8 +411,8 @@ export default function HomePage() {
             <span>Blouds resources</span>
             <h2>Useful Queen Street pages, grouped clean.</h2>
             <p>
-              Visit planning, downtown Brampton menu sections, flower tiers, late-night shopping,
-              and Queen Street West walk-in pages without burying the main menu.
+              Visit planning, downtown Brampton menu sections, flower tiers, Queen Street West delivery,
+              late-night shopping, and Queen Street West walk-in pages without burying the main menu.
             </p>
             <Link href="/resources">Open Resource Lounge</Link>
           </div>

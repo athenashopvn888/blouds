@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -111,6 +112,7 @@ export default function DeliveryContent() {
     </section>
     <section className={styles.deliveryDetails} aria-label="Blouds delivery details">
       <strong>$60 PRODUCT MINIMUM</strong>
+      <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West delivery guide — hours are not the 24-hour walk-in</Link>
     </section>
     <section className={styles.loyalty} aria-labelledby="loyalty-title">
       <div><p>SAVE ON A LATER ORDER</p><h2 id="loyalty-title">Member Loyalty Savings</h2></div>

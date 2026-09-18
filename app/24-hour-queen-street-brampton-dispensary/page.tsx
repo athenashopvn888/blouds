@@ -123,7 +123,10 @@ export default function QueenStreet24HourPage() {
           <a href={gbpLocation.phoneHref}>{gbpLocation.phone}</a> if one listing is why you are coming after hours. The{" "}
           <Link href="/visit">Queen Street West walk-in guide</Link> covers how the storefront looks in daylight or
           dark. Broad weed browsing stays on the{" "}
-          <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link>.
+          <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link>. Cannabis delivery from this door is
+          a separate dispatcher-confirmed window on the{" "}
+          <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West delivery guide</Link> — not this
+          overnight walk-in.
         </p>
 
         <div className={styles.napBar}>
@@ -163,7 +166,9 @@ export default function QueenStreet24HourPage() {
           <p>
             The storefront is street-level on Queen Street West in the downtown core. Put the full address into maps
             before you leave so a city-only search does not send you to a different Brampton block. This page does not
-            invent hours for other banners.
+            invent hours for other banners. Delivery from Queen Street West is not this 24-hour walk-in; use the{" "}
+            <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West delivery guide</Link> for
+            dispatcher-confirmed hours.
           </p>
           <p>
             Inside, adults 19+ can browse flower by tier or another listed format. Listings can change overnight. If
@@ -247,6 +252,9 @@ export default function QueenStreet24HourPage() {
               </Link>
               <Link className={styles.secondaryAction} href="/weed-dispensary-brampton">
                 Queen Street West weed hub
+              </Link>
+              <Link className={styles.secondaryAction} href="/cannabis-delivery-queen-street-brampton">
+                Queen Street West delivery
               </Link>
               <Link className={styles.secondaryAction} href="/">
                 Menu
