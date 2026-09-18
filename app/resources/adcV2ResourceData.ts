@@ -364,7 +364,7 @@ export function applyAdcV2Expansions(page: ResourcePage): ResourcePage {
         { heading: "Current Listings Handle Changing Details", body: ["Products, prices, package formats and availability can change. Use the current menu and product pages for those details."] },
       ],
       faqs: faq(["Where is Blouds Dispensary?", "Blouds Dispensary is at 117 Queen St W, Brampton, ON L6Y 1M3."], ["What is the phone number?", "Call +1 (437) 371-5377."], ["What are the listed hours?", "Blouds Dispensary is listed as open 24 hours daily."], ["How old do I need to be to buy recreational cannabis in Ontario?", "Adults must be 19 or older."], ["Do I need to know which strain I want before visiting?", "No. Starting with the product category and current menu is enough."], ["Where should I check current product information?", "Use the current category and product pages."]),
-      commercialLinks: links(["Store Page", "/weed-dispensary-brampton"], ["Cannabis 101", basicsHub], ["Menu Guide", "/resources/menu-guide"], ["Weed & Flower Guides", flowerHub], ["Pre-Roll Guides", "/resources/pre-roll-guides"], ["Edibles Guides", "/resources/edibles-guides"], ["Vape Guides", "/resources/vape-guides"], ["Resource Centre", resourcesHub]),
+      commercialLinks: links(["Store Page", "/weed-dispensary-brampton"], ["Queen Street Walk-In", "/visit"], ["Cannabis 101", basicsHub], ["Menu Guide", "/resources/menu-guide"], ["Weed & Flower Guides", flowerHub], ["Pre-Roll Guides", "/resources/pre-roll-guides"], ["Edibles Guides", "/resources/edibles-guides"], ["Vape Guides", "/resources/vape-guides"], ["Resource Centre", resourcesHub]),
       related: ["/resources/local-guides", basicsHub, flowerHub],
     };
   }

@@ -112,6 +112,11 @@
   margin: 0 0 16px;
 }
 
+.ctaText a {
+  color: var(--green-mid);
+  font-weight: 700;
+}
+
 .ctaLink {
   display: inline-flex;
   align-items: center;

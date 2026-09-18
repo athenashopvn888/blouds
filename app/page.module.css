@@ -263,8 +263,7 @@
   background: linear-gradient(135deg, #fde68a, #f59e0b);
 }
 
-.localActions a:nth-child(2),
-.localActions a:nth-child(3) {
+.localActions a:nth-child(n + 2) {
   color: #064e3b;
   background: #ecfdf5;
   border: 1px solid rgba(16, 185, 129, 0.55);

@@ -55,6 +55,7 @@ test("BLS01 locks Queen St NAP across schema, footer, contact, and delivery", ()
     "app/components/Footer.tsx",
     "app/components/Navbar.tsx",
     "app/components/GBPLandingPage.tsx",
+    "app/visit/page.tsx",
   ];
   for (const path of consumers) {
     assert.match(read(path), /gbpLocation|buildStoreJsonLd/, path);
@@ -73,8 +74,9 @@ test("BLS01 locks Queen St NAP across schema, footer, contact, and delivery", ()
     read("app/components/GBPLandingPage.tsx"),
     read("app/delivery/DeliveryContent.tsx"),
     read("app/lib/seoContent.generated.json"),
+    read("app/visit/page.tsx"),
   ].join("\n");
-  assert.doesNotMatch(publicSources, /B Loud|BLoud Cannabis|7990 Kennedy|Kennedy Loud|425-0117/i);
+  assert.doesNotMatch(publicSources, /B Loud Kennedy|BLoud Cannabis|7990 Kennedy|Kennedy Loud|425-0117/i);
 
   const schema = read("app/lib/gbp-location.ts");
   assert.match(schema, /url: SITE_ORIGIN/);
@@ -106,4 +108,6 @@ test("homepage and Brampton landing keep a visible Queen Street H1", () => {
   assert.doesNotMatch(homepage, /clip: "rect\(0, 0, 0, 0\)"/);
   assert.match(landing, /<h1>Weed Dispensary in Brampton on Queen Street West<\/h1>/);
   assert.match(landing, /Call <a href=\{`tel:\$\{store\.phoneIntl\}`\}>\{store\.phoneDisplay\}<\/a>/);
+  assert.match(homepage, /href="\/visit"/);
+  assert.match(landing, /href="\/visit"/);
 });

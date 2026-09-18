@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./faq.module.css";
@@ -113,7 +114,7 @@ export default function FAQPage() {
           <div className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Still have questions?</h2>
             <p className={styles.ctaText}>
-              Browse the resource hub or visit us at 117 Queen St W, Brampton.
+              Use the <Link href="/visit">Queen Street West walk-in guide</Link> for the downtown storefront, or visit us at 117 Queen St W, Brampton.
             </p>
           </div>
         </div>
