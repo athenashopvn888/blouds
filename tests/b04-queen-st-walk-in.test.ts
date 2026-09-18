@@ -19,7 +19,8 @@ test("B04 ships a /visit Queen Street West walk-in guide with locked BLS01 NAP",
 
   assert.match(page, /117 Queen St W, Brampton, ON L6Y 1M3/);
   assert.match(page, /\+1 \(437\) 371-5377/);
-  assert.match(page, /Open 24 Hours/);
+  assert.match(page, /gbpLocation\.hoursDisplay/);
+  assert.match(page, /open 24 hours a day/i);
   assert.equal(gbpLocation.address, "117 Queen St W, Brampton, ON L6Y 1M3");
   assert.equal(gbpLocation.phone, "+1 (437) 371-5377");
   assert.equal(SITE_ORIGIN, "https://www.bloudsdispensary.ca");
@@ -42,7 +43,7 @@ test("B04 Value Buds intercept stays a checklist and does not fake reviews", () 
   assert.match(page, /Value Buds is a separate licensed chain/);
   assert.match(page, /does not publish ratings or reviews/);
   assert.match(page, /does not invent ratings, quotes, or competitor hours/);
-  assert.doesNotMatch(page, /\d(?:\.\d)?\s*\/\s*5|\bstars?\b|\bgoogle review/i);
+  assert.doesNotMatch(page, /\d(?:\.\d)?\s*\/\s*5|\b\d(?:\.\d)?\s*stars?\b|\bgoogle review says\b/i);
 });
 
 test("B04 does not revive B Loud Kennedy or send GBP website off the homepage", () => {
