@@ -60,6 +60,7 @@ export default function Footer() {
               <Link href="/resources">Resources</Link>
               <Link href="/visit">Queen Street Walk-In</Link>
               <Link href="/brampton-walk-in-checklist">Brampton Walk-In Checklist</Link>
+              <Link href="/dispensary-brampton">Brampton Dispensary Near Me</Link>
               <Link href="/resources/local-guides/queen-street-brampton-visit-guide">Queen Street Visit Guide</Link>
               <Link href="/resources/weed-flower-guides">Weed &amp; Flower Guides</Link>
               <Link href="/faq">FAQ</Link>

@@ -57,6 +57,7 @@ test("BLS01 locks Queen St NAP across schema, footer, contact, and delivery", ()
     "app/components/GBPLandingPage.tsx",
     "app/visit/page.tsx",
     "app/brampton-walk-in-checklist/page.tsx",
+    "app/dispensary-brampton/page.tsx",
   ];
   for (const path of consumers) {
     assert.match(read(path), /gbpLocation|buildStoreJsonLd/, path);
@@ -77,6 +78,7 @@ test("BLS01 locks Queen St NAP across schema, footer, contact, and delivery", ()
     read("app/lib/seoContent.generated.json"),
     read("app/visit/page.tsx"),
     read("app/brampton-walk-in-checklist/page.tsx"),
+    read("app/dispensary-brampton/page.tsx"),
   ].join("\n");
   assert.doesNotMatch(publicSources, /B Loud Kennedy|BLoud Cannabis|7990 Kennedy|Kennedy Loud|425-0117/i);
 
