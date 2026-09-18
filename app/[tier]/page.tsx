@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FlowerCard from "../components/FlowerCard";
+import SccHubLinks from "../components/SccHubLinks";
 import {
   getFlowersByTier,
   getTierFromSlug,
@@ -72,16 +73,33 @@ export default async function TierPage({
   const regularFlowers = flowers.filter((f) => !f.isSale);
   const hotFlowers = flowers.filter((f) => f.isHot);
   const displayFlowers = [...saleFlowers, ...regularFlowers];
+  const pageUrl = `https://www.bloudsdispensary.ca/${tierSlug}`;
   const tierJsonLd = buildTierCollectionJsonLd({
     canonicalPath: `/${tierSlug}`,
     name: seo?.h1 || config.name,
-    description: seo?.seoIntro || `${config.name} cannabis flower at Blouds Dispensary in Brampton.`,
+    description: seo?.seoIntro || `${config.name} cannabis flower at Blouds Dispensary on Queen Street West in downtown Brampton.`,
     flowers: displayFlowers,
   });
+  const faqJsonLd = seo?.faqs.length
+    ? {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        about: { "@id": "https://www.bloudsdispensary.ca/#store" },
+        mainEntity: seo.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: { "@type": "Answer", text: faq.a },
+        })),
+      }
+    : null;
+  const pageJsonLd = {
+    ...tierJsonLd,
+    "@graph": faqJsonLd ? [...tierJsonLd["@graph"], faqJsonLd] : tierJsonLd["@graph"],
+  };
 
   return (
     <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(tierJsonLd) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
     <main className={styles.main}>
       <Navbar />
 
@@ -207,10 +225,13 @@ export default async function TierPage({
                 <Link href="/budget-weed">Budget Weed</Link>
               </nav>
               <p className={styles.seoBody}>
-                Looking for the broader store overview instead of one flower tier? Explore Blouds Dispensary —{" "}
-                <Link href="/weed-dispensary-brampton">Weed Dispensary in Brampton</Link>{" "}
-                for store information and additional cannabis categories.
+                Looking for the broader downtown weed overview instead of one flower tier? Explore the{" "}
+                <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link>
+                {" "}or the <Link href="/">homepage menu</Link>. Storefront arrival is on the{" "}
+                <Link href="/visit">Queen Street walk-in guide</Link>. Overnight visits use the{" "}
+                <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West page</Link>.
               </p>
+              <SccHubLinks currentPath={`/${tierSlug}`} showTiers={false} />
             </div>
 
             {education && (

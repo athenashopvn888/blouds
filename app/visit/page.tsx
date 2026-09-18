@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import SccHubLinks from "../components/SccHubLinks";
 import styles from "./visit.module.css";
 import { SITE_ORIGIN, gbpLocation, siteUrl } from "../lib/gbp-location";
 
@@ -130,8 +131,9 @@ export default function VisitPage() {
         <p className={styles.lede}>
           This is a visit guide for the Queen Street West door. City Brampton near-me searches can use the{" "}
           <Link href="/dispensary-brampton">downtown Queen Street open guide</Link>. The{" "}
-          <Link href="/weed-dispensary-brampton">Brampton store page</Link> and the{" "}
-          <Link href="/">current menu</Link> stay on this same website.
+          <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link> and the{" "}
+          <Link href="/">current menu</Link> stay on this same website. Overnight walk-ins can use the{" "}
+          <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West guide</Link>.
         </p>
 
         <div className={styles.napBar}>
@@ -158,6 +160,7 @@ export default function VisitPage() {
               FAQ
             </Link>
           </div>
+          <SccHubLinks currentPath={PAGE_PATH} />
         </div>
 
         <section className={styles.section}>
@@ -208,7 +211,8 @@ export default function VisitPage() {
           <p>
             Walk-ins are welcome late night and early morning. Bring 19+ ID either way. Hours on this page match the
             store listing used across the homepage and{" "}
-            <Link href="/weed-dispensary-brampton">Brampton landing</Link>. Call{" "}
+            <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link>. Late-night notes live on the{" "}
+            <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West page</Link>. Call{" "}
             <a href={gbpLocation.phoneHref}>{gbpLocation.phone}</a> if you need to confirm a product, not the address.
           </p>
         </section>
@@ -296,13 +300,20 @@ export default function VisitPage() {
               <Link className={styles.secondaryAction} href="/dispensary-brampton">
                 Brampton near-me guide
               </Link>
+              <Link className={styles.secondaryAction} href="/brampton-walk-in-checklist">
+                Walk-in checklist
+              </Link>
+              <Link className={styles.secondaryAction} href="/24-hour-queen-street-brampton-dispensary">
+                24-hour Queen Street West
+              </Link>
               <Link className={styles.secondaryAction} href="/weed-dispensary-brampton">
-                Brampton store page
+                Queen Street West weed hub
               </Link>
               <Link className={styles.secondaryAction} href="/">
                 Menu
               </Link>
             </div>
+            <SccHubLinks currentPath={PAGE_PATH} />
           </div>
         </section>
       </article>

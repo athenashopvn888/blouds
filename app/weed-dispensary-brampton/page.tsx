@@ -3,14 +3,14 @@ import { GBPLandingPage } from "@/app/components/GBPLandingPage";
 import { gbpLocation, siteUrl } from "@/app/lib/gbp-location";
 
 export const metadata: Metadata = {
-  title: { absolute: gbpLocation.seoTitle },
-  description: gbpLocation.metaDescription,
+  title: { absolute: gbpLocation.weedOwnerTitle },
+  description: gbpLocation.weedOwnerDescription,
   alternates: {
     canonical: siteUrl(`/${gbpLocation.slug}`),
   },
   openGraph: {
-    title: gbpLocation.seoTitle,
-    description: gbpLocation.metaDescription,
+    title: gbpLocation.weedOwnerTitle,
+    description: gbpLocation.weedOwnerDescription,
     url: siteUrl(`/${gbpLocation.slug}`),
   },
   robots: {
@@ -22,4 +22,3 @@ export const metadata: Metadata = {
 export default function Page() {
   return <GBPLandingPage />;
 }
-

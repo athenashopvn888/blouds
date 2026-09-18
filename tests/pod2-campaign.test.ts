@@ -10,11 +10,11 @@ test("five Blouds tier routes carry distinct Weed and Flower signals", () => {
   assert.deepEqual(Object.values(TIER_SEO).map((tier) => tier.h1.split(" Weed")[0]), expected);
 
   for (const tier of Object.values(TIER_SEO)) {
-    assert.match(tier.seoTitle, / Weed & Cannabis Flower in Brampton \| Blouds$/);
-    assert.match(tier.h1, / Weed & Cannabis Flower in Brampton$/);
-    assert.match(tier.catalogHeading, /^Explore .* Weed & Flower$/);
-    assert.match(tier.imageAlt, / Weed and Cannabis Flower at Blouds Dispensary$/);
-    assert.equal(tier.faqs.length, 1);
+    assert.match(tier.seoTitle, / Weed & Cannabis Flower on Queen Street West \| Blouds$/);
+    assert.match(tier.h1, / Weed & Cannabis Flower on Queen Street West$/);
+    assert.match(tier.catalogHeading, /^Explore .* Weed at the Queen Street West counter$/);
+    assert.match(tier.imageAlt, / Weed and Cannabis Flower at Blouds Dispensary on Queen Street West$/);
+    assert.ok(tier.faqs.length >= 3);
   }
 });
 

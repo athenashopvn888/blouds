@@ -19,8 +19,7 @@ test("BLS01 V2.1 tiers have tier-first Weed labels and compliant canonical slugs
   const tierSeo = read("app/lib/tierSeoContent.ts");
   for (const [, slug, name] of routes) {
     assert.match(products, new RegExp(`name: \"${name.replace("+", "\\+")}\",\\s+slug: \"${slug}\"`));
-    assert.ok(tierSeo.includes(`seoTitle: \`\${name} Weed & Cannabis Flower in Brampton | Blouds\``));
-    assert.ok(tierSeo.includes(`h1: \`\${name} Weed & Cannabis Flower in Brampton\``));
+    assert.ok(tierSeo.includes(`${name} Weed & Cannabis Flower on Queen Street West`));
   }
 });
 

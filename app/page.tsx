@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "./components/Navbar";
 import HiringCallout from "./components/HiringCallout";
 import Footer from "./components/Footer";
+import SccHubLinks from "./components/SccHubLinks";
 import { WeedDiscoveryModule } from "./components/WeedDiscoveryModule";
 import { allFlowers } from "./lib/products";
 import { SITE_ORIGIN, gbpLocation } from "./lib/gbp-location";
@@ -149,28 +150,40 @@ const FEATURED_STRAINS = buildFeatured();
 
 const RESOURCE_LINKS = [
   {
+    href: "/visit",
+    tag: "Walk-in",
+    title: "Queen Street West storefront",
+    body: "How the downtown door looks, how to arrive, and what to bring for a Queen Street West walk-in.",
+  },
+  {
     href: "/brampton-walk-in-checklist",
     tag: "Walk-in checklist",
     title: "Choosing a Brampton walk-in",
     body: "Confirm hours, address, and phone before you travel — a practical checklist, not a review roundup.",
   },
   {
-    href: "/resources/local-guides/queen-street-brampton-visit-guide",
-    tag: "Visit guide",
-    title: "Queen Street W pull-up notes",
-    body: "Route-friendly store notes, ID reminders, and fast menu prep for downtown Brampton.",
+    href: "/dispensary-brampton",
+    tag: "Near me",
+    title: "Downtown Queen Street pin",
+    body: "Turn a Brampton near-me search into the exact 117 Queen St W storefront, hours, and phone.",
+  },
+  {
+    href: "/weed-dispensary-brampton",
+    tag: "Weed hub",
+    title: "Queen Street West weed",
+    body: "The downtown Queen Street West owner page for broad weed browsing, flower tiers, and store facts.",
+  },
+  {
+    href: "/24-hour-queen-street-brampton-dispensary",
+    tag: "Open 24 hours",
+    title: "Overnight Queen Street West",
+    body: "Late-night and open-now notes for the 24-hour Queen Street West door — not a city-wide hours list.",
   },
   {
     href: "/resources/menu-guide",
     tag: "Menu guide",
     title: "Downtown Brampton menu map",
     body: "Flower tiers, edibles, vapes, pre-rolls, concentrates, cigarettes, and accessories in one useful flow.",
-  },
-  {
-    href: "/resources/vape-guides",
-    tag: "Format guide",
-    title: "Edibles and vape paths",
-    body: "Separate THC vapes, nicotine vapes, edibles, and support gear before you head in.",
   },
 ];
 
@@ -222,14 +235,19 @@ export default function HomePage() {
           </p>
           <div className={styles.localActions}>
             <Link href="#menu">Browse the menu</Link>
-            <Link href={`/${gbpLocation.slug}`}>Brampton store details</Link>
+            <Link href={`/${gbpLocation.slug}`}>Queen Street West weed hub</Link>
             <Link href="/visit">Queen Street walk-in</Link>
             <Link href="/brampton-walk-in-checklist">Walk-in checklist</Link>
             <Link href="/dispensary-brampton">Brampton dispensary near me</Link>
+            <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West</Link>
             <a href={gbpLocation.phoneHref}>Call {gbpLocation.phone}</a>
           </div>
         </div>
       </section>
+
+      <div className={`${styles.container} ${styles.hubWrap}`}>
+        <SccHubLinks currentPath="/" />
+      </div>
 
       {/* ── SHOP BY TIER BANNER ── */}
       <section className={styles.tierSection} id="menu">
@@ -387,7 +405,7 @@ export default function HomePage() {
             <h2>Useful Queen Street pages, grouped clean.</h2>
             <p>
               Visit planning, downtown Brampton menu sections, flower tiers, late-night shopping,
-              native smokes, edibles, and vape guides without burying the main menu.
+              and Queen Street West walk-in pages without burying the main menu.
             </p>
             <Link href="/resources">Open Resource Lounge</Link>
           </div>
