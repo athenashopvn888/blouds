@@ -113,6 +113,8 @@ export default function ContactPage() {
               </p>
               <p className={styles.infoText}>
                 <Link href="/visit">Queen Street West walk-in guide</Link>
+                {" · "}
+                <Link href="/brampton-walk-in-checklist">Brampton walk-in checklist</Link>
               </p>
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>

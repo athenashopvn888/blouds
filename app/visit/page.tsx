@@ -240,7 +240,8 @@ export default function VisitPage() {
           <p>
             Value Buds and other chain names often appear when people search for a Brampton cannabis store. Familiarity
             is not the same as confirming the downtown Queen Street pin. If you are comparing walk-ins, use the checklist
-            above on each store’s own page. This guide does not invent ratings, quotes, or competitor hours.
+            above on each store’s own page, or the dedicated{" "}
+            <Link href="/brampton-walk-in-checklist">Brampton walk-in checklist</Link>. This guide does not invent ratings, quotes, or competitor hours.
           </p>
         </section>
 
