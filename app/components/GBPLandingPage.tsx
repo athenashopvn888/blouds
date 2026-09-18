@@ -1,13 +1,14 @@
 import Link from "next/link";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import SccHubLinks from "./SccHubLinks";
 import styles from "./GBPLandingPage.module.css";
 import { bloudsWeedOwner as store } from "../lib/weedDiscovery";
 import { SITE_ORIGIN, gbpLocation, siteUrl } from "../lib/gbp-location";
 
 const faqItems = [
-  { question: "Where is Blouds Dispensary?", answer: `Blouds Dispensary is located at ${store.address}.` },
-  { question: "Is Blouds Dispensary open 24 hours?", answer: "Yes. Blouds Dispensary is open 24 hours a day, seven days a week." },
+  { question: "Where is Blouds Dispensary?", answer: `Blouds Dispensary is the downtown Queen Street West walk-in at ${store.address}.` },
+  { question: "Is Blouds Dispensary open 24 hours?", answer: "Yes. The Queen Street West storefront is listed as open 24 hours a day, seven days a week. Overnight notes live on the 24-hour Queen Street West page." },
   { question: "What is the phone number for Blouds Dispensary?", answer: `Call Blouds Dispensary at ${store.phoneDisplay}.` },
   { question: "What cannabis categories can I explore?", answer: "Adults 19+ can explore Budget, AA, AAA+, Premium and Exotic flower tiers, along with pre-rolls, edibles, vapes, concentrates and accessories." },
   { question: "What is the difference between weed and cannabis?", answer: "Weed is common everyday terminology for cannabis. Cannabis is the broader term and can include flower, pre-rolls, edibles, vapes, concentrates and other formats." },
@@ -26,8 +27,8 @@ const structuredData = {
       "@type": "WebPage",
       "@id": `${pageUrl}#webpage`,
       url: pageUrl,
-      name: gbpLocation.seoTitle,
-      description: gbpLocation.metaDescription,
+      name: gbpLocation.weedOwnerTitle,
+      description: gbpLocation.weedOwnerDescription,
       isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
       about: { "@id": `${SITE_ORIGIN}/#store` },
     },
@@ -63,17 +64,18 @@ export function GBPLandingPage() {
       <main className={styles.main}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         <section className={styles.hero}>
-          <p className={styles.eyebrow}>Open 24 Hours · Adults 19+</p>
-          <h1>Weed Dispensary in Brampton on Queen Street West</h1>
+          <p className={styles.eyebrow}>Open 24 Hours · Downtown Queen Street West · Adults 19+</p>
+          <h1>{gbpLocation.weedOwnerH1}</h1>
           <p className={styles.heroAddress}>{store.address}</p>
           <p className={styles.heroAddress}>Call <a href={`tel:${store.phoneIntl}`}>{store.phoneDisplay}</a> · {gbpLocation.hoursDisplay}</p>
           <div className={styles.actions}><Link href="#find-your-weed" className={styles.primaryAction}>Find Your Weed</Link><Link href="#visit" className={styles.secondaryAction}>Visit Blouds</Link></div>
+          <SccHubLinks currentPath={`/${gbpLocation.slug}`} variant="dark" />
         </section>
 
         <section className={styles.section}>
           <h2>Weed and Cannabis on Queen Street West</h2>
-          <p>Looking for a weed dispensary in Brampton that is open now? Blouds Dispensary is the Queen Street West walk-in cannabis store at <strong>{store.streetAddress}</strong> in Brampton and is <strong>open 24 hours a day, seven days a week</strong>.</p>
-          <p>Use <strong>{store.address}</strong> in maps. Downtown Brampton shoppers use this page to confirm the Queen Street West door, hours, and phone before walking in.</p>
+          <p>Looking for a weed dispensary in downtown Brampton that is open now? Blouds Dispensary is the Queen Street West walk-in cannabis store at <strong>{store.streetAddress}</strong> and is <strong>open 24 hours a day, seven days a week</strong>.</p>
+          <p>Use <strong>{store.address}</strong> in maps. Downtown Queen Street West shoppers use this page to confirm this door, hours, and phone before walking in. Overnight and late-night visits can use the <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West guide</Link>.</p>
           <p>At Blouds Dispensary on Queen St W, adults 19+ can start with flower by tier or choose a cannabis format such as pre-rolls, edibles, vapes, concentrates or accessories. Use the <Link href="/visit">Queen Street West walk-in guide</Link> for storefront arrival and an honest comparison checklist. Shoppers looking for a dispensary Brampton or dispensary near me can use the <Link href="/dispensary-brampton">downtown Queen Street open guide</Link> for the exact pin and hours. Shoppers comparing cannabis stores in Brampton can use the <Link href="/brampton-walk-in-checklist">walk-in checklist</Link> to confirm hours, address, and phone. The <Link href="/resources/local-guides/queen-street-brampton-visit-guide">Queen Street Brampton Visit Guide</Link> is also available for shoppers who want additional store-specific visit information before heading over.</p>
           <p>If you are looking for one specific product, call <a href={`tel:${store.phoneIntl}`}><strong>{store.phoneDisplay}</strong></a> before making a special trip.</p>
         </section>
@@ -103,7 +105,7 @@ export function GBPLandingPage() {
         <section className={styles.visitSection} id="visit">
           <div><p className={styles.kicker}>Open 24 Hours at 117 Queen St W</p><h2>{store.storeName}</h2><address>{store.streetAddress}<br />{store.city}, {store.province} {store.postalCode}</address></div>
           <div className={styles.visitFacts}><strong>Open 24 Hours · 7 Days a Week</strong><a href={`tel:${store.phoneIntl}`}>Phone: {store.phoneDisplay}</a><a href={gbpLocation.directionsUrl}>Get directions</a><span>Adults 19+</span></div>
-          <p>Blouds Dispensary is available around the clock for adults 19+ who want flexibility in when they visit Queen Street West. If a particular product is the reason for your trip, call ahead before travelling specifically for that item. The <Link href="/visit">downtown storefront walk-in guide</Link> has arrival notes, hours, and the contact map.</p>
+          <p>Blouds Dispensary is available around the clock for adults 19+ who want flexibility in when they visit Queen Street West. If a particular product is the reason for your trip, call ahead before travelling specifically for that item. The <Link href="/visit">downtown storefront walk-in guide</Link> has arrival notes, hours, and the contact map. Late-night shoppers can use the <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West page</Link>.</p>
         </section>
 
         <section className={styles.section}>

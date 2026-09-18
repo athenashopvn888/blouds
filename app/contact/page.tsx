@@ -117,6 +117,10 @@ export default function ContactPage() {
                 <Link href="/brampton-walk-in-checklist">Brampton walk-in checklist</Link>
                 {" · "}
                 <Link href="/dispensary-brampton">Brampton dispensary near me</Link>
+                {" · "}
+                <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West</Link>
+                {" · "}
+                <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link>
               </p>
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>

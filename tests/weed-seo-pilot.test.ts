@@ -12,7 +12,9 @@ test("BLS01 keeps the protected owner and exact metadata", () => {
   assert.match(location, /Weed Dispensary in Brampton \| Blouds Dispensary/);
   assert.match(location, /Blouds Dispensary is open 24 hours at 117 Queen St W/);
   assert.match(sitemap, /weed-dispensary-brampton`/);
-  assert.match(page, /title: \{ absolute: gbpLocation\.seoTitle \}/);
+  assert.match(page, /title: \{ absolute: gbpLocation\.weedOwnerTitle \}/);
+  assert.match(location, /weedOwnerTitle: "Queen Street West Weed Dispensary in Downtown Brampton \| Blouds"/);
+  assert.match(location, /weedOwnerH1: "Queen Street West Weed Dispensary in Downtown Brampton"/);
   assert.match(page, /canonical:.*gbpLocation\.slug/s);
 });
 
@@ -58,6 +60,7 @@ test("BLS01 locks Queen St NAP across schema, footer, contact, and delivery", ()
     "app/visit/page.tsx",
     "app/brampton-walk-in-checklist/page.tsx",
     "app/dispensary-brampton/page.tsx",
+    "app/24-hour-queen-street-brampton-dispensary/page.tsx",
   ];
   for (const path of consumers) {
     assert.match(read(path), /gbpLocation|buildStoreJsonLd/, path);
@@ -79,6 +82,7 @@ test("BLS01 locks Queen St NAP across schema, footer, contact, and delivery", ()
     read("app/visit/page.tsx"),
     read("app/brampton-walk-in-checklist/page.tsx"),
     read("app/dispensary-brampton/page.tsx"),
+    read("app/24-hour-queen-street-brampton-dispensary/page.tsx"),
   ].join("\n");
   assert.doesNotMatch(publicSources, /B Loud Kennedy|BLoud Cannabis|7990 Kennedy|Kennedy Loud|425-0117/i);
 
@@ -110,8 +114,10 @@ test("homepage and Brampton landing keep a visible Queen Street H1", () => {
   const landing = read("app/components/GBPLandingPage.tsx");
   assert.match(homepage, /<h1>24-Hour Weed Dispensary in Brampton<\/h1>/);
   assert.doesNotMatch(homepage, /clip: "rect\(0, 0, 0, 0\)"/);
-  assert.match(landing, /<h1>Weed Dispensary in Brampton on Queen Street West<\/h1>/);
+  assert.match(landing, /<h1>\{gbpLocation\.weedOwnerH1\}<\/h1>/);
   assert.match(landing, /Call <a href=\{`tel:\$\{store\.phoneIntl\}`\}>\{store\.phoneDisplay\}<\/a>/);
   assert.match(homepage, /href="\/visit"/);
   assert.match(landing, /href="\/visit"/);
+  assert.match(homepage, /href="\/24-hour-queen-street-brampton-dispensary"/);
+  assert.match(landing, /href="\/24-hour-queen-street-brampton-dispensary"/);
 });

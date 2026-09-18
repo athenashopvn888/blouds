@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import SccHubLinks from "../components/SccHubLinks";
 import styles from "../visit/visit.module.css";
 import { SITE_ORIGIN, gbpLocation, siteUrl } from "../lib/gbp-location";
 
@@ -127,8 +128,10 @@ export default function DispensaryBramptonPage() {
         <p className={styles.lede}>
           This open guide turns a near-me or city search into the Queen Street West door, hours, and phone. Use the{" "}
           <Link href="/visit">Queen Street West walk-in guide</Link> for storefront arrival notes. The{" "}
-          <Link href="/weed-dispensary-brampton">Brampton store page</Link> and the{" "}
-          <Link href="/">current menu</Link> stay on this same website.
+          <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link> and the{" "}
+          <Link href="/">current menu</Link> stay on this same website. Overnight walk-ins can use the{" "}
+          <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West guide</Link>. The{" "}
+          <Link href="/brampton-walk-in-checklist">walk-in checklist</Link> stays on name, address, hours, and phone.
         </p>
 
         <div className={styles.napBar}>
@@ -158,6 +161,7 @@ export default function DispensaryBramptonPage() {
               FAQ
             </Link>
           </div>
+          <SccHubLinks currentPath={PAGE_PATH} />
         </div>
 
         <section className={styles.section}>
@@ -208,9 +212,10 @@ export default function DispensaryBramptonPage() {
           </p>
           <p>
             Hours on this page match the store listing used across the <Link href="/">homepage</Link> and{" "}
-            <Link href="/weed-dispensary-brampton">Brampton landing</Link>. Call{" "}
-            <a href={gbpLocation.phoneHref}>{gbpLocation.phone}</a> if you need to confirm a product, not the address.
-            Bring valid 19+ ID any hour you walk in.
+            <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link>. Overnight and late-night notes
+            live on the <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West page</Link>.
+            Call <a href={gbpLocation.phoneHref}>{gbpLocation.phone}</a> if you need to confirm a product, not the
+            address. Bring valid 19+ ID any hour you walk in.
           </p>
         </section>
 
@@ -242,6 +247,7 @@ export default function DispensaryBramptonPage() {
           <p>
             This guide does not invent ratings, quotes, or competitor hours. If you still need storefront arrival notes
             after the pin is confirmed, open the <Link href="/visit">walk-in guide</Link>, the{" "}
+            <Link href="/brampton-walk-in-checklist">walk-in checklist</Link>, the{" "}
             <Link href="/contact">contact page</Link>, or the <Link href="/faq">FAQ</Link>.
           </p>
         </section>
@@ -284,12 +290,19 @@ export default function DispensaryBramptonPage() {
                 More FAQ
               </Link>
               <Link className={styles.secondaryAction} href="/weed-dispensary-brampton">
-                Brampton store page
+                Queen Street West weed hub
+              </Link>
+              <Link className={styles.secondaryAction} href="/brampton-walk-in-checklist">
+                Walk-in checklist
+              </Link>
+              <Link className={styles.secondaryAction} href="/24-hour-queen-street-brampton-dispensary">
+                24-hour Queen Street West
               </Link>
               <Link className={styles.secondaryAction} href="/">
                 Menu
               </Link>
             </div>
+            <SccHubLinks currentPath={PAGE_PATH} />
           </div>
         </section>
       </article>

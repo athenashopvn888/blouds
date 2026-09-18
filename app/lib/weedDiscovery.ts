@@ -32,6 +32,8 @@ export const bloudsWeedOwner = {
     { label: "Value Guides", description: "Explore value-oriented choices without relying on a current price or promotion.", href: "/resources/value-guides" },
     { label: "Pre-Roll Guides", description: "Focus specifically on pre-rolls.", href: "/resources/pre-roll-guides" },
     { label: "Queen Street Brampton Visit Guide", description: "Find additional store-specific visit information.", href: "/resources/local-guides/queen-street-brampton-visit-guide" },
+    { label: "Queen Street Walk-In", description: "Storefront arrival notes for the downtown Queen Street West door.", href: "/visit" },
+    { label: "24-Hour Queen Street West", description: "Overnight and open-now notes for the 24-hour Queen Street West walk-in.", href: "/24-hour-queen-street-brampton-dispensary" },
     { label: "Brampton Walk-In Checklist", description: "Confirm hours, address, and phone before you travel. A practical checklist, not a review roundup.", href: "/brampton-walk-in-checklist" },
   ] satisfies WeedDiscoveryLink[],
 };
