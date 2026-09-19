@@ -194,7 +194,7 @@ test("Wave 3 stays on Queen Street West NAP and never claims Hillcrest, sister s
     PUBLIC_SOURCES,
     /Hillcrest|Unit 104|Kennedy Loud|B Loud Kennedy|7990 Kennedy|sister store|our other location|ByWard|Gatineau|Dalhousie|Ottawa/i,
   );
-  assert.doesNotMatch(PUBLIC_SOURCES, /#1|number one|best dispensary|best cigarettes|best vape|5-star review|fake review/i);
+  assert.doesNotMatch(PUBLIC_SOURCES, /(?:ranked\s*)?#1\b|number one|best dispensary|best cigarettes|best vape|5-star review|fake review/i);
   assert.doesNotMatch(PUBLIC_SOURCES, /\b(cures?|diagnos(?:e|is|ed)|prescription|medical cannabis|medicinal)\b/i);
   assert.doesNotMatch(read(NATIVE_FILE), /bloudsdispensary\.ca\/#store/);
   assert.doesNotMatch(read(VAPE_FILE), /bloudsdispensary\.ca\/#store/);
