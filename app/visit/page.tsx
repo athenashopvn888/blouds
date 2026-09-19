@@ -174,7 +174,10 @@ export default function VisitPage() {
           <p>
             At the door, staff will ask adults for valid government photo ID. Ontario’s legal age for recreational cannabis
             is 19. Inside, you can browse flower by tier or choose another cannabis format such as pre-rolls, edibles,
-            vapes, concentrates, or accessories.
+            vapes, concentrates, or accessories. The cigarette category has a{" "}
+            <Link href="/native-cigarettes-brampton-queen">Queen Street West native cigarettes guide</Link>. Nicotine
+            vape is a separate category from THC vape — use the{" "}
+            <Link href="/nicotine-vape-queen-street-brampton">Queen Street West nicotine vape guide</Link>.
           </p>
           <p>
             Product names and posted sizes can change. If one specific item is the reason for the trip, call{" "}
@@ -213,7 +216,8 @@ export default function VisitPage() {
           <p>
             Walk-ins are welcome late night and early morning. Bring 19+ ID either way. Hours on this page match the
             store listing used across the homepage and{" "}
-            <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link>. Late-night notes live on the{" "}
+            <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link>. Late-night and open-now notes —
+            including what the listed 24-hour schedule does and does not cover — live on the{" "}
             <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West page</Link>. Call{" "}
             <a href={gbpLocation.phoneHref}>{gbpLocation.phone}</a> if you need to confirm a product, not the address.
           </p>
@@ -307,6 +311,12 @@ export default function VisitPage() {
               </Link>
               <Link className={styles.secondaryAction} href="/24-hour-queen-street-brampton-dispensary">
                 24-hour Queen Street West
+              </Link>
+              <Link className={styles.secondaryAction} href="/native-cigarettes-brampton-queen">
+                Queen Street West native cigarettes
+              </Link>
+              <Link className={styles.secondaryAction} href="/nicotine-vape-queen-street-brampton">
+                Queen Street West nicotine vape
               </Link>
               <Link className={styles.secondaryAction} href="/cannabis-delivery-queen-street-brampton">
                 Queen Street West delivery

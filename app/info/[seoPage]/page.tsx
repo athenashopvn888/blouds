@@ -149,6 +149,14 @@ export default async function SeoLandingPage({
             </div>
           )}
 
+          {page.neighbourhoodLp ? (
+            <p className={styles.sectionBody}>
+              Queen Street West neighbourhood page:{" "}
+              <Link href={page.neighbourhoodLp.href}>{page.neighbourhoodLp.label}</Link>
+              . The public website for this store is the homepage.
+            </p>
+          ) : null}
+
           {page.warning && <p className={styles.nicotineWarning}>{page.warning}</p>}
         </div>
       </section>

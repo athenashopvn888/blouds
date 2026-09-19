@@ -151,6 +151,22 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               117 Queen St W, Brampton, ON L6Y 1M3 · Open 24 Hours
             </p>
+            {catSlug === "cigarettes" ? (
+              <p className={styles.visitText}>
+                Queen Street West neighbourhood guide:{" "}
+                <Link href="/native-cigarettes-brampton-queen">native cigarettes on Queen Street West</Link>
+                . Overnight walk-in notes:{" "}
+                <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West</Link>.
+              </p>
+            ) : null}
+            {catSlug === "vapes" ? (
+              <p className={styles.visitText}>
+                Queen Street West neighbourhood guide:{" "}
+                <Link href="/nicotine-vape-queen-street-brampton">nicotine vape on Queen Street West</Link>
+                . Overnight walk-in notes:{" "}
+                <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West</Link>.
+              </p>
+            ) : null}
           </div>
         </div>
       </section>
