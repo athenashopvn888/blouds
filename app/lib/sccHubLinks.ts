@@ -6,6 +6,8 @@ export const SCC_WAVE1_HUBS = [
   { href: "/weed-dispensary-brampton", label: "Queen Street West weed hub" },
   { href: "/cannabis-delivery-queen-street-brampton", label: "Queen Street West delivery" },
   { href: "/24-hour-queen-street-brampton-dispensary", label: "24-hour Queen Street West" },
+  { href: "/native-cigarettes-brampton-queen", label: "Queen Street West native cigarettes" },
+  { href: "/nicotine-vape-queen-street-brampton", label: "Queen Street West nicotine vape" },
 ] as const;
 
 export const SCC_TIER_ROUTES = [

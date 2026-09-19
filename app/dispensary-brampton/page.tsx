@@ -214,10 +214,12 @@ export default function DispensaryBramptonPage() {
           </p>
           <p>
             Hours on this page match the store listing used across the <Link href="/">homepage</Link> and{" "}
-            <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link>. Overnight and late-night notes
-            live on the <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West page</Link>.
-            Call <a href={gbpLocation.phoneHref}>{gbpLocation.phone}</a> if you need to confirm a product, not the
-            address. Bring valid 19+ ID any hour you walk in.
+            <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link>. Overnight, open-now, and
+            “what 24 hours covers” notes live on the{" "}
+            <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West page</Link>. That listed
+            schedule is the walk-in door at 117 Queen St W — not delivery, and not another Brampton pin. Call{" "}
+            <a href={gbpLocation.phoneHref}>{gbpLocation.phone}</a> if you need to confirm a product, not the address.
+            Bring valid 19+ ID any hour you walk in.
           </p>
         </section>
 

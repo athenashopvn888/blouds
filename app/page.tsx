@@ -186,6 +186,18 @@ const RESOURCE_LINKS = [
     body: "Late-night and open-now notes for the 24-hour Queen Street West door — not a city-wide hours list.",
   },
   {
+    href: "/native-cigarettes-brampton-queen",
+    tag: "Native cigarettes",
+    title: "Queen Street West native cigarettes",
+    body: "Cigarette category at 117 Queen St W. Check the current cigarette menu. Adults 19+.",
+  },
+  {
+    href: "/nicotine-vape-queen-street-brampton",
+    tag: "Nicotine vape",
+    title: "Queen Street West nicotine vape",
+    body: "Nicotine vape at the downtown Queen Street West door — separate from THC vape. Adults 19+.",
+  },
+  {
     href: "/resources/menu-guide",
     tag: "Menu guide",
     title: "Downtown Brampton menu map",
@@ -247,6 +259,8 @@ export default function HomePage() {
             <Link href="/dispensary-brampton">Brampton dispensary near me</Link>
             <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West delivery</Link>
             <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West</Link>
+            <Link href="/native-cigarettes-brampton-queen">Queen Street West native cigarettes</Link>
+            <Link href="/nicotine-vape-queen-street-brampton">Queen Street West nicotine vape</Link>
             <a href={gbpLocation.phoneHref}>Call {gbpLocation.phone}</a>
           </div>
         </div>
@@ -412,7 +426,8 @@ export default function HomePage() {
             <h2>Useful Queen Street pages, grouped clean.</h2>
             <p>
               Visit planning, downtown Brampton menu sections, flower tiers, Queen Street West delivery,
-              late-night shopping, and Queen Street West walk-in pages without burying the main menu.
+              late-night shopping, native cigarettes, nicotine vape, and Queen Street West walk-in pages
+              without burying the main menu.
             </p>
             <Link href="/resources">Open Resource Lounge</Link>
           </div>

@@ -63,6 +63,8 @@ export default function Footer() {
               <Link href="/dispensary-brampton">Brampton Dispensary Near Me</Link>
               <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West Delivery</Link>
               <Link href="/24-hour-queen-street-brampton-dispensary">24-Hour Queen Street West</Link>
+              <Link href="/native-cigarettes-brampton-queen">Queen Street West Native Cigarettes</Link>
+              <Link href="/nicotine-vape-queen-street-brampton">Queen Street West Nicotine Vape</Link>
               <Link href="/resources/local-guides/queen-street-brampton-visit-guide">Queen Street Visit Guide</Link>
               <Link href="/resources/weed-flower-guides">Weed &amp; Flower Guides</Link>
               <Link href="/faq">FAQ</Link>
