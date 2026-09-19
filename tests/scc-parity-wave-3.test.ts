@@ -201,6 +201,53 @@ test("Wave 3 stays on Queen Street West NAP and never claims Hillcrest, sister s
   assert.match(read("app/lib/gbp-location.ts"), /url: SITE_ORIGIN/);
 });
 
+test("Master GO: four Queen St pillars, FAQ on each LP, hub cards, supporting articles tied, Updates stay homepage", () => {
+  const pillars = [
+    [HOURS_PATH, HOURS_FILE],
+    [DELIVERY_PATH, DELIVERY_FILE],
+    [NATIVE_PATH, NATIVE_FILE],
+    [VAPE_PATH, VAPE_FILE],
+  ] as const;
+
+  const homepage = read("app/page.tsx");
+  const hubLib = read("app/lib/sccHubLinks.ts");
+  const seoPages = read("app/lib/seoPages.ts");
+  const infoPage = read("app/info/[seoPage]/page.tsx");
+  const resourceGuide = read("app/resources/adcV2ResourceData.ts");
+  const gbp = read("app/lib/gbp-location.ts");
+
+  for (const [path, file] of pillars) {
+    const source = read(file);
+    assert.equal(existsSync(file), true, path);
+    assert.match(source, /"@type": "FAQPage"/);
+    assert.match(source, /faqItems/);
+    assert.match(source, /117 Queen St W/);
+    assert.match(source, /Adults 19\+/);
+    assert.match(source, /the homepage/);
+    assert.ok(hubLib.includes(`href: "${path}"`), `Hub missing ${path}`);
+    assert.ok(
+      homepage.includes(`href: "${path}"`) || homepage.includes(`href="${path}"`),
+      `Homepage hub card missing ${path}`,
+    );
+    assert.doesNotMatch(source, /Hillcrest|Kennedy Loud|Ottawa|sister store/i);
+  }
+
+  assert.match(read(DELIVERY_FILE), /const PAGE_PATH = "\/cannabis-delivery-queen-street-brampton"/);
+  assert.match(read(NATIVE_FILE), /href="\/cannabis-delivery-queen-street-brampton"/);
+  assert.match(read(VAPE_FILE), /href="\/cannabis-delivery-queen-street-brampton"/);
+  assert.match(read(HOURS_FILE), /href="\/cannabis-delivery-queen-street-brampton"/);
+
+  assert.match(seoPages, /href: "\/native-cigarettes-brampton-queen"/);
+  assert.match(seoPages, /href: "\/nicotine-vape-queen-street-brampton"/);
+  assert.match(infoPage, /page\.neighbourhoodLp\.href/);
+  assert.match(resourceGuide, /\/native-cigarettes-brampton-queen/);
+  assert.equal(resourceGuide.match(/\barticle\(\{/g)?.length, 16);
+
+  assert.match(gbp, /url: SITE_ORIGIN/);
+  assert.doesNotMatch(homepage + hubLib + seoPages + infoPage, /LEARN_MORE/);
+  assert.doesNotMatch(read(NATIVE_FILE) + read(VAPE_FILE) + read(HOURS_FILE) + read(DELIVERY_FILE), /LEARN_MORE/);
+});
+
 test("Wave 3 does not touch the menu swimlane", () => {
   for (const file of MENU_SWIMLANE) {
     assert.equal(existsSync(file), true, file);

@@ -74,6 +74,7 @@ export interface SeoPageData {
   sections: { heading: string; body: string }[];
   faqs: { q: string; a: string }[];
   warning?: string;
+  neighbourhoodLp?: { href: string; label: string };
 }
 
 // GPT-reviewed store payload approved by Tri for publication.
@@ -112,6 +113,10 @@ export const NICOTINE_VAPE_LANDING_CONTENT: SeoPageData = {
     { q: "Does this Blouds page include cannabis vapes?", a: "No. This page covers nicotine products from the VAPE PENS category for adults 19+. THC and cannabis vape products under /items/vape-disposables are excluded." },
   ],
   warning: "Adults 19+. Nicotine is addictive.",
+  neighbourhoodLp: {
+    href: "/nicotine-vape-queen-street-brampton",
+    label: "Queen Street West nicotine vape",
+  },
 };
 
 export const SEO_PAGES: SeoPageData[] = [
@@ -182,6 +187,10 @@ export const SEO_PAGES: SeoPageData[] = [
       { q: "Where is Blouds Dispensary?", a: "The store is at 117 Queen St W in Brampton." },
       { q: "Is the store open late?", a: "Yes. Blouds Dispensary is open 24 hours a day." },
     ],
+    neighbourhoodLp: {
+      href: "/native-cigarettes-brampton-queen",
+      label: "Queen Street West native cigarettes",
+    },
   },
   NICOTINE_VAPE_LANDING_CONTENT,
   {
