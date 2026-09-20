@@ -3,7 +3,7 @@ export const SCC_WAVE1_HUBS = [
   { href: "/visit", label: "Queen Street walk-in" },
   { href: "/brampton-walk-in-checklist", label: "Brampton walk-in checklist" },
   { href: "/dispensary-brampton", label: "Brampton dispensary near me" },
-  { href: "/weed-dispensary-brampton", label: "Queen Street West weed hub" },
+  { href: "/weed-dispensary-brampton", label: "Queen Street West weed dispensary" },
   { href: "/cannabis-delivery-queen-street-brampton", label: "Queen Street West delivery" },
   { href: "/24-hour-queen-street-brampton-dispensary", label: "24-hour Queen Street West" },
   { href: "/native-cigarettes-brampton-queen", label: "Queen Street West native cigarettes" },

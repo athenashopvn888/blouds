@@ -34,6 +34,9 @@ export const bloudsWeedOwner = {
     { label: "Queen Street Brampton Visit Guide", description: "Find additional store-specific visit information.", href: "/resources/local-guides/queen-street-brampton-visit-guide" },
     { label: "Queen Street Walk-In", description: "Storefront arrival notes for the downtown Queen Street West door.", href: "/visit" },
     { label: "24-Hour Queen Street West", description: "Overnight and open-now notes for the 24-hour Queen Street West walk-in.", href: "/24-hour-queen-street-brampton-dispensary" },
+    { label: "Queen Street West Delivery", description: "Dispatcher-confirmed cannabis delivery from this Queen Street West door — not the 24-hour walk-in.", href: "/cannabis-delivery-queen-street-brampton" },
+    { label: "Queen Street West Native Cigarettes", description: "Cigarette category at the downtown Queen Street West door. Adults 19+.", href: "/native-cigarettes-brampton-queen" },
+    { label: "Queen Street West Nicotine Vape", description: "Nicotine vape at this Queen Street West store — separate from THC vape. Adults 19+.", href: "/nicotine-vape-queen-street-brampton" },
     { label: "Brampton Walk-In Checklist", description: "Confirm hours, address, and phone before you travel. A practical checklist, not a review roundup.", href: "/brampton-walk-in-checklist" },
   ] satisfies WeedDiscoveryLink[],
 };
