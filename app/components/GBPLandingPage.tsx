@@ -37,7 +37,8 @@ const faqItems = [
   },
   {
     question: "Can I start with flower tiers from this downtown Queen Street West page?",
-    answer: `Yes. Adults 19+ can start with Budget, AA, AAA+, Premium, and Exotic flower tiers, or choose pre-rolls, edibles, vapes, concentrates, or accessories. Call ${store.phoneDisplay} if one listing is the reason for the trip.`,
+    answer:
+      "Yes. Adults 19+ can start with Budget, AA, AAA+, Premium, and Exotic flower tiers, or choose pre-rolls, edibles, vapes, concentrates, or accessories. Call +1 (437) 371-5377 if one listing is the reason for the trip.",
   },
   {
     question: "Does this weed dispensary page cover native cigarettes or nicotine vape?",
@@ -46,7 +47,8 @@ const faqItems = [
   },
   {
     question: "What is the exact Queen Street West pin for this weed dispensary?",
-    answer: `${store.storeName} is at ${store.address}. Call ${store.phoneDisplay}. The public website for this store is the homepage.`,
+    answer:
+      "Blouds Dispensary is at 117 Queen St W, Brampton, ON L6Y 1M3. Call +1 (437) 371-5377. The public website for this store is the homepage.",
   },
   {
     question: "Do I need to be 19+ to shop weed on Queen Street West?",
@@ -55,7 +57,7 @@ const faqItems = [
   {
     question: "Where should I browse the current Queen Street West menu from this page?",
     answer:
-      "The homepage menu is the current public listing for this store. This neighbourhood page helps you start with a flower tier or cannabis format before you walk in at 117 Queen St W.",
+      "The homepage menu is the current public listing for this store. This neighbourhood page helps you start with a flower tier or cannabis format before you walk in at 117 Queen St W, Brampton, ON L6Y 1M3.",
   },
 ];
 
@@ -112,7 +114,7 @@ export function GBPLandingPage() {
         <section className={styles.hero}>
           <p className={styles.eyebrow}>Open 24 Hours · Downtown Queen Street West · Adults 19+</p>
           <h1>{gbpLocation.weedOwnerH1}</h1>
-          <p className={styles.heroAddress}>{store.address}</p>
+          <p className={styles.heroAddress}>117 Queen St W, Brampton, ON L6Y 1M3</p>
           <p className={styles.heroAddress}>Call <a href={`tel:${store.phoneIntl}`}>{store.phoneDisplay}</a> · {gbpLocation.hoursDisplay}</p>
           <div className={styles.actions}>
             <Link href="#find-your-weed" className={styles.primaryAction}>Find Your Weed</Link>
@@ -128,7 +130,7 @@ export function GBPLandingPage() {
             Looking for a weed dispensary in downtown Brampton that is open now? Blouds Dispensary is the Queen Street West walk-in cannabis store at <strong>{store.streetAddress}</strong> and is <strong>open 24 hours a day, seven days a week</strong>. This page is the neighbourhood weed dispensary owner for that Queen Street West / downtown door — not a city-wide Brampton roundup.
           </p>
           <p>
-            Use <strong>{store.address}</strong> in maps. Downtown Queen Street West shoppers use this page to confirm this door, hours, and phone before walking in. Storefront arrival stays on the <Link href="/visit">Queen Street West walk-in guide</Link>. Overnight and late-night visits can use the <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West guide</Link>. Cannabis delivery from this Queen Street West store uses dispatcher-confirmed hours on the <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West delivery guide</Link> — not the 24-hour walk-in.
+            Use <strong>117 Queen St W, Brampton, ON L6Y 1M3</strong> in maps. Downtown Queen Street West shoppers use this page to confirm this door, hours, and phone before walking in. Storefront arrival stays on the <Link href="/visit">Queen Street West walk-in guide</Link>. Overnight and late-night visits can use the <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West guide</Link>. Cannabis delivery from this Queen Street West store uses dispatcher-confirmed hours on the <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West delivery guide</Link> — not the 24-hour walk-in.
           </p>
           <p>
             At Blouds Dispensary on Queen St W, adults 19+ can start with flower by tier or choose a cannabis format such as pre-rolls, edibles, vapes, concentrates or accessories. Flower shelves on this Queen Street West door are <Link href="/exotic-weed">Exotic Weed</Link>, <Link href="/premium-weed">Premium Weed</Link>, <Link href="/aaa-weed">AAA+ Weed</Link>, <Link href="/aa-weed">AA Weed</Link>, and <Link href="/budget-weed">Budget Weed</Link>. The cigarette category has a <Link href="/native-cigarettes-brampton-queen">Queen Street West native cigarettes guide</Link>. Nicotine vape is separate from THC vape — use the <Link href="/nicotine-vape-queen-street-brampton">Queen Street West nicotine vape guide</Link>. Shoppers looking for a dispensary Brampton or dispensary near me can use the <Link href="/dispensary-brampton">downtown Queen Street open guide</Link> for the exact pin and hours. Shoppers comparing cannabis stores in Brampton can use the <Link href="/brampton-walk-in-checklist">walk-in checklist</Link> to confirm hours, address, and phone. The <Link href="/resources/local-guides/queen-street-brampton-visit-guide">Queen Street Brampton Visit Guide</Link> is also available for shoppers who want additional store-specific visit information before heading over.
