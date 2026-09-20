@@ -139,6 +139,10 @@ export const SEO_PAGES: SeoPageData[] = [
       { q: "What are the store hours?", a: "Blouds Dispensary is open 24 hours a day, seven days a week." },
       { q: "What can I check before visiting?", a: "Browse the current flower tiers and product categories online for listed menu details." },
     ],
+    neighbourhoodLp: {
+      href: "/weed-dispensary-brampton",
+      label: "Queen Street West weed dispensary",
+    },
   },
   {
     slug: "cheap-weed-brampton",
@@ -158,6 +162,10 @@ export const SEO_PAGES: SeoPageData[] = [
       { q: "Can I check item details before visiting?", a: "Yes. Current menu pages show the names, weights, prices, and package details listed online." },
       { q: "When is the store open?", a: "Blouds Dispensary is open 24 hours a day." },
     ],
+    neighbourhoodLp: {
+      href: "/weed-dispensary-brampton",
+      label: "Queen Street West weed dispensary",
+    },
   },
   {
     slug: "native-cigarettes-brampton",
@@ -211,6 +219,10 @@ export const SEO_PAGES: SeoPageData[] = [
       { q: "Is Blouds Dispensary open late?", a: "Blouds Dispensary is open 24 hours a day." },
       { q: "What is the store address?", a: "Blouds Dispensary is at 117 Queen St W in Brampton." },
     ],
+    neighbourhoodLp: {
+      href: "/weed-dispensary-brampton",
+      label: "Queen Street West weed dispensary",
+    },
   },
   {
     slug: "dispensary-near-me-brampton",
@@ -230,6 +242,10 @@ export const SEO_PAGES: SeoPageData[] = [
       { q: "What are the hours?", a: "The store is open 24 hours a day." },
       { q: "Can I browse online first?", a: "Yes. Use the current menu pages to compare categories and listed item details." },
     ],
+    neighbourhoodLp: {
+      href: "/weed-dispensary-brampton",
+      label: "Queen Street West weed dispensary",
+    },
   },
 ];
 

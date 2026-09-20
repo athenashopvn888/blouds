@@ -167,6 +167,14 @@ export default async function ItemsCategoryPage({
                 <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West</Link>.
               </p>
             ) : null}
+            {catSlug !== "cigarettes" && catSlug !== "vapes" ? (
+              <p className={styles.visitText}>
+                Queen Street West neighbourhood weed dispensary:{" "}
+                <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link>
+                . Overnight walk-in notes:{" "}
+                <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West</Link>.
+              </p>
+            ) : null}
           </div>
         </div>
       </section>

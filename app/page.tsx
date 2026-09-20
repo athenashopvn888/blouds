@@ -169,9 +169,9 @@ const RESOURCE_LINKS = [
   },
   {
     href: "/weed-dispensary-brampton",
-    tag: "Weed hub",
-    title: "Queen Street West weed",
-    body: "The downtown Queen Street West owner page for broad weed browsing, flower tiers, and store facts.",
+    tag: "Weed dispensary",
+    title: "Queen Street West weed dispensary",
+    body: "Neighbourhood weed dispensary for Queen Street West / downtown at 117 Queen St W. Flower tiers, formats, and store facts — not a city-wide Brampton roundup.",
   },
   {
     href: "/cannabis-delivery-queen-street-brampton",
