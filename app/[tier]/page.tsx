@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
@@ -13,8 +13,18 @@ import {
 import { TIER_SEO } from "../lib/tierSeoContent";
 import { TIER_EDUCATION } from "../lib/tierEducation";
 import { buildTierCollectionJsonLd } from "../lib/tierStructuredData";
+import { SCHEMA_STORE_ID, serializeJsonLd } from "../lib/collectionPageSchema";
+import { SITE_ORIGIN } from "../lib/gbp-location";
 import seoContent from "../lib/seoContent.generated.json";
 import styles from "./tier.module.css";
+
+const LEGACY_TIER_REDIRECTS: Record<string, string> = {
+  exotic: "exotic-weed",
+  premium: "premium-weed",
+  aaa: "aaa-weed",
+  aa: "aa-weed",
+  budget: "budget-weed",
+};
 
 /* -- Generate all tier pages at build -- */
 export function generateStaticParams() {
@@ -37,12 +47,12 @@ export async function generateMetadata({
     title: seo ? { absolute: seo.seoTitle } : `${tierInfo.config.name} Cannabis Flower - ${flowers.length} Strains`,
     description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at Blouds Dispensary.`,
     alternates: {
-      canonical: `https://www.bloudsdispensary.ca/${tierSlug}`,
+      canonical: `${SITE_ORIGIN}/${tierSlug}`,
     },
     openGraph: {
       title: seo?.seoTitle || `${tierInfo.config.name} Flower | Blouds Dispensary`,
       description: seo?.seoIntro || `Browse the ${tierInfo.config.name.toLowerCase()} flower section at Blouds Dispensary.`,
-      url: `https://www.bloudsdispensary.ca/${tierSlug}`,
+      url: `${SITE_ORIGIN}/${tierSlug}`,
     },
     twitter: {
       card: "summary_large_image",
@@ -59,6 +69,8 @@ export default async function TierPage({
   params: Promise<{ tier: string }>;
 }) {
   const { tier: tierSlug } = await params;
+  const canonicalTierSlug = LEGACY_TIER_REDIRECTS[tierSlug];
+  if (canonicalTierSlug) permanentRedirect(`/${canonicalTierSlug}`);
   const tierInfo = getTierFromSlug(tierSlug);
   if (!tierInfo) notFound();
 
@@ -73,8 +85,8 @@ export default async function TierPage({
   const regularFlowers = flowers.filter((f) => !f.isSale);
   const hotFlowers = flowers.filter((f) => f.isHot);
   const displayFlowers = [...saleFlowers, ...regularFlowers];
-  const pageUrl = `https://www.bloudsdispensary.ca/${tierSlug}`;
-  const tierJsonLd = buildTierCollectionJsonLd({
+  const pageUrl = `${SITE_ORIGIN}/${tierSlug}`;
+  const collectionJsonLd = buildTierCollectionJsonLd({
     canonicalPath: `/${tierSlug}`,
     name: seo?.h1 || config.name,
     description: seo?.seoIntro || `${config.name} cannabis flower at Blouds Dispensary on Queen Street West in downtown Brampton.`,
@@ -84,7 +96,7 @@ export default async function TierPage({
     ? {
         "@type": "FAQPage",
         "@id": `${pageUrl}#faq`,
-        about: { "@id": "https://www.bloudsdispensary.ca/#store" },
+        about: { "@id": SCHEMA_STORE_ID },
         mainEntity: seo.faqs.map((faq) => ({
           "@type": "Question",
           name: faq.q,
@@ -92,14 +104,14 @@ export default async function TierPage({
         })),
       }
     : null;
-  const pageJsonLd = {
-    ...tierJsonLd,
-    "@graph": faqJsonLd ? [...tierJsonLd["@graph"], faqJsonLd] : tierJsonLd["@graph"],
+  const tierJsonLd = {
+    ...collectionJsonLd,
+    "@graph": faqJsonLd ? [...collectionJsonLd["@graph"], faqJsonLd] : collectionJsonLd["@graph"],
   };
 
   return (
     <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(tierJsonLd) }} />
     <main className={styles.main}>
       <Navbar />
 
