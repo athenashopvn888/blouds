@@ -13,6 +13,7 @@ import {
 } from "../../lib/products";
 import styles from "./items.module.css";
 import { buildCategoryCollectionJsonLd } from "../../lib/categoryStructuredData";
+import { serializeJsonLd } from "../../lib/collectionPageSchema";
 import seoContent from "../../lib/seoContent.generated.json";
 
 /* ── Generate all category pages ── */
@@ -68,7 +69,7 @@ export default async function ItemsCategoryPage({
 
   return (
     <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryJsonLd) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(categoryJsonLd) }} />
     <main className={styles.main}>
       <Navbar />
 
