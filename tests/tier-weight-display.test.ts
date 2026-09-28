@@ -7,7 +7,8 @@ const tvPage = readFileSync("app/tv/page.tsx", "utf8");
 test("BLS01 TV uses 6g for the top three Weed tiers", () => {
   assert.match(tvPage, /const isTop3 = \["EXOTIC","PREMIUM","AAA\+"\]\.includes\(tier\)/);
   assert.match(tvPage, /\{isTop3 \? "6g" : "5g"\}/);
-  assert.match(tvPage, /\{f\.isSale \? "6G=" : "3G-6G"\}/);
+  assert.match(tvPage, /TOP_TIER_BUNDLE_LABELS\.price5g/);
+  assert.doesNotMatch(tvPage, /3G-6G/);
 });
 
 test("BLS01 TV preserves AA Weed at 5g", () => {
