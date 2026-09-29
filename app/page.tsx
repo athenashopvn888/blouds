@@ -1,3 +1,7 @@
+import { HOME_TITLE } from "./lib/homeDelivery";
+import CohortDeliveryActions from "./components/CohortDeliveryActions";
+import HomeDeliverySection from "./components/HomeDeliverySection";
+import HomepageTopNotices from "./components/HomepageTopNotices";
 import type { Metadata } from "next";
 import styles from "./page.module.css";
 import FleetAnnouncementBanner from "./components/FleetAnnouncementBanner";
@@ -11,16 +15,18 @@ import { allFlowers } from "./lib/products";
 import { SITE_ORIGIN, gbpLocation } from "./lib/gbp-location";
 
 export const metadata: Metadata = {
-  title: { absolute: gbpLocation.seoTitle },
+  title: { absolute: HOME_TITLE },
   description: gbpLocation.metaDescription,
   alternates: {
     canonical: SITE_ORIGIN,
   },
   openGraph: {
     url: SITE_ORIGIN,
-    title: gbpLocation.seoTitle,
+    title: HOME_TITLE,
     description: gbpLocation.metaDescription,
   },
+
+  twitter: { card: "summary_large_image", title: HOME_TITLE },
 };
 
 /* ── Tier data (will come from Supabase later) ── */
@@ -114,16 +120,16 @@ const TIERS = [
 /* ── Build featured strains dynamically from real inventory ── */
 function buildFeatured() {
   const pool = [...allFlowers].filter(f => f.image);
-  
+
   // Shuffle pool securely
   for (let i = pool.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [pool[i], pool[j]] = [pool[j], pool[i]];
   }
-  
+
   const picked: typeof pool = [];
   const tierCounts: Record<string, number> = {};
-  
+
   for (const f of pool) {
     if (picked.length >= 8) break;
     const tc = tierCounts[f.tier] || 0;
@@ -133,7 +139,7 @@ function buildFeatured() {
     picked.push(f);
     tierCounts[f.tier] = tc + 1;
   }
-  
+
   return picked.map((f) => ({
     name: f.name,
     slug: f.slug,
@@ -225,9 +231,11 @@ function getTierColor(tier: string) {
 export default function HomePage() {
   return (
     <main className={styles.main}>
+      <Navbar />
+      <HomepageTopNotices />
       <FleetAnnouncementBanner />
       {/* ── NAVBAR ── */}
-      <Navbar />
+
       <HiringCallout />
 
       {/* ── HERO BANNER ── */}
@@ -245,7 +253,8 @@ export default function HomePage() {
       <section className={styles.localIdentity} aria-label="Blouds Dispensary Brampton location">
         <div className={styles.container}>
           <p className={styles.localKicker}>Open 24 Hours · Adults 19+</p>
-          <h1>24-Hour Weed Dispensary in Brampton</h1>
+          <h1>{HOME_TITLE}</h1>
+            <CohortDeliveryActions variant="hero" />
           <p>
             <strong>{gbpLocation.storeName}</strong> is the walk-in cannabis store at{" "}
             <strong>{gbpLocation.address}</strong>. Call{" "}
@@ -265,6 +274,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <HomeDeliverySection />
 
       <div className={`${styles.container} ${styles.hubWrap}`}>
         <SccHubLinks currentPath="/" />
@@ -505,4 +516,3 @@ export default function HomePage() {
     </main>
   );
 }
-
