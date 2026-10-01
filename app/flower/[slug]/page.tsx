@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { allFlowers, TIER_CONFIG, type FlowerProduct, type PricePoint } from "../../lib/products";
+import { formatDollars, formatPerGram, isBogoDeal, paidAmount, type BoardDeal } from "../../lib/flowerDeals";
 import { getStrainData } from "../../lib/strainData";
 import RelatedScroll from "./RelatedScroll";
 import Magnifier from "../../components/Magnifier";
@@ -143,11 +144,17 @@ export default async function FlowerPage({
   const fiveGLabel = isTopTier ? "6g" : "5g";
   const fiveGGrams = isTopTier ? 6 : 5;
 
+  const dealFor = (kind: "3g" | "6g"): BoardDeal | null => {
+    const deal = kind === "3g" ? tierConfig?.deal3g : tierConfig?.deal6g;
+    if (!deal || (kind === "6g" && !isTopTier)) return null;
+    return deal;
+  };
+
   const prices = [
-    { label: "3g", grams: 3, p: flower.price3g, promo: "3g bundle pricing" },
-    { label: fiveGLabel, grams: fiveGGrams, p: flower.price5g, promo: isTopTier ? "6g bundle pricing" : null },
-    { label: "14g", grams: 14, p: flower.price14g, promo: null },
-    { label: "28g", grams: 28, p: flower.price28g, promo: null },
+    { label: "3g", grams: tierConfig?.deal3g?.grams ?? 3, p: flower.price3g, deal: dealFor("3g") },
+    { label: fiveGLabel, grams: fiveGGrams, p: flower.price5g, deal: dealFor("6g") },
+    { label: "14g", grams: 14, p: flower.price14g, deal: null as BoardDeal | null },
+    { label: "28g", grams: 28, p: flower.price28g, deal: null as BoardDeal | null },
   ].filter((x) => x.p !== null);
 
   // Cheapest per-gram for value display
@@ -248,20 +255,22 @@ export default async function FlowerPage({
               {/* -- Pricing table -- */}
               <div className={styles.pricingSection}>
                 <h2 className={styles.pricingTitle}>Pricing</h2>
+                {isTopTier && isBogoDeal(tierConfig?.deal3g) && isBogoDeal(tierConfig?.deal6g) && <p className={styles.boardIntro}>In-store board deals</p>}
                 <div className={styles.priceTable}>
                   <div className={styles.priceTableHeader}>
                     <span>WEIGHT</span>
                     <span>PRICE</span>
                     <span>$/G</span>
                   </div>
-                  {prices.map(({ label, grams, p, promo }) => {
-                    const effectivePrice = p ? (p.sale ?? p.regular) : 0;
+                  {prices.map(({ label, grams, p, deal }) => {
+                    const effectivePrice = paidAmount(p) ?? 0;
                     const perG = effectivePrice > 0 ? (effectivePrice / grams).toFixed(2) : "—";
+                    const showDeal = !!deal && (isBogoDeal(deal) || effectivePrice === deal.price);
                     return (
-                      <div key={label} className={promo ? styles.dealGroup : ""}>
-                        {promo && (
+                      <div key={label} className={showDeal ? styles.dealGroup : ""}>
+                        {showDeal && deal && (
                           <div className={styles.dealBanner}>
-                            🎁 {promo} = <strong>${effectivePrice} / {label.toUpperCase()}</strong>
+                            {isBogoDeal(deal) ? <>{deal.label}{" · "}Pay <strong>{formatDollars(effectivePrice)} = {grams}g</strong>{" "}<span className={styles.dealBannerMeta}>({formatPerGram(effectivePrice, grams)} · {deal.equals})</span></> : <>🎁 {deal.label} = <strong>{formatDollars(effectivePrice)} / {label.toUpperCase()}</strong></>}
                           </div>
                         )}
                         <div className={`${styles.priceTableRow} ${p && p.sale !== null ? styles.priceTableRowSale : ""}`}>
@@ -288,6 +297,7 @@ export default async function FlowerPage({
                     Lowest listed unit price: <strong>${bestValue.perG}/g</strong> at {bestValue.label}
                   </div>
                 )}
+                {isTopTier && tierConfig && <p className={styles.boardFootnote}>Effective $/g after promo; list price ${tierConfig.unitPrice}/g.</p>}
               </div>
 
               {/* -- Description (SEO) -- */}
