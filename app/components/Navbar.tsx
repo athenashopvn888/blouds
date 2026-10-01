@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import { gbpLocation } from "../lib/gbp-location";
+import FlowerBogoStrip from "./FlowerBogoStrip";
 
 const ALL_LINKS = [
   { href: "/careers/budtender", label: "Join Team" },
@@ -114,6 +115,7 @@ export default function Navbar() {
         )}
       </div>
       <CohortDeliveryActions />
+      {pathname !== "/" ? <FlowerBogoStrip /> : null}
     </nav>
   );
 }
