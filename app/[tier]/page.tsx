@@ -17,6 +17,7 @@ import { SCHEMA_STORE_ID, serializeJsonLd } from "../lib/collectionPageSchema";
 import { SITE_ORIGIN } from "../lib/gbp-location";
 import seoContent from "../lib/seoContent.generated.json";
 import styles from "./tier.module.css";
+import { getTierGuideLinks } from "../lib/guideRegistry";
 import { formatAsLowAsAfterPromos, formatPerGram, isBogoDeal, type BoardDeal } from "../lib/flowerDeals";
 
 const LEGACY_TIER_REDIRECTS: Record<string, string> = {
@@ -77,6 +78,7 @@ export default async function TierPage({
 
   const flowers = getFlowersByTier(tierInfo.key);
   const { config } = tierInfo;
+  const guideLinks = getTierGuideLinks(`/${tierSlug}`);
   const seo = TIER_SEO[tierInfo.key];
   const education = TIER_EDUCATION[tierInfo.key];
   const flowerCopy = seoContent.flowerTiers;
@@ -178,6 +180,14 @@ export default async function TierPage({
           </div>
         </div>
       </section>
+
+      {guideLinks.length > 0 && (
+        <nav className={styles.guideStrip} aria-label={`Popular ${config.name} strain guides`}>
+          <div className={styles.container}><h2>Popular strain guides</h2><div>
+            {guideLinks.map((guide) => <Link key={guide.slug} href={`/guides/${guide.slug}`}>{guide.name}</Link>)}
+          </div></div>
+        </nav>
+      )}
 
       {/* Product grid */}
       <section className={styles.products}>
