@@ -27,7 +27,9 @@ test("exact strip and BLS01 homepage stack are installed", () => {
   const sequence = ["data-thanksgiving-hours-notice","<FlowerBogoStrip hero","data-exotic-tier-banner","data-cigarette-deal","data-bb-light-deal","data-cig-mix-banner","data-bb-premium-banner"];
   let cursor=-1; for(const item of sequence){const next=banner.indexOf(item); assert.ok(next>cursor,item); cursor=next;}
   assert.match(banner,/top-weed-tier-bls01\.webp/); assert.match(banner,/2pack5cig\.webp/); assert.match(banner,/Blouds Dispensary/);
-  for(const file of ["public/banners/top-weed-tier-bls01.webp","public/banners/2pack5cig.webp","public/banners/bb-premium-grade-full-lights.webp"]) assert.ok(fs.statSync(file).size>1000,file);
+  assert.match(banner,/EXCLUSIVE SPECIAL PREMIUM GRADE BB FULL, BB LIGHT &amp; BELMONT KING SIZE!/);
+  assert.match(banner,/BB_Belmont_Premium_Grade\.webp/);
+  for(const file of ["public/banners/top-weed-tier-bls01.webp","public/banners/2pack5cig.webp","public/banners/BB_Belmont_Premium_Grade.webp"]) assert.ok(fs.statSync(file).size>1000,file);
 });
 
 test("mobile one-bar CSS and protected surfaces remain scoped out", () => {
