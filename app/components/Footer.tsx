@@ -58,6 +58,7 @@ export default function Footer() {
               <Link href="/items/cigarettes">Cigarettes</Link>
               <Link href="/items/vapes">Nicotine Vape</Link>
               <Link href="/resources">Resources</Link>
+              <Link href="/guides">Guides</Link>
               <Link href="/visit">Queen Street Walk-In</Link>
               <Link href="/brampton-walk-in-checklist">Brampton Walk-In Checklist</Link>
               <Link href="/dispensary-brampton">Brampton Dispensary Near Me</Link>
@@ -91,4 +92,3 @@ export default function Footer() {
     </footer>
   );
 }
-

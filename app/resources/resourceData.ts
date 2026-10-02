@@ -46,6 +46,7 @@ export interface ResourcePage {
   faqs?: ResourceFaq[];
   commercialLinks: ResourceLink[];
   related: string[];
+  guidesCard?: ResourceLink;
 }
 
 export const SITE = {
@@ -671,6 +672,12 @@ export const RESOURCE_PAGES: ResourcePage[] = [
   ...ADC_V2_NEW_PAGES,
 ];
 
+RESOURCE_PAGES[0].guidesCard = {
+  label: "Name Guides",
+  href: "/guides",
+  description: "Browse all strain, Native Cigarettes, Nicotine Vape, and THC Vape name guides in one directory.",
+};
+
 export const RESOURCE_HOME = RESOURCE_PAGES[0];
 
 export function normalizeResourcePath(path: string) {
@@ -717,4 +724,3 @@ export function getFeaturedPages() {
 export function getRelatedPages(page: ResourcePage) {
   return page.related.map((path) => RESOURCE_PAGES.find((item) => item.path === path)).filter(Boolean) as ResourcePage[];
 }
-
