@@ -25,6 +25,7 @@ const ALL_LINKS = [
   { href: "/items/add-ons", label: "Accessories" },
   { href: "/delivery", label: "DELIVERY MENU" },
   { href: "/resources", label: "Resources" },
+  { href: "/guides", label: "Guides" },
   { href: "/faq", label: "FAQ" },
 ];
 
