@@ -58,6 +58,10 @@ export default function FleetAnnouncementBanner() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/banners/BB_Belmont_Premium_Grade.webp" alt="Exclusive Premium Grade BB Full Flavor, BB Lights, and Belmont King Size cigarettes at Blouds Dispensary." />
       </Link>
+      <Link href="/items/cigarettes" data-belmont-mix-match-banner="" aria-label="BELMONT KING SIZE $10 - 2PACK BB $5 MIX & MATCH">
+        <span data-belmont-offer-lead="">BELMONT KING SIZE $10 -</span>
+        <span data-belmont-offer-tail=""> 2PACK BB $5 MIX &amp; MATCH</span>
+      </Link>
     </aside>
   );
 }
