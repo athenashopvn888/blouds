@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 import FlowerCard from "../components/FlowerCard";
 import SccHubLinks from "../components/SccHubLinks";
 import {
-  getFlowersByTier,
   getTierFromSlug,
   TIER_CONFIG,
 } from "../lib/products";
@@ -19,6 +18,10 @@ import seoContent from "../lib/seoContent.generated.json";
 import styles from "./tier.module.css";
 import { getTierGuideLinks } from "../lib/guideRegistry";
 import { formatAsLowAsAfterPromos, formatPerGram, isBogoDeal, type BoardDeal } from "../lib/flowerDeals";
+import { liveFlowersByTier } from "../lib/liveMenu";
+
+// Read the live menu feed on every request (never a build-time snapshot).
+export const dynamic = "force-dynamic";
 
 const LEGACY_TIER_REDIRECTS: Record<string, string> = {
   exotic: "exotic-weed",
@@ -42,7 +45,7 @@ export async function generateMetadata({
   const { tier: tierSlug } = await params;
   const tierInfo = getTierFromSlug(tierSlug);
   if (!tierInfo) return {};
-  const flowers = getFlowersByTier(tierInfo.key);
+  const flowers = (await liveFlowersByTier(tierInfo.key));
   const seo = TIER_SEO[tierInfo.key];
 
   return {
@@ -76,7 +79,7 @@ export default async function TierPage({
   const tierInfo = getTierFromSlug(tierSlug);
   if (!tierInfo) notFound();
 
-  const flowers = getFlowersByTier(tierInfo.key);
+  const flowers = (await liveFlowersByTier(tierInfo.key));
   const { config } = tierInfo;
   const guideLinks = getTierGuideLinks(`/${tierSlug}`);
   const seo = TIER_SEO[tierInfo.key];
