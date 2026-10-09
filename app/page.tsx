@@ -1,5 +1,5 @@
 import { getLiveMenu } from "./lib/liveMenu";
-import { HOME_TITLE } from "./lib/homeDelivery";
+import { HOME_TITLE, HOME_DOC_TITLE } from "./lib/homeDelivery";
 import CohortDeliveryActions from "./components/CohortDeliveryActions";
 import HomeDeliverySection from "./components/HomeDeliverySection";
 import HomepageTopNotices from "./components/HomepageTopNotices";
@@ -25,18 +25,18 @@ async function __loadMenuData(): Promise<void> {
 }
 
 export const metadata: Metadata = {
-  title: { absolute: HOME_TITLE },
+  title: { absolute: HOME_DOC_TITLE },
   description: gbpLocation.metaDescription,
   alternates: {
     canonical: SITE_ORIGIN,
   },
   openGraph: {
     url: SITE_ORIGIN,
-    title: HOME_TITLE,
+    title: HOME_DOC_TITLE,
     description: gbpLocation.metaDescription,
   },
 
-  twitter: { card: "summary_large_image", title: HOME_TITLE },
+  twitter: { card: "summary_large_image", title: HOME_DOC_TITLE },
 };
 
 /* ── Tier data (will come from Supabase later) ── */
