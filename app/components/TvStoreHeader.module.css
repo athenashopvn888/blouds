@@ -106,7 +106,7 @@
   overflow: hidden;
   color: var(--tv-theme-header-text);
   background-color: var(--tv-theme-primary);
-  background-image: var(--tv-theme-header-image);
+  background-image: linear-gradient(105deg, #062d19 0%, #126b25 54%, #4c1d76 100%);
   background-repeat: no-repeat;
   background-position: center 52%;
   background-size: cover;
