@@ -33,6 +33,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/cannabis-delivery-queen-street-brampton`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/native-cigarettes-brampton-queen`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/nicotine-vape-queen-street-brampton`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/vape-shop-brampton`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/careers/budtender`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
