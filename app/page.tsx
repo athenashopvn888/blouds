@@ -284,6 +284,7 @@ export default async function HomePage() {
             <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West</Link>
             <Link href="/native-cigarettes-brampton-queen">Queen Street West native cigarettes</Link>
             <Link href="/nicotine-vape-queen-street-brampton">Queen Street West nicotine vape</Link>
+            <Link href="/vape-shop-brampton">Current Brampton nicotine vape listings</Link>
             <a href={gbpLocation.phoneHref}>Call {gbpLocation.phone}</a>
           </div>
         </div>

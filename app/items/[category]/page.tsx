@@ -16,6 +16,7 @@ import { buildCategoryCollectionJsonLd } from "../../lib/categoryStructuredData"
 import { serializeJsonLd } from "../../lib/collectionPageSchema";
 import seoContent from "../../lib/seoContent.generated.json";
 import { liveItemsByCategory } from "../../lib/liveMenu";
+import VapeActionPanel from "../../components/VapeActionPanel";
 
 // Read the live menu feed on every request (never a build-time snapshot).
 export const dynamic = "force-dynamic";
@@ -130,6 +131,8 @@ export default async function ItemsCategoryPage({
           )}
         </div>
       </section>
+
+      {(catInfo.key === "VAPE PENS" || catInfo.key === "VAPE DISPOSABLE") && <VapeActionPanel />}
 
       {/* SEO Content */}
       <section className={styles.seoSection}>

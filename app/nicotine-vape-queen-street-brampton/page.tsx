@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import SccHubLinks from "../components/SccHubLinks";
 import styles from "../visit/visit.module.css";
 import { SITE_ORIGIN, gbpLocation, siteUrl } from "../lib/gbp-location";
+import VapeActionPanel from "../components/VapeActionPanel";
 
 const PAGE_PATH = "/nicotine-vape-queen-street-brampton";
 const PAGE_URL = siteUrl(PAGE_PATH);
@@ -127,6 +128,7 @@ export default function QueenStreetNicotineVapePage() {
       <article className={styles.content}>
         <p className={styles.kicker}>Queen Street West nicotine vape · Adults 19+ · Nicotine is addictive</p>
         <h1 className={styles.pageTitle}>Nicotine Vape on Queen Street West in Downtown Brampton</h1>
+        <VapeActionPanel />
         <p className={styles.lede}>
           {gbpLocation.storeName} lists a nicotine vape category at the downtown Queen Street West walk-in,{" "}
           <strong>{gbpLocation.address}</strong>. This page is the neighbourhood guide for that door — not a city-wide
