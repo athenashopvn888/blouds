@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import BloudsWebChat from "./BloudsWebChat";
 import menu from "./delivery-menu.json";
 import styles from "./delivery.module.css";
+import { deliveryTierRanges, tierRangeText } from "../lib/tierPriceRanges";
 
 type Tier = "SHREDS" | "Budget" | "BC Premium" | "CRAFTS" | "Exotics";
 type PriceOption = { key: string; label: string; price: number };
@@ -46,6 +47,7 @@ function ProductPricing({ product }: { product: Product }) {
   const bundles = eligible && loyalty ? [{ quantity: 2, perUnitPrice: loyalty, totalPrice: loyalty * 2 }, ...suppliedBundles] : product.offers?.filter((offer) => offer.kind === "multi_ounce") ?? [];
 
   return <div className={styles.pricing}>
+    <strong className="price-scope-label">Delivery price</strong>
     {compact.length > 0 && <div className={styles.compactPrices}>{compact.map((option) => <span key={option.key}>{option.label} <strong>{formatCurrency(option.price)}</strong></span>)}</div>}
     <div className={styles.decisionPrices}>
       {loyalty !== null && <span className={styles.loyalty}><small>MEMBER LOYALTY 28g</small><strong>{formatCurrency(loyalty)}</strong></span>}
@@ -103,6 +105,7 @@ export default function DeliveryContent() {
     return products.filter((product) => (filter === "ALL" || product.tier === filter) && (!needle || `${product.name} ${product.category} ${product.strain}`.toLowerCase().includes(needle)))
       .sort((a, b) => tierOrder.indexOf(a.tier) - tierOrder.indexOf(b.tier) || entryPrice(a) - entryPrice(b) || a.name.localeCompare(b.name));
   }, [filter, products, search]);
+  const tierRanges = useMemo(() => deliveryTierRanges(products).map(({ tier, range }) => ({ tier, line: tierRangeText(range) })).filter((item): item is { tier: string; line: string } => Boolean(item.line)), [products]);
 
   return <main className={styles.main}>
     <Navbar />
@@ -110,10 +113,12 @@ export default function DeliveryContent() {
       <Image src="/banners/Blouds_Delivery.webp" alt="Blouds delivery menu" width={1200} height={500} priority sizes="100vw" />
       <div><p>Blouds Dispensary</p><h1>Delivery Menu</h1><span>Browse the shared product catalog. The store confirms current availability and delivery details before an order is accepted.</span></div>
     </section>
+    <p className="price-rule-notice"><strong>DELIVERY PRICES ONLY.</strong> Delivery orders are charged these prices, not in-store prices. <Link href="/faq#delivery-price-rule">See the FAQ</Link></p>
     <section className={styles.deliveryDetails} aria-label="Blouds delivery details">
       <strong>$60 PRODUCT MINIMUM</strong>
       <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West delivery guide — hours are not the 24-hour walk-in</Link>
     </section>
+    {tierRanges.length > 0 ? <section className="tier-range-list" aria-label="Delivery prices per gram by flower tier"><h2>Delivery prices per gram</h2><ul>{tierRanges.map(({ tier, line }) => <li key={tier}><strong>{tier}</strong><span><b className="price-scope-label">Delivery price</b>{line}</span></li>)}</ul></section> : null}
     <section className={styles.loyalty} aria-labelledby="loyalty-title">
       <div><p>SAVE ON A LATER ORDER</p><h2 id="loyalty-title">Member Loyalty Savings</h2></div>
       <p>Qualify with an eligible regular-price 28g purchase in BC Premium, Crafts, or Exotics, or with a selected 2 × 28g tier offer. Rewards and coupons apply to a later order—not the qualifying purchase.</p>

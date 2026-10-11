@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import SccHubLinks from "./components/SccHubLinks";
 import { WeedDiscoveryModule } from "./components/WeedDiscoveryModule";
 import { SITE_ORIGIN, gbpLocation } from "./lib/gbp-location";
+import { storeTierRange, tierRangeText } from "./lib/tierPriceRanges";
 
 // Products come from the same loader as /api/tv-data on every request.
 export const dynamic = "force-dynamic";
@@ -43,6 +44,7 @@ export const metadata: Metadata = {
 const TIERS = [
   {
     name: "Exotic Weed",
+    key: "EXOTIC",
     slug: "exotic-weed",
     tagline: "Browse current Exotic flower listings",
     thc: "35-39%",
@@ -57,6 +59,7 @@ const TIERS = [
   },
   {
     name: "Premium Weed",
+    key: "PREMIUM",
     slug: "premium-weed",
     tagline: "Hand-picked connoisseur grade",
     thc: "32-34%",
@@ -71,6 +74,7 @@ const TIERS = [
   },
   {
     name: "AAA+ Weed",
+    key: "AAA+",
     slug: "aaa-weed",
     tagline: "Heavy hitters, proven strains",
     thc: "30-32%",
@@ -85,6 +89,7 @@ const TIERS = [
   },
   {
     name: "AA Weed",
+    key: "AA",
     slug: "aa-weed",
     tagline: "Quality daily drivers",
     thc: "27-29%",
@@ -99,6 +104,7 @@ const TIERS = [
   },
   {
     name: "Budget Weed",
+    key: "BUDGET",
     slug: "budget-weed",
     tagline: "Shreds & value OZs",
     thc: "24-27%",
@@ -113,6 +119,7 @@ const TIERS = [
   },
   {
     name: "EDIBLES & MORE",
+    key: null,
     slug: "items/edibles",
     tagline: "Gummies, vapes, pre-rolls, hash",
     thc: "Up to 98%",
@@ -308,6 +315,7 @@ export default async function HomePage() {
             </p>
           </div>
 
+          <p className="price-rule-notice"><strong>IN-STORE PRICES ONLY.</strong> These prices do not apply to delivery orders. Delivery has its own prices. Why? <Link href="/faq#delivery-price-rule">See the FAQ</Link></p>
           <div className={styles.tierGrid}>
             {TIERS.map((tier, i) => (
               <Link
@@ -336,21 +344,7 @@ export default async function HomePage() {
                   >
                     {tier.icon} {tier.name}
                   </h3>
-                  <div className={styles.tierCardMeta}>
-                    <span className={styles.tierCardThc}>
-                      THC {tier.thc}
-                    </span>
-                    <span className={styles.tierCardCount}>
-                      {tier.count} strains
-                    </span>
-                  </div>
-                  <div className={styles.tierCardPrice}>
-                    {tier.unitPrice !== null && (
-                      <span className={styles.tierCardUnitPrice}>
-                        ${tier.unitPrice}/g
-                      </span>
-                    )}
-                  </div>
+                  {tier.key ? (() => { const value = storeTierRange(__menu.flowers, tier.key); const line = tierRangeText(value); return line ? <div className={styles.tierCardPrice}><small className="price-scope-label">In-store price</small><span className={styles.tierCardUnitPrice}>{line}</span><span className={styles.tierCardCount}>{value.count} strains</span></div> : null; })() : null}
                   {tier.deal3g && (
                     <div className={styles.tierCardDeals}>
                       <span className={styles.tierCardDeal}>🎁 {tier.deal3g}</span>
