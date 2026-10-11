@@ -61,6 +61,7 @@ const FAQ_CATEGORIES = [
   {
     title: "🛒 Shopping & Experience",
     faqs: [
+      { q: "Can I get the store price on a delivery order?", a: "In-store prices are for purchases made in the store. Delivery orders always use delivery prices." },
       { q: "Do I need an appointment?", a: "No. Blouds Dispensary is walk-in friendly. Just bring valid 19+ ID and check the menu before visiting." },
       { q: "Can I order online?", a: "Currently, Blouds Dispensary is an in-store shopping experience only. You can browse the current menu online before visiting." },
       { q: "Do you offer delivery?", a: "Delivery is coming soon! Visit our delivery page to sign up for email notifications when we launch our delivery service." },
@@ -116,7 +117,7 @@ export default function FAQPage() {
             <div key={cat.title} className={styles.category}>
               <h2 className={styles.categoryTitle}>{cat.title}</h2>
               {cat.faqs.map((faq) => (
-                <details key={faq.q} className={styles.faqItem}>
+                <details key={faq.q} id={faq.q === "Can I get the store price on a delivery order?" ? "delivery-price-rule" : undefined} open={faq.q === "Can I get the store price on a delivery order?"} className={styles.faqItem}>
                   <summary className={styles.faqQuestion}>{faq.q}</summary>
                   <p className={styles.faqAnswer}>{faq.a}</p>
                 </details>
