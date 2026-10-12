@@ -212,7 +212,8 @@
   padding: 8px 0 28px;
 }
 
-.localIdentity h1 {
+.localIdentity h1,
+.localIdentity .homeTitleEcho {
   margin: 0 0 12px;
   color: var(--text-primary);
   font-family: var(--font-display);
