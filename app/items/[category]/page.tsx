@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
+import CategoryCoreBanners, { cigaretteCategoryImage } from "../../components/CategoryCoreBanners";
 import SafeImage from "../../components/SafeImage";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
 import Footer from "../../components/Footer";
@@ -85,7 +86,8 @@ export default async function ItemsCategoryPage({
           <>
             <img
               src={config.banner}
-              alt={config.name}
+              alt={catSlug === "cigarettes" ? cigaretteCategoryImage.alt : config.name}
+              title={catSlug === "cigarettes" ? cigaretteCategoryImage.title : config.name}
               style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
             />
             <div className={styles.heroContent} style={{ background: config.color, padding: "20px 24px", textAlign: "center" }}>
@@ -104,6 +106,9 @@ export default async function ItemsCategoryPage({
           </div>
         )}
       </section>
+
+      {(catSlug === "vapes" || catSlug === "vape-disposables") && <CategoryCoreBanners kind="vapes" />}
+      {catSlug === "cigarettes" && <CategoryCoreBanners kind="cigarettes" />}
 
       {guideGroups.length > 0 && (
         <nav className={styles.guideStrip} aria-label={`${config.name} guides`}>
