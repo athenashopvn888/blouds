@@ -6,6 +6,7 @@ import HomepageTopNotices from "./components/HomepageTopNotices";
 import type { Metadata } from "next";
 import styles from "./page.module.css";
 import FleetAnnouncementBanner from "./components/FleetAnnouncementBanner";
+import HomeTitleBlock from "./components/HomeTitleBlock";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
 import HiringCallout from "./components/HiringCallout";
@@ -253,6 +254,7 @@ export default async function HomePage() {
   return (
     <main className={styles.main}>
       <Navbar />
+      <HomeTitleBlock />
       <FleetAnnouncementBanner />
       <HomepageTopNotices />
       {/* ── NAVBAR ── */}
@@ -274,7 +276,7 @@ export default async function HomePage() {
       <section className={styles.localIdentity} aria-label="Blouds Dispensary Brampton location">
         <div className={styles.container}>
           <p className={styles.localKicker}>Open 24 Hours · Adults 19+</p>
-          <h1>{HOME_TITLE}</h1>
+          <p className={styles.homeTitleEcho}>{HOME_TITLE}</p>
             <CohortDeliveryActions variant="hero" />
           <p>
             <strong>{gbpLocation.storeName}</strong> is the walk-in cannabis store at{" "}
