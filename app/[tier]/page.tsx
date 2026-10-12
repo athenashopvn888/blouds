@@ -2,6 +2,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import CategoryCoreBanners from "../components/CategoryCoreBanners";
 import Footer from "../components/Footer";
 import FlowerCard from "../components/FlowerCard";
 import SccHubLinks from "../components/SccHubLinks";
@@ -131,6 +132,8 @@ export default async function TierPage({
           className={styles.bannerImg}
         />
       </section>
+
+      {["EXOTIC", "PREMIUM", "AAA+"].includes(tierInfo.key.toUpperCase()) ? <CategoryCoreBanners kind="weed" /> : null}
 
       {/* Hero Content BELOW banner */}
       <section
