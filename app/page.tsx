@@ -253,8 +253,8 @@ export default async function HomePage() {
   return (
     <main className={styles.main}>
       <Navbar />
-      <HomepageTopNotices />
       <FleetAnnouncementBanner />
+      <HomepageTopNotices />
       {/* ── NAVBAR ── */}
 
       <HiringCallout />
