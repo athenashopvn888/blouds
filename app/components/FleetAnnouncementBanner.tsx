@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import FlowerBogoStrip from "./FlowerBogoStrip";
 
 const STORE_NAME = "Blouds Dispensary";
-const STORE_AREA = "Queen Street West, Brampton";
+const STORE_AREA = "Brampton";
 const STORE_ORIGIN = "https://www.bloudsdispensary.ca";
 const TOP_WEED_IMAGE = "/banners/top-weed-tier-bls01.webp";
 const CIGARETTE_IMAGE = "/banners/2pack5cig.webp";
@@ -17,7 +17,7 @@ const imageObjects = [
   { name: `${STORE_NAME} nicotine and THC vapes`, description: `Nicotine vapes and THC vapes at ${STORE_NAME} in ${STORE_AREA}.`, contentUrl: `${STORE_ORIGIN}${VAPE_IMAGE}` },
   { name: `${STORE_NAME} cigarette mix and match`, description: `Two packs for $5 mix and match and $25 carton cigarette offer at ${STORE_NAME} in ${STORE_AREA}.`, contentUrl: `${STORE_ORIGIN}${CIGARETTE_IMAGE}` },
   { name: `${STORE_NAME} premium cigarette offer`, description: `BB Full Flavor and Lights two packs for $5 plus Marlboro and Belmont for $10 per pack at ${STORE_NAME} in ${STORE_AREA}.`, contentUrl: `${STORE_ORIGIN}${PREMIUM_CIGARETTE_IMAGE}` },
-].map((image) => ({ "@type": "ImageObject", ...image }));
+].map((image) => ({ "@type": "ImageObject", ...image, caption: image.description }));
 
 function isThanksgivingNoticeActive(date: Date) {
   const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Toronto", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(date);
