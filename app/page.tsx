@@ -15,6 +15,8 @@ import SccHubLinks from "./components/SccHubLinks";
 import { WeedDiscoveryModule } from "./components/WeedDiscoveryModule";
 import { SITE_ORIGIN, gbpLocation } from "./lib/gbp-location";
 import { storeTierRange, tierRangeText } from "./lib/tierPriceRanges";
+import NearMeFaq from "./components/NearMeFaq";
+import nearMeFaq from "./lib/nearMeFaq.json";
 
 // Products come from the same loader as /api/tv-data on every request.
 export const dynamic = "force-dynamic";
@@ -523,6 +525,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── FOOTER ── */}
+      <NearMeFaq id="local-near-me" q={nearMeFaq.home.q} a={nearMeFaq.home.a} />
       <Footer />
     </main>
   );
