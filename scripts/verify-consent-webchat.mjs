@@ -9,6 +9,9 @@ for (const expected of [
   'sod-web-chat:BLD',
   'smsConsent',
   'required type="checkbox"',
+  'if (!firstMessage.trim())',
+  '<label>Order details<textarea required',
+  'disabled={busy || !smsConsent || !firstMessage.trim()}',
   'workflowVersion: "READY_V1"',
   'I agree to receive one READY delivery-link text for this order.',
   '/api/web-chat/session',
@@ -24,6 +27,8 @@ for (const expected of [
   'NEW_CUSTOMER',
   'RETURNING_CUSTOMER',
 ]) assert.ok(chat.includes(expected), `Missing Web Chat contract: ${expected}`);
+
+assert.ok(!chat.includes("Order details (optional)"), "Order details must not be presented as optional");
 
 assert.ok(delivery.includes("<BloudsWebChat />"), "Delivery page must render Blouds Web Chat");
 assert.ok(!chat.includes('storeId: "P60"'), "Reference store identity must not remain");
