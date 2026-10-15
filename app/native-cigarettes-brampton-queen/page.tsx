@@ -1,3 +1,4 @@
+import CigaretteSeasonalNotice from "../components/CigaretteSeasonalNotice";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
@@ -122,6 +123,7 @@ export default function QueenStreetNativeCigarettesPage() {
     <main className={styles.main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <Navbar />
+      <CigaretteSeasonalNotice sticky />
 
       <article className={styles.content}>
         <p className={styles.kicker}>Queen Street West cigarettes · Adults 19+ · Tobacco is addictive</p>
