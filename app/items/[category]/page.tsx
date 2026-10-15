@@ -1,3 +1,4 @@
+import CigaretteSeasonalNotice from "../../components/CigaretteSeasonalNotice";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -79,6 +80,7 @@ export default async function ItemsCategoryPage({
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(categoryJsonLd) }} />
     <main className={styles.main}>
       <Navbar />
+      {catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
 
       {/* Hero Banner */}
       <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
