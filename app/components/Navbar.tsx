@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
+import GoogleReviewButton from "./GoogleReviewButton";
 import { gbpLocation } from "../lib/gbp-location";
 import FlowerBogoStrip from "./FlowerBogoStrip";
 
@@ -78,6 +79,7 @@ export default function Navbar() {
           />
         </Link>
         <div className={styles.topBarRight}>
+          <GoogleReviewButton />
           <a href={gbpLocation.phoneHref} className={styles.callLink}>
             {gbpLocation.phone}
           </a>
