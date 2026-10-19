@@ -47,6 +47,8 @@ export interface ResourcePage {
   commercialLinks: ResourceLink[];
   related: string[];
   guidesCard?: ResourceLink;
+  /** Verbatim markdown body. When set, ResourceView renders this instead of intro/sections. */
+  bodyMarkdown?: string;
 }
 
 export const SITE = {
@@ -666,10 +668,12 @@ const BASE_RESOURCE_PAGES: ResourcePage[] = [
 ];
 
 import { ADC_V2_NEW_PAGES, applyAdcV2Expansions } from "./adcV2ResourceData.ts";
+import { CANNABIS_LEGALIZATION_CANADA_TIMELINE } from "./cannabisLegalizationCanadaTimeline.ts";
 
 export const RESOURCE_PAGES: ResourcePage[] = [
   ...BASE_RESOURCE_PAGES.map(applyAdcV2Expansions),
   ...ADC_V2_NEW_PAGES,
+  CANNABIS_LEGALIZATION_CANADA_TIMELINE,
 ];
 
 RESOURCE_PAGES[0].guidesCard = {
