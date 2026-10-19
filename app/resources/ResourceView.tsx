@@ -2,6 +2,7 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./resources.module.css";
+import ResourceMarkdown from "./ResourceMarkdown";
 import {
   AUTHORS,
   SITE,
@@ -33,8 +34,8 @@ export default function ResourceView({ page }: ResourceViewProps) {
         <div className={styles.heroContent}>
           <Breadcrumbs page={page} />
           <p className={styles.kicker}>{page.categoryLabel}</p>
-          <h1>{page.h1}</h1>
-          <p className={styles.heroText}>{page.excerpt}</p>
+          <h1 className={page.bodyMarkdown ? styles.articleTitle : undefined}>{page.h1}</h1>
+          {page.excerpt ? <p className={styles.heroText}>{page.excerpt}</p> : null}
           <div className={styles.metaRow}>
             <span>{author.name}</span>
             <span>{author.role}</span>
@@ -45,40 +46,46 @@ export default function ResourceView({ page }: ResourceViewProps) {
 
       <section className={styles.bodyWrap}>
         <article className={styles.article}>
-          <div className={styles.introBlock}>
-            {page.intro.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+          {page.bodyMarkdown ? (
+            <ResourceMarkdown markdown={page.bodyMarkdown} />
+          ) : (
+            <>
+              <div className={styles.introBlock}>
+                {page.intro.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
 
-          {children.length > 0 && (
-            <ResourceCards
-              title={page.kind === "root" ? "Choose a Resource Section" : "Guides in This Section"}
-              pages={children}
-              leadLink={page.kind === "root" ? page.guidesCard : undefined}
-            />
-          )}
-
-          {page.kind === "root" && featured.length > 0 && (
-            <ResourceCards title="Featured Blouds Reads" pages={featured} compact />
-          )}
-
-          {page.sections.map((section) => (
-            <section key={section.heading} className={styles.contentSection}>
-              <h2>{section.heading}</h2>
-              {section.body.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-              {section.bullets && (
-                <ul>
-                  {section.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
+              {children.length > 0 && (
+                <ResourceCards
+                  title={page.kind === "root" ? "Choose a Resource Section" : "Guides in This Section"}
+                  pages={children}
+                  leadLink={page.kind === "root" ? page.guidesCard : undefined}
+                />
               )}
-              {section.links && <LinkList links={section.links} />}
-            </section>
-          ))}
+
+              {page.kind === "root" && featured.length > 0 && (
+                <ResourceCards title="Featured Blouds Reads" pages={featured} compact />
+              )}
+
+              {page.sections.map((section) => (
+                <section key={section.heading} className={styles.contentSection}>
+                  <h2>{section.heading}</h2>
+                  {section.body.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                  {section.bullets && (
+                    <ul>
+                      {section.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  )}
+                  {section.links && <LinkList links={section.links} />}
+                </section>
+              ))}
+            </>
+          )}
 
           {page.faqs && page.faqs.length > 0 && (
             <section className={styles.contentSection} aria-labelledby="resource-faq-heading">

@@ -77,6 +77,11 @@
   margin: 10px 0 18px;
 }
 
+.hero h1.articleTitle {
+  font-size: clamp(32px, 4.2vw, 54px);
+  line-height: 1.12;
+}
+
 .heroText {
   max-width: 830px;
   color: #fef3c7;
@@ -176,6 +181,66 @@
 
 .contentSection li + li {
   margin-top: 6px;
+}
+
+.markdownBody {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.32);
+  padding: 30px;
+}
+
+.markdownBody > :first-child {
+  margin-top: 0;
+}
+
+.markdownBody p,
+.markdownBody li {
+  color: #d1fae5;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.markdownBody p + p,
+.markdownBody h2,
+.markdownBody ul,
+.markdownBody ol {
+  margin-top: 16px;
+}
+
+.markdownBody h2 {
+  font-family: var(--font-display);
+  color: #ffffff;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.15;
+  letter-spacing: 0;
+  margin-bottom: 0;
+}
+
+.markdownBody h2 + p,
+.markdownBody h2 + ul,
+.markdownBody h2 + ol {
+  margin-top: 12px;
+}
+
+.markdownBody ul,
+.markdownBody ol {
+  margin-left: 22px;
+  color: #fef3c7;
+}
+
+.markdownBody li + li {
+  margin-top: 6px;
+}
+
+.markdownBody a {
+  color: #86efac;
+  font-weight: 800;
+}
+
+.markdownBody strong {
+  color: #ffffff;
 }
 
 .faqList {
