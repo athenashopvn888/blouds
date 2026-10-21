@@ -1,3 +1,4 @@
+import { cigaretteSafeContent } from "../lib/siteConfig";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
@@ -26,7 +27,7 @@ const BOARD_DEAL_ANSWER = ["Exotic, Premium, and AAA+ use the in-store board dea
 const aaaDeals = TIER_CONFIG["AAA+"];
 const BOARD_DEAL_HOW = [`${BOGO_BUY_2_GET_1} means you pay for 2g and receive 3g.`, aaaDeals.deal3g ? `On AAA+ that is ${formatPayEquals(aaaDeals.deal3g.price, aaaDeals.deal3g.grams)}.` : "", `${BOGO_BUY_3_GET_3} means you pay for 3g and receive 6g.`, aaaDeals.deal6g ? `On AAA+ that is ${formatPayEquals(aaaDeals.deal6g.price, aaaDeals.deal6g.grams)}.` : "", "Premium and Exotic use the same FREE lines with their own paid totals. The 6g total is on Exotic, Premium, and AAA+ only. AA has neither board deal."].filter(Boolean).join(" ");
 
-const FAQ_CATEGORIES = [
+const FAQ_CATEGORIES_RAW = [
   {
     title: "📍 Location & Hours",
     faqs: [
@@ -71,6 +72,8 @@ const FAQ_CATEGORIES = [
     ],
   },
 ];
+
+const FAQ_CATEGORIES = cigaretteSafeContent(FAQ_CATEGORIES_RAW);
 
 export default function FAQPage() {
   // JSON-LD for FAQ page

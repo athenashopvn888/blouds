@@ -1,4 +1,7 @@
 "use client";
+
+import { filterCigaretteEntries } from "../lib/siteConfig";
+
 import CohortDeliveryActions from "./CohortDeliveryActions";
 
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -9,7 +12,7 @@ import GoogleReviewButton from "./GoogleReviewButton";
 import { gbpLocation } from "../lib/gbp-location";
 import FlowerBogoStrip from "./FlowerBogoStrip";
 
-const ALL_LINKS = [
+const ALL_LINKS_RAW = [
   { href: "/careers/budtender", label: "Join Team" },
   { href: "/exotic-weed", label: "Exotic Weed" },
   { href: "/premium-weed", label: "Premium Weed" },
@@ -29,6 +32,8 @@ const ALL_LINKS = [
   { href: "/guides", label: "Guides" },
   { href: "/faq", label: "FAQ" },
 ];
+
+const ALL_LINKS = filterCigaretteEntries(ALL_LINKS_RAW);
 
 export default function Navbar() {
   const pathname = usePathname();
