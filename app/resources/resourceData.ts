@@ -1,3 +1,4 @@
+import { SHOW_CIGARETTES, cigaretteSafeContent, isCigarettePath } from "../lib/siteConfig";
 export type ResourceAuthorKey = "team" | "menu" | "local";
 
 export interface ResourceAuthor {
@@ -670,17 +671,23 @@ const BASE_RESOURCE_PAGES: ResourcePage[] = [
 import { ADC_V2_NEW_PAGES, applyAdcV2Expansions } from "./adcV2ResourceData.ts";
 import { CANNABIS_LEGALIZATION_CANADA_TIMELINE } from "./cannabisLegalizationCanadaTimeline.ts";
 
-export const RESOURCE_PAGES: ResourcePage[] = [
+const RESOURCE_PAGES_RAW: ResourcePage[] = [
   ...BASE_RESOURCE_PAGES.map(applyAdcV2Expansions),
   ...ADC_V2_NEW_PAGES,
   CANNABIS_LEGALIZATION_CANADA_TIMELINE,
 ];
 
-RESOURCE_PAGES[0].guidesCard = {
+RESOURCE_PAGES_RAW[0].guidesCard = {
   label: "Name Guides",
   href: "/guides",
   description: "Browse all strain, Native Cigarettes, Nicotine Vape, and THC Vape name guides in one directory.",
 };
+
+export const RESOURCE_PAGES = SHOW_CIGARETTES
+  ? RESOURCE_PAGES_RAW
+  : RESOURCE_PAGES_RAW
+      .filter((page) => !isCigarettePath((page as { slug?: string; path?: string }).slug ?? (page as { path?: string }).path))
+      .map((page) => cigaretteSafeContent(page));
 
 export const RESOURCE_HOME = RESOURCE_PAGES[0];
 

@@ -1,3 +1,4 @@
+import { cigaretteSafeContent } from "./lib/siteConfig";
 import FullNameNap from "./components/FullNameNap";
 import PinnedNavClearance from "./components/PinnedNavClearance";
 import type { Metadata } from "next";
@@ -5,7 +6,7 @@ import Link from "next/link";
 import "./globals.css";
 import { SITE_ORIGIN, buildStoreJsonLd, buildWebsiteJsonLd, gbpLocation } from "./lib/gbp-location";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = cigaretteSafeContent({
   metadataBase: new URL(SITE_ORIGIN),
   title: {
     default: gbpLocation.seoTitle,
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-};
+});
 
 const storeJsonLd = buildStoreJsonLd();
 const websiteJsonLd = buildWebsiteJsonLd();
@@ -80,7 +81,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify([storeJsonLd, websiteJsonLd]) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(cigaretteSafeContent([storeJsonLd, websiteJsonLd])) }}
         />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-D2SNLR6G0H"></script>
         <script

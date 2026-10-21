@@ -1,3 +1,4 @@
+import { cigaretteSafeContent } from "./lib/siteConfig";
 import { getLiveMenu } from "./lib/liveMenu";
 import { HOME_TITLE, HOME_DOC_TITLE } from "./lib/homeDelivery";
 import CohortDeliveryActions from "./components/CohortDeliveryActions";
@@ -177,7 +178,7 @@ function __compute_FEATURED_STRAINS() {
 }
 let FEATURED_STRAINS!: ReturnType<typeof __compute_FEATURED_STRAINS>;
 
-const RESOURCE_LINKS = [
+const RESOURCE_LINKS = cigaretteSafeContent([
   {
     href: "/visit",
     tag: "Walk-in",
@@ -232,7 +233,7 @@ const RESOURCE_LINKS = [
     title: "Downtown Brampton menu map",
     body: "Flower tiers, edibles, vapes, pre-rolls, concentrates, cigarettes, and accessories in one useful flow.",
   },
-];
+]);
 
 function getTypeLabel(type: string) {
   if (type.startsWith("IH")) return "Indica";
