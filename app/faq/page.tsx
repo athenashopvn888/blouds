@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./faq.module.css";
 import { TIER_CONFIG } from "../lib/products";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 import { BOGO_BUY_2_GET_1, BOGO_BUY_3_GET_3, formatAsLowAsAfterPromos, formatBoardDealLine, formatDollars, formatPayEquals, formatPerGram } from "../lib/flowerDeals";
 
 export const metadata: Metadata = {
@@ -41,12 +42,12 @@ const FAQ_CATEGORIES_RAW = [
   {
     title: "🌿 Products & Menu",
     faqs: [
-      { q: "What products do you carry?", a: "We carry over 200 strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles (gummies, chocolates, baked goods), vape pens, disposable vapes, concentrates (shatter, wax, hash, diamonds, live resin), pre-rolled joints, native cigarettes, and accessories." },
+      { q: "What products do you carry?", a: SHOW_CIGARETTES ? "We carry over 200 strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles (gummies, chocolates, baked goods), vape pens, disposable vapes, concentrates (shatter, wax, hash, diamonds, live resin), pre-rolled joints, native cigarettes, and accessories." : "We carry over 200 strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles (gummies, chocolates, baked goods), vape pens, disposable vapes, concentrates (shatter, wax, hash, diamonds, live resin), pre-rolled joints, and accessories." },
       { q: "Do you have an online menu?", a: "Yes. Browse the current menu at www.bloudsdispensary.ca for listed categories, items, prices, and package details." },
       { q: "What are your flower tiers?", a: "The flower menu is organized into Exotic, Premium, AAA+, AA, and Budget sections so shoppers can compare current listings and posted prices." },
       { q: "Do you list edibles online?", a: "Yes. Check the current edibles category for the items and package details listed online." },
       { q: "Do you list vapes?", a: "Yes. Browse the current disposable and refillable vape categories for listed nicotine and THC vape brands and package details." },
-      { q: "Do you sell native cigarettes?", a: "Yes! We carry one of the widest selections of native cigarettes in downtown Brampton, including premium and value brands in multiple varieties." },
+      ...(SHOW_CIGARETTES ? [{ q: "Do you sell native cigarettes?", a: "Yes! We carry one of the widest selections of native cigarettes in downtown Brampton, including premium and value brands in multiple varieties." }] : []),
     ],
   },
   {

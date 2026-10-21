@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ResourceView from "../ResourceView";
+import { visibleSmokeCopy, visibleSmokeKeywords, visibleSmokeLabel } from "../../lib/siteConfig";
 import {
   AUTHORS,
   SITE,
@@ -44,19 +45,23 @@ export default async function ResourceRoute({ params }: { params: PageParams }) 
 function buildResourceMetadata(page: ResourcePage): Metadata {
   const canonical = `${SITE.baseUrl}${page.path}`;
   const author = AUTHORS[page.author];
+  const title = visibleSmokeLabel(page.seoTitle);
+  const description = visibleSmokeCopy(page.metaDescription);
+  const keywords = visibleSmokeKeywords([page.primaryKeyword, ...page.supportingKeywords]);
+  const alt = visibleSmokeLabel(page.image.alt);
 
   return {
-    title: { absolute: page.seoTitle },
-    description: page.metaDescription,
-    keywords: [page.primaryKeyword, ...page.supportingKeywords],
+    title: { absolute: title },
+    description,
+    keywords,
     alternates: { canonical },
     openGraph: {
       type: page.kind === "article" ? "article" : "website",
-      title: page.seoTitle,
-      description: page.metaDescription,
+      title,
+      description,
       url: canonical,
       siteName: SITE.name,
-      images: [{ url: `${SITE.baseUrl}${page.image.src}`, width: 1200, height: 630, alt: page.image.alt }],
+      images: [{ url: `${SITE.baseUrl}${page.image.src}`, width: 1200, height: 630, alt }],
       ...(page.kind === "article"
         ? {
             publishedTime: page.datePublished,
@@ -67,8 +72,8 @@ function buildResourceMetadata(page: ResourcePage): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title: page.seoTitle,
-      description: page.metaDescription,
+      title,
+      description,
       images: [`${SITE.baseUrl}${page.image.src}`],
     },
     authors: [{ name: author.name }],
@@ -79,22 +84,25 @@ function buildSchema(page: ResourcePage) {
   const canonical = `${SITE.baseUrl}${page.path}`;
   const author = AUTHORS[page.author];
 
+  const faqs = (page.faqs ?? [])
+    .map((faq) => ({ question: visibleSmokeCopy(faq.question), answer: visibleSmokeCopy(faq.answer) }))
+    .filter((faq) => faq.question && faq.answer);
   const graph = [
       {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: SITE.baseUrl },
           { "@type": "ListItem", position: 2, name: "Resources", item: `${SITE.baseUrl}/resources` },
-          { "@type": "ListItem", position: 3, name: page.title, item: canonical },
+          { "@type": "ListItem", position: 3, name: visibleSmokeLabel(page.title), item: canonical },
         ],
       },
       {
         "@type": page.kind === "article" ? "Article" : "CollectionPage",
         "@id": canonical,
         url: canonical,
-        name: page.seoTitle,
-        headline: page.h1,
-        description: page.metaDescription,
+        name: visibleSmokeLabel(page.seoTitle),
+        headline: visibleSmokeLabel(page.h1),
+        description: visibleSmokeCopy(page.metaDescription),
         image: `${SITE.baseUrl}${page.image.src}`,
         author: { "@type": "Person", name: author.name, alternateName: author.handle },
         publisher: {
@@ -106,11 +114,11 @@ function buildSchema(page: ResourcePage) {
         dateModified: page.dateModified,
         mainEntityOfPage: canonical,
       },
-      ...(page.faqs && page.faqs.length > 0
+      ...(faqs.length > 0
         ? [{
             "@type": "FAQPage",
             "@id": `${canonical}#faq`,
-            mainEntity: page.faqs.map((faq) => ({
+            mainEntity: faqs.map((faq) => ({
               "@type": "Question",
               name: faq.question,
               acceptedAnswer: { "@type": "Answer", text: faq.answer },

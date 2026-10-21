@@ -35,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/dispensary-brampton`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/24-hour-queen-street-brampton-dispensary`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/cannabis-delivery-queen-street-brampton`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${BASE}/native-cigarettes-brampton-queen`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    ...(SHOW_CIGARETTES ? [{ url: `${BASE}/native-cigarettes-brampton-queen`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 }] : []),
     { url: `${BASE}/nicotine-vape-queen-street-brampton`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/vape-shop-brampton`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },

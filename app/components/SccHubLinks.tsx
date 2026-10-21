@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SCC_TIER_ROUTES, SCC_WAVE1_HUBS } from "../lib/sccHubLinks";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 import styles from "./SccHubLinks.module.css";
 
 type SccHubLinksProps = {
@@ -17,7 +18,7 @@ export default function SccHubLinks({
   heading = "Queen Street West pages",
   tierHeading = "Flower tiers at this door",
 }: SccHubLinksProps) {
-  const hubs = SCC_WAVE1_HUBS.filter((item) => item.href !== currentPath);
+  const hubs = SCC_WAVE1_HUBS.filter((item) => item.href !== currentPath && (SHOW_CIGARETTES || !item.href.includes("native-cigarette")));
   const tiers = SCC_TIER_ROUTES.filter((item) => item.href !== currentPath);
 
   return (

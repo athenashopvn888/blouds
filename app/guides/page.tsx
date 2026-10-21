@@ -1,4 +1,4 @@
-import { cigaretteSafeContent } from "../lib/siteConfig";
+import { cigaretteSafeContent, SHOW_CIGARETTES } from "../lib/siteConfig";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
@@ -33,7 +33,10 @@ const jsonLd = {
 };
 
 export default function GuidesPage() {
-  const guideGroups = getGuidesByLane();
+  const guideGroups = getGuidesByLane().map((group) => ({
+    ...group,
+    label: !SHOW_CIGARETTES && group.lane === "native_cig" ? "Backwoods" : group.label,
+  }));
   return (
     <main className={styles.main}>
       <Navbar />

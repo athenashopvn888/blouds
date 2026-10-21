@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import { SITE_ORIGIN, buildStoreJsonLd, buildWebsiteJsonLd, gbpLocation } from "./lib/gbp-location";
+import { SHOW_CIGARETTES } from "./lib/showCigarettes";
 
 export const metadata: Metadata = cigaretteSafeContent({
   metadataBase: new URL(SITE_ORIGIN),
@@ -25,7 +26,7 @@ export const metadata: Metadata = cigaretteSafeContent({
     "dispensary near me Brampton",
     "edibles Brampton",
     "pre-rolls Brampton",
-    "native cigarettes Brampton",
+    ...(SHOW_CIGARETTES ? ["native cigarettes Brampton"] : []),
   ],
   openGraph: {
     type: "website",
