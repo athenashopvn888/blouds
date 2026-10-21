@@ -12,6 +12,8 @@ import {
   getRelatedPages,
   type ResourcePage,
 } from "./resourceData";
+import { isHiddenCigaretteHref, visibleSmokeCopy, visibleSmokeLabel, visibleSmokeMarkdown } from "../lib/siteConfig";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 type ResourceViewProps = {
   page: ResourcePage;
@@ -28,14 +30,14 @@ export default function ResourceView({ page }: ResourceViewProps) {
       <Navbar />
       <section className={styles.hero}>
         <div className={styles.heroMedia}>
-          <img src={page.image.src} alt={page.image.alt} className={styles.heroImage} />
+          <img src={page.image.src} alt={visibleSmokeLabel(page.image.alt)} className={styles.heroImage} />
           <div className={styles.heroShade} />
         </div>
         <div className={styles.heroContent}>
           <Breadcrumbs page={page} />
-          <p className={styles.kicker}>{page.categoryLabel}</p>
-          <h1 className={page.bodyMarkdown ? styles.articleTitle : undefined}>{page.h1}</h1>
-          {page.excerpt ? <p className={styles.heroText}>{page.excerpt}</p> : null}
+          <p className={styles.kicker}>{visibleSmokeLabel(page.categoryLabel)}</p>
+          <h1 className={page.bodyMarkdown ? styles.articleTitle : undefined}>{visibleSmokeLabel(page.h1)}</h1>
+          {visibleSmokeCopy(page.excerpt) ? <p className={styles.heroText}>{visibleSmokeCopy(page.excerpt)}</p> : null}
           <div className={styles.metaRow}>
             <span>{author.name}</span>
             <span>{author.role}</span>
@@ -47,11 +49,11 @@ export default function ResourceView({ page }: ResourceViewProps) {
       <section className={styles.bodyWrap}>
         <article className={styles.article}>
           {page.bodyMarkdown ? (
-            <ResourceMarkdown markdown={page.bodyMarkdown} />
+            <ResourceMarkdown markdown={visibleSmokeMarkdown(page.bodyMarkdown)} />
           ) : (
             <>
               <div className={styles.introBlock}>
-                {page.intro.map((paragraph) => (
+                {page.intro.map((paragraph) => visibleSmokeCopy(paragraph)).filter(Boolean).map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
@@ -68,22 +70,24 @@ export default function ResourceView({ page }: ResourceViewProps) {
                 <ResourceCards title="Featured Blouds Reads" pages={featured} compact />
               )}
 
-              {page.sections.map((section) => (
+              {page.sections.map((section) => {
+                const heading = visibleSmokeLabel(section.heading);
+                return (
                 <section key={section.heading} className={styles.contentSection}>
-                  <h2>{section.heading}</h2>
-                  {section.body.map((paragraph) => (
+                  {heading ? <h2>{heading}</h2> : null}
+                  {section.body.map((paragraph) => visibleSmokeCopy(paragraph)).filter(Boolean).map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
                   {section.bullets && (
                     <ul>
-                      {section.bullets.map((bullet) => (
+                      {section.bullets.map((bullet) => visibleSmokeCopy(bullet)).filter(Boolean).map((bullet) => (
                         <li key={bullet}>{bullet}</li>
                       ))}
                     </ul>
                   )}
                   {section.links && <LinkList links={section.links} />}
                 </section>
-              ))}
+              );})}
             </>
           )}
 
@@ -91,7 +95,7 @@ export default function ResourceView({ page }: ResourceViewProps) {
             <section className={styles.contentSection} aria-labelledby="resource-faq-heading">
               <h2 id="resource-faq-heading">Frequently Asked Questions</h2>
               <div className={styles.faqList}>
-                {page.faqs.map((faq) => (
+                {page.faqs.map((faq) => ({ question: visibleSmokeCopy(faq.question), answer: visibleSmokeCopy(faq.answer) })).filter((faq) => faq.question && faq.answer).map((faq) => (
                   <article className={styles.faqItem} key={faq.question}>
                     <h3>{faq.question}</h3>
                     <p>{faq.answer}</p>
@@ -129,7 +133,7 @@ export default function ResourceView({ page }: ResourceViewProps) {
             <span>Gas Gang</span>
             <span>Drizzle Switch</span>
             <span>ZYN, Velo, Pablo, Killa</span>
-            <span>Backwoods and grabba</span>
+            <span>{SHOW_CIGARETTES ? "Backwoods and grabba" : "Backwoods"}</span>
           </div>
         </aside>
       </section>
@@ -147,7 +151,7 @@ function Breadcrumbs({ page }: { page: ResourcePage }) {
       {page.path !== "/resources" && (
         <>
           <span>/</span>
-          <span>{page.title}</span>
+          <span>{visibleSmokeLabel(page.title)}</span>
         </>
       )}
     </nav>
@@ -162,17 +166,20 @@ function ResourceCards({ title, pages, compact = false, leadLink }: { title: str
         {leadLink && (
           <Link href={leadLink.href} className={styles.resourceCard}>
             <span className={styles.cardKicker}>Name Guides</span>
-            <h3>{leadLink.label}</h3>
-            {leadLink.description && <p>{leadLink.description}</p>}
+            <h3>{visibleSmokeLabel(leadLink.label)}</h3>
+            {visibleSmokeCopy(leadLink.description || "") ? <p>{visibleSmokeCopy(leadLink.description || "")}</p> : null}
           </Link>
         )}
-        {pages.map((page) => {
+        {pages.filter((page) => !isHiddenCigaretteHref(page.path)).map((page) => {
           const author = AUTHORS[page.author];
+          const title = visibleSmokeLabel(page.title);
+          const excerpt = visibleSmokeCopy(page.excerpt);
+          if (!title) return null;
           return (
             <Link href={page.path} key={page.path} className={styles.resourceCard}>
-              <span className={styles.cardKicker}>{page.categoryLabel}</span>
-              <h3>{page.title}</h3>
-              <p>{page.excerpt}</p>
+              <span className={styles.cardKicker}>{visibleSmokeLabel(page.categoryLabel)}</span>
+              <h3>{title}</h3>
+              {excerpt ? <p>{excerpt}</p> : null}
               <div className={styles.cardMeta}>
                 <span>{author.name}</span>
                 <span>Updated {formatDate(page.dateModified)}</span>
@@ -188,10 +195,10 @@ function ResourceCards({ title, pages, compact = false, leadLink }: { title: str
 function LinkList({ links }: { links: { label: string; href: string; description?: string }[] }) {
   return (
     <div className={styles.linkList}>
-      {links.map((link) => (
+      {links.filter((link) => !isHiddenCigaretteHref(link.href)).map((link) => (
         <Link href={link.href} key={`${link.href}-${link.label}`}>
-          <span>{link.label}</span>
-          {link.description && <small>{link.description}</small>}
+          <span>{visibleSmokeLabel(link.label)}</span>
+          {visibleSmokeCopy(link.description || "") ? <small>{visibleSmokeCopy(link.description || "")}</small> : null}
         </Link>
       ))}
     </div>

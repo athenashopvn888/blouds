@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import SccHubLinks from "./SccHubLinks";
 import styles from "./GBPLandingPage.module.css";
 import { bloudsWeedOwner as store } from "../lib/weedDiscovery";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 import { SITE_ORIGIN, gbpLocation, siteUrl } from "../lib/gbp-location";
 
 const PAGE_PATH = "/weed-dispensary-brampton";
@@ -133,7 +134,7 @@ export function GBPLandingPage() {
             Use <strong>117 Queen St W, Brampton, ON L6Y 1M3</strong> in maps. Downtown Queen Street West shoppers use this page to confirm this door, hours, and phone before walking in. Storefront arrival stays on the <Link href="/visit">Queen Street West walk-in guide</Link>. Overnight and late-night visits can use the <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West guide</Link>. Cannabis delivery from this Queen Street West store uses dispatcher-confirmed hours on the <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West delivery guide</Link> — not the 24-hour walk-in.
           </p>
           <p>
-            At Blouds Dispensary on Queen St W, adults 19+ can start with flower by tier or choose a cannabis format such as pre-rolls, edibles, vapes, concentrates or accessories. Flower shelves on this Queen Street West door are <Link href="/exotic-weed">Exotic Weed</Link>, <Link href="/premium-weed">Premium Weed</Link>, <Link href="/aaa-weed">AAA+ Weed</Link>, <Link href="/aa-weed">AA Weed</Link>, and <Link href="/budget-weed">Budget Weed</Link>. The cigarette category has a <Link href="/native-cigarettes-brampton-queen">Queen Street West native cigarettes guide</Link>. Nicotine vape is separate from THC vape — use the <Link href="/nicotine-vape-queen-street-brampton">Queen Street West nicotine vape guide</Link>. Shoppers looking for a dispensary Brampton or dispensary near me can use the <Link href="/dispensary-brampton">downtown Queen Street open guide</Link> for the exact pin and hours. Shoppers comparing cannabis stores in Brampton can use the <Link href="/brampton-walk-in-checklist">walk-in checklist</Link> to confirm hours, address, and phone. The <Link href="/resources/local-guides/queen-street-brampton-visit-guide">Queen Street Brampton Visit Guide</Link> is also available for shoppers who want additional store-specific visit information before heading over.
+            At Blouds Dispensary on Queen St W, adults 19+ can start with flower by tier or choose a cannabis format such as pre-rolls, edibles, vapes, concentrates or accessories. Flower shelves on this Queen Street West door are <Link href="/exotic-weed">Exotic Weed</Link>, <Link href="/premium-weed">Premium Weed</Link>, <Link href="/aaa-weed">AAA+ Weed</Link>, <Link href="/aa-weed">AA Weed</Link>, and <Link href="/budget-weed">Budget Weed</Link>. {SHOW_CIGARETTES ? <>The cigarette category has a <Link href="/native-cigarettes-brampton-queen">Queen Street West native cigarettes guide</Link>. </> : null}Nicotine vape is separate from THC vape — use the <Link href="/nicotine-vape-queen-street-brampton">Queen Street West nicotine vape guide</Link>. Shoppers looking for a dispensary Brampton or dispensary near me can use the <Link href="/dispensary-brampton">downtown Queen Street open guide</Link> for the exact pin and hours. Shoppers comparing cannabis stores in Brampton can use the <Link href="/brampton-walk-in-checklist">walk-in checklist</Link> to confirm hours, address, and phone. The <Link href="/resources/local-guides/queen-street-brampton-visit-guide">Queen Street Brampton Visit Guide</Link> is also available for shoppers who want additional store-specific visit information before heading over.
           </p>
           <p>
             The public website for this store is the homepage. If you are looking for one specific product, call <a href={`tel:${store.phoneIntl}`}><strong>{store.phoneDisplay}</strong></a> before making a special trip.
@@ -189,7 +190,7 @@ export function GBPLandingPage() {
 
         <section className={styles.section}>
           <h2>Helpful Blouds Guides</h2>
-          <div className={styles.guideGrid}>{store.guides.map((guide) => <article className={styles.guideCard} key={guide.href}><h3>{guide.label}</h3><p>{guide.description}</p><Link href={guide.href}>Explore {guide.label}</Link></article>)}</div>
+          <div className={styles.guideGrid}>{store.guides.filter((guide) => SHOW_CIGARETTES || !guide.href.includes("native-cigarette")).map((guide) => <article className={styles.guideCard} key={guide.href}><h3>{guide.label}</h3><p>{guide.description}</p><Link href={guide.href}>Explore {guide.label}</Link></article>)}</div>
         </section>
 
         <section className={styles.section} id="faq">

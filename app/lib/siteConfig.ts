@@ -24,7 +24,7 @@ export const isCigaretteEntry = (value: Record<string, unknown>) => {
 };
 
 export const filterCigaretteItems = <T extends { category?: string }>(items: readonly T[]): T[] =>
-  SHOW_CIGARETTES ? [...items] : items.filter((item) => !isCigaretteCategory(item.category));
+  SHOW_CIGARETTES ? [...items] : items.filter((item) => !isCigaretteEntry(item as Record<string, unknown>));
 
 export const filterCigaretteEntries = <T extends Record<string, unknown>>(entries: readonly T[]): T[] =>
   SHOW_CIGARETTES ? [...entries] : entries.filter((entry) => !isCigaretteEntry(entry));
@@ -60,4 +60,87 @@ export function cigaretteSafeContent<T>(value: T): T {
     ) as T;
   }
   return value;
+}
+
+const GRABBA = /grabba/i;
+const NATIVE_CIGARETTE = /native[-\s]+cigarettes?/i;
+const PRESERVED_SMOKE = /(?:backwoods|cigarillos?|rolling[- ]?papers?)/i;
+
+export function isHiddenCigaretteItem(item: { name?: string; slug?: string; category?: string }): boolean {
+  return !SHOW_CIGARETTES && isCigaretteEntry(item as Record<string, unknown>);
+}
+
+export function isHiddenCigaretteGuide(slug: string, lane?: string): boolean {
+  return !SHOW_CIGARETTES && isCigaretteGuide({ slug, lane });
+}
+
+export function isHiddenCigaretteHref(href: string): boolean {
+  if (SHOW_CIGARETTES) return false;
+  const path = (href.split("#")[0]?.split("?")[0] || "").replace(/\/+$/, "") || "/";
+  if (path.startsWith("/guides/")) return isHiddenCigaretteGuide(decodeURIComponent(path.slice("/guides/".length)));
+  if (path.startsWith("/item/")) {
+    const slug = decodeURIComponent(path.slice("/item/".length));
+    return isHiddenCigaretteItem({ slug, name: slug });
+  }
+  return isCigarettePath(path);
+}
+
+function stripSmokeTerm(text: string, term: string): string {
+  const token = `(?:\\*{1,2})?${term}(?:\\*{1,2})?`;
+  return text
+    .replace(new RegExp(`\\s*(?:\\+|\\/|&|,|and|or)\\s*${token}`, "gi"), "")
+    .replace(new RegExp(`${token}\\s*(?:\\+|\\/|&|,|and|or)\\s*`, "gi"), "")
+    .replace(new RegExp(token, "gi"), "");
+}
+
+/** Drop Grabba and "native cigarettes" from a kept Backwoods label. Source text stays. */
+export function visibleSmokeLabel(label: string, showCigarettes = SHOW_CIGARETTES): string {
+  if (showCigarettes || !label || (!GRABBA.test(label) && !NATIVE_CIGARETTE.test(label))) return label;
+  const cleaned = stripSmokeTerm(stripSmokeTerm(label, "grabba(?:\\s+shaker)?(?:\\s+at\\s+\\$\\d+)?"), "native[-\\s]+cigarettes?")
+    .replace(/\s+\/\s+/g, " ")
+    .replace(/\s+,/g, ",")
+    .replace(/,\s*,+/g, ",")
+    .replace(/,\s+(get|stay)\b/gi, " $1")
+    .replace(/[ \t]{2,}/g, " ")
+    .replace(/\s+([.!?])/g, "$1")
+    .trim()
+    .replace(/^[,.\-–—/]+\s*/, "")
+    .replace(/^(?:or|and)\s+/i, "")
+    .replace(/\s+(?:and|or)\s*$/i, "")
+    .replace(/,\s*$/, "")
+    .trim();
+  if (/^(brampton|blouds)$/i.test(cleaned)) return "";
+  return /[a-z]/i.test(cleaned) ? cleaned : "";
+}
+
+/** Keep Backwoods sentences. Drop Grabba-only sentences. Source text is unchanged. */
+export function visibleSmokeCopy(text: string, showCigarettes = SHOW_CIGARETTES): string {
+  if (showCigarettes || !text || (!GRABBA.test(text) && !NATIVE_CIGARETTE.test(text))) return text;
+  if (GRABBA.test(text) && !PRESERVED_SMOKE.test(text)) return "";
+  const cleaned = visibleSmokeLabel(text, showCigarettes)
+    .split(/(?<=[.!?])\s+/)
+    .filter((sentence) => sentence && !/“\s*”|“\s*,|use the in\b/i.test(sentence))
+    .join(" ")
+    .trim();
+  if (NATIVE_CIGARETTE.test(text) && !PRESERVED_SMOKE.test(text) && cleaned.split(/\s+/).filter(Boolean).length < 4) return "";
+  return /[a-z]/i.test(cleaned) ? cleaned : "";
+}
+
+export function visibleSmokeKeywords(keywords: string[], showCigarettes = SHOW_CIGARETTES): string[] {
+  if (showCigarettes) return keywords;
+  return keywords.map((keyword) => visibleSmokeLabel(keyword, showCigarettes)).filter(Boolean);
+}
+
+export function visibleSmokeMarkdown(markdown: string, showCigarettes = SHOW_CIGARETTES): string {
+  if (showCigarettes || !markdown || (!GRABBA.test(markdown) && !NATIVE_CIGARETTE.test(markdown))) return markdown;
+  return markdown
+    .split("\n")
+    .filter((line) => !GRABBA.test(line) || PRESERVED_SMOKE.test(line))
+    .map((line) => (GRABBA.test(line) || NATIVE_CIGARETTE.test(line) ? visibleSmokeLabel(line, showCigarettes) : line))
+    .filter((line) => line.trim() === "" || /[a-z]/i.test(line))
+    .join("\n");
+}
+
+export function visibleGuideTitle(title: string, showCigarettes = SHOW_CIGARETTES): string {
+  return visibleSmokeLabel(title, showCigarettes);
 }

@@ -24,6 +24,7 @@ const cigaretteRedirects = SHOW_CIGARETTES ? [] : [
   { source: "/guides/time-cigarettes", destination: "/items/vapes", statusCode: 302 as const },
   { source: "/guides/grabba", destination: "/items/vapes", statusCode: 302 as const },
   { source: "/guides/grabba-delivery-brampton", destination: "/items/vapes", statusCode: 302 as const },
+  { source: "/item/:slug(grabba.*)", destination: "/items/vapes", statusCode: 302 as const },
   { source: "/guides/bb-delivery-brampton", destination: "/items/vapes", statusCode: 302 as const },
   { source: "/guides/bb-full-delivery-brampton", destination: "/items/vapes", statusCode: 302 as const },
   { source: "/guides/bb-light-delivery-brampton", destination: "/items/vapes", statusCode: 302 as const },

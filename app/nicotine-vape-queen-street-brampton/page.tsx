@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import SccHubLinks from "../components/SccHubLinks";
 import styles from "../visit/visit.module.css";
 import { SITE_ORIGIN, gbpLocation, siteUrl } from "../lib/gbp-location";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 import VapeActionPanel from "../components/VapeActionPanel";
 
 const PAGE_PATH = "/nicotine-vape-queen-street-brampton";
@@ -209,9 +210,9 @@ export default function QueenStreetNicotineVapePage() {
             <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West delivery guide</Link>.
           </p>
           <p>
-            Cigarettes are a separate tobacco category. If that is the product you want, use the{" "}
+            {SHOW_CIGARETTES ? <>Cigarettes are a separate tobacco category. If that is the product you want, use the{" "}
             <Link href="/native-cigarettes-brampton-queen">Queen Street West native cigarettes guide</Link> or the{" "}
-            <Link href="/items/cigarettes">cigarette menu</Link>. Flower browsing stays on the{" "}
+            <Link href="/items/cigarettes">cigarette menu</Link>. </> : null}Flower browsing stays on the{" "}
             <Link href="/weed-dispensary-brampton">Queen Street West weed hub</Link>.
           </p>
         </section>
@@ -264,9 +265,9 @@ export default function QueenStreetNicotineVapePage() {
               <Link className={styles.secondaryAction} href="/24-hour-queen-street-brampton-dispensary">
                 24-hour Queen Street West
               </Link>
-              <Link className={styles.secondaryAction} href="/native-cigarettes-brampton-queen">
+              {SHOW_CIGARETTES ? <Link className={styles.secondaryAction} href="/native-cigarettes-brampton-queen">
                 Queen Street West native cigarettes
-              </Link>
+              </Link> : null}
               <Link className={styles.secondaryAction} href="/cannabis-delivery-queen-street-brampton">
                 Queen Street West delivery
               </Link>

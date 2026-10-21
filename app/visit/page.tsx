@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import SccHubLinks from "../components/SccHubLinks";
 import styles from "./visit.module.css";
 import { SITE_ORIGIN, gbpLocation, siteUrl } from "../lib/gbp-location";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 const PAGE_PATH = "/visit";
 const PAGE_URL = siteUrl(PAGE_PATH);
@@ -174,8 +175,8 @@ export default function VisitPage() {
           <p>
             At the door, staff will ask adults for valid government photo ID. Ontario’s legal age for recreational cannabis
             is 19. Inside, you can browse flower by tier or choose another cannabis format such as pre-rolls, edibles,
-            vapes, concentrates, or accessories. The cigarette category has a{" "}
-            <Link href="/native-cigarettes-brampton-queen">Queen Street West native cigarettes guide</Link>. Nicotine
+            vapes, concentrates, or accessories. {SHOW_CIGARETTES ? <>The cigarette category has a{" "}
+            <Link href="/native-cigarettes-brampton-queen">Queen Street West native cigarettes guide</Link>. </> : null}Nicotine
             vape is a separate category from THC vape — use the{" "}
             <Link href="/nicotine-vape-queen-street-brampton">Queen Street West nicotine vape guide</Link>.
           </p>
@@ -312,9 +313,9 @@ export default function VisitPage() {
               <Link className={styles.secondaryAction} href="/24-hour-queen-street-brampton-dispensary">
                 24-hour Queen Street West
               </Link>
-              <Link className={styles.secondaryAction} href="/native-cigarettes-brampton-queen">
+              {SHOW_CIGARETTES ? <Link className={styles.secondaryAction} href="/native-cigarettes-brampton-queen">
                 Queen Street West native cigarettes
-              </Link>
+              </Link> : null}
               <Link className={styles.secondaryAction} href="/nicotine-vape-queen-street-brampton">
                 Queen Street West nicotine vape
               </Link>
