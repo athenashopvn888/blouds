@@ -1,8 +1,22 @@
 /**
  * One cigarette gate for public URLs.
  * A feed error or a missing block keeps today's coded redirect.
- * An explicit web off stays on the same URL and renders the unavailable block.
+ * An explicit web off stays on the same URL and renders the unavailable block,
+ * except the four URLs that next.config already 302'd while the coded switch was off.
  */
+
+/** Parent of f565ee1, cigarettes off: these 302 to /items/vapes before any page or feed. */
+const CODED_OFF_REDIRECTS: Readonly<Record<string, "/items/vapes">> = {
+  "/items/cigarettes": "/items/vapes",
+  "/cigarettes": "/items/vapes",
+  "/native-cigarettes-brampton-queen": "/items/vapes",
+  "/guides/grabba": "/items/vapes",
+};
+
+export function codedOffRedirect(pathname: string): "/items/vapes" | null {
+  const path = (pathname.split("?")[0]?.split("#")[0] || "/").replace(/\/+$/, "") || "/";
+  return CODED_OFF_REDIRECTS[path] ?? null;
+}
 export type CigaretteRequest = "redirect" | "unavailable" | "allow";
 
 function envHardOff(raw: string | undefined): boolean {
