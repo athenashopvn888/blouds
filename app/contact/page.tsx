@@ -5,8 +5,11 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./contact.module.css";
 import { SITE_ORIGIN, gbpLocation } from "../lib/gbp-location";
+import { getFleetContent } from "../lib/fleetContent";
 
-export const metadata: Metadata = {
+export const dynamic = "force-dynamic";
+
+const metadata: Metadata = {
   title: { absolute: `Contact ${gbpLocation.storeName} | ${gbpLocation.streetAddress}, ${gbpLocation.city}` },
   description:
     `Visit ${gbpLocation.storeName} at ${gbpLocation.address}. ${gbpLocation.hoursDisplay} a day, 7 days a week. Call ${gbpLocation.phone}. Walk-ins welcome.`,
@@ -20,6 +23,18 @@ export const metadata: Metadata = {
     url: `${SITE_ORIGIN}/contact`,
   },
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const fleet = await getFleetContent();
+  if (!fleet.active) return metadata;
+  const description = fleet.pages.Contact?.metaDescription || "";
+  if (!description || description === metadata.description) return metadata;
+  return {
+    ...metadata,
+    description,
+    openGraph: { ...metadata.openGraph, description },
+  };
+}
 
 export default function ContactPage() {
   return (

@@ -1,13 +1,18 @@
 import { cigaretteSafeContent } from "./lib/siteConfig";
 import FullNameNap from "./components/FullNameNap";
 import PinnedNavClearance from "./components/PinnedNavClearance";
+import FleetContentProvider from "./components/FleetContentProvider";
+import CigaretteStateProvider from "./components/CigaretteStateProvider";
+import { getFleetContent } from "./lib/fleetContent";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "./lib/cigaretteFeed";
+import { CODED_BANNERS } from "./lib/fleet/config";
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import { SITE_ORIGIN, buildStoreJsonLd, buildWebsiteJsonLd, gbpLocation } from "./lib/gbp-location";
 import { SHOW_CIGARETTES } from "./lib/showCigarettes";
 
-export const metadata: Metadata = cigaretteSafeContent({
+const ROOT_METADATA: Metadata = cigaretteSafeContent({
   metadataBase: new URL(SITE_ORIGIN),
   title: {
     default: gbpLocation.seoTitle,
@@ -63,17 +68,34 @@ export const metadata: Metadata = cigaretteSafeContent({
   },
 });
 
-const storeJsonLd = buildStoreJsonLd();
+export async function generateMetadata(): Promise<Metadata> {
+  const fleet = await getFleetContent();
+  if (!fleet.active) return ROOT_METADATA;
+  const description = fleet.pages.Home?.metaDescription || "";
+  const codedDescription = typeof ROOT_METADATA.description === "string" ? ROOT_METADATA.description : "";
+  if (!description || description === codedDescription) return ROOT_METADATA;
+  return {
+    ...ROOT_METADATA,
+    description,
+    openGraph: { ...ROOT_METADATA.openGraph, description },
+    twitter: { ...ROOT_METADATA.twitter, description },
+  };
+}
+
 const websiteJsonLd = buildWebsiteJsonLd();
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [fleet, cigaretteSnapshot] = await Promise.all([getFleetContent(), getCigaretteSnapshot()]);
+  const storeJsonLd = buildStoreJsonLd();
+  const sheetBanners = fleet.active && fleet.banners.some((banner, index) => banner !== CODED_BANNERS[index]) ? fleet.banners : undefined;
   return (
     <html lang="en">
       <head>
+        <meta name="fleet-content-version" content={fleet.version} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -100,9 +122,13 @@ export default function RootLayout({
         <Link className="deliveryAnnouncement" href="/delivery">
           NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE
         </Link>
-        {children}
-        <FullNameNap />
-        <PinnedNavClearance />
+        <FleetContentProvider value={{ active: fleet.active, version: fleet.version, nap: fleet.nap, banners: sheetBanners }}>
+          <CigaretteStateProvider value={toPublicCigaretteState(cigaretteSnapshot)}>
+            {children}
+            <FullNameNap />
+            <PinnedNavClearance />
+          </CigaretteStateProvider>
+        </FleetContentProvider>
       </body>
     </html>
   );
