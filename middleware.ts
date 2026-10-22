@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { decideCigaretteRequest, isCigaretteRedirectPath } from "./app/lib/cigaretteGate";
+import { codedOffRedirect, decideCigaretteRequest, isCigaretteRedirectPath } from "./app/lib/cigaretteGate";
 
 const STOCK_URL =
   "https://script.google.com/macros/s/AKfycbx09_sDal1eMVF1r-hUck4e7oq_XBHEWhGvA79JuhZNQ6P4CdhCas0xE3FfexWQ3hq4/exec?store=BLS01";
@@ -18,6 +18,12 @@ async function readFeedCig(): Promise<{ errored: boolean; cig: unknown }> {
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+  // Same four URLs next.config 302'd while NEXT_PUBLIC_SHOW_CIGARETTES was not "true".
+  // The sheet feed must not rewrite them to the unavailable block.
+  const showCigarettes = process.env.NEXT_PUBLIC_SHOW_CIGARETTES?.trim().toLowerCase() === "true";
+  if (!showCigarettes && codedOffRedirect(pathname)) {
+    return NextResponse.redirect(new URL("/items/vapes", request.url), 302);
+  }
   if (!isCigaretteRedirectPath(pathname)) return NextResponse.next();
 
   const envRaw = process.env.SHOW_CIGARETTES ?? process.env.NEXT_PUBLIC_SHOW_CIGARETTES;
