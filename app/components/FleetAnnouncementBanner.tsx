@@ -1,6 +1,8 @@
 "use client";
 
 import { SHOW_CIGARETTES } from "../lib/siteConfig";
+import { useFleetContent } from "./fleet/FleetContentProvider";
+import FleetSheetBanner from "./fleet/FleetAnnouncementBanner";
 
 import CigaretteSeasonalNotice from "./CigaretteSeasonalNotice";
 
@@ -37,6 +39,12 @@ const captionStyle = { margin: 0, padding: "14px 18px", background: "#111827", c
 const captionLinkStyle = { color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" } as const;
 
 export default function FleetAnnouncementBanner() {
+  const fleet = useFleetContent();
+  if (fleet.banners && fleet.banners.length > 0) return <FleetSheetBanner banners={fleet.banners} />;
+  return <CodedFleetAnnouncementBanner />;
+}
+
+function CodedFleetAnnouncementBanner() {
   const [showHalloweenNotice, setShowHalloweenNotice] = useState(false);
   useEffect(() => {
     const updateVisibility = () => setShowHalloweenNotice(isHalloweenNoticeActive(new Date()));
