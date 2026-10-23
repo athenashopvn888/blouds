@@ -1,6 +1,6 @@
 import { cache } from "react";
 import {
-  CIG_WORDING_FALLBACK,
+  cigarettePublicHeaders,
   decideCigaretteGuide,
   decideCigaretteSurface,
   reconcileSurfaceItems,
@@ -26,22 +26,23 @@ export type PublicCigaretteState = {
   wording: CigaretteWording;
 };
 
-function codedSurface(reason: "error" | "missing"): CigaretteSurfaceDecision & { wording: CigaretteWording } {
-  return { show: SHOW_CIGARETTES, reason, wording: { ...CIG_WORDING_FALLBACK } };
+/** Website and guides keep the coded switch when the feed is missing or errors. A real feed flag is webOn / master only. */
+function codedWebFallback<T extends { show: boolean; reason: string }>(decision: T): T {
+  if (decision.reason === "error" || decision.reason === "missing") {
+    return { ...decision, show: SHOW_CIGARETTES };
+  }
+  return decision;
+}
+
+function snapshotFrom(cig: unknown, items: ItemProduct[], live: boolean, errored: boolean): CigaretteSnapshot {
+  const web = codedWebFallback(decideCigaretteSurface({ cig, items, surface: "web", errored }));
+  const tv = decideCigaretteSurface({ cig, items, surface: "tv", errored });
+  const guides = codedWebFallback(decideCigaretteGuide({ cig, items, errored }));
+  return { web, tv, guides, wording: web.wording, live, items };
 }
 
 export async function readCigaretteFeed(): Promise<CigaretteSnapshot> {
-  if (cigaretteEnvHardOff()) {
-    const hidden = decideCigaretteSurface({ cig: null, items: [], surface: "web", envRaw: "false" });
-    return {
-      web: hidden,
-      tv: hidden,
-      guides: { show: false, reason: "env" },
-      wording: hidden.wording,
-      live: false,
-      items: allItems,
-    };
-  }
+  if (cigaretteEnvHardOff()) return snapshotFrom(null, [], false, false);
   try {
     const dataset = await getCigaretteDataset({
       staticFlowers: allFlowers,
@@ -51,31 +52,11 @@ export async function readCigaretteFeed(): Promise<CigaretteSnapshot> {
     const live = source === "live" || source === "last-good";
     const items = Array.isArray(dataset?.items) && dataset.items.length ? dataset.items as ItemProduct[] : allItems;
     const cig = dataset?.cig ?? null;
-    if (!cig) {
-      const surface = codedSurface(source === "static-fallback" ? "error" : "missing");
-      return {
-        web: surface,
-        tv: { ...surface },
-        guides: { show: SHOW_CIGARETTES, reason: surface.reason },
-        wording: surface.wording,
-        live: false,
-        items,
-      };
-    }
-    const web = decideCigaretteSurface({ cig, items, surface: "web" });
-    const tv = decideCigaretteSurface({ cig, items, surface: "tv" });
-    const guides = decideCigaretteGuide({ cig, items });
-    return { web, tv, guides, wording: web.wording, live, items };
+    // TV follows tvOn, including cigDecision's miss/error fallback. Web and guides
+    // use the coded switch for that miss/error, and the feed flag when one is present.
+    return snapshotFrom(cig, items, live, !live && !cig);
   } catch {
-    const surface = codedSurface("error");
-    return {
-      web: surface,
-      tv: { ...surface },
-      guides: { show: SHOW_CIGARETTES, reason: "error" },
-      wording: surface.wording,
-      live: false,
-      items: allItems,
-    };
+    return snapshotFrom(null, allItems, false, true);
   }
 }
 
@@ -86,10 +67,7 @@ export function toPublicCigaretteState(snap: CigaretteSnapshot): PublicCigarette
 }
 
 export function snapshotHeaders(snap: CigaretteSnapshot): Record<string, string> {
-  return {
-    "x-tv-data-cig-tv": snap.tv.show ? "1" : "0",
-    "x-tv-data-cig-web": snap.web.show ? "1" : "0",
-  };
+  return cigarettePublicHeaders({ web: snap.web.show, tv: snap.tv.show, wording: snap.wording });
 }
 
 export { reconcileSurfaceItems };
