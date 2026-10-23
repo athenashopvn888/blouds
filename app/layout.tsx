@@ -90,6 +90,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const [fleet, cigaretteSnapshot] = await Promise.all([getFleetContent(), getCigaretteSnapshot()]);
+  const cigarettes = toPublicCigaretteState(cigaretteSnapshot);
   const storeJsonLd = buildStoreJsonLd();
   const sheetBanners = fleet.active && fleet.banners.some((banner, index) => banner !== CODED_BANNERS[index]) ? fleet.banners : undefined;
   return (
@@ -123,7 +124,7 @@ export default async function RootLayout({
           NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE
         </Link>
         <FleetContentProvider value={{ active: fleet.active, version: fleet.version, nap: fleet.nap, banners: sheetBanners }}>
-          <CigaretteStateProvider value={toPublicCigaretteState(cigaretteSnapshot)}>
+          <CigaretteStateProvider value={{ ...cigarettes, web: SHOW_CIGARETTES ? cigarettes.web : false }}>
             {children}
             <FullNameNap />
             <PinnedNavClearance />

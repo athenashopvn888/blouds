@@ -4,6 +4,7 @@ import {
   CIG_WORDING_FALLBACK,
   decideCigaretteGuide,
   decideCigaretteSurface,
+  publicWebsiteCigaretteFlag,
   reconcileSurfaceItems,
   resolveCigWording,
   resolveSurfaceFlag,
@@ -80,6 +81,49 @@ test("guide pages follow the master switch and a feed error stays open", () => {
   assert.equal(decideCigaretteGuide({ cig: cig({ on: true, master: true, webOn: false }), items }).show, true);
   assert.equal(decideCigaretteGuide({ cig: null, items, errored: true }).show, true);
   assert.equal(decideCigaretteGuide({ cig: cig({ on: true, master: true }), items, envRaw: "off" }).reason, "env");
+});
+
+test("TV hides on a feed error and on a missing cig block", () => {
+  const items = [carton, backwoods, pouch];
+  const errored = decideCigaretteSurface({
+    cig: cig({ on: true, webOn: true, tvOn: true }),
+    items,
+    surface: "tv",
+    errored: true,
+  });
+  assert.equal(errored.reason, "error");
+  assert.equal(errored.show, false);
+  const missing = decideCigaretteSurface({ cig: null, items, surface: "tv" });
+  assert.equal(missing.reason, "missing");
+  assert.equal(missing.show, false);
+  assert.equal(decideCigaretteSurface({ cig: [], items, surface: "tv" }).show, false);
+  const hidden = reconcileSurfaceItems([vape, carton, backwoods, pouch], [carton], errored.show);
+  assert.equal(hidden.some((item) => item.slug === carton.slug), false);
+  assert.ok(hidden.some((item) => item.slug === backwoods.slug));
+  assert.ok(hidden.some((item) => item.slug === pouch.slug));
+});
+
+test("TV shows only when tvOn is true and hides when tvOn is false", () => {
+  const items = [carton, backwoods];
+  assert.equal(decideCigaretteSurface({ cig: cig({ on: false, webOn: false, tvOn: true }), items, surface: "tv" }).show, true);
+  assert.equal(decideCigaretteSurface({ cig: cig({ on: true, webOn: true, tvOn: false }), items, surface: "tv" }).show, false);
+});
+
+test("the website flag stays off whenever the static gate is off, including a feed error or a missing block", () => {
+  const items = [carton, backwoods];
+  const on = decideCigaretteSurface({ cig: cig({ on: true, webOn: true, tvOn: true }), items, surface: "web" });
+  const off = decideCigaretteSurface({ cig: cig({ on: true, webOn: false, tvOn: true }), items, surface: "web" });
+  const errored = decideCigaretteSurface({ cig: cig({ on: true, webOn: true, tvOn: true }), items, surface: "web", errored: true });
+  const missing = decideCigaretteSurface({ cig: null, items, surface: "web" });
+  assert.equal(on.show, true);
+  assert.equal(publicWebsiteCigaretteFlag(on, false), false);
+  assert.equal(publicWebsiteCigaretteFlag(off, false), false);
+  assert.equal(publicWebsiteCigaretteFlag(errored, false), false);
+  assert.equal(publicWebsiteCigaretteFlag(missing, false), false);
+  assert.equal(publicWebsiteCigaretteFlag(errored, true), false);
+  assert.equal(publicWebsiteCigaretteFlag(missing, true), false);
+  assert.equal(publicWebsiteCigaretteFlag(off, true), false);
+  assert.equal(publicWebsiteCigaretteFlag(on, true), true);
 });
 
 test("each surface hides real cigarettes itself and always keeps wraps and pouches", () => {
