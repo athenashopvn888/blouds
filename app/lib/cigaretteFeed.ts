@@ -3,6 +3,7 @@ import {
   cigarettePublicHeaders,
   decideCigaretteGuide,
   decideCigaretteSurface,
+  publicWebsiteCigaretteFlag,
   reconcileSurfaceItems,
   type CigaretteSurfaceDecision,
   type CigaretteWording,
@@ -26,8 +27,8 @@ export type PublicCigaretteState = {
   wording: CigaretteWording;
 };
 
-/** Website and guides keep the coded switch when the feed is missing or errors. A real feed flag is webOn / master only. */
-function codedWebFallback<T extends { show: boolean; reason: string }>(decision: T): T {
+/** Guide diagnostics keep the coded switch when the feed is missing or errors. */
+function codedGuideFallback<T extends { show: boolean; reason: string }>(decision: T): T {
   if (decision.reason === "error" || decision.reason === "missing") {
     return { ...decision, show: SHOW_CIGARETTES };
   }
@@ -35,9 +36,9 @@ function codedWebFallback<T extends { show: boolean; reason: string }>(decision:
 }
 
 function snapshotFrom(cig: unknown, items: ItemProduct[], live: boolean, errored: boolean): CigaretteSnapshot {
-  const web = codedWebFallback(decideCigaretteSurface({ cig, items, surface: "web", errored }));
+  const web = decideCigaretteSurface({ cig, items, surface: "web", errored });
   const tv = decideCigaretteSurface({ cig, items, surface: "tv", errored });
-  const guides = codedWebFallback(decideCigaretteGuide({ cig, items, errored }));
+  const guides = codedGuideFallback(decideCigaretteGuide({ cig, items, errored }));
   return { web, tv, guides, wording: web.wording, live, items };
 }
 
@@ -52,8 +53,8 @@ export async function readCigaretteFeed(): Promise<CigaretteSnapshot> {
     const live = source === "live" || source === "last-good";
     const items = Array.isArray(dataset?.items) && dataset.items.length ? dataset.items as ItemProduct[] : allItems;
     const cig = dataset?.cig ?? null;
-    // TV follows tvOn, including cigDecision's miss/error fallback. Web and guides
-    // use the coded switch for that miss/error, and the feed flag when one is present.
+    // A last-good snapshot inside the cache window counts as live and follows its saved tvOn.
+    // A failed read with no saved cig block is an error. TV hides on that error and on a missing block.
     return snapshotFrom(cig, items, live, !live && !cig);
   } catch {
     return snapshotFrom(null, allItems, false, true);
@@ -63,11 +64,16 @@ export async function readCigaretteFeed(): Promise<CigaretteSnapshot> {
 export const getCigaretteSnapshot = cache(readCigaretteFeed);
 
 export function toPublicCigaretteState(snap: CigaretteSnapshot): PublicCigaretteState {
-  return { web: snap.web.show, tv: snap.tv.show, wording: snap.wording };
+  return {
+    web: publicWebsiteCigaretteFlag(snap.web, SHOW_CIGARETTES),
+    tv: snap.tv.show,
+    wording: snap.wording,
+  };
 }
 
 export function snapshotHeaders(snap: CigaretteSnapshot): Record<string, string> {
-  return cigarettePublicHeaders({ web: snap.web.show, tv: snap.tv.show, wording: snap.wording });
+  const state = toPublicCigaretteState(snap);
+  return cigarettePublicHeaders({ web: state.web, tv: state.tv, wording: state.wording });
 }
 
 export { reconcileSurfaceItems };

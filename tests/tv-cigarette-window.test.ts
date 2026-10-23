@@ -71,7 +71,13 @@ test("TV boards read the live header and do not build the card list from the cod
   assert.doesNotMatch(route, /SHOW_CIGARETTES/);
   assert.match(feed, /const tv = decideCigaretteSurface\(\{ cig, items, surface: "tv", errored \}\)/);
   assert.doesNotMatch(feed, /tv = codedWebFallback/);
-  assert.match(feed, /return cigarettePublicHeaders\(\{ web: snap\.web\.show, tv: snap\.tv\.show, wording: snap\.wording \}\)/);
+  assert.doesNotMatch(feed, /tv = codedGuideFallback/);
+  assert.match(feed, /source === "live" \|\| source === "last-good"/);
+  assert.match(feed, /snapshotFrom\(cig, items, live, !live && !cig\)/);
+  assert.match(feed, /publicWebsiteCigaretteFlag\(snap\.web, SHOW_CIGARETTES\)/);
+  assert.match(feed, /return cigarettePublicHeaders\(\{ web: state\.web, tv: state\.tv, wording: state\.wording \}\)/);
+  const layout = readFileSync(new URL("../app/layout.tsx", import.meta.url), "utf8");
+  assert.match(layout, /web: SHOW_CIGARETTES \? cigarettes\.web : false/);
 });
 
 test("tv-data cigarette headers follow the TV flag and the page can read them", () => {
