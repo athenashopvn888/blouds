@@ -32,6 +32,7 @@ test("5-second cigarette list overlay runs only outside Toronto daytime", () => 
   assert.equal(isCigaretteOfferVisible(false, 5_000), false);
   assert.equal(isCigaretteOfferVisible(false, 30_000), true);
   assert.equal(getCigaretteOfferPromo(true, 0), undefined);
-  assert.equal(getCigaretteOfferPromo(false, 0), undefined);
-  assert.equal(getCigaretteOfferPromo(false, 30_000), undefined);
+  assert.equal(getCigaretteOfferPromo(false, 0)?.src, "/banners/luxury_mix_match_600_web.webp");
+  assert.equal(getCigaretteOfferPromo(false, 30_000)?.src, "/banners/marlboro_belmont_600x600.webp");
+  assert.equal(getCigaretteOfferPromo(false, 5_000), undefined);
 });

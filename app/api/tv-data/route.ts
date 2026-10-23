@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { allFlowers, allItems } from "../../lib/products";
-import { getCigaretteSnapshot, snapshotHeaders } from "../../lib/cigaretteFeed";
+import { getCigaretteSnapshot, reconcileSurfaceItems, snapshotHeaders } from "../../lib/cigaretteFeed";
 import { getTvData } from "../../lib/tvStock";
 
 export const runtime = "nodejs";
@@ -33,5 +33,12 @@ export async function GET(request: Request) {
     staticItems: allItems,
   });
 
-  return NextResponse.json(body, { headers: { ...headers, ...cigHeaders } });
+  let payload = body;
+  const responseHeaders: Record<string, string> = { ...headers, ...cigHeaders };
+  if (type === "items" && Array.isArray(body)) {
+    payload = reconcileSurfaceItems(body, snap.items, snap.tv.show);
+    responseHeaders["x-tv-data-item-count"] = String(payload.length);
+  }
+
+  return NextResponse.json(payload, { headers: responseHeaders });
 }
