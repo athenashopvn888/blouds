@@ -1,5 +1,6 @@
 import { cigaretteSafeContent } from "./lib/siteConfig";
 import FullNameNap from "./components/FullNameNap";
+import MobileBottomBar from "./components/MobileBottomBar";
 import PinnedNavClearance from "./components/PinnedNavClearance";
 import FleetContentProvider from "./components/FleetContentProvider";
 import CigaretteStateProvider from "./components/CigaretteStateProvider";
@@ -128,6 +129,7 @@ export default async function RootLayout({
             {children}
             <FullNameNap />
             <PinnedNavClearance />
+            <MobileBottomBar />
           </CigaretteStateProvider>
         </FleetContentProvider>
       </body>
