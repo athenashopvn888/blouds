@@ -74,7 +74,7 @@ Each of these gets one line here; our other resources go deeper.
 - The federal *Cannabis Regulations*, also on Justice Laws.
 - Government of Ontario: "Cannabis laws."
 
-For the basics on product types and how to read a menu, our [Cannabis 101 hub](/resources/cannabis-101) is the next stop. Blouds Dispensary is at 117 Queen St W, in downtown Brampton west of Main St; directions are on the [Blouds visit page](/visit). Legal cannabis in Ontario is for adults 19 and over.
+For the basics on product types and how to read a menu, our [Cannabis 101 hub](/resources/cannabis-101) is the next stop. Blouds Dispensary is at 117 Queen St W, in downtown Brampton west of Main St; directions are on the [Blouds visit page](/visit), and more about the shop is on our [weed dispensary in Brampton](/weed-dispensary-brampton) page. If you'd rather order from home, see how our [weed delivery in Brampton](/delivery) works. Legal cannabis in Ontario is for adults 19 and over.
 `;
 
 const FIRST_PARAGRAPH =
