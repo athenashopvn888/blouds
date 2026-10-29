@@ -1,5 +1,5 @@
 import { SHOW_CIGARETTES, cigaretteSafeContent, isCigarettePath } from "../lib/siteConfig";
-export type ResourceAuthorKey = "team" | "menu" | "local";
+export type ResourceAuthorKey = "team" | "menu" | "local" | "store";
 
 export interface ResourceAuthor {
   name: string;
@@ -66,6 +66,7 @@ export const AUTHORS: Record<ResourceAuthorKey, ResourceAuthor> = {
   team: { name: "Blouds Dispensary Team", handle: "@BloudsDispensary", role: "Store Team" },
   menu: { name: "Blouds Menu Desk", handle: "@BloudsMenu", role: "Menu Guide" },
   local: { name: "Queen Street Desk", handle: "@BloudsBrampton", role: "Local Guide" },
+  store: { name: "Blouds Dispensary", handle: "@BloudsDispensary", role: "Dispensary" },
 };
 
 export const updated = "2026-07-15";
@@ -670,11 +671,13 @@ const BASE_RESOURCE_PAGES: ResourcePage[] = [
 
 import { ADC_V2_NEW_PAGES, applyAdcV2Expansions } from "./adcV2ResourceData.ts";
 import { CANNABIS_LEGALIZATION_CANADA_TIMELINE } from "./cannabisLegalizationCanadaTimeline.ts";
+import { WHY_IS_SOME_WEED_PURPLE } from "./whyIsSomeWeedPurple.ts";
 
 const RESOURCE_PAGES_RAW: ResourcePage[] = [
   ...BASE_RESOURCE_PAGES.map(applyAdcV2Expansions),
   ...ADC_V2_NEW_PAGES,
   CANNABIS_LEGALIZATION_CANADA_TIMELINE,
+  WHY_IS_SOME_WEED_PURPLE,
 ];
 
 RESOURCE_PAGES_RAW[0].guidesCard = {
@@ -687,7 +690,15 @@ export const RESOURCE_PAGES = SHOW_CIGARETTES
   ? RESOURCE_PAGES_RAW
   : RESOURCE_PAGES_RAW
       .filter((page) => !isCigarettePath((page as { slug?: string; path?: string }).slug ?? (page as { path?: string }).path))
-      .map((page) => cigaretteSafeContent(page));
+      .map((page) => {
+        const safe = cigaretteSafeContent(page);
+        // Cigarette stripping collapses every newline. This article has no cigarette
+        // wording, so keep its approved markdown verbatim.
+        if (page.path === "/resources/why-is-some-weed-purple" && page.bodyMarkdown) {
+          return { ...safe, bodyMarkdown: page.bodyMarkdown };
+        }
+        return safe;
+      });
 
 export const RESOURCE_HOME = RESOURCE_PAGES[0];
 

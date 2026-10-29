@@ -205,7 +205,8 @@
 .markdownBody p + p,
 .markdownBody h2,
 .markdownBody ul,
-.markdownBody ol {
+.markdownBody ol,
+.markdownBody table {
   margin-top: 16px;
 }
 
@@ -220,7 +221,8 @@
 
 .markdownBody h2 + p,
 .markdownBody h2 + ul,
-.markdownBody h2 + ol {
+.markdownBody h2 + ol,
+.markdownBody h2 + table {
   margin-top: 12px;
 }
 
@@ -241,6 +243,28 @@
 
 .markdownBody strong {
   color: #ffffff;
+}
+
+.markdownBody table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.markdownBody th,
+.markdownBody td {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.markdownBody th {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.markdownBody td {
+  color: #d1fae5;
 }
 
 .faqList {
