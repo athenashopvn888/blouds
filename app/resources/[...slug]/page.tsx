@@ -104,7 +104,9 @@ function buildSchema(page: ResourcePage) {
         headline: visibleSmokeLabel(page.h1),
         description: visibleSmokeCopy(page.metaDescription),
         image: `${SITE.baseUrl}${page.image.src}`,
-        author: { "@type": "Person", name: author.name, alternateName: author.handle },
+        author: author.name === SITE.name
+          ? { "@type": "Organization", name: SITE.name }
+          : { "@type": "Person", name: author.name, alternateName: author.handle },
         publisher: {
           "@type": "Organization",
           name: SITE.name,
