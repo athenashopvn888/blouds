@@ -671,6 +671,7 @@ const BASE_RESOURCE_PAGES: ResourcePage[] = [
 
 import { ADC_V2_NEW_PAGES, applyAdcV2Expansions } from "./adcV2ResourceData.ts";
 import { CANNABIS_LEGALIZATION_CANADA_TIMELINE } from "./cannabisLegalizationCanadaTimeline.ts";
+import { HOW_OFTEN_TO_CHANGE_BONG_WATER } from "./howOftenToChangeBongWater.ts";
 import { WHY_IS_SOME_WEED_PURPLE } from "./whyIsSomeWeedPurple.ts";
 
 const RESOURCE_PAGES_RAW: ResourcePage[] = [
@@ -678,6 +679,7 @@ const RESOURCE_PAGES_RAW: ResourcePage[] = [
   ...ADC_V2_NEW_PAGES,
   CANNABIS_LEGALIZATION_CANADA_TIMELINE,
   WHY_IS_SOME_WEED_PURPLE,
+  HOW_OFTEN_TO_CHANGE_BONG_WATER,
 ];
 
 RESOURCE_PAGES_RAW[0].guidesCard = {
@@ -692,9 +694,13 @@ export const RESOURCE_PAGES = SHOW_CIGARETTES
       .filter((page) => !isCigarettePath((page as { slug?: string; path?: string }).slug ?? (page as { path?: string }).path))
       .map((page) => {
         const safe = cigaretteSafeContent(page);
-        // Cigarette stripping collapses every newline. This article has no cigarette
-        // wording, so keep its approved markdown verbatim.
-        if (page.path === "/resources/why-is-some-weed-purple" && page.bodyMarkdown) {
+        // Cigarette stripping collapses every newline. These articles have no cigarette
+        // wording, so keep their approved markdown verbatim.
+        if (
+          (page.path === "/resources/why-is-some-weed-purple" ||
+            page.path === "/resources/how-often-to-change-bong-water") &&
+          page.bodyMarkdown
+        ) {
           return { ...safe, bodyMarkdown: page.bodyMarkdown };
         }
         return safe;
