@@ -674,13 +674,54 @@ import { CANNABIS_LEGALIZATION_CANADA_TIMELINE } from "./cannabisLegalizationCan
 import { HOW_OFTEN_TO_CHANGE_BONG_WATER } from "./howOftenToChangeBongWater.ts";
 import { WHY_IS_SOME_WEED_PURPLE } from "./whyIsSomeWeedPurple.ts";
 
+const CANNABIS_LEGALIZATION_TIMELINE_PATH = CANNABIS_LEGALIZATION_CANADA_TIMELINE.path;
+/** One line from the approved article. The page record itself is unchanged. */
+const CANNABIS_LEGALIZATION_TIMELINE_DESCRIPTION =
+  "The short answer is October 17, 2018. The fuller answer is a sequence of dates, because the federal law arrived in stages and a few of its rules have been adjusted since. This is a plain summary for adults 19 and over, not legal advice.";
+
+function withCannabisLegalizationTimelineLink(page: ResourcePage): ResourcePage {
+  if (page.path === "/resources") {
+    return {
+      ...page,
+      sections: [
+        ...page.sections,
+        {
+          heading: "Latest articles",
+          body: [],
+          links: [
+            {
+              label: CANNABIS_LEGALIZATION_CANADA_TIMELINE.title,
+              href: CANNABIS_LEGALIZATION_TIMELINE_PATH,
+              description: CANNABIS_LEGALIZATION_TIMELINE_DESCRIPTION,
+            },
+          ],
+        },
+      ],
+      related: page.related.includes(CANNABIS_LEGALIZATION_TIMELINE_PATH)
+        ? page.related
+        : [...page.related, CANNABIS_LEGALIZATION_TIMELINE_PATH],
+    };
+  }
+
+  if (page.path === "/resources/cannabis-101") {
+    return {
+      ...page,
+      related: page.related.includes(CANNABIS_LEGALIZATION_TIMELINE_PATH)
+        ? page.related
+        : [...page.related, CANNABIS_LEGALIZATION_TIMELINE_PATH],
+    };
+  }
+
+  return page;
+}
+
 const RESOURCE_PAGES_RAW: ResourcePage[] = [
   ...BASE_RESOURCE_PAGES.map(applyAdcV2Expansions),
   ...ADC_V2_NEW_PAGES,
   CANNABIS_LEGALIZATION_CANADA_TIMELINE,
   WHY_IS_SOME_WEED_PURPLE,
   HOW_OFTEN_TO_CHANGE_BONG_WATER,
-];
+].map(withCannabisLegalizationTimelineLink);
 
 RESOURCE_PAGES_RAW[0].guidesCard = {
   label: "Name Guides",
