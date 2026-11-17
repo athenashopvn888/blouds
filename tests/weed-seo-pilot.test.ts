@@ -12,7 +12,8 @@ test("BLS01 keeps the protected owner and exact metadata", () => {
   assert.match(location, /Weed Dispensary in Brampton \| Blouds Dispensary/);
   assert.match(location, /Blouds Dispensary is open 24 hours at 117 Queen St W/);
   assert.match(sitemap, /weed-dispensary-brampton`/);
-  assert.match(page, /title: \{ absolute: gbpLocation\.weedOwnerTitle \}/);
+  assert.match(page, /title: \{ absolute: WEED_DOC_TITLE \}/);
+  assert.match(page, /const WEED_DOC_TITLE = "Queen Street West Weed Dispensary near me in Downtown Brampton \| Blouds"/);
   assert.match(location, /weedOwnerTitle: "Queen Street West Weed Dispensary in Downtown Brampton \| Blouds"/);
   assert.match(location, /weedOwnerH1: "Queen Street West Weed Dispensary in Downtown Brampton"/);
   assert.match(page, /canonical:.*gbpLocation\.slug/s);
