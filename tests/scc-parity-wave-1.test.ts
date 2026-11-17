@@ -39,7 +39,8 @@ test("Wave 1 keeps the live Queen Street West weed owner and splits title/H1/met
   const config = read("next.config.ts");
 
   assert.match(ownerPage, /canonical: siteUrl\(`\/\$\{gbpLocation\.slug\}`\)/);
-  assert.match(ownerPage, /title: \{ absolute: gbpLocation\.weedOwnerTitle \}/);
+  assert.match(ownerPage, /title: \{ absolute: WEED_DOC_TITLE \}/);
+  assert.match(ownerPage, /const WEED_DOC_TITLE = "Queen Street West Weed Dispensary near me in Downtown Brampton \| Blouds"/);
   assert.match(ownerPage, /description: gbpLocation\.weedOwnerDescription/);
   assert.equal(gbpLocation.slug, "weed-dispensary-brampton");
   assert.equal(gbpLocation.weedOwnerTitle, "Queen Street West Weed Dispensary in Downtown Brampton | Blouds");

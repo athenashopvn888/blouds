@@ -58,7 +58,8 @@ test("5th pillar keeps the live Queen Street West weed-dispensary path and downt
   assert.equal(existsSync(PAGE_FILE), true);
   assert.equal(existsSync(LANDING_FILE), true);
   assert.match(page, /canonical: siteUrl\(`\/\$\{gbpLocation\.slug\}`\)/);
-  assert.match(page, /title: \{ absolute: gbpLocation\.weedOwnerTitle \}/);
+  assert.match(page, /title: \{ absolute: WEED_DOC_TITLE \}/);
+  assert.match(page, /const WEED_DOC_TITLE = "Queen Street West Weed Dispensary near me in Downtown Brampton \| Blouds"/);
   assert.equal(gbpLocation.slug, "weed-dispensary-brampton");
   assert.equal(gbpLocation.weedOwnerTitle, "Queen Street West Weed Dispensary in Downtown Brampton | Blouds");
   assert.equal(gbpLocation.weedOwnerH1, "Queen Street West Weed Dispensary in Downtown Brampton");
