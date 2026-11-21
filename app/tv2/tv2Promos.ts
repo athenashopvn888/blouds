@@ -26,10 +26,6 @@ export const CIGARETTE_PROMOS = CIGARETTE_PROMOS_RAW;
 export const TV2_DAYTIME_PROMOS: Readonly<
   Partial<Record<string, Tv2DaytimePromo>>
 > = {
-  CIGARETTES: {
-    src: "/banners/Blouds_THC_Vape.webp",
-    alt: "Blouds Dispensary THC Vape",
-  },
   VAPES: {
     src: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/cannabis_banner_mashup_variation_01_600x600.webp",
     fallbackSrc:
@@ -53,11 +49,8 @@ export function isTv2Daytime(now = new Date()): boolean {
 export function getTv2DaytimePromo(
   cardId: string,
   daytime: boolean,
-  elapsedMs = 0,
 ): Tv2DaytimePromo | undefined {
-  if (!daytime) return undefined;
-  if (cardId !== "CIGARETTES") return TV2_DAYTIME_PROMOS[cardId];
-
+  if (!daytime || cardId === "CIGARETTES") return undefined;
   return TV2_DAYTIME_PROMOS[cardId];
 }
 
