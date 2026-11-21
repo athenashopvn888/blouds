@@ -354,7 +354,7 @@ export default function TV2Page() {
                   </div>
                 );
               }
-              const promo = getTv2DaytimePromo(card.id, daytime, promoElapsedMs);
+              const promo = getTv2DaytimePromo(card.id, daytime);
 
               if (promo && card.id === "CIGARETTES") {
                 return (
