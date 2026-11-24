@@ -672,6 +672,7 @@ const BASE_RESOURCE_PAGES: ResourcePage[] = [
 import { ADC_V2_NEW_PAGES, applyAdcV2Expansions } from "./adcV2ResourceData.ts";
 import { CANNABIS_LEGALIZATION_CANADA_TIMELINE } from "./cannabisLegalizationCanadaTimeline.ts";
 import { HOW_OFTEN_TO_CHANGE_BONG_WATER } from "./howOftenToChangeBongWater.ts";
+import { WHAT_IS_A_DOOB_TUBE } from "./whatIsADoobTube.ts";
 import { WHY_IS_SOME_WEED_PURPLE } from "./whyIsSomeWeedPurple.ts";
 
 const CANNABIS_LEGALIZATION_TIMELINE_PATH = CANNABIS_LEGALIZATION_CANADA_TIMELINE.path;
@@ -721,6 +722,7 @@ const RESOURCE_PAGES_RAW: ResourcePage[] = [
   CANNABIS_LEGALIZATION_CANADA_TIMELINE,
   WHY_IS_SOME_WEED_PURPLE,
   HOW_OFTEN_TO_CHANGE_BONG_WATER,
+  WHAT_IS_A_DOOB_TUBE,
 ].map(withCannabisLegalizationTimelineLink);
 
 RESOURCE_PAGES_RAW[0].guidesCard = {
@@ -739,7 +741,8 @@ export const RESOURCE_PAGES = SHOW_CIGARETTES
         // wording, so keep their approved markdown verbatim.
         if (
           (page.path === "/resources/why-is-some-weed-purple" ||
-            page.path === "/resources/how-often-to-change-bong-water") &&
+            page.path === "/resources/how-often-to-change-bong-water" ||
+            page.path === "/resources/what-is-a-doob-tube") &&
           page.bodyMarkdown
         ) {
           return { ...safe, bodyMarkdown: page.bodyMarkdown };
