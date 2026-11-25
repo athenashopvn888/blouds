@@ -19,7 +19,7 @@ import { serializeJsonLd } from "../../lib/collectionPageSchema";
 import seoContent from "../../lib/seoContent.generated.json";
 import { liveItemsByCategory } from "../../lib/liveMenu";
 import VapeActionPanel from "../../components/VapeActionPanel";
-import { SHOW_CIGARETTES } from "../../lib/showCigarettes";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "../../lib/cigaretteFeed";
 
 // Read the live menu feed on every request (never a build-time snapshot).
 export const dynamic = "force-dynamic";
@@ -40,7 +40,7 @@ export async function generateMetadata({
   if (!catInfo) return {};
   const items = (await liveItemsByCategory(catInfo.key));
 
-  const cigarettesHidden = !SHOW_CIGARETTES && catSlug === "cigarettes";
+  const cigarettesHidden = catSlug === "cigarettes" && !toPublicCigaretteState(await getCigaretteSnapshot()).web;
   return {
     title: cigarettesHidden ? "Backwoods Brampton | Blouds Dispensary" : catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
     description: cigarettesHidden ? "Backwoods and rolling papers at Blouds Dispensary, 117 Queen St W in Brampton. Adults 19+." : catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at Blouds Dispensary.`,
@@ -71,7 +71,8 @@ export default async function ItemsCategoryPage({
     items = [...items, ...uniqueAccessories];
   }
   const { config } = catInfo;
-  const cigarettesHidden = !SHOW_CIGARETTES && catSlug === "cigarettes";
+  const cigaretteCategoryOn = catSlug === "cigarettes" && toPublicCigaretteState(await getCigaretteSnapshot()).web;
+  const cigarettesHidden = catSlug === "cigarettes" && !cigaretteCategoryOn;
   const visibleFaqs = cigarettesHidden ? config.faqs.filter((faq) => !/native cigarette|grabba/i.test(`${faq.q} ${faq.a}`)) : config.faqs;
   const guideGroups = getCategoryGuideGroups(`/items/${catSlug}`);
   const seoKey = config.name.toLowerCase().includes("thc") ? "vape-disposables" : config.name.toLowerCase().includes("nic") ? "vapes" : catSlug;
@@ -84,16 +85,16 @@ export default async function ItemsCategoryPage({
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(categoryJsonLd) }} />
     <main className={styles.main}>
       <Navbar />
-      {SHOW_CIGARETTES && catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
+      {cigaretteCategoryOn && <CigaretteSeasonalNotice sticky />}
 
       {/* Hero Banner */}
       <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
-        {config.banner ? (
+        {config.banner && !cigarettesHidden ? (
           <>
             <img
               src={config.banner}
-              alt={catSlug === "cigarettes" && SHOW_CIGARETTES ? cigaretteCategoryImage.alt : catSlug === "cigarettes" ? "Backwoods at Blouds Dispensary" : config.name}
-              title={catSlug === "cigarettes" && SHOW_CIGARETTES ? cigaretteCategoryImage.title : catSlug === "cigarettes" ? "Backwoods at Blouds Dispensary" : config.name}
+              alt={cigaretteCategoryOn ? cigaretteCategoryImage.alt : catSlug === "cigarettes" ? "Backwoods at Blouds Dispensary" : config.name}
+              title={cigaretteCategoryOn ? cigaretteCategoryImage.title : catSlug === "cigarettes" ? "Backwoods at Blouds Dispensary" : config.name}
               style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
             />
             <div className={styles.heroContent} style={{ background: config.color, padding: "20px 24px", textAlign: "center" }}>
@@ -114,7 +115,7 @@ export default async function ItemsCategoryPage({
       </section>
 
       {(catSlug === "vapes" || catSlug === "vape-disposables") && <CategoryCoreBanners kind="vapes" />}
-      {SHOW_CIGARETTES && catSlug === "cigarettes" && <CategoryCoreBanners kind="cigarettes" />}
+      {cigaretteCategoryOn && <CategoryCoreBanners kind="cigarettes" />}
 
       {guideGroups.length > 0 && (
         <nav className={styles.guideStrip} aria-label={`${config.name} guides`}>
@@ -179,7 +180,7 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               117 Queen St W, Brampton, ON L6Y 1M3 · Open 24 Hours
             </p>
-            {catSlug === "cigarettes" && SHOW_CIGARETTES ? (
+            {cigaretteCategoryOn ? (
               <p className={styles.visitText}>
                 Queen Street West neighbourhood guide:{" "}
                 <Link href="/native-cigarettes-brampton-queen">native cigarettes on Queen Street West</Link>

@@ -1,4 +1,6 @@
 import CigaretteSeasonalNotice from "../components/CigaretteSeasonalNotice";
+import { redirect } from "next/navigation";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "../lib/cigaretteFeed";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
@@ -118,7 +120,10 @@ function renderFaqAnswer(answer: string) {
   );
 }
 
-export default function QueenStreetNativeCigarettesPage() {
+export const dynamic = "force-dynamic";
+
+export default async function QueenStreetNativeCigarettesPage() {
+  if (!toPublicCigaretteState(await getCigaretteSnapshot()).web) redirect("/cigarette-unavailable");
   return (
     <main className={styles.main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
