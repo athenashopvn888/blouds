@@ -15,7 +15,7 @@ import Footer from "./components/Footer";
 import SccHubLinks from "./components/SccHubLinks";
 import { WeedDiscoveryModule } from "./components/WeedDiscoveryModule";
 import { SITE_ORIGIN, gbpLocation } from "./lib/gbp-location";
-import { SHOW_CIGARETTES } from "./lib/showCigarettes";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "./lib/cigaretteFeed";
 import { storeTierRange, tierRangeText } from "./lib/tierPriceRanges";
 import NearMeFaq from "./components/NearMeFaq";
 import nearMeFaq from "./lib/nearMeFaq.json";
@@ -254,7 +254,8 @@ function getTierColor(tier: string) {
 }
 
 export default async function HomePage() {
-    await __loadMenuData();
+  const [, cigaretteSnapshot] = await Promise.all([__loadMenuData(), getCigaretteSnapshot()]);
+  const { web: showCigarettes } = toPublicCigaretteState(cigaretteSnapshot);
   return (
     <main className={styles.main}>
       <Navbar />
@@ -295,7 +296,7 @@ export default async function HomePage() {
             <Link href="/dispensary-brampton">Brampton dispensary near me</Link>
             <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West delivery</Link>
             <Link href="/24-hour-queen-street-brampton-dispensary">24-hour Queen Street West</Link>
-            {SHOW_CIGARETTES ? <Link href="/native-cigarettes-brampton-queen">Queen Street West native cigarettes</Link> : null}
+            {showCigarettes ? <Link href="/native-cigarettes-brampton-queen">Queen Street West native cigarettes</Link> : null}
             <Link href="/nicotine-vape-queen-street-brampton">Queen Street West nicotine vape</Link>
             <Link href="/vape-shop-brampton">Current Brampton nicotine vape listings</Link>
             <a href={gbpLocation.phoneHref}>Call {gbpLocation.phone}</a>
@@ -452,13 +453,13 @@ export default async function HomePage() {
             <h2>Useful Queen Street pages, grouped clean.</h2>
             <p>
               Visit planning, downtown Brampton menu sections, flower tiers, Queen Street West delivery,
-              late-night shopping, {SHOW_CIGARETTES ? "native cigarettes, " : ""}nicotine vape, and Queen Street West walk-in pages
+              late-night shopping, {showCigarettes ? "native cigarettes, " : ""}nicotine vape, and Queen Street West walk-in pages
               without burying the main menu.
             </p>
             <Link href="/resources">Open Resource Lounge</Link>
           </div>
           <div className={styles.resourceLoungeGrid}>
-            {RESOURCE_LINKS.filter((resource) => SHOW_CIGARETTES || resource.href !== "/native-cigarettes-brampton-queen").map((resource) => (
+            {RESOURCE_LINKS.filter((resource) => showCigarettes || resource.href !== "/native-cigarettes-brampton-queen").map((resource) => (
               <Link key={resource.href} href={resource.href} className={styles.resourceLoungeCard}>
                 <span>{resource.tag}</span>
                 <h3>{resource.title}</h3>

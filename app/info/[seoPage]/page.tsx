@@ -1,4 +1,6 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { connection } from "next/server";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "../../lib/cigaretteFeed";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,6 +45,10 @@ export default async function SeoLandingPage({
   const { seoPage: slug } = await params;
   const page = getSeoPageBySlug(slug);
   if (!page) notFound();
+  if (slug === "native-cigarettes-brampton") {
+    await connection();
+    if (!toPublicCigaretteState(await getCigaretteSnapshot()).web) redirect("/cigarette-unavailable");
+  }
 
   const tiers = Object.values(TIER_CONFIG);
   const heroPreview = page.heroPreview;

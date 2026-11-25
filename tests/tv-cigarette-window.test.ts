@@ -49,10 +49,15 @@ test("the website stays hidden when the TV flag is on", () => {
   assert.equal(decideCigaretteSurface({ cig, items, surface: "web" }).show, false);
   assert.equal(decideCigaretteSurface({ cig, items, surface: "tv" }).show, true);
   assert.equal(decideCigaretteSurface({ cig, items, surface: "web", envRaw: "false" }).reason, "env");
-  for (const file of ["app/page.tsx", "app/sitemap.ts", "app/components/Footer.tsx", "app/faq/page.tsx"]) {
+  for (const file of ["app/sitemap.ts", "app/faq/page.tsx"]) {
     assert.match(readFileSync(new URL(`../${file}`, import.meta.url), "utf8"), /SHOW_CIGARETTES/);
   }
-  assert.match(readFileSync(new URL("../app/components/Navbar.tsx", import.meta.url), "utf8"), /filterCigaretteEntries\(ALL_LINKS_RAW\)/);
+  for (const file of ["Navbar", "Footer", "FleetAnnouncementBanner", "SccHubLinks"]) {
+    const component = readFileSync(new URL(`../app/components/${file}.tsx`, import.meta.url), "utf8");
+    assert.match(component, /web: showCigarettes.*useCigaretteState\(\)/);
+    assert.doesNotMatch(component, /SHOW_CIGARETTES/);
+  }
+  assert.match(readFileSync(new URL("../app/page.tsx", import.meta.url), "utf8"), /toPublicCigaretteState\(cigaretteSnapshot\)/);
   const banner = readFileSync(new URL("../app/components/fleet/FleetAnnouncementBanner.tsx", import.meta.url), "utf8");
   assert.match(banner, /const showCigarettes = cigarettes\.web/);
 });

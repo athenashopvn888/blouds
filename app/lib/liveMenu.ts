@@ -1,6 +1,6 @@
 import { allFlowers, allItems, type FlowerProduct, type ItemProduct } from "./products";
 import { getTvData } from "./tvStock";
-import { filterCigaretteItems } from "./siteConfig";
+import { getCigaretteSnapshot, reconcileSurfaceItems, toPublicCigaretteState } from "./cigaretteFeed";
 
 /**
  * ONE product loader for every web page (Grok 2026-10-08/09): the same getTvData() call /api/tv-data uses
@@ -8,13 +8,14 @@ import { filterCigaretteItems } from "./siteConfig";
  * so the web menu, /tv and /tv2 always show the same products.
  */
 export async function getLiveMenu(): Promise<{ flowers: FlowerProduct[]; items: ItemProduct[] }> {
-  const [f, i] = await Promise.all([
+  const [f, i, cigaretteSnapshot] = await Promise.all([
     getTvData({ type: "flowers", staticFlowers: allFlowers, staticItems: allItems }),
     getTvData({ type: "items", staticFlowers: allFlowers, staticItems: allItems }),
+    getCigaretteSnapshot(),
   ]);
   return {
     flowers: Array.isArray(f?.body) ? (f.body as unknown as FlowerProduct[]) : allFlowers,
-    items: filterCigaretteItems(Array.isArray(i?.body) ? (i.body as unknown as ItemProduct[]) : allItems),
+    items: reconcileSurfaceItems(Array.isArray(i?.body) ? (i.body as unknown as ItemProduct[]) : allItems, [], toPublicCigaretteState(cigaretteSnapshot).web),
   };
 }
 

@@ -1,9 +1,12 @@
-import { SHOW_CIGARETTES } from "../lib/siteConfig";
+"use client";
+
+import { useCigaretteState } from "./CigaretteStateProvider";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 import { gbpLocation } from "../lib/gbp-location";
 
 export default function Footer() {
+  const { web: showCigarettes } = useCigaretteState();
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -56,7 +59,7 @@ export default function Footer() {
               <Link href="/aa-weed">AA Weed</Link>
               <Link href="/budget-weed">Budget Weed</Link>
               <Link href="/items/edibles">Edibles</Link>
-              {SHOW_CIGARETTES ? (<Link href="/items/cigarettes">Cigarettes</Link>) : null}
+              {showCigarettes ? (<Link href="/items/cigarettes">Cigarettes</Link>) : null}
               <Link href="/items/vapes">Nicotine Vape</Link>
               <Link href="/resources">Resources</Link>
               <Link href="/guides">Guides</Link>
@@ -65,7 +68,7 @@ export default function Footer() {
               <Link href="/dispensary-brampton">Brampton Dispensary Near Me</Link>
               <Link href="/cannabis-delivery-queen-street-brampton">Queen Street West Delivery</Link>
               <Link href="/24-hour-queen-street-brampton-dispensary">24-Hour Queen Street West</Link>
-              {SHOW_CIGARETTES ? (<Link href="/native-cigarettes-brampton-queen">Queen Street West Native Cigarettes</Link>) : null}
+              {showCigarettes ? (<Link href="/native-cigarettes-brampton-queen">Queen Street West Native Cigarettes</Link>) : null}
               <Link href="/nicotine-vape-queen-street-brampton">Queen Street West Nicotine Vape</Link>
               <Link href="/resources/local-guides/queen-street-brampton-visit-guide">Queen Street Visit Guide</Link>
               <Link href="/resources/weed-flower-guides">Weed &amp; Flower Guides</Link>
@@ -74,7 +77,7 @@ export default function Footer() {
               <Link href="/delivery">DELIVERY MENU</Link>
               <Link href="/info/brampton-weed-dispensary">Brampton Dispensary</Link>
               <Link href="/info/cheap-weed-brampton">Cheap Weed Brampton</Link>
-              {SHOW_CIGARETTES ? (<Link href="/info/native-cigarettes-brampton">Native Cigarettes</Link>) : null}
+              {showCigarettes ? (<Link href="/info/native-cigarettes-brampton">Native Cigarettes</Link>) : null}
               <Link href="/info/nicotine-vapes-brampton">Nicotine Vapes Brampton</Link>
               <Link href="/info/weed-store-near-mississauga">Weed Store Near Mississauga</Link>
               <Link href="/resources/local-guides/how-to-reach-blouds-from-north-mississauga">North Mississauga Route Guide</Link>
